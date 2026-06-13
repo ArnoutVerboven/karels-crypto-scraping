@@ -40,3 +40,33 @@ def normalise(word: str) -> str:
 def exact_match_metric(example, pred, trace=None) -> bool:
     """Exact-match metric: did the model produce the correct word (zero-shot)?"""
     return normalise(getattr(pred, "solution", "")) == normalise(example.solution)
+
+
+# Edit this string to inject your own domain knowledge into GEPA's reflection
+# (it is passed verbatim to the reflection LM for every wrong answer).
+WRONG_ANSWER_FEEDBACK = (
+    "Karel's Crypto clues use cryptic wordplay: a definition part plus a wordplay "
+    "part (anagram, hidden word, reversal, container, deletion/insertion, "
+    "homophone, charades, double definition, and sometimes bilingual puns - the "
+    "puzzle is Flemish/Dutch). Identify which part is the definition and which is "
+    "the wordplay, then make the answer a real Dutch word whose length and any "
+    "known letters match the pattern exactly."
+)
+
+
+def gepa_feedback_metric(gold, pred, trace=None, pred_name=None, pred_trace=None):
+    """GEPA feedback metric: returns a score plus natural-language feedback.
+
+    The ``feedback`` string is what GEPA's reflection LM reads to propose a
+    better instruction, so it's the place to add domain knowledge.
+    """
+    import dspy
+
+    if exact_match_metric(gold, pred):
+        return dspy.Prediction(score=1.0, feedback="Correct: the answer matches.")
+    expected = getattr(gold, "solution", "")
+    got = normalise(getattr(pred, "solution", "")) or "(no answer)"
+    return dspy.Prediction(
+        score=0.0,
+        feedback=f"Incorrect. Expected '{expected}', got '{got}'. {WRONG_ANSWER_FEEDBACK}",
+    )

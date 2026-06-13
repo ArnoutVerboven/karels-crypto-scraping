@@ -4,7 +4,8 @@ Artifacts produced by `karels-crypto-optimize` (the DSPy word-solver prompt
 optimization). These are committed so the optimised prompt and its metrics live
 in the repo.
 
-After a run you'll find:
+Results are grouped per technique in a subdirectory: `mipro/`, `copro/`,
+`gepa/` — so different optimizers can be compared side by side. Each contains:
 
 | File | Contents |
 | ---- | -------- |

@@ -1,56 +1,58 @@
 name: optimize
 
-# Manually-triggered prompt optimization for the word solver (DSPy / MIPROv2).
+# Manually-triggered prompt optimization for the word solver (DSPy: MIPROv2 /
+# COPRO / GEPA, selectable via the optimizer input).
 # Configure credentials first (Settings -> Secrets and variables -> Actions):
 #   - OPENAI_API_KEY  as a repository *secret* (sensitive)
 #   - OPENAI_BASE_URL as a repository *variable* (not sensitive)
 #   - OPENAI_MODEL    as a repository *variable* (optional; not sensitive)
-# The optimised prompt + metrics are committed to
-# karels-crypto-solving/optimization_results/.
+# Results are committed to karels-crypto-solving/optimization_results/<optimizer>/.
 
 on:
   workflow_dispatch:
     inputs:
+      optimizer:
+        description: "Technique"
+        type: choice
+        options: ["mipro", "copro", "gepa"]
+        default: "mipro"
+      model:
+        description: "Task model (blank = OPENAI_MODEL variable / default)"
+        type: string
+        default: ""
+      reflection_model:
+        description: "GEPA reflection / proposer model (blank = task model)"
+        type: string
+        default: ""
       auto:
-        description: "Search budget preset ('none' = manual num_candidates/num_trials)"
+        description: "Budget preset (mipro/gepa)"
         type: choice
         options: ["light", "medium", "heavy", "none"]
         default: "light"
-      num_candidates:
-        description: "Instruction candidates (only when auto=none)"
-        type: string
-        default: ""
-      num_trials:
-        description: "Optimization trials (only when auto=none)"
-        type: string
-        default: ""
-      max_tokens:
-        description: "Max output tokens per LM call"
-        type: string
-        default: "1000"
-      minibatch_size:
-        description: "Minibatch size (blank = default 35, clamped to valset)"
-        type: string
-        default: ""
-      max_examples:
-        description: "Cap number of labelled words (blank = all)"
-        type: string
-        default: ""
-      demos:
-        description: "Max few-shot demos (0 = instruction-only)"
-        type: string
-        default: "0"
       reveal:
         description: "Helper letters revealed in the pattern"
         type: choice
         options: ["none", "partial", "all"]
         default: "none"
-      reveal_fraction:
-        description: "Fraction revealed when reveal=partial"
+      reasoning_effort:
+        description: "Reasoning effort for reasoning models"
+        type: choice
+        options: ["", "minimal", "low", "medium", "high"]
+        default: "low"
+      max_tokens:
+        description: "Max output tokens per task-LM call"
         type: string
-        default: "0.5"
-      model:
-        description: "Model override (blank = OPENAI_MODEL secret / default)"
+        default: "1000"
+      num_threads:
+        description: "Parallel eval threads"
+        type: string
+        default: "8"
+      demos:
+        description: "Max few-shot demos (0 = instruction-only)"
+        type: string
+        default: "0"
+      max_examples:
+        description: "Cap number of labelled words (blank = all)"
         type: string
         default: ""
 
@@ -88,24 +90,23 @@ jobs:
 
       - name: Run prompt optimization
         env:
-          IN_AUTO: ${{ inputs.auto }}
-          IN_NUM_CANDIDATES: ${{ inputs.num_candidates }}
-          IN_NUM_TRIALS: ${{ inputs.num_trials }}
-          IN_MAX_TOKENS: ${{ inputs.max_tokens }}
-          IN_MINIBATCH_SIZE: ${{ inputs.minibatch_size }}
-          IN_MAX_EXAMPLES: ${{ inputs.max_examples }}
-          IN_DEMOS: ${{ inputs.demos }}
-          IN_REVEAL: ${{ inputs.reveal }}
-          IN_REVEAL_FRACTION: ${{ inputs.reveal_fraction }}
+          IN_OPTIMIZER: ${{ inputs.optimizer }}
           IN_MODEL: ${{ inputs.model }}
+          IN_REFLECTION_MODEL: ${{ inputs.reflection_model }}
+          IN_AUTO: ${{ inputs.auto }}
+          IN_REVEAL: ${{ inputs.reveal }}
+          IN_REASONING_EFFORT: ${{ inputs.reasoning_effort }}
+          IN_MAX_TOKENS: ${{ inputs.max_tokens }}
+          IN_NUM_THREADS: ${{ inputs.num_threads }}
+          IN_DEMOS: ${{ inputs.demos }}
+          IN_MAX_EXAMPLES: ${{ inputs.max_examples }}
         run: |
-          ARGS="--auto $IN_AUTO --reveal $IN_REVEAL --reveal-fraction $IN_REVEAL_FRACTION"
-          ARGS="$ARGS --demos $IN_DEMOS --max-tokens $IN_MAX_TOKENS"
-          [ -n "$IN_NUM_CANDIDATES" ] && ARGS="$ARGS --num-candidates $IN_NUM_CANDIDATES"
-          [ -n "$IN_NUM_TRIALS" ]     && ARGS="$ARGS --num-trials $IN_NUM_TRIALS"
-          [ -n "$IN_MINIBATCH_SIZE" ] && ARGS="$ARGS --minibatch-size $IN_MINIBATCH_SIZE"
-          [ -n "$IN_MAX_EXAMPLES" ]   && ARGS="$ARGS --max-examples $IN_MAX_EXAMPLES"
-          [ -n "$IN_MODEL" ]          && ARGS="$ARGS --model $IN_MODEL"
+          ARGS="--optimizer $IN_OPTIMIZER --auto $IN_AUTO --reveal $IN_REVEAL"
+          ARGS="$ARGS --demos $IN_DEMOS --max-tokens $IN_MAX_TOKENS --num-threads $IN_NUM_THREADS"
+          [ -n "$IN_MODEL" ]            && ARGS="$ARGS --model $IN_MODEL"
+          [ -n "$IN_REFLECTION_MODEL" ] && ARGS="$ARGS --reflection-model $IN_REFLECTION_MODEL"
+          [ -n "$IN_REASONING_EFFORT" ] && ARGS="$ARGS --reasoning-effort $IN_REASONING_EFFORT"
+          [ -n "$IN_MAX_EXAMPLES" ]     && ARGS="$ARGS --max-examples $IN_MAX_EXAMPLES"
           echo "Running: karels-crypto-optimize $ARGS"
           uv run karels-crypto-optimize $ARGS
 
@@ -117,6 +118,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No optimization result changes."
           else
-            git commit -m "optimize: word-solver prompt (reveal=${{ inputs.reveal }}, auto=${{ inputs.auto }})"
+            git commit -m "optimize: ${{ inputs.optimizer }} word-solver prompt (reveal=${{ inputs.reveal }})"
             git push
           fi

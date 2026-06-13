@@ -1,26 +1,34 @@
-"""Optimize the word-solver prompt with DSPy / MIPROv2.
+"""Optimize the word-solver prompt with DSPy.
 
 Supervised prompt optimization: we treat the scraped solutions as labels and
 maximise *zero-shot accuracy* (the fraction of clues the program answers
 correctly with no few-shot examples; the model may still reason/think). By
 default we optimise the **instruction only** (0 few-shot demos) on **empty
-patterns** (no letter hints), matching the hardest setup. If that proves too
-hard, reveal some/all helper letters with ``--reveal``.
+patterns** (no letter hints), the hardest setup.
+
+Three techniques are selectable with ``--optimizer``:
+
+* ``mipro``  - MIPROv2: a proposer LM writes instruction candidates grounded in
+  the data/program/tips; Bayesian search picks the best (default).
+* ``copro``  - COPRO: coordinate ascent; a proposer LM rewrites the instruction
+  over ``--depth`` rounds, ``--breadth`` candidates each, keeping the best.
+* ``gepa``   - GEPA: a reflection LM reads failing traces + the metric's textual
+  feedback and proposes targeted instruction edits (Pareto search).
 
 Run:
 
     uv sync --extra optimize
-    karels-crypto-optimize --auto light --reveal none
+    karels-crypto-optimize --optimizer mipro --auto light --reveal none
 
-Requires OPENAI_API_KEY / OPENAI_BASE_URL (and optionally OPENAI_MODEL).
+Requires OPENAI_API_KEY / OPENAI_BASE_URL (and optionally OPENAI_MODEL); a local
+``.env`` is loaded automatically.
 
-Artifacts (committed to the repo) are written to ``optimization_results/`` next
-to the solving package:
+Artifacts are written to ``optimization_results/<optimizer>/`` so techniques can
+be compared side by side:
 
-* ``optimized_prompt.txt``      - the optimised instruction (copy into prompts).
-* ``optimized_word_solver.json``- the full compiled DSPy program.
-* ``metrics.json``              - config, baseline/optimized accuracy and the
-                                  per-trial score curve (for plotting).
+* ``optimized_prompt.txt``       - the optimised instruction.
+* ``optimized_word_solver.json`` - the full compiled DSPy program.
+* ``metrics.json``               - config, baseline/optimized accuracy, curve.
 """
 
 from __future__ import annotations
@@ -34,41 +42,46 @@ from pathlib import Path
 
 from .. import config, data
 from ..patterns import build_pattern
-from .program import build_program, exact_match_metric, normalise
+from .program import (
+    build_program,
+    exact_match_metric,
+    gepa_feedback_metric,
+    normalise,
+)
 
 # <module root>/optimization_results (module root = karels-crypto-solving/).
 _MODULE_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_RESULTS_DIR = _MODULE_ROOT / "optimization_results"
 
+# Instructions can be long, so give proposer/reflection LMs a generous budget.
+_PROPOSER_MAX_TOKENS = 8000
 
-def _configure_lm(
-    model: str | None,
+
+def make_lm(
+    model_id: str,
+    *,
     max_tokens: int,
-    temperature: float | None,
+    temperature: float | None = None,
     reasoning_effort: str | None = None,
-) -> None:
+):
+    """Build a dspy.LM, applying reasoning-model requirements automatically."""
     import dspy
 
-    model_id = model or config.model_name()
     kwargs = {"max_tokens": max_tokens}
-    # Reasoning models (gpt-5 family, o-series) require temperature=1.0 and a
-    # large token budget, otherwise the reply comes back empty.
     if config.is_reasoning_model(model_id):
+        # Reasoning models need temperature=1.0 and a large budget, else empty.
         temperature = 1.0
         kwargs["max_tokens"] = max(max_tokens or 0, config.REASONING_MIN_MAX_TOKENS)
         if reasoning_effort:
-            # Forwarded to the OpenAI API via litellm; caps how much the model
-            # "thinks" (low = cheaper/faster).
             kwargs["reasoning_effort"] = reasoning_effort
     if temperature is not None:
         kwargs["temperature"] = temperature
-    lm = dspy.LM(
+    return dspy.LM(
         f"openai/{model_id}",
         api_key=os.environ.get("OPENAI_API_KEY"),
         api_base=os.environ.get("OPENAI_BASE_URL"),
         **kwargs,
     )
-    dspy.configure(lm=lm)
 
 
 def build_examples(reveal: str, fraction: float, seed: int, max_examples: int | None) -> list:
@@ -109,7 +122,7 @@ def extract_instruction(program) -> str:
 
 
 def training_curve(compiled) -> list[dict]:
-    """JSON-safe per-trial score curve from MIPROv2's trial_logs."""
+    """JSON-safe per-trial score curve from MIPROv2's trial_logs (if present)."""
     logs = getattr(compiled, "trial_logs", {}) or {}
     curve = []
     for trial in sorted(logs):
@@ -125,51 +138,29 @@ def training_curve(compiled) -> list[dict]:
     return curve
 
 
-def run(args: argparse.Namespace) -> int:
+def _compile_mipro(args, program, trainset, valset, prompt_lm, log_dir):
     from dspy.teleprompt import MIPROv2
 
-    _configure_lm(args.model, args.max_tokens, args.temperature, args.reasoning_effort)
-
-    results_dir = Path(args.output_dir)
-    results_dir.mkdir(parents=True, exist_ok=True)
-
-    examples = build_examples(
-        args.reveal, args.reveal_fraction, args.seed, args.max_examples
-    )
-    if not examples:
-        print("No labelled words available; scrape some history first.")
-        return 1
-
-    split = max(1, int(len(examples) * (1 - args.val_fraction)))
-    trainset, valset = examples[:split], examples[split:] or examples[:1]
-    print(f"{len(examples)} examples ({len(trainset)} train / {len(valset)} val), "
-          f"reveal={args.reveal}")
-
-    program = build_program()
-    baseline = evaluate(program, valset)
-    print(f"Baseline zero-shot accuracy (val): {baseline:.1%}")
-
     manual = args.auto == "none"
-    optimizer_kwargs = {
+    kwargs = {
         "metric": exact_match_metric,
-        # 0 demos => pure instruction (prompt) optimization, no few-shot vocab.
         "max_bootstrapped_demos": args.demos,
         "max_labeled_demos": args.demos,
         "num_threads": args.num_threads,
         "track_stats": True,
-        "log_dir": str(results_dir / "dspy_logs"),
+        "log_dir": str(log_dir),
     }
+    if prompt_lm is not None:
+        kwargs["prompt_model"] = prompt_lm
     if args.max_errors is not None:
-        optimizer_kwargs["max_errors"] = args.max_errors
+        kwargs["max_errors"] = args.max_errors
     if manual:
-        # Manual budget: you control the search size explicitly.
-        optimizer_kwargs["auto"] = None
-        optimizer_kwargs["num_candidates"] = args.num_candidates or 5
+        kwargs["auto"] = None
+        kwargs["num_candidates"] = args.num_candidates or 5
     else:
-        optimizer_kwargs["auto"] = args.auto
-    optimizer = MIPROv2(**optimizer_kwargs)
+        kwargs["auto"] = args.auto
+    optimizer = MIPROv2(**kwargs)
 
-    # minibatch_size must not exceed the validation set size.
     minibatch_size = min(args.minibatch_size or 35, len(valset))
     compile_kwargs = {
         "trainset": trainset,
@@ -179,7 +170,98 @@ def run(args: argparse.Namespace) -> int:
     }
     if manual:
         compile_kwargs["num_trials"] = args.num_trials or 10
-    compiled = optimizer.compile(program, **compile_kwargs)
+    return optimizer.compile(program, **compile_kwargs)
+
+
+def _compile_copro(args, program, trainset, valset, prompt_lm, log_dir):
+    from dspy.teleprompt import COPRO
+
+    kwargs = {
+        "metric": exact_match_metric,
+        "breadth": args.breadth,
+        "depth": args.depth,
+        "init_temperature": args.init_temperature,
+        "track_stats": True,
+    }
+    if prompt_lm is not None:
+        kwargs["prompt_model"] = prompt_lm
+    optimizer = COPRO(**kwargs)
+    eval_kwargs = {"num_threads": args.num_threads, "display_progress": True, "display_table": 0}
+    # COPRO evaluates candidates on the trainset it is given.
+    return optimizer.compile(program, trainset=trainset + valset, eval_kwargs=eval_kwargs)
+
+
+def _compile_gepa(args, program, trainset, valset, reflection_lm, log_dir):
+    import dspy
+
+    auto = args.auto if args.auto != "none" else "light"
+    optimizer = dspy.GEPA(
+        metric=gepa_feedback_metric,
+        auto=auto,
+        reflection_lm=reflection_lm,
+        reflection_minibatch_size=args.reflection_minibatch_size,
+        num_threads=args.num_threads,
+        track_stats=True,
+        log_dir=str(log_dir),
+        seed=args.seed,
+    )
+    return optimizer.compile(program, trainset=trainset, valset=valset)
+
+
+_COMPILERS = {"mipro": _compile_mipro, "copro": _compile_copro, "gepa": _compile_gepa}
+
+
+def run(args: argparse.Namespace) -> int:
+    import dspy
+
+    task_model = args.model or config.model_name()
+    dspy.configure(
+        lm=make_lm(
+            task_model,
+            max_tokens=args.max_tokens,
+            temperature=args.temperature,
+            reasoning_effort=args.reasoning_effort,
+        )
+    )
+
+    results_dir = Path(args.output_dir) / args.optimizer
+    results_dir.mkdir(parents=True, exist_ok=True)
+
+    examples = build_examples(args.reveal, args.reveal_fraction, args.seed, args.max_examples)
+    if not examples:
+        print("No labelled words available; scrape some history first.")
+        return 1
+
+    split = max(1, int(len(examples) * (1 - args.val_fraction)))
+    trainset, valset = examples[:split], examples[split:] or examples[:1]
+    print(f"[{args.optimizer}] {len(examples)} examples "
+          f"({len(trainset)} train / {len(valset)} val), reveal={args.reveal}")
+
+    program = build_program()
+    if args.seed_instruction:
+        # Inject your own starting prompt / domain knowledge.
+        predictor = program.predictors()[0]
+        predictor.signature = predictor.signature.with_instructions(args.seed_instruction)
+
+    baseline = evaluate(program, valset)
+    print(f"Baseline zero-shot accuracy (val): {baseline:.1%}")
+
+    # Optional separate LM for proposing/reflecting on instructions.
+    proposer_model = args.prompt_model or args.reflection_model
+    proposer_lm = None
+    if args.optimizer == "gepa":
+        reflection_model = args.reflection_model or args.prompt_model or task_model
+        proposer_lm = make_lm(
+            reflection_model,
+            max_tokens=_PROPOSER_MAX_TOKENS,
+            reasoning_effort=args.reasoning_effort,
+        )
+    elif proposer_model:
+        proposer_lm = make_lm(proposer_model, max_tokens=_PROPOSER_MAX_TOKENS)
+
+    compiled = _COMPILERS[args.optimizer](
+        args, program, trainset, valset, proposer_lm, results_dir / "dspy_logs"
+    )
 
     optimized = evaluate(compiled, valset)
     print(f"Optimized zero-shot accuracy (val): {optimized:.1%}")
@@ -195,12 +277,18 @@ def run(args: argparse.Namespace) -> int:
     metrics = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "config": {
-            "model": args.model or config.model_name(),
+            "optimizer": args.optimizer,
+            "model": task_model,
+            "prompt_model": args.prompt_model,
+            "reflection_model": args.reflection_model,
+            "seed_instruction": bool(args.seed_instruction),
             "auto": args.auto,
-            "num_candidates": args.num_candidates if manual else None,
-            "num_trials": args.num_trials if manual else None,
-            "minibatch": args.minibatch,
-            "minibatch_size": minibatch_size,
+            "breadth": args.breadth,
+            "depth": args.depth,
+            "init_temperature": args.init_temperature,
+            "reflection_minibatch_size": args.reflection_minibatch_size,
+            "num_candidates": args.num_candidates,
+            "num_trials": args.num_trials,
             "max_tokens": args.max_tokens,
             "temperature": args.temperature,
             "reasoning_effort": args.reasoning_effort,
@@ -235,74 +323,78 @@ def run(args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Optimize the word-solver prompt with DSPy.")
-    parser.add_argument("--model", default=None, help="Override OPENAI_MODEL.")
+    parser.add_argument(
+        "--optimizer", choices=["mipro", "copro", "gepa"], default="mipro",
+        help="Prompt-optimization technique.",
+    )
+    parser.add_argument("--model", default=None, help="Task model (override OPENAI_MODEL).")
+    parser.add_argument(
+        "--prompt-model", default=None,
+        help="Separate LM to propose instructions (MIPROv2/COPRO). Default: task model.",
+    )
+    parser.add_argument(
+        "--reflection-model", default=None,
+        help="LM that reflects/proposes for GEPA (use a strong model). Default: task model.",
+    )
+    parser.add_argument(
+        "--seed-instruction", default=None,
+        help="Override the starting instruction (inject your own domain knowledge).",
+    )
 
     # --- search budget (the main cost knobs) -------------------------------
     budget = parser.add_argument_group("search budget / cost")
     budget.add_argument(
         "--auto", choices=["light", "medium", "heavy", "none"], default="light",
-        help="Preset search budget. 'none' = manual (--num-candidates/--num-trials).",
+        help="Preset budget for MIPROv2/GEPA ('none' = manual for MIPROv2).",
     )
-    budget.add_argument(
-        "--num-candidates", type=int, default=None,
-        help="Instruction candidates to propose (only when --auto none).",
-    )
-    budget.add_argument(
-        "--num-trials", type=int, default=None,
-        help="Optimization trials to run (only when --auto none).",
-    )
+    budget.add_argument("--num-candidates", type=int, default=None,
+                        help="MIPROv2 instruction candidates (with --auto none).")
+    budget.add_argument("--num-trials", type=int, default=None,
+                        help="MIPROv2 trials (with --auto none).")
+    budget.add_argument("--breadth", type=int, default=10,
+                        help="COPRO: candidates per round.")
+    budget.add_argument("--depth", type=int, default=3,
+                        help="COPRO: coordinate-ascent rounds.")
+    budget.add_argument("--init-temperature", type=float, default=1.4,
+                        help="COPRO: proposal temperature (diversity).")
+    budget.add_argument("--reflection-minibatch-size", type=int, default=8,
+                        help="GEPA: failing examples analysed per reflection.")
     budget.add_argument(
         "--minibatch", action=argparse.BooleanOptionalAction, default=True,
-        help="Evaluate candidates on minibatches (cheaper) vs the full valset.",
+        help="MIPROv2: evaluate candidates on minibatches vs full valset.",
     )
-    budget.add_argument(
-        "--minibatch-size", type=int, default=None,
-        help="Minibatch size (clamped to the valset size; default 35).",
-    )
-    budget.add_argument(
-        "--max-tokens", type=int, default=1000,
-        help="Max output tokens per LM call (caps token consumption).",
-    )
+    budget.add_argument("--minibatch-size", type=int, default=None,
+                        help="MIPROv2 minibatch size (clamped to valset; default 35).")
+    budget.add_argument("--max-tokens", type=int, default=1000,
+                        help="Max output tokens per task-LM call.")
     budget.add_argument("--temperature", type=float, default=None)
     budget.add_argument(
-        "--reasoning-effort",
-        choices=["minimal", "low", "medium", "high"],
-        default=None,
-        help="Reasoning budget for reasoning models (low = fast/cheap). Ignored by others.",
+        "--reasoning-effort", choices=["minimal", "low", "medium", "high"], default=None,
+        help="Reasoning budget for reasoning models (low = fast/cheap).",
     )
-    budget.add_argument(
-        "--num-threads", type=int, default=1,
-        help="Parallel eval threads (speed, not cost).",
-    )
-    budget.add_argument(
-        "--max-errors", type=int, default=None,
-        help="Abort after this many failing LM calls.",
-    )
-    budget.add_argument(
-        "--max-examples", type=int, default=None,
-        help="Cap the number of labelled words used (cheaper runs).",
-    )
+    budget.add_argument("--num-threads", type=int, default=1, help="Parallel eval threads.")
+    budget.add_argument("--max-errors", type=int, default=None,
+                        help="MIPROv2: abort after this many failing LM calls.")
+    budget.add_argument("--max-examples", type=int, default=None,
+                        help="Cap the number of labelled words used.")
 
     # --- task setup --------------------------------------------------------
-    parser.add_argument(
-        "--demos", type=int, default=0,
-        help="Max few-shot demos (0 = instruction-only prompt optimization).",
-    )
-    parser.add_argument(
-        "--reveal", choices=["none", "partial", "all"], default="none",
-        help="Helper letters revealed in the pattern (none = hardest).",
-    )
+    parser.add_argument("--demos", type=int, default=0,
+                        help="Max few-shot demos (0 = instruction-only).")
+    parser.add_argument("--reveal", choices=["none", "partial", "all"], default="none",
+                        help="Helper letters revealed in the pattern (none = hardest).")
     parser.add_argument("--reveal-fraction", type=float, default=0.5)
     parser.add_argument("--val-fraction", type=float, default=0.3)
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument(
-        "--output-dir", default=str(DEFAULT_RESULTS_DIR),
-        help="Directory for the prompt / program / metrics artifacts.",
-    )
+    parser.add_argument("--output-dir", default=str(DEFAULT_RESULTS_DIR),
+                        help="Base dir for artifacts (results go in <dir>/<optimizer>/).")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
+    import logging
+
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     config.load_env()
     return run(build_parser().parse_args(argv))
 
