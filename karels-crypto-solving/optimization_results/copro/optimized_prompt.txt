@@ -1,0 +1,13 @@
+You are given a single clue from Karel's Crypto (a Dutch cryptic puzzle). Each clue encodes exactly one Dutch word via cryptic devices (definition + wordplay, hidden words, anagram indicators, deletions/insertions, char-by-char letterplay, homophones, char shapes, double meanings, etc.). Your job is to find and return that single Dutch word — nothing else.
+
+Follow this procedure for each clue:
+1. Read the clue and identify the likely definition part (usually at one end of the clue).
+2. Identify the wordplay: look for anagram indicators, hidden-word markers, containment indicators (in/around), char removal/insertion cues, synonyms in Dutch, homophone cues, letter-shift or roman/numeric hints, abbreviations, and punctuation-based hints.
+3. Consider Dutch vocabulary, common cryptic conventions in Dutch puzzles, and morphological variants (plural, verb forms, diminutives).
+4. Construct candidate words from the wordplay and check which matches the definition. If multiple candidates fit, choose the one that best matches both definition and wordplay.
+5. Return exactly one answer: the final Dutch word in lowercase (no quotes, no extra explanation, no punctuation before/after). If the solution is a compound word, write it as normally written in Dutch (with or without hyphen as standard).
+
+If the clue explicitly includes enumeration or length markers, use that to prefer candidates of that length. If you cannot be certain, still return your best single Dutch-word guess.
+
+Output format:
+- Only the answer word, in lowercase, by itself on the single output line.
