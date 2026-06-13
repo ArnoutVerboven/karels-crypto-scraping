@@ -167,6 +167,39 @@ def main() -> int:
     for p in sorted(found_paths):
         print(p)
 
+    # Keyword scan across every downloaded JS bundle (incl. vendor chunk) so the
+    # surrounding context of API calls shows up in the workflow logs.
+    keywords = [
+        "baseURL", "axios", "fetch(", "/api", "https://", "http://",
+        "crypto", "puzzel", "puzzle", "week", "oplossing", "cryptogram",
+        "woord", "lengte", "hulpcijfer", "solution", ".json", "endpoint",
+        "VUE_APP", "process.env",
+    ]
+    print("\n==== keyword context in JS bundles ====")
+    for jsfile in sorted((OUT / "js").glob("*.js")):
+        try:
+            text = jsfile.read_text(errors="replace")
+        except Exception:  # noqa: BLE001
+            continue
+        for kw in keywords:
+            start = 0
+            hits = 0
+            while hits < 12:
+                idx = text.find(kw, start)
+                if idx == -1:
+                    break
+                snippet = text[max(0, idx - 80): idx + 120].replace("\n", " ")
+                print(f"[{jsfile.name}] {kw!r}: ...{snippet}...")
+                start = idx + len(kw)
+                hits += 1
+
+    # Drop the huge vendor chunk so the recon output stays small enough to
+    # commit back to the branch for offline inspection.
+    for big in (OUT / "js").glob("*.js"):
+        if big.stat().st_size > 400_000:
+            print(f"removing large file before commit: {big} ({big.stat().st_size} bytes)")
+            big.unlink()
+
     return 0
 
 
