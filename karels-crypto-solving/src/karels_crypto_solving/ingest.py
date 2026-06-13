@@ -28,6 +28,7 @@ import json
 import logging
 import mimetypes
 import re
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import openai
@@ -148,17 +149,26 @@ def _extract(
 
 
 def _extract_dir(images_dir: Path, glob: str, *, client, model: str, system: str,
-                 reasoning_effort: str | None = None):
+                 reasoning_effort: str | None = None, concurrency: int = 1):
     images = list(iter_images(images_dir, glob))
-    results = []
-    for path in images:
+
+    def work(path: Path):
         try:
-            results.append((path, _extract(
+            raw = _extract(
                 path, client=client, model=model, system=system,
                 reasoning_effort=reasoning_effort,
-            )))
+            )
+            return path, raw
         except _EXPECTED_ERRORS as exc:
             logger.warning("Skipping %s: %s", path.name, exc)
+            return path, None
+
+    if concurrency and concurrency > 1:
+        with ThreadPoolExecutor(max_workers=concurrency) as pool:
+            pairs = list(pool.map(work, images))
+    else:
+        pairs = [work(p) for p in images]
+    results = [(path, raw) for path, raw in pairs if raw is not None]
     return images, results
 
 
@@ -276,6 +286,7 @@ def cmd_puzzles(args: argparse.Namespace) -> int:
     images, results = _extract_dir(
         Path(args.images_dir), args.glob, client=client, model=args.model,
         system=PUZZLE_SYSTEM, reasoning_effort=args.reasoning_effort,
+        concurrency=args.concurrency,
     )
     if not images:
         print(f"No images found in {args.images_dir}.")
@@ -295,6 +306,7 @@ def cmd_solutions(args: argparse.Namespace) -> int:
     images, results = _extract_dir(
         Path(args.images_dir), args.glob, client=client, model=args.model,
         system=SOLUTIONS_SYSTEM, reasoning_effort=args.reasoning_effort,
+        concurrency=args.concurrency,
     )
     if not images:
         print(f"No images found in {args.images_dir}.")
@@ -340,6 +352,7 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Vision model (use the strongest available for best OCR).")
     p.add_argument("--reasoning-effort", choices=effort, default=None,
                    help="For reasoning models (e.g. gpt-5.x): thinking budget.")
+    p.add_argument("--concurrency", type=int, default=6, help="Parallel image requests.")
     p.add_argument("--output", default=str(PUZZLES_RAW))
     p.set_defaults(func=cmd_puzzles)
 
@@ -350,6 +363,7 @@ def build_parser() -> argparse.ArgumentParser:
                    help="Vision model (use the strongest available for best OCR).")
     s.add_argument("--reasoning-effort", choices=effort, default=None,
                    help="For reasoning models (e.g. gpt-5.x): thinking budget.")
+    s.add_argument("--concurrency", type=int, default=6, help="Parallel image requests.")
     s.add_argument("--output", default=str(SOLUTIONS_RAW))
     s.set_defaults(func=cmd_solutions)
 

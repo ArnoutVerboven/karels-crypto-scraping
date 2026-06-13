@@ -1,0 +1,68 @@
+name: run-ingest-once
+
+# TEMPORARY one-off: ingest the committed puzzle + solution photos with the
+# strongest model and commit data/ingested_puzzles.json. Push-triggered; removed
+# after the run.
+
+on:
+  push:
+    branches:
+      - "cursor/**"
+    paths:
+      - ".github/workflows/run-ingest-once.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest-once
+  cancel-in-progress: true
+
+jobs:
+  ingest-once:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      MODEL: gpt-5.5-2026-04-23
+      EFFORT: medium
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: karels-crypto-solving/uv.lock
+
+      - name: Sync dependencies
+        run: uv sync --frozen
+
+      - name: Ingest puzzle pages
+        run: |
+          uv run karels-crypto-ingest puzzles \
+            --model "$MODEL" --reasoning-effort "$EFFORT" --concurrency 8
+
+      - name: Ingest solution pages
+        run: |
+          uv run karels-crypto-ingest solutions \
+            --model "$MODEL" --reasoning-effort "$EFFORT" --concurrency 8
+
+      - name: Merge
+        run: uv run karels-crypto-ingest merge
+
+      - name: Commit ingested dataset + raw intermediates
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/ingested_puzzles.json data/_ingest_puzzles_raw.json data/_ingest_solutions_raw.json
+          if git diff --cached --quiet; then
+            echo "No ingest output to commit."
+          else
+            git commit -m "data: ingest puzzle/solution photos -> ingested_puzzles.json [skip ci]"
+            git push
+          fi
