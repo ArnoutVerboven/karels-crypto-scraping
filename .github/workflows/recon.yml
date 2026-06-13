@@ -24,6 +24,9 @@ permissions:
 jobs:
   recon:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-scraping
     steps:
       - uses: actions/checkout@v4
 
@@ -41,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: recon-output
-          path: recon_output/
+          path: karels-crypto-scraping/recon_output/
           if-no-files-found: warn
           retention-days: 14
 

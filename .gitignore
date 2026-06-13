@@ -8,5 +8,15 @@ __pycache__/
 # uv / virtual envs
 .venv/
 
+# local secrets
+.env
+.env.*
+!.env.example
+
 # recon workflow output (regenerated on demand)
 recon_output/
+
+# DSPy intermediate logs / cache (the curated artifacts in
+# optimization_results/ ARE tracked; these per-trial dumps are not)
+dspy_logs/
+.dspy_cache/

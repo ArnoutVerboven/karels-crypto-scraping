@@ -1,0 +1,47 @@
+[project]
+name = "karels-crypto-solving"
+version = "0.1.0"
+description = "LLM-based solver for Karel's Crypto (De Standaard), plus a DSPy prompt-optimization submodule."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "openai>=1.40",
+    "openai-agents>=0.1",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+karels-crypto-solve = "karels_crypto_solving.runner:main"
+karels-crypto-optimize = "karels_crypto_solving.optimization.optimize:main"
+karels-crypto-benchmark = "karels_crypto_solving.benchmark:main"
+
+[project.optional-dependencies]
+# The DSPy prompt-optimization submodule is optional: only install it when you
+# want to run the optimizer, so the core solver stays lightweight.
+optimize = [
+    # MIPROv2's Bayesian search needs optuna (dspy's optional extra).
+    "dspy[optuna]>=2.5",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/karels_crypto_solving"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
