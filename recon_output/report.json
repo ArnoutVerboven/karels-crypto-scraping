@@ -1,0 +1,176 @@
+{
+  "base": "https://puzzelkc.standaard.be/",
+  "endpoints": {
+    "https://puzzelkc.standaard.be/version.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/manifest.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/flutter_bootstrap.js": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/main.dart.js": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/flutter_service_worker.js": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/assets/AssetManifest.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/assets/AssetManifest.bin.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/assets/FontManifest.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/assets/NOTICES": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/crypto": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/cryptos": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/puzzle": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/puzzles": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/latest": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/current": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/week": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/api/v1/crypto": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/data/crypto.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/data/latest.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/crypto.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://puzzelkc.standaard.be/latest.json": {
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "length": 3992
+    },
+    "https://api.42puzzles.com/hub/mediahuis/server?path=/puzzels/karels-crypto&brand=ds": {
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "length": 718
+    },
+    "https://api.42puzzles.com/hub/mediahuis/configs": {
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "length": 1353
+    }
+  },
+  "index_status": 200,
+  "discovered_in_html": [
+    "https://puzzelkc.standaard.be/assets/favicon/apple-touch-icon.png",
+    "https://puzzelkc.standaard.be/assets/favicon/favicon-16x16.png",
+    "https://puzzelkc.standaard.be/assets/favicon/favicon-32x32.png",
+    "https://puzzelkc.standaard.be/assets/favicon/safari-pinned-tab.svg",
+    "https://puzzelkc.standaard.be/assets/favicon/site.webmanifest",
+    "https://puzzelkc.standaard.be/assets/js/iframe-resizer-contentwindow.js",
+    "https://puzzelkc.standaard.be/css/app.58e9b1c9.css",
+    "https://puzzelkc.standaard.be/js/app.cbcce22c.js",
+    "https://puzzelkc.standaard.be/js/chunk-vendors.8553afe0.js",
+    "https://use.typekit.net/tbm4yoc.css",
+    "https://www.googletagmanager.com/gtag/js?id=UA-160734585-1"
+  ],
+  "urls_in_js": [
+    "http://dev.apollodata.com/core/fragments.html#unique-names",
+    "http://momentjs.com/guides/#/warnings/add-inverted-param/",
+    "http://momentjs.com/guides/#/warnings/define-locale/",
+    "http://momentjs.com/guides/#/warnings/dst-shifted/",
+    "http://momentjs.com/guides/#/warnings/js-date/",
+    "http://momentjs.com/guides/#/warnings/min-max/",
+    "http://momentjs.com/guides/#/warnings/zone/",
+    "http://underscorejs.org/LICENSE>",
+    "http://www.w3.org/1998/Math/MathML",
+    "http://www.w3.org/1999/xlink",
+    "http://www.w3.org/2000/svg",
+    "https://feross.org>",
+    "https://github.com/apollographql/invariant-packages",
+    "https://github.com/highlightjs/highlight.js/issues/2277",
+    "https://github.com/highlightjs/highlight.js/issues/2534",
+    "https://github.com/highlightjs/highlight.js/issues/2559",
+    "https://github.com/highlightjs/highlight.js/pull/2844",
+    "https://lodash.com/>",
+    "https://lodash.com/license>",
+    "https://npms.io/search?q=ponyfill.",
+    "https://openjsf.org/>",
+    "https://prosemirror.net/docs/guide/#generatable",
+    "https://puzzelkc.standaard.be",
+    "https://puzzelkc.standaard.be/assets/favicon/apple-touch-icon.png",
+    "https://puzzelkc.standaard.be/assets/favicon/favicon-16x16.png",
+    "https://puzzelkc.standaard.be/assets/favicon/favicon-32x32.png",
+    "https://puzzelkc.standaard.be/assets/favicon/safari-pinned-tab.svg",
+    "https://puzzelkc.standaard.be/assets/favicon/site.webmanifest",
+    "https://puzzelkc.standaard.be/assets/images/og-image.png",
+    "https://puzzelkc.standaard.be/assets/js/iframe-resizer-contentwindow.js",
+    "https://tags.tiqcdn.com/utag/corelio/service-puzzle/prod/utag.js",
+    "https://twitter.com/share?url=",
+    "https://use.typekit.net/tbm4yoc.css",
+    "https://www.facebook.com/sharer/sharer.php?u=",
+    "https://www.googletagmanager.com/gtag/js?id=UA-160734585-1",
+    "https://www.standaard.be/crypto"
+  ],
+  "paths_in_js": [
+    "/js/app.cbcce22c.js",
+    "/js/chunk-vendors.8553afe0.js"
+  ]
+}
