@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import random
 from datetime import datetime, timezone
@@ -48,6 +49,8 @@ from .program import (
     gepa_feedback_metric,
     normalise,
 )
+
+logger = logging.getLogger(__name__)
 
 # <module root>/optimization_results (module root = karels-crypto-solving/).
 _MODULE_ROOT = Path(__file__).resolve().parents[3]
@@ -176,11 +179,24 @@ def _compile_mipro(args, program, trainset, valset, prompt_lm, log_dir):
 def _compile_copro(args, program, trainset, valset, prompt_lm, log_dir):
     from dspy.teleprompt import COPRO
 
+    # COPRO applies init_temperature when the proposer generates candidates;
+    # reasoning models only allow temperature=1.0, so clamp it for them.
+    proposer_model = args.prompt_model or args.model or config.model_name()
+    init_temperature = args.init_temperature
+    if config.is_reasoning_model(proposer_model) and init_temperature != 1.0:
+        logger.warning(
+            "COPRO: proposer %s is a reasoning model; forcing init_temperature=1.0 "
+            "(was %s).",
+            proposer_model,
+            init_temperature,
+        )
+        init_temperature = 1.0
+
     kwargs = {
         "metric": exact_match_metric,
         "breadth": args.breadth,
         "depth": args.depth,
-        "init_temperature": args.init_temperature,
+        "init_temperature": init_temperature,
         "track_stats": True,
     }
     if prompt_lm is not None:

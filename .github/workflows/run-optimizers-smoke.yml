@@ -35,19 +35,11 @@ jobs:
       - name: Sync (with optimize extra)
         run: uv sync --frozen --extra optimize
 
-      - name: Run all three optimizers (tiny budgets)
+      - name: Run COPRO (re-validate after temperature fix)
         run: |
-          set +e
-          fail=0
           common="--model $MODEL --reasoning-effort low --reveal none --max-examples 12 --num-threads 8"
-          echo "===== MIPRO ====="
-          uv run karels-crypto-optimize --optimizer mipro $common --auto none --num-candidates 2 --num-trials 2 || fail=1
           echo "===== COPRO ====="
-          uv run karels-crypto-optimize --optimizer copro $common --breadth 2 --depth 1 || fail=1
-          echo "===== GEPA ====="
-          uv run karels-crypto-optimize --optimizer gepa $common --auto light --reflection-model "$MODEL" --reflection-minibatch-size 3 || fail=1
-          echo "fail=$fail"
-          exit $fail
+          uv run karels-crypto-optimize --optimizer copro $common --breadth 2 --depth 1
 
       - name: Commit results
         if: always()
