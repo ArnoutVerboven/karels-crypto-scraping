@@ -17,7 +17,8 @@ DEFAULT_MODEL = "gpt-4o-mini"
 
 
 def model_name() -> str:
-    return os.environ.get("OPENAI_MODEL", DEFAULT_MODEL)
+    # `or` so an empty/unset env var falls back to the default.
+    return os.environ.get("OPENAI_MODEL") or DEFAULT_MODEL
 
 
 def openai_client():

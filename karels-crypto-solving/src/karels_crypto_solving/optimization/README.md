@@ -43,9 +43,28 @@ karels-crypto-optimize --reveal partial --reveal-fraction 0.5
 karels-crypto-optimize --reveal all
 ```
 
-Reads `OPENAI_API_KEY` / `OPENAI_BASE_URL` / `OPENAI_MODEL`. The compiled program
-is written to `--output` (default `optimized_word_solver.json`) and the optimised
-instruction is printed so it can be copied into `prompts.WORD_SOLVER_SYSTEM`.
+Reads `OPENAI_API_KEY` / `OPENAI_BASE_URL` / `OPENAI_MODEL`.
+
+### Where results are stored
+
+All artifacts are written to (and committed from) `../../optimization_results/`
+(i.e. `karels-crypto-solving/optimization_results/`):
+
+- `optimized_prompt.txt` — the optimised instruction (copy into
+  `prompts.WORD_SOLVER_SYSTEM`, or load the program).
+- `optimized_word_solver.json` — the full compiled DSPy program.
+- `metrics.json` — config, baseline vs optimized accuracy, best score, total LM
+  calls, and the per-trial **training curve** (`training_curve[]`).
+
+Override the location with `--output-dir`.
+
+### Running on GitHub Actions
+
+Add the `OPENAI_API_KEY` / `OPENAI_BASE_URL` (and optionally `OPENAI_MODEL`)
+repository secrets, then trigger the **optimize** workflow
+(`.github/workflows/optimize.yml`) from the Actions tab. It runs the optimizer
+with the chosen inputs and commits the updated `optimization_results/` back to
+the branch.
 
 ## Notes
 

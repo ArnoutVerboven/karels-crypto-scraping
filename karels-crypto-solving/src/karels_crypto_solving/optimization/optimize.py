@@ -13,17 +13,32 @@ Run:
     karels-crypto-optimize --auto light --reveal none
 
 Requires OPENAI_API_KEY / OPENAI_BASE_URL (and optionally OPENAI_MODEL).
+
+Artifacts (committed to the repo) are written to ``optimization_results/`` next
+to the solving package:
+
+* ``optimized_prompt.txt``      - the optimised instruction (copy into prompts).
+* ``optimized_word_solver.json``- the full compiled DSPy program.
+* ``metrics.json``              - config, baseline/optimized accuracy and the
+                                  per-trial score curve (for plotting).
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import random
+from datetime import datetime, timezone
+from pathlib import Path
 
 from .. import config, data
 from ..patterns import build_pattern
 from .program import build_program, exact_match_metric, normalise
+
+# <module root>/optimization_results (module root = karels-crypto-solving/).
+_MODULE_ROOT = Path(__file__).resolve().parents[3]
+DEFAULT_RESULTS_DIR = _MODULE_ROOT / "optimization_results"
 
 
 def _configure_lm(model: str | None) -> None:
@@ -67,10 +82,35 @@ def evaluate(program, examples) -> float:
     return hits / len(examples)
 
 
+def extract_instruction(program) -> str:
+    predictor = next(iter(program.predictors()))
+    return predictor.signature.instructions
+
+
+def training_curve(compiled) -> list[dict]:
+    """JSON-safe per-trial score curve from MIPROv2's trial_logs."""
+    logs = getattr(compiled, "trial_logs", {}) or {}
+    curve = []
+    for trial in sorted(logs):
+        entry = logs[trial]
+        curve.append(
+            {
+                "trial": trial,
+                "minibatch_score": entry.get("mb_score"),
+                "full_eval_score": entry.get("full_eval_score"),
+                "eval_calls_so_far": entry.get("total_eval_calls_so_far"),
+            }
+        )
+    return curve
+
+
 def run(args: argparse.Namespace) -> int:
     from dspy.teleprompt import MIPROv2
 
     _configure_lm(args.model)
+
+    results_dir = Path(args.output_dir)
+    results_dir.mkdir(parents=True, exist_ok=True)
 
     examples = build_examples(args.reveal, args.reveal_fraction, args.seed)
     if not examples:
@@ -92,6 +132,8 @@ def run(args: argparse.Namespace) -> int:
         # 0 demos => pure instruction (prompt) optimization, no few-shot vocab.
         max_bootstrapped_demos=args.demos,
         max_labeled_demos=args.demos,
+        track_stats=True,
+        log_dir=str(results_dir / "dspy_logs"),
     )
     compiled = optimizer.compile(
         program,
@@ -103,15 +145,43 @@ def run(args: argparse.Namespace) -> int:
     optimized = evaluate(compiled, valset)
     print(f"Optimized zero-shot accuracy (val): {optimized:.1%}")
 
-    compiled.save(args.output)
-    print(f"Saved optimized program to {args.output}")
+    instruction = extract_instruction(compiled)
+    program_path = results_dir / "optimized_word_solver.json"
+    prompt_path = results_dir / "optimized_prompt.txt"
+    metrics_path = results_dir / "metrics.json"
 
-    # Surface the optimised instruction so it can be reused as the solver prompt.
-    try:
-        predictor = next(iter(compiled.predictors()))
-        print("\nOptimized instruction:\n" + predictor.signature.instructions)
-    except Exception as exc:  # noqa: BLE001
-        print(f"(could not extract instruction: {exc})")
+    compiled.save(str(program_path))
+    prompt_path.write_text(instruction + "\n", encoding="utf-8")
+
+    metrics = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "config": {
+            "model": args.model or config.model_name(),
+            "auto": args.auto,
+            "demos": args.demos,
+            "reveal": args.reveal,
+            "reveal_fraction": args.reveal_fraction,
+            "val_fraction": args.val_fraction,
+            "seed": args.seed,
+            "n_examples": len(examples),
+            "n_train": len(trainset),
+            "n_val": len(valset),
+        },
+        "baseline_accuracy": baseline,
+        "optimized_accuracy": optimized,
+        "best_val_score": getattr(compiled, "score", None),
+        "total_lm_calls": getattr(compiled, "total_calls", None),
+        "training_curve": training_curve(compiled),
+    }
+    metrics_path.write_text(
+        json.dumps(metrics, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+    print(f"\nSaved artifacts to {results_dir}:")
+    print(f"  - {prompt_path.name}      (optimized instruction)")
+    print(f"  - {program_path.name} (compiled DSPy program)")
+    print(f"  - {metrics_path.name}        (metrics + training curve)")
+    print("\nOptimized instruction:\n" + instruction)
     return 0
 
 
@@ -134,8 +204,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--val-fraction", type=float, default=0.3)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument(
-        "--output", default="optimized_word_solver.json",
-        help="Where to save the compiled DSPy program.",
+        "--output-dir", default=str(DEFAULT_RESULTS_DIR),
+        help="Directory for the prompt / program / metrics artifacts.",
     )
     return parser
 

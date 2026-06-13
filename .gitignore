@@ -11,6 +11,7 @@ __pycache__/
 # recon workflow output (regenerated on demand)
 recon_output/
 
-# DSPy optimization artifacts / cache
-optimized_word_solver.json
+# DSPy intermediate logs / cache (the curated artifacts in
+# optimization_results/ ARE tracked; these per-trial dumps are not)
+optimization_results/dspy_logs/
 .dspy_cache/
