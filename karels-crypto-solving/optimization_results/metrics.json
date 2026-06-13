@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-06-13T17:45:11.915125+00:00",
+  "config": {
+    "model": "gpt-5.5-2026-04-23",
+    "auto": "none",
+    "num_candidates": 2,
+    "num_trials": 2,
+    "minibatch": false,
+    "minibatch_size": 4,
+    "max_tokens": 1000,
+    "temperature": null,
+    "num_threads": 1,
+    "demos": 0,
+    "reveal": "none",
+    "reveal_fraction": 0.5,
+    "val_fraction": 0.3,
+    "max_examples": 12,
+    "seed": 0,
+    "n_examples": 12,
+    "n_train": 8,
+    "n_val": 4
+  },
+  "baseline_accuracy": 1.0,
+  "optimized_accuracy": 1.0,
+  "best_val_score": 100.0,
+  "total_lm_calls": 0,
+  "training_curve": [
+    {
+      "trial": 1,
+      "minibatch_score": null,
+      "full_eval_score": 100.0,
+      "eval_calls_so_far": 4
+    },
+    {
+      "trial": 2,
+      "minibatch_score": null,
+      "full_eval_score": 100.0,
+      "eval_calls_so_far": 8
+    },
+    {
+      "trial": 3,
+      "minibatch_score": null,
+      "full_eval_score": 100.0,
+      "eval_calls_so_far": 12
+    }
+  ]
+}

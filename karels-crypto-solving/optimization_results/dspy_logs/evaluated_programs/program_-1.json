@@ -1,0 +1,36 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Solve a clue from Karel's Crypto, a Dutch cryptic word puzzle.\n\nEach clue cryptically describes exactly one Dutch word (through wordplay,\ndouble meanings, hidden words, anagram-like tricks, etc.). Return that word.",
+      "fields": [
+        {
+          "prefix": "Cryptogram:",
+          "description": "the cryptic clue"
+        },
+        {
+          "prefix": "Pattern:",
+          "description": "known letters in the answer, '_' marks an unknown position"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Solution:",
+          "description": "the single Dutch word, lowercase"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.2.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}

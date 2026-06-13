@@ -1,0 +1,4 @@
+Solve a clue from Karel's Crypto, a Dutch cryptic word puzzle.
+
+Each clue cryptically describes exactly one Dutch word (through wordplay,
+double meanings, hidden words, anagram-like tricks, etc.). Return that word.
