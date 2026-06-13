@@ -210,16 +210,23 @@ def _compile_copro(args, program, trainset, valset, prompt_lm, log_dir):
 def _compile_gepa(args, program, trainset, valset, reflection_lm, log_dir):
     import dspy
 
-    auto = args.auto if args.auto != "none" else "light"
+    # Exactly one budget: an explicit iteration/call cap wins over the preset.
+    if args.max_metric_calls is not None:
+        budget = {"max_metric_calls": args.max_metric_calls}
+    elif args.max_full_evals is not None:
+        budget = {"max_full_evals": args.max_full_evals}
+    else:
+        budget = {"auto": args.auto if args.auto != "none" else "light"}
+
     optimizer = dspy.GEPA(
         metric=gepa_feedback_metric,
-        auto=auto,
         reflection_lm=reflection_lm,
         reflection_minibatch_size=args.reflection_minibatch_size,
         num_threads=args.num_threads,
         track_stats=True,
         log_dir=str(log_dir),
         seed=args.seed,
+        **budget,
     )
     return optimizer.compile(program, trainset=trainset, valset=valset)
 
@@ -303,6 +310,8 @@ def run(args: argparse.Namespace) -> int:
             "depth": args.depth,
             "init_temperature": args.init_temperature,
             "reflection_minibatch_size": args.reflection_minibatch_size,
+            "max_full_evals": args.max_full_evals,
+            "max_metric_calls": args.max_metric_calls,
             "num_candidates": args.num_candidates,
             "num_trials": args.num_trials,
             "max_tokens": args.max_tokens,
@@ -375,6 +384,10 @@ def build_parser() -> argparse.ArgumentParser:
                         help="COPRO: proposal temperature (diversity).")
     budget.add_argument("--reflection-minibatch-size", type=int, default=8,
                         help="GEPA: failing examples analysed per reflection.")
+    budget.add_argument("--max-full-evals", type=int, default=None,
+                        help="GEPA: cap full evaluations (≈ iterations); overrides --auto.")
+    budget.add_argument("--max-metric-calls", type=int, default=None,
+                        help="GEPA: hard cap on total metric calls; overrides --auto.")
     budget.add_argument(
         "--minibatch", action=argparse.BooleanOptionalAction, default=True,
         help="MIPROv2: evaluate candidates on minibatches vs full valset.",
