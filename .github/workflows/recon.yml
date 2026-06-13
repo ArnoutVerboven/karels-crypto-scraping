@@ -1,0 +1,59 @@
+name: recon
+
+# Investigative / maintenance workflow. Karel's Crypto is served by a Vue SPA
+# backed by a GraphQL API; if the site structure ever changes and the scraper
+# breaks, run this to recapture the raw HTML, JS bundles, candidate endpoints
+# and live GraphQL responses so the scraper can be re-derived.
+#
+# Run it manually from the Actions tab ("Run workflow"). Results are uploaded as
+# the "recon-output" artifact. Set "commit_back" to true to also commit the
+# captured files to the current branch (handy when artifact downloads are not
+# reachable, e.g. from a restricted sandbox).
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_back:
+        description: "Commit recon_output/ back to the current branch"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  recon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Capture HTML / JS / candidate endpoints
+        run: uv run --with requests python scripts/recon.py
+
+      - name: Query GraphQL API
+        run: uv run --with requests python scripts/recon_graphql.py
+
+      - name: Upload recon output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recon-output
+          path: recon_output/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit recon output back to branch
+        if: ${{ always() && inputs.commit_back }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f recon_output/ || true
+          if git diff --cached --quiet; then
+            echo "No recon output to commit"
+          else
+            git commit -m "chore(recon): capture raw data source output [skip ci]"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi

@@ -7,3 +7,6 @@ __pycache__/
 
 # uv / virtual envs
 .venv/
+
+# recon workflow output (regenerated on demand)
+recon_output/

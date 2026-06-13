@@ -116,6 +116,17 @@ uv run ruff check .  # lint
 Saturday at 06:30 UTC (and on manual `workflow_dispatch`). It scrapes the latest
 puzzle, merges it into the datasets and commits any changes back to the repo.
 
+## Maintenance: re-discovering the data source
+
+The data source was reverse-engineered from the puzzle's Vue SPA. If the site
+ever changes and the scraper breaks, run the **recon** workflow
+([`.github/workflows/recon.yml`](./.github/workflows/recon.yml)) from the Actions
+tab. It recaptures the raw HTML, JS bundles, candidate endpoints and live
+GraphQL responses (via [`scripts/recon.py`](./scripts/recon.py) and
+[`scripts/recon_graphql.py`](./scripts/recon_graphql.py)) and uploads them as the
+`recon-output` artifact. Enable the `commit_back` input to instead commit the
+captured files to the branch (useful when artifact downloads aren't reachable).
+
 ## Project layout
 
 ```
@@ -126,5 +137,6 @@ src/karels_crypto/
   storage.py     load / merge / save the JSON datasets
   scraper.py     orchestration + CLI entry point
 data/            the committed JSON datasets
+scripts/         recon helpers for re-discovering the data source
 tests/           unit tests with captured fixtures
 ```
