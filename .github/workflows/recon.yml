@@ -12,6 +12,7 @@ on:
       - "cursor/**"
     paths:
       - "scripts/recon.py"
+      - "scripts/recon_graphql.py"
       - ".github/workflows/recon.yml"
   workflow_dispatch:
 
@@ -29,6 +30,9 @@ jobs:
 
       - name: Run reconnaissance
         run: uv run --with requests python scripts/recon.py
+
+      - name: Query GraphQL API
+        run: uv run --with requests python scripts/recon_graphql.py
 
       - name: Commit recon output back to branch
         if: always()
