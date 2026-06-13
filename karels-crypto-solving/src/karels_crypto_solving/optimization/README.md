@@ -43,7 +43,9 @@ karels-crypto-optimize --reveal partial --reveal-fraction 0.5
 karels-crypto-optimize --reveal all
 ```
 
-Reads `OPENAI_API_KEY` / `OPENAI_BASE_URL` / `OPENAI_MODEL`.
+Reads `OPENAI_API_KEY` / `OPENAI_BASE_URL` / `OPENAI_MODEL` (locally, a `.env`
+file in the module folder or repo root is loaded automatically — see
+[`../../.env.example`](../../.env.example)).
 
 ### Where results are stored
 

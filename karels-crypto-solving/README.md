@@ -72,9 +72,13 @@ uv run karels-crypto-solve word --reveal partial --reveal-fraction 0.5
 uv run karels-crypto-solve puzzle
 ```
 
-LLM access uses the standard environment variables (provide via GitHub secrets):
-`OPENAI_API_KEY`, `OPENAI_BASE_URL`, and `OPENAI_MODEL` (defaults to
-`gpt-4o-mini`).
+LLM access uses the standard environment variables: `OPENAI_API_KEY`,
+`OPENAI_BASE_URL`, and `OPENAI_MODEL` (defaults to `gpt-4o-mini`). On GitHub
+Actions these come from repository secrets.
+
+Locally you can put them in a `.env` file (copy `.env.example`) in this folder or
+the repo root — it's loaded automatically. Real environment variables override
+the file, and `.env` is git-ignored.
 
 The datasets are read from `../karels-crypto-scraping/data` by default; override
 with `KARELS_CRYPTO_DATA_DIR`.

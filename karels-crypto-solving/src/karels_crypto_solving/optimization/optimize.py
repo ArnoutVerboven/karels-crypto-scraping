@@ -281,6 +281,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    config.load_env()
     return run(build_parser().parse_args(argv))
 
 

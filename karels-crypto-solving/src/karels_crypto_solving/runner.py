@@ -12,7 +12,7 @@ from __future__ import annotations
 import argparse
 import random
 
-from . import data
+from . import config, data
 from .patterns import build_pattern
 from .puzzle_solver import render_board, solve_puzzle
 from .word_solver import solve_word
@@ -104,6 +104,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    config.load_env()
     parser = build_parser()
     args = parser.parse_args(argv)
     return args.func(args)

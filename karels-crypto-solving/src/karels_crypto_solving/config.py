@@ -16,6 +16,20 @@ import os
 DEFAULT_MODEL = "gpt-4o-mini"
 
 
+def load_env() -> None:
+    """Load a local ``.env`` file if present (real env vars take precedence).
+
+    Looks from the current directory upward, so a ``.env`` in the module folder
+    or repo root is picked up. ``override=False`` means CI secrets / already-set
+    variables win over the file.
+    """
+    try:
+        from dotenv import find_dotenv, load_dotenv
+    except ImportError:  # pragma: no cover - dotenv is a declared dependency
+        return
+    load_dotenv(find_dotenv(usecwd=True), override=False)
+
+
 def model_name() -> str:
     # `or` so an empty/unset env var falls back to the default.
     return os.environ.get("OPENAI_MODEL") or DEFAULT_MODEL

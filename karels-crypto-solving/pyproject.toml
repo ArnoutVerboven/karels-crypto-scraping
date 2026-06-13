@@ -8,6 +8,7 @@ license = { text = "MIT" }
 dependencies = [
     "openai>=1.40",
     "openai-agents>=0.1",
+    "python-dotenv>=1.0",
 ]
 
 [project.scripts]
