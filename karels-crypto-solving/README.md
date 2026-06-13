@@ -74,7 +74,25 @@ uv run karels-crypto-solve puzzle
 # Compare OpenAI models on word solving (accuracy + estimated cost):
 uv run karels-crypto-benchmark --limit 20
 uv run karels-crypto-benchmark --models gpt-4o-mini gpt-4o o3 --limit 30
+
+# Ingest photos of puzzles into the data format (vision LLM):
+uv run karels-crypto-ingest --images-dir ./photos --model gpt-4o
 ```
+
+## Ingesting puzzle photos
+
+`karels-crypto-ingest` turns a folder of puzzle photos into the JSON data format
+using a **vision-capable** model (images are sent as base64 data URLs). It writes
+`data/ingested_puzzles.json`, which the optimizer includes in its training set by
+default (`karels-crypto-optimize --no-ingested` to exclude).
+
+What it extracts reliably: the **clue text** and, for filled-in puzzles, the
+**answers** + the 19-letter solution. It does **not** OCR the grid's
+help-numbers/offsets (left empty) — fine for word-solver optimization (which only
+needs `cryptogram` + `solution`), but it means the `--reveal partial/all`
+helper-letter experiments won't apply to ingested puzzles. Answers are taken only
+when actually shown in the image (never guessed). Ingested puzzles get ids from
+`--id-start` (default 900000) so they don't clash with scraped ids.
 
 LLM access uses the standard environment variables: `OPENAI_API_KEY`,
 `OPENAI_BASE_URL`, and `OPENAI_MODEL` (defaults to `gpt-4o-mini`). On GitHub
@@ -106,6 +124,7 @@ src/karels_crypto_solving/
   word_solver.py    solve_word (single clue, prompt only)
   puzzle_solver.py  solve_puzzle (agentic loop, 2 tools)
   patterns.py       build known-letter patterns (none/partial/all)
+  ingest.py         vision-LLM ingestion of puzzle photos -> data format
   runner.py         CLI
   pricing.py        OpenAI model prices (for benchmark cost estimates)
   benchmark.py      compare models on word solving (accuracy + cost)

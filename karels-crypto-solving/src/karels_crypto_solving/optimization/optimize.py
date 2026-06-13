@@ -87,13 +87,27 @@ def make_lm(
     )
 
 
-def build_examples(reveal: str, fraction: float, seed: int, max_examples: int | None) -> list:
-    """Build DSPy examples (cryptogram + pattern -> solution) from history."""
+def build_examples(
+    reveal: str,
+    fraction: float,
+    seed: int,
+    max_examples: int | None,
+    include_ingested: bool = True,
+) -> list:
+    """Build DSPy examples (cryptogram + pattern -> solution) from history.
+
+    Also includes puzzles ingested from photos (see ``ingest.py``) unless
+    ``include_ingested`` is False.
+    """
     import dspy
+
+    puzzles = data.load_history()
+    if include_ingested:
+        puzzles = puzzles + data.load_ingested()
 
     rng = random.Random(seed)
     examples = []
-    for _puzzle, _index, word in data.iter_solved_words(data.load_history()):
+    for _puzzle, _index, word in data.iter_solved_words(puzzles):
         pattern = build_pattern(word, reveal, fraction=fraction, rng=rng)
         examples.append(
             dspy.Example(
@@ -250,7 +264,9 @@ def run(args: argparse.Namespace) -> int:
     results_dir = Path(args.output_dir) / args.optimizer
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    examples = build_examples(args.reveal, args.reveal_fraction, args.seed, args.max_examples)
+    examples = build_examples(
+        args.reveal, args.reveal_fraction, args.seed, args.max_examples, args.ingested
+    )
     if not examples:
         print("No labelled words available; scrape some history first.")
         return 1
@@ -319,6 +335,7 @@ def run(args: argparse.Namespace) -> int:
             "reasoning_effort": args.reasoning_effort,
             "num_threads": args.num_threads,
             "demos": args.demos,
+            "ingested": args.ingested,
             "reveal": args.reveal,
             "reveal_fraction": args.reveal_fraction,
             "val_fraction": args.val_fraction,
@@ -410,6 +427,10 @@ def build_parser() -> argparse.ArgumentParser:
     # --- task setup --------------------------------------------------------
     parser.add_argument("--demos", type=int, default=0,
                         help="Max few-shot demos (0 = instruction-only).")
+    parser.add_argument(
+        "--ingested", action=argparse.BooleanOptionalAction, default=True,
+        help="Include photo-ingested puzzles in the training set (--no-ingested to skip).",
+    )
     parser.add_argument("--reveal", choices=["none", "partial", "all"], default="none",
                         help="Helper letters revealed in the pattern (none = hardest).")
     parser.add_argument("--reveal-fraction", type=float, default=0.5)
