@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import random
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -23,12 +24,28 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
+import openai
+
 from . import config, data, pricing
 from .patterns import build_pattern
 from .word_solver import solve_word
 
+logger = logging.getLogger(__name__)
+
 _MODULE_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_RESULTS_DIR = _MODULE_ROOT / "benchmark_results"
+
+# Per-model API failures we expect during a sweep and want to skip (the model
+# isn't enabled on the gateway, rate limiting, transient network/server issues).
+# Everything else - bad requests / wrong parameters (400), auth (401), and any
+# non-API bug - is left to propagate and crash, so real problems surface.
+EXPECTED_API_ERRORS = (
+    openai.APIConnectionError,  # includes APITimeoutError
+    openai.RateLimitError,
+    openai.PermissionDeniedError,  # 403: model not allowed
+    openai.NotFoundError,  # 404: unknown model
+    openai.InternalServerError,  # 5xx
+)
 
 # A representative spread of "main" models across generations. Override with
 # --models, or use --all-models for everything in the pricing table.
@@ -109,7 +126,8 @@ def benchmark_model(
                 reasoning_effort=reasoning_effort,
             )
             return result, solution, None
-        except Exception as exc:  # noqa: BLE001 - one bad model shouldn't abort the run
+        except EXPECTED_API_ERRORS as exc:
+            logger.warning("Skipping a clue for model %s due to API error: %s", model, exc)
             return None, solution, str(exc)
 
     start = time.perf_counter()
@@ -267,6 +285,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     config.load_env()
     return run(build_parser().parse_args(argv))
 

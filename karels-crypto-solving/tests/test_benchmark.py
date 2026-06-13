@@ -1,3 +1,5 @@
+import httpx
+import openai
 import pytest
 
 from karels_crypto_solving import benchmark, pricing
@@ -26,17 +28,30 @@ def test_benchmark_model_aggregates():
     assert r.est_cost_usd == pytest.approx(30 / 1e6 * 2.5 + 15 / 1e6 * 10)
 
 
-def test_benchmark_model_handles_errors():
-    def boom(*args, **kwargs):
-        raise RuntimeError("model not allowed")
+def test_benchmark_model_skips_expected_api_errors():
+    # e.g. a model that isn't enabled on the gateway / a timeout: skip + count.
+    def timeout(*args, **kwargs):
+        raise openai.APITimeoutError(request=httpx.Request("POST", "http://x"))
 
     clues = [("x", 1, "_", "y"), ("z", 1, "_", "w")]
     r = benchmark.benchmark_model(
-        "made-up-model", clues, client=None, max_completion_tokens=None, solve_fn=boom
+        "made-up-model", clues, client=None, max_completion_tokens=None, solve_fn=timeout
     )
     assert r.errors == 2 and r.correct == 0 and r.accuracy == 0.0
-    assert r.last_error == "model not allowed"
+    assert r.last_error  # recorded
     assert r.est_cost_usd is None  # unknown model -> no price
+
+
+def test_benchmark_model_propagates_unexpected_errors():
+    # A bug / wrong parameter must crash, not be silently swallowed.
+    def boom(*args, **kwargs):
+        raise ValueError("wrong parameter")
+
+    clues = [("x", 1, "_", "y")]
+    with pytest.raises(ValueError, match="wrong parameter"):
+        benchmark.benchmark_model(
+            "gpt-4o", clues, client=None, max_completion_tokens=None, solve_fn=boom
+        )
 
 
 def test_estimate_cost_known_and_unknown():

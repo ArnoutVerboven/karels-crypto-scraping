@@ -117,6 +117,8 @@ src/karels_crypto_solving/
 `karels-crypto-benchmark` runs the word solver across several OpenAI models on
 the same sampled clues and reports zero-shot accuracy, token usage and estimated
 cost (from `pricing.py`). Results are written to `benchmark_results/`
-(`benchmark.json` + a sorted `benchmark.md` table). A model that isn't enabled on
-your gateway is reported with an error count instead of aborting the run. It can
-also be run via the **benchmark** GitHub Actions workflow (commits results back).
+(`benchmark.json` + a sorted `benchmark.md` table). Expected API errors (model
+not enabled on your gateway, rate limits, transient failures) are logged and
+skipped; unexpected errors (bad parameters, bugs) crash the run. `--reasoning-effort`
+and `--num-threads` keep reasoning models fast/cheap. It can also be run via the
+**benchmark** GitHub Actions workflow (commits results back).
