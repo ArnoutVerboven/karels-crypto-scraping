@@ -1,19 +1,23 @@
 """Ingest photos of Karel's Crypto puzzles into the JSON data format.
 
-Vision-capable OpenAI models read the clues (and any filled-in answers) straight
-from an image. We send each picture as a base64 data URL and ask for structured
-JSON, then normalise it into the same Crypto shape the scraper produces.
+Karel's Crypto (book form) is a number-substitution cryptogram: 19 clues labelled
+A-S, and a diamond grid where every cell shows a number (equal numbers = equal
+letters). The puzzle pages are *empty* (only numbers); the answers live in a
+separate solutions section, many puzzles per page.
 
-    karels-crypto-ingest --images-dir ./photos --model gpt-4o
+So ingestion is a two-pass + merge pipeline (vision models read images as base64
+data URLs):
 
-Output goes to ``karels-crypto-solving/data/ingested_puzzles.json`` by default,
-which the optimizer includes in its training set (disable with
-``--no-ingested``).
+    # 1) one pass over the (empty) puzzle pages -> clues + the number key
+    karels-crypto-ingest puzzles   --images-dir ./puzzles   --model gpt-4o
+    # 2) one pass over the solutions pages -> answers per puzzle number
+    karels-crypto-ingest solutions --images-dir ./solutions --model gpt-4o
+    # 3) join them into the data format the optimizer reads
+    karels-crypto-ingest merge
 
-Note on scope: a photo reliably yields the **clue text** and, if the puzzle is
-filled in, the **answers** + the 19-letter solution. The grid's help-numbers /
-offsets are hard to OCR, so those are left empty - which is fine for word-solver
-optimization (it uses cryptogram + solution).
+`merge` writes ``data/ingested_puzzles.json`` (included in optimization by
+default; ``karels-crypto-optimize --no-ingested`` to skip). Puzzles are matched
+by their printed number; clues by their A-S label.
 """
 
 from __future__ import annotations
@@ -23,6 +27,7 @@ import base64
 import json
 import logging
 import mimetypes
+import re
 from pathlib import Path
 
 import openai
@@ -34,8 +39,11 @@ logger = logging.getLogger(__name__)
 DEFAULT_INGEST_MODEL = "gpt-4o"  # strong, cheap vision + reliable JSON
 _IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
-# Per-image failures we tolerate during a batch (model hiccup, model not enabled,
-# rate limit, transient). Other errors propagate and crash.
+_SOLVING_DATA = data.INGESTED_PATH.parent
+PUZZLES_RAW = _SOLVING_DATA / "_ingest_puzzles_raw.json"
+SOLUTIONS_RAW = _SOLVING_DATA / "_ingest_solutions_raw.json"
+
+# Per-image failures we tolerate during a batch; other errors propagate & crash.
 _EXPECTED_ERRORS = (
     openai.APIConnectionError,
     openai.RateLimitError,
@@ -45,27 +53,55 @@ _EXPECTED_ERRORS = (
     json.JSONDecodeError,
 )
 
-EXTRACT_SYSTEM = """\
-You are reading a photo of "Karel's Crypto", a Dutch/Flemish cryptic word puzzle
-that has 19 numbered clues, each describing one Dutch word.
+PUZZLE_SYSTEM = """\
+You are reading a photo of a "Karels Crypto" puzzle (a Dutch/Flemish number
+cryptogram). The page shows a title like "Karels Crypto 122", a date, 19 clues
+labelled A, B, C, ... S, and a diamond-shaped grid. Each clue's answer occupies
+one row of cells; every cell shows a small number (the substitution key - equal
+numbers mean equal letters). The grid is EMPTY (no letters are filled in).
 
-Return ONLY a JSON object with this exact shape:
+Return ONLY a JSON object:
 {
-  "title": string or null,        // e.g. a date or puzzle number printed on it
-  "date": "YYYY-MM-DD" or null,   // only if a date is clearly shown
-  "solution": string or null,     // the 19-letter word hidden vertically, if shown
-  "words": [                      // the clues, in order, top to bottom
-    {"cryptogram": string, "solution": string or null}
+  "number": integer or null,      // the puzzle number in the title
+  "date": "YYYY-MM-DD" or null,
+  "clues": [
+    {"label": "A", "cryptogram": "<clue text>", "numbers": [<cell numbers, left to right>]}
   ]
 }
 
 Rules:
-- "cryptogram" is the clue text, transcribed exactly (keep accents/punctuation).
-- "solution" is the answer ONLY if it is filled in / printed in the image;
-  otherwise null. Never guess or invent an answer.
-- Transcribe Dutch text faithfully; do not translate.
+- One entry per clue, in order A, B, C, ...
+- "cryptogram": the clue text transcribed exactly (keep Dutch spelling, accents,
+  punctuation). Do NOT translate.
+- "numbers": the numbers printed in that clue's row of grid cells, left to right.
+  If a row's numbers are unreadable, use [].
+- The grid is empty: never output letters or answers.
 """
 
+SOLUTIONS_SYSTEM = """\
+You are reading a photo from the SOLUTIONS section of a "Karels Crypto" puzzle
+book. One page lists the answers for MULTIPLE puzzles. Each puzzle is identified
+by its number (e.g. 122) and gives the answer word for each clue A, B, C, ...
+
+Return ONLY a JSON object:
+{
+  "puzzles": [
+    {
+      "number": integer,
+      "solution": "<the hidden 19-letter word, or null>",
+      "answers": {"A": "<word>", "B": "<word>", ...}
+    }
+  ]
+}
+
+Rules:
+- Include every puzzle visible on the page.
+- Transcribe the Dutch answer words exactly (lowercase is fine). Do NOT translate.
+- Use null or omit fields that are not present.
+"""
+
+
+# --- image helpers ---------------------------------------------------------
 
 def data_url(path: Path) -> str:
     mime = mimetypes.guess_type(str(path))[0] or "image/jpeg"
@@ -73,16 +109,21 @@ def data_url(path: Path) -> str:
     return f"data:{mime};base64,{encoded}"
 
 
-def extract_image(path: Path, *, client, model: str) -> dict:
-    """Call the vision model and return the parsed JSON for one image."""
+def iter_images(images_dir: Path, glob: str):
+    for path in sorted(images_dir.glob(glob)):
+        if path.is_file() and path.suffix.lower() in _IMAGE_EXTS:
+            yield path
+
+
+def _extract(path: Path, *, client, model: str, system: str) -> dict:
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": EXTRACT_SYSTEM},
+            {"role": "system", "content": system},
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "Extract this puzzle to JSON."},
+                    {"type": "text", "text": "Extract to JSON."},
                     {"type": "image_url", "image_url": {"url": data_url(path)}},
                 ],
             },
@@ -92,103 +133,215 @@ def extract_image(path: Path, *, client, model: str) -> dict:
     return json.loads(response.choices[0].message.content or "{}")
 
 
-def to_crypto_dict(raw: dict, puzzle_id: int, title_fallback: str) -> dict:
-    """Normalise the model's JSON into the scraper's Crypto dict format."""
+def _extract_dir(images_dir: Path, glob: str, *, client, model: str, system: str):
+    images = list(iter_images(images_dir, glob))
+    results = []
+    for path in images:
+        try:
+            results.append((path, _extract(path, client=client, model=model, system=system)))
+        except _EXPECTED_ERRORS as exc:
+            logger.warning("Skipping %s: %s", path.name, exc)
+    return images, results
+
+
+# --- normalisation / merge (pure, unit-tested) -----------------------------
+
+_DATE_DMY = re.compile(r"^(\d{2})-(\d{2})-(\d{4})$")
+
+
+def normalise_date(value: str | None) -> str:
+    if not value:
+        return ""
+    value = value.strip()
+    m = _DATE_DMY.match(value)
+    if m:  # DD-MM-YYYY -> YYYY-MM-DD
+        day, month, year = m.groups()
+        return f"{year}-{month}-{day}"
+    return value
+
+
+def _ints(values) -> list[int]:
+    out = []
+    for v in values or []:
+        if isinstance(v, bool):
+            continue
+        if isinstance(v, int):
+            out.append(v)
+        elif isinstance(v, float):
+            out.append(int(v))
+        elif isinstance(v, str) and v.strip().isdigit():
+            out.append(int(v.strip()))
+    return out
+
+
+def _help_numbers(numbers: list[int], length: int) -> list:
+    """Align the row's cell numbers to the word length (every cell is numbered).
+
+    If the count doesn't match the answer length we don't trust the alignment
+    and leave them empty rather than mislabel cells.
+    """
+    if length and len(numbers) == length:
+        return list(numbers)
+    return [None] * length
+
+
+def merge_puzzle(puzzle: dict, solution: dict | None, puzzle_id: int) -> dict:
+    """Join one puzzle (clues + key) with its solution (answers) -> Crypto dict."""
+    answers = {}
+    meta = None
+    if solution:
+        answers = {str(k).upper().strip(): v for k, v in (solution.get("answers") or {}).items()}
+        meta = solution.get("solution")
+
     words = []
-    for entry in raw.get("words") or []:
-        solution = entry.get("solution")
-        solution = solution.strip().lower() if solution else None
-        length = len(solution) if solution else int(entry.get("length") or 0)
+    for clue in puzzle.get("clues") or []:
+        label = str(clue.get("label") or "").upper().strip()
+        numbers = _ints(clue.get("numbers"))
+        answer = answers.get(label)
+        answer = answer.strip().lower() if answer else None
+        length = len(answer) if answer else len(numbers)
         words.append(
             {
-                "cryptogram": (entry.get("cryptogram") or "").strip(),
+                "cryptogram": (clue.get("cryptogram") or "").strip(),
                 "length": length,
-                "help_numbers": [None] * length,  # not OCR'd from a photo
+                "help_numbers": _help_numbers(numbers, length),
                 "offset": 0,
-                "solution": solution,
+                "solution": answer,
             }
         )
-    solution = raw.get("solution")
+
+    number = puzzle.get("number")
     return {
         "id": puzzle_id,
-        "title": raw.get("title") or title_fallback,
-        "date": raw.get("date") or "",
-        "solution": solution.strip().lower() if solution else None,
+        "number": number,
+        "title": f"Karels Crypto {number}" if number is not None else "Karels Crypto",
+        "date": normalise_date(puzzle.get("date")),
+        "solution": meta.strip().lower() if meta else None,
         "words": words,
     }
 
 
-def iter_images(images_dir: Path, glob: str):
-    for path in sorted(images_dir.glob(glob)):
-        if path.is_file() and path.suffix.lower() in _IMAGE_EXTS:
-            yield path
+def merge(puzzles: list[dict], solutions: list[dict], id_start: int) -> list[dict]:
+    """Merge raw puzzle dicts with flattened solution dicts (matched by number)."""
+    by_number: dict[int, dict] = {}
+    for sol in solutions:
+        num = sol.get("number")
+        if isinstance(num, int):
+            by_number[num] = sol
+
+    merged = []
+    for index, puzzle in enumerate(puzzles):
+        number = puzzle.get("number")
+        puzzle_id = id_start + number if isinstance(number, int) else id_start + index
+        solution = by_number.get(number) if isinstance(number, int) else None
+        merged.append(merge_puzzle(puzzle, solution, puzzle_id))
+    return merged
 
 
-def run(args: argparse.Namespace) -> int:
-    images_dir = Path(args.images_dir)
-    if not images_dir.is_dir():
-        print(f"Not a directory: {images_dir}")
-        return 1
+def flatten_solutions(raw_results: list[dict]) -> list[dict]:
+    """A solutions image yields {"puzzles": [...]}; flatten across images."""
+    out = []
+    for result in raw_results:
+        out.extend(result.get("puzzles") or [])
+    return out
 
-    images = list(iter_images(images_dir, args.glob))
-    if not images:
-        print(f"No images found in {images_dir} (glob={args.glob}).")
-        return 1
 
+# --- subcommands -----------------------------------------------------------
+
+def _write(path: Path, payload) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def cmd_puzzles(args: argparse.Namespace) -> int:
     client = config.openai_client()
-    model = args.model
-    print(f"Ingesting {len(images)} image(s) with {model} ...")
-
-    puzzles: list[dict] = []
-    for index, path in enumerate(images):
-        puzzle_id = args.id_start + index
-        try:
-            raw = extract_image(path, client=client, model=model)
-        except _EXPECTED_ERRORS as exc:
-            logger.warning("Skipping %s: %s", path.name, exc)
-            continue
-        crypto = to_crypto_dict(raw, puzzle_id, title_fallback=path.stem)
-        solved = sum(1 for w in crypto["words"] if w["solution"])
-        print(f"  {path.name}: {len(crypto['words'])} clues, {solved} answers filled")
-        puzzles.append(crypto)
-
-    output = Path(args.output)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    if args.append and output.exists():
-        existing = json.loads(output.read_text(encoding="utf-8"))
-        puzzles = existing + puzzles
-    output.write_text(
-        json.dumps(puzzles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    images, results = _extract_dir(
+        Path(args.images_dir), args.glob, client=client, model=args.model, system=PUZZLE_SYSTEM
     )
-    total_words = sum(len(p["words"]) for p in puzzles)
-    print(f"\nWrote {len(puzzles)} puzzle(s) ({total_words} clues) to {output}")
+    if not images:
+        print(f"No images found in {args.images_dir}.")
+        return 1
+    puzzles = []
+    for path, raw in results:
+        clues = raw.get("clues") or []
+        print(f"  {path.name}: puzzle {raw.get('number')}, {len(clues)} clues")
+        puzzles.append(raw)
+    _write(Path(args.output), puzzles)
+    print(f"\nWrote {len(puzzles)} puzzle(s) to {args.output}")
+    return 0
+
+
+def cmd_solutions(args: argparse.Namespace) -> int:
+    client = config.openai_client()
+    images, results = _extract_dir(
+        Path(args.images_dir), args.glob, client=client, model=args.model, system=SOLUTIONS_SYSTEM
+    )
+    if not images:
+        print(f"No images found in {args.images_dir}.")
+        return 1
+    raw_results = []
+    for path, raw in results:
+        n = len(raw.get("puzzles") or [])
+        print(f"  {path.name}: {n} puzzle solution(s)")
+        raw_results.append(raw)
+    solutions = flatten_solutions(raw_results)
+    _write(Path(args.output), solutions)
+    print(f"\nWrote {len(solutions)} puzzle solution(s) to {args.output}")
+    return 0
+
+
+def cmd_merge(args: argparse.Namespace) -> int:
+    puzzles = json.loads(Path(args.puzzles).read_text(encoding="utf-8"))
+    solutions = json.loads(Path(args.solutions).read_text(encoding="utf-8"))
+    merged = merge(puzzles, solutions, args.id_start)
+
+    solved_words = sum(1 for p in merged for w in p["words"] if w["solution"])
+    matched = sum(1 for p in merged if any(w["solution"] for w in p["words"]))
+    _write(Path(args.output), merged)
+    print(
+        f"Merged {len(merged)} puzzle(s); {matched} matched a solution; "
+        f"{solved_words} solved clues -> {args.output}"
+    )
     return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Ingest puzzle photos into the JSON data format.")
-    parser.add_argument("--images-dir", required=True, help="Folder of puzzle images.")
-    parser.add_argument("--glob", default="*", help="Filename glob within the folder.")
-    parser.add_argument("--model", default=DEFAULT_INGEST_MODEL, help="Vision model id.")
-    parser.add_argument(
-        "--output", default=str(data.INGESTED_PATH),
-        help="Output JSON file (default: the optimizer's ingested dataset).",
+    parser = argparse.ArgumentParser(
+        description="Ingest puzzle/solution photos into the data format."
     )
-    parser.add_argument(
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p = sub.add_parser("puzzles", help="Pass over the (empty) puzzle pages.")
+    p.add_argument("--images-dir", required=True)
+    p.add_argument("--glob", default="*")
+    p.add_argument("--model", default=DEFAULT_INGEST_MODEL)
+    p.add_argument("--output", default=str(PUZZLES_RAW))
+    p.set_defaults(func=cmd_puzzles)
+
+    s = sub.add_parser("solutions", help="Pass over the solutions pages.")
+    s.add_argument("--images-dir", required=True)
+    s.add_argument("--glob", default="*")
+    s.add_argument("--model", default=DEFAULT_INGEST_MODEL)
+    s.add_argument("--output", default=str(SOLUTIONS_RAW))
+    s.set_defaults(func=cmd_solutions)
+
+    m = sub.add_parser("merge", help="Merge puzzles + solutions into the data format.")
+    m.add_argument("--puzzles", default=str(PUZZLES_RAW))
+    m.add_argument("--solutions", default=str(SOLUTIONS_RAW))
+    m.add_argument("--output", default=str(data.INGESTED_PATH))
+    m.add_argument(
         "--id-start", type=int, default=900000,
-        help="First id to assign (kept high to avoid clashing with scraped ids).",
+        help="Base added to the puzzle number for ids (avoids clashing with scraped ids).",
     )
-    parser.add_argument(
-        "--append", action="store_true",
-        help="Append to the existing output file instead of overwriting.",
-    )
+    m.set_defaults(func=cmd_merge)
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     config.load_env()
-    return run(build_parser().parse_args(argv))
+    args = build_parser().parse_args(argv)
+    return args.func(args)
 
 
 if __name__ == "__main__":

@@ -13,6 +13,10 @@ __pycache__/
 .env.*
 !.env.example
 
+# ingestion intermediates (the merged data/ingested_puzzles.json IS committed)
+_ingest_puzzles_raw.json
+_ingest_solutions_raw.json
+
 # recon workflow output (regenerated on demand)
 recon_output/
 

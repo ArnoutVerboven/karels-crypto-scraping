@@ -75,24 +75,43 @@ uv run karels-crypto-solve puzzle
 uv run karels-crypto-benchmark --limit 20
 uv run karels-crypto-benchmark --models gpt-4o-mini gpt-4o o3 --limit 30
 
-# Ingest photos of puzzles into the data format (vision LLM):
-uv run karels-crypto-ingest --images-dir ./photos --model gpt-4o
+# Ingest photos of puzzles + solutions into the data format (vision LLM):
+uv run karels-crypto-ingest puzzles   --images-dir ./puzzles   --model gpt-4o
+uv run karels-crypto-ingest solutions --images-dir ./solutions --model gpt-4o
+uv run karels-crypto-ingest merge
 ```
 
 ## Ingesting puzzle photos
 
-`karels-crypto-ingest` turns a folder of puzzle photos into the JSON data format
-using a **vision-capable** model (images are sent as base64 data URLs). It writes
-`data/ingested_puzzles.json`, which the optimizer includes in its training set by
-default (`karels-crypto-optimize --no-ingested` to exclude).
+The book puzzles are number-substitution cryptograms: an **empty** grid of
+numbered cells (equal numbers = equal letters) with 19 clues labelled A-S, and
+the **answers live on separate solutions pages** (many puzzles per page). So
+ingestion is a **two-pass + merge** pipeline using a **vision-capable** model
+(images sent as base64 data URLs):
 
-What it extracts reliably: the **clue text** and, for filled-in puzzles, the
-**answers** + the 19-letter solution. It does **not** OCR the grid's
-help-numbers/offsets (left empty) — fine for word-solver optimization (which only
-needs `cryptogram` + `solution`), but it means the `--reveal partial/all`
-helper-letter experiments won't apply to ingested puzzles. Answers are taken only
-when actually shown in the image (never guessed). Ingested puzzles get ids from
-`--id-start` (default 900000) so they don't clash with scraped ids.
+```bash
+# 1) the empty puzzle pages -> clues + the number key
+uv run karels-crypto-ingest puzzles   --images-dir ./puzzles
+# 2) the solutions pages -> answers per puzzle number
+uv run karels-crypto-ingest solutions --images-dir ./solutions
+# 3) join them (by puzzle number + clue label) into the data format
+uv run karels-crypto-ingest merge
+```
+
+`merge` writes `data/ingested_puzzles.json`, which the optimizer includes in its
+training set by default (`karels-crypto-optimize --no-ingested` to exclude).
+
+What's extracted: per puzzle the **number/date** and the 19 **clues** (label +
+cryptogram + the row's cell numbers); per solution page the **answer word** for
+each label (+ the 19-letter hidden word). Merge joins them on puzzle number and
+A-S label to produce `cryptogram` + `solution` pairs (with `help_numbers` from
+the captured key when the count matches the answer length). Answers are taken
+only from the solutions pages (never guessed). Ids are `--id-start` + puzzle
+number (default base 900000) so they don't clash with scraped ids.
+
+Tip: transcription of Dutch accents / the grid numbers is where a vision model is
+most likely to slip — eyeball a few entries in `data/ingested_puzzles.json` (and
+the `_ingest_*_raw.json` intermediates) before optimizing on them.
 
 LLM access uses the standard environment variables: `OPENAI_API_KEY`,
 `OPENAI_BASE_URL`, and `OPENAI_MODEL` (defaults to `gpt-4o-mini`). On GitHub
