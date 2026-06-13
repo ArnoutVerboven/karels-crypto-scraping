@@ -6,11 +6,12 @@ as labels.
 
 ## Goal / loss
 
-Maximise **one-shot accuracy**: the fraction of clues the program answers
-correctly in a single attempt. By default this is measured on **empty patterns**
-(no letters revealed) — the hardest setting and the one we care about most.
+Maximise **zero-shot accuracy**: the fraction of clues the program answers
+correctly with no few-shot examples (the model may still reason/think before
+answering). By default this is measured on **empty patterns** (no letters
+revealed) — the hardest setting and the one we care about most.
 
-The metric (`program.one_shot_metric`) is a normalised exact match
+The metric (`program.exact_match_metric`) is a normalised exact match
 (`example, pred, trace=None) -> bool`), which is exactly what MIPROv2 maximises.
 
 ## How DSPy does this (brief)

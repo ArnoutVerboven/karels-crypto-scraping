@@ -41,7 +41,7 @@ The solver is built in three layers:
      instructions. The agent fills, checks, and revises until solved.
 
 3. **Runner (`runner.py`)** — runs either solver over the scraped datasets and
-   reports one-shot word accuracy / whether a puzzle was solved.
+   reports zero-shot word accuracy / whether a puzzle was solved.
 
 The default prompts (`prompts.py`) are deliberately minimal baselines; the
 `optimization/` submodule improves the word-solver prompt automatically (see

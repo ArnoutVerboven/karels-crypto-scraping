@@ -54,7 +54,7 @@ def _run_word(args: argparse.Namespace) -> int:
         )
 
     total = len(items)
-    print(f"\nOne-shot accuracy: {correct}/{total} = {correct / total:.1%}")
+    print(f"\nZero-shot accuracy: {correct}/{total} = {correct / total:.1%}")
     return 0
 
 

@@ -1,10 +1,11 @@
 """Optimize the word-solver prompt with DSPy / MIPROv2.
 
 Supervised prompt optimization: we treat the scraped solutions as labels and
-maximise *one-shot accuracy* (how many clues the program gets right in a single
-attempt). By default we optimise the **instruction only** (0 few-shot demos) on
-**empty patterns** (no letter hints), matching the hardest setup. If that proves
-too hard, reveal some/all helper letters with ``--reveal``.
+maximise *zero-shot accuracy* (the fraction of clues the program answers
+correctly with no few-shot examples; the model may still reason/think). By
+default we optimise the **instruction only** (0 few-shot demos) on **empty
+patterns** (no letter hints), matching the hardest setup. If that proves too
+hard, reveal some/all helper letters with ``--reveal``.
 
 Run:
 
@@ -22,7 +23,7 @@ import random
 
 from .. import config, data
 from ..patterns import build_pattern
-from .program import build_program, normalise, one_shot_metric
+from .program import build_program, exact_match_metric, normalise
 
 
 def _configure_lm(model: str | None) -> None:
@@ -56,7 +57,7 @@ def build_examples(reveal: str, fraction: float, seed: int) -> list:
 
 
 def evaluate(program, examples) -> float:
-    """Return one-shot accuracy of ``program`` over ``examples``."""
+    """Return zero-shot accuracy of ``program`` over ``examples``."""
     if not examples:
         return 0.0
     hits = 0
@@ -83,10 +84,10 @@ def run(args: argparse.Namespace) -> int:
 
     program = build_program()
     baseline = evaluate(program, valset)
-    print(f"Baseline one-shot accuracy (val): {baseline:.1%}")
+    print(f"Baseline zero-shot accuracy (val): {baseline:.1%}")
 
     optimizer = MIPROv2(
-        metric=one_shot_metric,
+        metric=exact_match_metric,
         auto=args.auto,
         # 0 demos => pure instruction (prompt) optimization, no few-shot vocab.
         max_bootstrapped_demos=args.demos,
@@ -100,7 +101,7 @@ def run(args: argparse.Namespace) -> int:
     )
 
     optimized = evaluate(compiled, valset)
-    print(f"Optimized one-shot accuracy (val): {optimized:.1%}")
+    print(f"Optimized zero-shot accuracy (val): {optimized:.1%}")
 
     compiled.save(args.output)
     print(f"Saved optimized program to {args.output}")

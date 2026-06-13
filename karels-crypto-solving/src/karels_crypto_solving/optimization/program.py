@@ -37,6 +37,6 @@ def normalise(word: str) -> str:
     return re.sub(r"[^a-zàâäéèêëïîôöùûüçáíóúñ]", "", (word or "").lower())
 
 
-def one_shot_metric(example, pred, trace=None) -> bool:
-    """Exact-match metric: the 'loss' is how many words are one-shotted."""
+def exact_match_metric(example, pred, trace=None) -> bool:
+    """Exact-match metric: did the model produce the correct word (zero-shot)?"""
     return normalise(getattr(pred, "solution", "")) == normalise(example.solution)
