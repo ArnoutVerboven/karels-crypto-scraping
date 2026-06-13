@@ -17,6 +17,10 @@ from .models import Puzzle, Word
 _REPO_ROOT = Path(__file__).resolve().parents[3]
 _DEFAULT_DATA_DIR = _REPO_ROOT / "karels-crypto-scraping" / "data"
 
+# Puzzles ingested from photos (see ingest.py) live with the solving module.
+_SOLVING_MODULE_ROOT = Path(__file__).resolve().parents[2]
+INGESTED_PATH = _SOLVING_MODULE_ROOT / "data" / "ingested_puzzles.json"
+
 
 def data_dir() -> Path:
     return Path(os.environ.get("KARELS_CRYPTO_DATA_DIR", str(_DEFAULT_DATA_DIR)))
@@ -62,6 +66,15 @@ def load_latest(path: Path | None = None) -> Puzzle | None:
     if not raw:
         return None
     return puzzle_from_scraping(raw)
+
+
+def load_ingested(path: Path | None = None) -> list[Puzzle]:
+    """Load puzzles ingested from photos (empty list if none exist yet)."""
+    path = path or INGESTED_PATH
+    if not path.exists():
+        return []
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return [puzzle_from_scraping(item) for item in raw]
 
 
 def iter_solved_words(puzzles: list[Puzzle]):

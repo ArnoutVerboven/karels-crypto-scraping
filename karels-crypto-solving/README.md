@@ -74,7 +74,50 @@ uv run karels-crypto-solve puzzle
 # Compare OpenAI models on word solving (accuracy + estimated cost):
 uv run karels-crypto-benchmark --limit 20
 uv run karels-crypto-benchmark --models gpt-4o-mini gpt-4o o3 --limit 30
+
+# Ingest photos of puzzles + solutions into the data format (vision LLM):
+uv run karels-crypto-ingest puzzles   --model gpt-5.5-2026-04-23
+uv run karels-crypto-ingest solutions --model gpt-5.5-2026-04-23
+uv run karels-crypto-ingest merge
 ```
+
+## Ingesting puzzle photos
+
+The book puzzles are number-substitution cryptograms: an **empty** grid of
+numbered cells (equal numbers = equal letters) with 19 clues labelled A-S, and
+the **answers live on separate solutions pages** (many puzzles per page). So
+ingestion is a **two-pass + merge** pipeline using a **vision-capable** model
+(images sent as base64 data URLs):
+
+Images live in `uploads/images/puzzles/` and `uploads/images/solutions/` (the
+defaults). Use the **strongest** vision model you have for accurate OCR; for
+reasoning models (gpt-5.x) optionally add `--reasoning-effort high`.
+
+```bash
+# 1) the empty puzzle pages -> clues + the number key
+uv run karels-crypto-ingest puzzles   --model gpt-5.5-2026-04-23
+# 2) the solutions pages -> answers per puzzle number
+uv run karels-crypto-ingest solutions --model gpt-5.5-2026-04-23
+# 3) join them (by puzzle number + clue label) into the data format
+uv run karels-crypto-ingest merge
+```
+
+(Override the folders with `--images-dir`. The default model is `gpt-4o`.)
+
+`merge` writes `data/ingested_puzzles.json`, which the optimizer includes in its
+training set by default (`karels-crypto-optimize --no-ingested` to exclude).
+
+What's extracted: per puzzle the **number/date** and the 19 **clues** (label +
+cryptogram + the row's cell numbers); per solution page the **answer word** for
+each label (+ the 19-letter hidden word). Merge joins them on puzzle number and
+A-S label to produce `cryptogram` + `solution` pairs (with `help_numbers` from
+the captured key when the count matches the answer length). Answers are taken
+only from the solutions pages (never guessed). Ids are `--id-start` + puzzle
+number (default base 900000) so they don't clash with scraped ids.
+
+Tip: transcription of Dutch accents / the grid numbers is where a vision model is
+most likely to slip — eyeball a few entries in `data/ingested_puzzles.json` (and
+the `_ingest_*_raw.json` intermediates) before optimizing on them.
 
 LLM access uses the standard environment variables: `OPENAI_API_KEY`,
 `OPENAI_BASE_URL`, and `OPENAI_MODEL` (defaults to `gpt-4o-mini`). On GitHub
@@ -106,6 +149,7 @@ src/karels_crypto_solving/
   word_solver.py    solve_word (single clue, prompt only)
   puzzle_solver.py  solve_puzzle (agentic loop, 2 tools)
   patterns.py       build known-letter patterns (none/partial/all)
+  ingest.py         vision-LLM ingestion of puzzle photos -> data format
   runner.py         CLI
   pricing.py        OpenAI model prices (for benchmark cost estimates)
   benchmark.py      compare models on word solving (accuracy + cost)
