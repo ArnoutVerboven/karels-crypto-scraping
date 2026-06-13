@@ -49,6 +49,7 @@ def solve_word(
     system_prompt: str = WORD_SOLVER_SYSTEM,
     temperature: float | None = None,
     max_completion_tokens: int | None = None,
+    reasoning_effort: str | None = None,
 ) -> WordSolution:
     """Solve one clue. ``pattern`` is the known-letters string (``_`` = unknown)."""
     if pattern is None:
@@ -72,6 +73,10 @@ def solve_word(
         if reasoning:
             max_completion_tokens = max(max_completion_tokens, config.REASONING_MIN_MAX_TOKENS)
         kwargs["max_completion_tokens"] = max_completion_tokens
+    # reasoning_effort caps how much reasoning models "think" (low = much faster
+    # and cheaper). Only valid for reasoning models.
+    if reasoning_effort and reasoning:
+        kwargs["reasoning_effort"] = reasoning_effort
 
     response = client.chat.completions.create(
         model=model,

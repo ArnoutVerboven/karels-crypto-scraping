@@ -4,7 +4,7 @@ from karels_crypto_solving import benchmark, pricing
 from karels_crypto_solving.word_solver import WordSolution
 
 
-def fake_solve(cryptogram, length, pattern, *, client=None, model=None, max_completion_tokens=None):
+def fake_solve(cryptogram, length, pattern, **kwargs):
     # "correct" when the clue starts with 'good'.
     answer = "right" if cryptogram.startswith("good") else "wrong"
     return WordSolution(answer=answer, raw="", prompt_tokens=10, completion_tokens=5)

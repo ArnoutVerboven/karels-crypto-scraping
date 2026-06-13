@@ -18,6 +18,7 @@ import argparse
 import json
 import random
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -83,12 +84,20 @@ def sample_clues(limit: int | None, reveal: str, reveal_fraction: float, seed: i
 
 
 def benchmark_model(
-    model, clues, *, client, max_completion_tokens, solve_fn=solve_word
+    model,
+    clues,
+    *,
+    client,
+    max_completion_tokens,
+    reasoning_effort=None,
+    num_threads=1,
+    solve_fn=solve_word,
 ) -> ModelResult:
     correct = errors = prompt_tokens = completion_tokens = 0
     last_error = None
-    start = time.perf_counter()
-    for cryptogram, length, pattern, solution in clues:
+
+    def attempt(clue):
+        cryptogram, length, pattern, solution = clue
         try:
             result = solve_fn(
                 cryptogram,
@@ -97,16 +106,29 @@ def benchmark_model(
                 client=client,
                 model=model,
                 max_completion_tokens=max_completion_tokens,
+                reasoning_effort=reasoning_effort,
             )
+            return result, solution, None
         except Exception as exc:  # noqa: BLE001 - one bad model shouldn't abort the run
+            return None, solution, str(exc)
+
+    start = time.perf_counter()
+    if num_threads and num_threads > 1:
+        with ThreadPoolExecutor(max_workers=num_threads) as pool:
+            outcomes = list(pool.map(attempt, clues))
+    else:
+        outcomes = [attempt(clue) for clue in clues]
+    elapsed = time.perf_counter() - start
+
+    for result, solution, error in outcomes:
+        if error is not None:
             errors += 1
-            last_error = str(exc)
+            last_error = error
             continue
         prompt_tokens += result.prompt_tokens
         completion_tokens += result.completion_tokens
         if result.answer == solution:
             correct += 1
-    elapsed = time.perf_counter() - start
 
     total = len(clues)
     return ModelResult(
@@ -131,6 +153,8 @@ def run_benchmark(
     reveal_fraction=0.5,
     seed=0,
     max_completion_tokens=None,
+    reasoning_effort=None,
+    num_threads=1,
     client=None,
     solve_fn=solve_word,
 ) -> list[ModelResult]:
@@ -144,6 +168,8 @@ def run_benchmark(
             clues,
             client=client,
             max_completion_tokens=max_completion_tokens,
+            reasoning_effort=reasoning_effort,
+            num_threads=num_threads,
             solve_fn=solve_fn,
         )
         note = f" (errors: {result.errors})" if result.errors else ""
@@ -185,6 +211,8 @@ def run(args: argparse.Namespace) -> int:
         reveal_fraction=args.reveal_fraction,
         seed=args.seed,
         max_completion_tokens=args.max_tokens,
+        reasoning_effort=args.reasoning_effort,
+        num_threads=args.num_threads,
     )
 
     results_dir = Path(args.output_dir)
@@ -197,6 +225,8 @@ def run(args: argparse.Namespace) -> int:
         "reveal_fraction": args.reveal_fraction,
         "seed": args.seed,
         "max_tokens": args.max_tokens,
+        "reasoning_effort": args.reasoning_effort,
+        "num_threads": args.num_threads,
         "models": models,
     }
     payload = {"config": config_info, "results": [asdict(r) for r in results]}
@@ -220,6 +250,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--max-tokens", type=int, default=None,
         help="max_completion_tokens per call (caps cost; leave room for reasoning models).",
+    )
+    parser.add_argument(
+        "--reasoning-effort",
+        choices=["minimal", "low", "medium", "high"],
+        default="low",
+        help="Reasoning budget for reasoning models (low = fast/cheap). Ignored by others.",
+    )
+    parser.add_argument(
+        "--num-threads", type=int, default=4,
+        help="Concurrent requests per model (speeds up the run).",
     )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--output-dir", default=str(DEFAULT_RESULTS_DIR))
