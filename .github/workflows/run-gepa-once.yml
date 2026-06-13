@@ -1,0 +1,60 @@
+name: run-gepa-once
+
+# TEMPORARY one-off: a single GEPA run (gpt-5.4-mini task, gpt-5.5 reflection),
+# tuned for low runtime. Push-triggered; removed right after.
+
+on:
+  push:
+    branches:
+      - "cursor/**"
+    paths:
+      - ".github/workflows/run-gepa-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  gepa-once:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: karels-crypto-solving/uv.lock
+
+      - name: Sync (with optimize extra)
+        run: uv sync --frozen --extra optimize
+
+      - name: GEPA run (tuned for runtime)
+        run: |
+          uv run karels-crypto-optimize \
+            --optimizer gepa --auto light \
+            --model gpt-5.4-mini-2026-03-17 \
+            --reflection-model gpt-5.5-2026-04-23 \
+            --reasoning-effort low \
+            --reflection-minibatch-size 2 \
+            --num-threads 16 \
+            --max-examples 14 \
+            --reveal none
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add optimization_results/
+          if git diff --cached --quiet; then
+            echo "No result changes."
+          else
+            git commit -m "optimize: gepa run (gpt-5.4-mini task, gpt-5.5 reflection) [skip ci]"
+            git push
+          fi
