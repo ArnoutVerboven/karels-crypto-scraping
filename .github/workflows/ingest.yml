@@ -1,0 +1,77 @@
+name: ingest
+
+# Manually-triggered: ingest the committed puzzle + solution photos
+# (uploads/images/{puzzles,solutions}) into data/ingested_puzzles.json via a
+# vision model. Re-run after adding images. Uses OPENAI_API_KEY (secret) +
+# OPENAI_BASE_URL (variable).
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "Vision model (use the strongest available)"
+        type: string
+        default: "gpt-5.5-2026-04-23"
+      reasoning_effort:
+        description: "Reasoning effort for reasoning models"
+        type: choice
+        options: ["", "minimal", "low", "medium", "high"]
+        default: "medium"
+      concurrency:
+        description: "Parallel image requests"
+        type: string
+        default: "8"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      IN_MODEL: ${{ inputs.model }}
+      IN_EFFORT: ${{ inputs.reasoning_effort }}
+      IN_CONCURRENCY: ${{ inputs.concurrency }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: karels-crypto-solving/uv.lock
+
+      - name: Sync dependencies
+        run: uv sync --frozen
+
+      - name: Ingest puzzle + solution pages, then merge
+        run: |
+          EFFORT_ARG=""
+          [ -n "$IN_EFFORT" ] && EFFORT_ARG="--reasoning-effort $IN_EFFORT"
+          uv run karels-crypto-ingest puzzles \
+            --model "$IN_MODEL" $EFFORT_ARG --concurrency "$IN_CONCURRENCY"
+          uv run karels-crypto-ingest solutions \
+            --model "$IN_MODEL" $EFFORT_ARG --concurrency "$IN_CONCURRENCY"
+          uv run karels-crypto-ingest merge
+
+      - name: Commit ingested dataset
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ingested_puzzles.json data/_ingest_puzzles_raw.json data/_ingest_solutions_raw.json
+          if git diff --cached --quiet; then
+            echo "No ingest output changes."
+          else
+            git commit -m "data: ingest puzzle/solution photos -> ingested_puzzles.json"
+            git push
+          fi
