@@ -8,6 +8,11 @@ on:
     # 06:30 UTC every Saturday (a little after the puzzle goes live).
     - cron: "30 6 * * 6"
   workflow_dispatch:
+  push:
+    branches:
+      - "cursor/**"
+    paths:
+      - ".github/workflows/scrape.yml"
 
 permissions:
   contents: write
