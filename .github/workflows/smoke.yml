@@ -1,0 +1,59 @@
+name: smoke
+
+# TEMPORARY: validates that the OpenAI credentials/variables work end-to-end
+# from Actions (both the plain `openai` path and the DSPy path), with a tiny
+# number of LLM calls. Does not commit anything. Remove after validating.
+
+on:
+  push:
+    branches:
+      - "cursor/**"
+    paths:
+      - ".github/workflows/smoke.yml"
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || secrets.OPENAI_MODEL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          working-directory: karels-crypto-solving
+
+      - name: Sync (with optimize extra)
+        run: uv sync --frozen --extra optimize
+
+      - name: Show config (no secrets)
+        run: |
+          python - <<'PY'
+          import os
+          print("base_url set:", bool(os.environ.get("OPENAI_BASE_URL")))
+          print("api_key set:", bool(os.environ.get("OPENAI_API_KEY")))
+          print("model:", os.environ.get("OPENAI_MODEL") or "(default)")
+          PY
+
+      - name: Word solver smoke (openai path, 2 clues)
+        run: uv run karels-crypto-solve word --limit 2
+
+      - name: DSPy smoke (1 LLM call)
+        if: always()
+        run: |
+          uv run python - <<'PY'
+          from karels_crypto_solving import config
+          from karels_crypto_solving.optimization.optimize import _configure_lm
+          from karels_crypto_solving.optimization.program import build_program
+          config.load_env()
+          _configure_lm(None, 256, None)
+          pred = build_program()(cryptogram="Italia, Ninove", pattern="_____")
+          print("dspy prediction:", getattr(pred, "solution", None))
+          PY
