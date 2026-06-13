@@ -1,15 +1,16 @@
 {
-  "timestamp": "2026-06-13T19:30:26.249342+00:00",
+  "timestamp": "2026-06-13T20:36:12.293298+00:00",
   "config": {
-    "model": "gpt-4o",
+    "model": "gpt-5-mini-2025-08-07",
     "auto": "light",
     "num_candidates": null,
     "num_trials": null,
     "minibatch": true,
     "minibatch_size": 12,
-    "max_tokens": 2000,
+    "max_tokens": 1000,
     "temperature": null,
-    "num_threads": 1,
+    "reasoning_effort": "low",
+    "num_threads": 8,
     "demos": 0,
     "reveal": "none",
     "reveal_fraction": 0.5,
@@ -20,33 +21,33 @@
     "n_train": 26,
     "n_val": 12
   },
-  "baseline_accuracy": 0.08333333333333333,
-  "optimized_accuracy": 0.08333333333333333,
-  "best_val_score": 8.33,
+  "baseline_accuracy": 0.16666666666666666,
+  "optimized_accuracy": 0.25,
+  "best_val_score": 25.0,
   "total_lm_calls": 0,
   "training_curve": [
     {
       "trial": 1,
       "minibatch_score": null,
-      "full_eval_score": 8.33,
+      "full_eval_score": 16.67,
       "eval_calls_so_far": 12
     },
     {
       "trial": 2,
       "minibatch_score": null,
-      "full_eval_score": 0.0,
+      "full_eval_score": 25.0,
       "eval_calls_so_far": 24
     },
     {
       "trial": 3,
       "minibatch_score": null,
-      "full_eval_score": 0.0,
+      "full_eval_score": 8.33,
       "eval_calls_so_far": 36
     },
     {
       "trial": 4,
       "minibatch_score": null,
-      "full_eval_score": 8.33,
+      "full_eval_score": 16.67,
       "eval_calls_so_far": 48
     },
     {
@@ -58,31 +59,31 @@
     {
       "trial": 6,
       "minibatch_score": null,
-      "full_eval_score": 0.0,
+      "full_eval_score": 8.33,
       "eval_calls_so_far": 72
     },
     {
       "trial": 7,
       "minibatch_score": null,
-      "full_eval_score": 0.0,
+      "full_eval_score": 8.33,
       "eval_calls_so_far": 84
     },
     {
       "trial": 8,
       "minibatch_score": null,
-      "full_eval_score": 8.33,
+      "full_eval_score": 16.67,
       "eval_calls_so_far": 96
     },
     {
       "trial": 9,
       "minibatch_score": null,
-      "full_eval_score": 0.0,
+      "full_eval_score": 8.33,
       "eval_calls_so_far": 108
     },
     {
       "trial": 10,
       "minibatch_score": null,
-      "full_eval_score": 8.33,
+      "full_eval_score": 16.67,
       "eval_calls_so_far": 120
     }
   ]
