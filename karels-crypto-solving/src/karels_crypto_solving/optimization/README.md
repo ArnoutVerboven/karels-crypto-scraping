@@ -62,11 +62,17 @@ Override the location with `--output-dir`.
 
 ### Running on GitHub Actions
 
-Add the `OPENAI_API_KEY` / `OPENAI_BASE_URL` (and optionally `OPENAI_MODEL`)
-repository secrets, then trigger the **optimize** workflow
-(`.github/workflows/optimize.yml`) from the Actions tab. It runs the optimizer
-with the chosen inputs and commits the updated `optimization_results/` back to
-the branch.
+Under **Settings → Secrets and variables → Actions**, add:
+
+- `OPENAI_API_KEY` as a repository **secret** (sensitive),
+- `OPENAI_BASE_URL` as a repository **variable** (not sensitive),
+- `OPENAI_MODEL` as a repository **variable** (optional).
+
+Then trigger the **optimize** workflow (`.github/workflows/optimize.yml`) from
+the Actions tab. It runs the optimizer with the chosen inputs and commits the
+updated `optimization_results/` back to the branch. (The workflow also accepts a
+`secrets` fallback for the base URL / model if you'd rather keep them as
+secrets.)
 
 ## Controllable parameters (and cost)
 

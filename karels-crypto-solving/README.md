@@ -74,7 +74,8 @@ uv run karels-crypto-solve puzzle
 
 LLM access uses the standard environment variables: `OPENAI_API_KEY`,
 `OPENAI_BASE_URL`, and `OPENAI_MODEL` (defaults to `gpt-4o-mini`). On GitHub
-Actions these come from repository secrets.
+Actions, `OPENAI_API_KEY` is a repository **secret**, while `OPENAI_BASE_URL`
+and `OPENAI_MODEL` are repository **variables** (they aren't sensitive).
 
 Locally you can put them in a `.env` file (copy `.env.example`) in this folder or
 the repo root — it's loaded automatically. Real environment variables override

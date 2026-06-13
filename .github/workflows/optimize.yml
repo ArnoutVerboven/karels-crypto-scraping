@@ -1,8 +1,11 @@
 name: optimize
 
 # Manually-triggered prompt optimization for the word solver (DSPy / MIPROv2).
-# Set OPENAI_API_KEY / OPENAI_BASE_URL (and optionally OPENAI_MODEL) as repo
-# secrets first. The optimised prompt + metrics are committed to
+# Configure credentials first (Settings -> Secrets and variables -> Actions):
+#   - OPENAI_API_KEY  as a repository *secret* (sensitive)
+#   - OPENAI_BASE_URL as a repository *variable* (not sensitive)
+#   - OPENAI_MODEL    as a repository *variable* (optional; not sensitive)
+# The optimised prompt + metrics are committed to
 # karels-crypto-solving/optimization_results/.
 
 on:
@@ -65,9 +68,12 @@ jobs:
       run:
         working-directory: karels-crypto-solving
     env:
+      # The API key is sensitive -> secret. Base URL and model are not
+      # sensitive -> repository variables (with a secret fallback, so it works
+      # whichever you configure).
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
-      OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || secrets.OPENAI_MODEL }}
     steps:
       - uses: actions/checkout@v4
 
