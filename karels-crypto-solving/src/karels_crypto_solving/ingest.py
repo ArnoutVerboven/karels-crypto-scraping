@@ -39,6 +39,11 @@ logger = logging.getLogger(__name__)
 DEFAULT_INGEST_MODEL = "gpt-4o"  # strong, cheap vision + reliable JSON
 _IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+_UPLOADS = _REPO_ROOT / "uploads" / "images"
+DEFAULT_PUZZLES_DIR = _UPLOADS / "puzzles"
+DEFAULT_SOLUTIONS_DIR = _UPLOADS / "solutions"
+
 _SOLVING_DATA = data.INGESTED_PATH.parent
 PUZZLES_RAW = _SOLVING_DATA / "_ingest_puzzles_raw.json"
 SOLUTIONS_RAW = _SOLVING_DATA / "_ingest_solutions_raw.json"
@@ -115,7 +120,15 @@ def iter_images(images_dir: Path, glob: str):
             yield path
 
 
-def _extract(path: Path, *, client, model: str, system: str) -> dict:
+def _extract(
+    path: Path, *, client, model: str, system: str, reasoning_effort: str | None = None
+) -> dict:
+    kwargs = {}
+    if config.is_reasoning_model(model):
+        # Reasoning models need a big budget or the JSON comes back empty.
+        kwargs["max_completion_tokens"] = config.REASONING_MIN_MAX_TOKENS
+        if reasoning_effort:
+            kwargs["reasoning_effort"] = reasoning_effort
     response = client.chat.completions.create(
         model=model,
         messages=[
@@ -129,16 +142,21 @@ def _extract(path: Path, *, client, model: str, system: str) -> dict:
             },
         ],
         response_format={"type": "json_object"},
+        **kwargs,
     )
     return json.loads(response.choices[0].message.content or "{}")
 
 
-def _extract_dir(images_dir: Path, glob: str, *, client, model: str, system: str):
+def _extract_dir(images_dir: Path, glob: str, *, client, model: str, system: str,
+                 reasoning_effort: str | None = None):
     images = list(iter_images(images_dir, glob))
     results = []
     for path in images:
         try:
-            results.append((path, _extract(path, client=client, model=model, system=system)))
+            results.append((path, _extract(
+                path, client=client, model=model, system=system,
+                reasoning_effort=reasoning_effort,
+            )))
         except _EXPECTED_ERRORS as exc:
             logger.warning("Skipping %s: %s", path.name, exc)
     return images, results
@@ -256,7 +274,8 @@ def _write(path: Path, payload) -> None:
 def cmd_puzzles(args: argparse.Namespace) -> int:
     client = config.openai_client()
     images, results = _extract_dir(
-        Path(args.images_dir), args.glob, client=client, model=args.model, system=PUZZLE_SYSTEM
+        Path(args.images_dir), args.glob, client=client, model=args.model,
+        system=PUZZLE_SYSTEM, reasoning_effort=args.reasoning_effort,
     )
     if not images:
         print(f"No images found in {args.images_dir}.")
@@ -274,7 +293,8 @@ def cmd_puzzles(args: argparse.Namespace) -> int:
 def cmd_solutions(args: argparse.Namespace) -> int:
     client = config.openai_client()
     images, results = _extract_dir(
-        Path(args.images_dir), args.glob, client=client, model=args.model, system=SOLUTIONS_SYSTEM
+        Path(args.images_dir), args.glob, client=client, model=args.model,
+        system=SOLUTIONS_SYSTEM, reasoning_effort=args.reasoning_effort,
     )
     if not images:
         print(f"No images found in {args.images_dir}.")
@@ -311,17 +331,25 @@ def build_parser() -> argparse.ArgumentParser:
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
+    effort = ["minimal", "low", "medium", "high"]
+
     p = sub.add_parser("puzzles", help="Pass over the (empty) puzzle pages.")
-    p.add_argument("--images-dir", required=True)
+    p.add_argument("--images-dir", default=str(DEFAULT_PUZZLES_DIR))
     p.add_argument("--glob", default="*")
-    p.add_argument("--model", default=DEFAULT_INGEST_MODEL)
+    p.add_argument("--model", default=DEFAULT_INGEST_MODEL,
+                   help="Vision model (use the strongest available for best OCR).")
+    p.add_argument("--reasoning-effort", choices=effort, default=None,
+                   help="For reasoning models (e.g. gpt-5.x): thinking budget.")
     p.add_argument("--output", default=str(PUZZLES_RAW))
     p.set_defaults(func=cmd_puzzles)
 
     s = sub.add_parser("solutions", help="Pass over the solutions pages.")
-    s.add_argument("--images-dir", required=True)
+    s.add_argument("--images-dir", default=str(DEFAULT_SOLUTIONS_DIR))
     s.add_argument("--glob", default="*")
-    s.add_argument("--model", default=DEFAULT_INGEST_MODEL)
+    s.add_argument("--model", default=DEFAULT_INGEST_MODEL,
+                   help="Vision model (use the strongest available for best OCR).")
+    s.add_argument("--reasoning-effort", choices=effort, default=None,
+                   help="For reasoning models (e.g. gpt-5.x): thinking budget.")
     s.add_argument("--output", default=str(SOLUTIONS_RAW))
     s.set_defaults(func=cmd_solutions)
 

@@ -76,8 +76,8 @@ uv run karels-crypto-benchmark --limit 20
 uv run karels-crypto-benchmark --models gpt-4o-mini gpt-4o o3 --limit 30
 
 # Ingest photos of puzzles + solutions into the data format (vision LLM):
-uv run karels-crypto-ingest puzzles   --images-dir ./puzzles   --model gpt-4o
-uv run karels-crypto-ingest solutions --images-dir ./solutions --model gpt-4o
+uv run karels-crypto-ingest puzzles   --model gpt-5.5-2026-04-23
+uv run karels-crypto-ingest solutions --model gpt-5.5-2026-04-23
 uv run karels-crypto-ingest merge
 ```
 
@@ -89,14 +89,20 @@ the **answers live on separate solutions pages** (many puzzles per page). So
 ingestion is a **two-pass + merge** pipeline using a **vision-capable** model
 (images sent as base64 data URLs):
 
+Images live in `uploads/images/puzzles/` and `uploads/images/solutions/` (the
+defaults). Use the **strongest** vision model you have for accurate OCR; for
+reasoning models (gpt-5.x) optionally add `--reasoning-effort high`.
+
 ```bash
 # 1) the empty puzzle pages -> clues + the number key
-uv run karels-crypto-ingest puzzles   --images-dir ./puzzles
+uv run karels-crypto-ingest puzzles   --model gpt-5.5-2026-04-23
 # 2) the solutions pages -> answers per puzzle number
-uv run karels-crypto-ingest solutions --images-dir ./solutions
+uv run karels-crypto-ingest solutions --model gpt-5.5-2026-04-23
 # 3) join them (by puzzle number + clue label) into the data format
 uv run karels-crypto-ingest merge
 ```
+
+(Override the folders with `--images-dir`. The default model is `gpt-4o`.)
 
 `merge` writes `data/ingested_puzzles.json`, which the optimizer includes in its
 training set by default (`karels-crypto-optimize --no-ingested` to exclude).
