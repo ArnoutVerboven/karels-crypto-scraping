@@ -20,7 +20,8 @@ karels-crypto-benchmark = "karels_crypto_solving.benchmark:main"
 # The DSPy prompt-optimization submodule is optional: only install it when you
 # want to run the optimizer, so the core solver stays lightweight.
 optimize = [
-    "dspy>=2.5",
+    # MIPROv2's Bayesian search needs optuna (dspy's optional extra).
+    "dspy[optuna]>=2.5",
 ]
 dev = [
     "pytest>=8.0",

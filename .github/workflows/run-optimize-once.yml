@@ -1,6 +1,6 @@
 name: run-optimize-once
 
-# TEMPORARY one-off: trigger a bounded prompt-optimization run on push (since
+# TEMPORARY one-off (attempt 3): trigger a bounded prompt-optimization run on push (since
 # workflow_dispatch can't be triggered programmatically here) to produce
 # baseline + optimized metrics. Cost is bounded via a small manual budget.
 # This file is removed right after the run.
