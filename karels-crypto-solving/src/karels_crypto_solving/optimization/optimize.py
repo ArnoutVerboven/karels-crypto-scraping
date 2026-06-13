@@ -41,17 +41,25 @@ _MODULE_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_RESULTS_DIR = _MODULE_ROOT / "optimization_results"
 
 
-def _configure_lm(model: str | None, max_tokens: int, temperature: float | None) -> None:
+def _configure_lm(
+    model: str | None,
+    max_tokens: int,
+    temperature: float | None,
+    reasoning_effort: str | None = None,
+) -> None:
     import dspy
 
     model_id = model or config.model_name()
+    kwargs = {"max_tokens": max_tokens}
     # Reasoning models (gpt-5 family, o-series) require temperature=1.0 and a
     # large token budget, otherwise the reply comes back empty.
     if config.is_reasoning_model(model_id):
         temperature = 1.0
-        max_tokens = max(max_tokens or 0, config.REASONING_MIN_MAX_TOKENS)
-
-    kwargs = {"max_tokens": max_tokens}
+        kwargs["max_tokens"] = max(max_tokens or 0, config.REASONING_MIN_MAX_TOKENS)
+        if reasoning_effort:
+            # Forwarded to the OpenAI API via litellm; caps how much the model
+            # "thinks" (low = cheaper/faster).
+            kwargs["reasoning_effort"] = reasoning_effort
     if temperature is not None:
         kwargs["temperature"] = temperature
     lm = dspy.LM(
@@ -120,7 +128,7 @@ def training_curve(compiled) -> list[dict]:
 def run(args: argparse.Namespace) -> int:
     from dspy.teleprompt import MIPROv2
 
-    _configure_lm(args.model, args.max_tokens, args.temperature)
+    _configure_lm(args.model, args.max_tokens, args.temperature, args.reasoning_effort)
 
     results_dir = Path(args.output_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
@@ -195,6 +203,7 @@ def run(args: argparse.Namespace) -> int:
             "minibatch_size": minibatch_size,
             "max_tokens": args.max_tokens,
             "temperature": args.temperature,
+            "reasoning_effort": args.reasoning_effort,
             "num_threads": args.num_threads,
             "demos": args.demos,
             "reveal": args.reveal,
@@ -255,6 +264,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Max output tokens per LM call (caps token consumption).",
     )
     budget.add_argument("--temperature", type=float, default=None)
+    budget.add_argument(
+        "--reasoning-effort",
+        choices=["minimal", "low", "medium", "high"],
+        default=None,
+        help="Reasoning budget for reasoning models (low = fast/cheap). Ignored by others.",
+    )
     budget.add_argument(
         "--num-threads", type=int, default=1,
         help="Parallel eval threads (speed, not cost).",
