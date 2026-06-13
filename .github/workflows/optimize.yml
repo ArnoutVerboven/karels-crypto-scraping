@@ -81,7 +81,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-          working-directory: karels-crypto-solving
+          cache-dependency-glob: karels-crypto-solving/uv.lock
 
       - name: Sync dependencies (with optimize extra)
         run: uv sync --frozen --extra optimize

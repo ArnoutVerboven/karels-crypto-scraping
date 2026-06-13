@@ -1,15 +1,11 @@
 name: smoke
 
-# TEMPORARY: validates that the OpenAI credentials/variables work end-to-end
-# from Actions (both the plain `openai` path and the DSPy path), with a tiny
-# number of LLM calls. Does not commit anything. Remove after validating.
+# Lightweight health check: confirms the OpenAI credentials / variables work
+# end-to-end from Actions (both the plain `openai` path and the DSPy path) with
+# a couple of LLM calls. Commits nothing. Run manually from the Actions tab,
+# e.g. to verify OPENAI_MODEL before launching a full optimization run.
 
 on:
-  push:
-    branches:
-      - "cursor/**"
-    paths:
-      - ".github/workflows/smoke.yml"
   workflow_dispatch:
 
 jobs:
@@ -27,8 +23,6 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
-        with:
-          working-directory: karels-crypto-solving
 
       - name: Sync (with optimize extra)
         run: uv sync --frozen --extra optimize

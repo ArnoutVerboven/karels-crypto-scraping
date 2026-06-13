@@ -29,7 +29,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-          working-directory: karels-crypto-scraping
+          cache-dependency-glob: karels-crypto-scraping/uv.lock
 
       - name: Sync dependencies
         run: uv sync --frozen
