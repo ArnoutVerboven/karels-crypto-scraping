@@ -9,10 +9,34 @@ on:
   workflow_dispatch:
     inputs:
       auto:
-        description: "MIPROv2 search budget"
+        description: "Search budget preset ('none' = manual num_candidates/num_trials)"
         type: choice
-        options: ["light", "medium", "heavy"]
+        options: ["light", "medium", "heavy", "none"]
         default: "light"
+      num_candidates:
+        description: "Instruction candidates (only when auto=none)"
+        type: string
+        default: ""
+      num_trials:
+        description: "Optimization trials (only when auto=none)"
+        type: string
+        default: ""
+      max_tokens:
+        description: "Max output tokens per LM call"
+        type: string
+        default: "1000"
+      minibatch_size:
+        description: "Minibatch size (blank = default 35, clamped to valset)"
+        type: string
+        default: ""
+      max_examples:
+        description: "Cap number of labelled words (blank = all)"
+        type: string
+        default: ""
+      demos:
+        description: "Max few-shot demos (0 = instruction-only)"
+        type: string
+        default: "0"
       reveal:
         description: "Helper letters revealed in the pattern"
         type: choice
@@ -22,10 +46,6 @@ on:
         description: "Fraction revealed when reveal=partial"
         type: string
         default: "0.5"
-      demos:
-        description: "Max few-shot demos (0 = instruction-only)"
-        type: string
-        default: "0"
       model:
         description: "Model override (blank = OPENAI_MODEL secret / default)"
         type: string
@@ -61,15 +81,27 @@ jobs:
         run: uv sync --frozen --extra optimize
 
       - name: Run prompt optimization
+        env:
+          IN_AUTO: ${{ inputs.auto }}
+          IN_NUM_CANDIDATES: ${{ inputs.num_candidates }}
+          IN_NUM_TRIALS: ${{ inputs.num_trials }}
+          IN_MAX_TOKENS: ${{ inputs.max_tokens }}
+          IN_MINIBATCH_SIZE: ${{ inputs.minibatch_size }}
+          IN_MAX_EXAMPLES: ${{ inputs.max_examples }}
+          IN_DEMOS: ${{ inputs.demos }}
+          IN_REVEAL: ${{ inputs.reveal }}
+          IN_REVEAL_FRACTION: ${{ inputs.reveal_fraction }}
+          IN_MODEL: ${{ inputs.model }}
         run: |
-          MODEL_ARG=""
-          if [ -n "${{ inputs.model }}" ]; then MODEL_ARG="--model ${{ inputs.model }}"; fi
-          uv run karels-crypto-optimize \
-            --auto "${{ inputs.auto }}" \
-            --reveal "${{ inputs.reveal }}" \
-            --reveal-fraction "${{ inputs.reveal_fraction }}" \
-            --demos "${{ inputs.demos }}" \
-            $MODEL_ARG
+          ARGS="--auto $IN_AUTO --reveal $IN_REVEAL --reveal-fraction $IN_REVEAL_FRACTION"
+          ARGS="$ARGS --demos $IN_DEMOS --max-tokens $IN_MAX_TOKENS"
+          [ -n "$IN_NUM_CANDIDATES" ] && ARGS="$ARGS --num-candidates $IN_NUM_CANDIDATES"
+          [ -n "$IN_NUM_TRIALS" ]     && ARGS="$ARGS --num-trials $IN_NUM_TRIALS"
+          [ -n "$IN_MINIBATCH_SIZE" ] && ARGS="$ARGS --minibatch-size $IN_MINIBATCH_SIZE"
+          [ -n "$IN_MAX_EXAMPLES" ]   && ARGS="$ARGS --max-examples $IN_MAX_EXAMPLES"
+          [ -n "$IN_MODEL" ]          && ARGS="$ARGS --model $IN_MODEL"
+          echo "Running: karels-crypto-optimize $ARGS"
+          uv run karels-crypto-optimize $ARGS
 
       - name: Commit optimization results
         run: |

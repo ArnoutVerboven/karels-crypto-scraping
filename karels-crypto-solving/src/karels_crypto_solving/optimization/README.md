@@ -66,6 +66,43 @@ repository secrets, then trigger the **optimize** workflow
 with the chosen inputs and commits the updated `optimization_results/` back to
 the branch.
 
+## Controllable parameters (and cost)
+
+There is **no built-in hard token/spend cap** in DSPy — you bound cost via the
+search size, the dataset size and the per-call token limit. The total number of
+LM calls is roughly:
+
+```
+(instruction proposals ≈ num_candidates) + (num_trials × minibatch_size evals)
+                                          + bootstrapping/eval overhead
+```
+
+Knobs (CLI flags; the workflow exposes the main ones):
+
+| Flag | Controls | Notes |
+| --- | --- | --- |
+| `--auto light\|medium\|heavy\|none` | overall search budget | biggest lever; `light` is cheapest. `none` = set the size yourself. |
+| `--num-candidates N` | instruction candidates proposed | only with `--auto none`. |
+| `--num-trials N` | optimization trials | only with `--auto none`. |
+| `--minibatch / --no-minibatch` | eval on minibatches vs full valset | minibatching is cheaper. |
+| `--minibatch-size N` | examples scored per trial | clamped to the valset size (default 35). |
+| `--max-tokens N` | **output tokens per LM call** | the direct token cap (default 1000); lower it to save tokens, but leave room for reasoning. |
+| `--temperature F` | sampling temperature | |
+| `--num-threads N` | parallel eval threads | speed, not cost. |
+| `--max-errors N` | abort after N failing calls | safety valve. |
+| `--max-examples N` | cap labelled words used | fewer examples = cheaper trials. |
+| `--demos N` | max few-shot demos | 0 = instruction-only (default). |
+| `--reveal`, `--reveal-fraction` | helper letters in the pattern | the experiment setup. |
+| `--val-fraction`, `--seed` | train/val split, determinism | |
+| `--model` | model override | else `OPENAI_MODEL`. |
+
+The chosen budget is recorded in `metrics.json -> config`, and the *actual* LM
+calls made are reported as `metrics.json -> total_lm_calls` after the run.
+
+To keep a first run cheap: `--auto light --max-tokens 600` (optionally
+`--max-examples 40`). For a tightly bounded run: `--auto none --num-candidates 4
+--num-trials 6 --max-tokens 600`.
+
 ## Notes
 
 - DSPy recommends ~50–500 examples. The training set is the scraped **history**,

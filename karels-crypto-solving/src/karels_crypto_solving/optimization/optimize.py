@@ -41,18 +41,22 @@ _MODULE_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_RESULTS_DIR = _MODULE_ROOT / "optimization_results"
 
 
-def _configure_lm(model: str | None) -> None:
+def _configure_lm(model: str | None, max_tokens: int, temperature: float | None) -> None:
     import dspy
 
+    kwargs = {"max_tokens": max_tokens}
+    if temperature is not None:
+        kwargs["temperature"] = temperature
     lm = dspy.LM(
         f"openai/{model or config.model_name()}",
         api_key=os.environ.get("OPENAI_API_KEY"),
         api_base=os.environ.get("OPENAI_BASE_URL"),
+        **kwargs,
     )
     dspy.configure(lm=lm)
 
 
-def build_examples(reveal: str, fraction: float, seed: int) -> list:
+def build_examples(reveal: str, fraction: float, seed: int, max_examples: int | None) -> list:
     """Build DSPy examples (cryptogram + pattern -> solution) from history."""
     import dspy
 
@@ -68,6 +72,8 @@ def build_examples(reveal: str, fraction: float, seed: int) -> list:
             ).with_inputs("cryptogram", "pattern")
         )
     rng.shuffle(examples)
+    if max_examples:
+        examples = examples[:max_examples]
     return examples
 
 
@@ -107,12 +113,14 @@ def training_curve(compiled) -> list[dict]:
 def run(args: argparse.Namespace) -> int:
     from dspy.teleprompt import MIPROv2
 
-    _configure_lm(args.model)
+    _configure_lm(args.model, args.max_tokens, args.temperature)
 
     results_dir = Path(args.output_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    examples = build_examples(args.reveal, args.reveal_fraction, args.seed)
+    examples = build_examples(
+        args.reveal, args.reveal_fraction, args.seed, args.max_examples
+    )
     if not examples:
         print("No labelled words available; scrape some history first.")
         return 1
@@ -126,21 +134,37 @@ def run(args: argparse.Namespace) -> int:
     baseline = evaluate(program, valset)
     print(f"Baseline zero-shot accuracy (val): {baseline:.1%}")
 
-    optimizer = MIPROv2(
-        metric=exact_match_metric,
-        auto=args.auto,
+    manual = args.auto == "none"
+    optimizer_kwargs = {
+        "metric": exact_match_metric,
         # 0 demos => pure instruction (prompt) optimization, no few-shot vocab.
-        max_bootstrapped_demos=args.demos,
-        max_labeled_demos=args.demos,
-        track_stats=True,
-        log_dir=str(results_dir / "dspy_logs"),
-    )
-    compiled = optimizer.compile(
-        program,
-        trainset=trainset,
-        valset=valset,
-        requires_permission_to_run=False,
-    )
+        "max_bootstrapped_demos": args.demos,
+        "max_labeled_demos": args.demos,
+        "num_threads": args.num_threads,
+        "track_stats": True,
+        "log_dir": str(results_dir / "dspy_logs"),
+    }
+    if args.max_errors is not None:
+        optimizer_kwargs["max_errors"] = args.max_errors
+    if manual:
+        # Manual budget: you control the search size explicitly.
+        optimizer_kwargs["auto"] = None
+        optimizer_kwargs["num_candidates"] = args.num_candidates or 5
+    else:
+        optimizer_kwargs["auto"] = args.auto
+    optimizer = MIPROv2(**optimizer_kwargs)
+
+    # minibatch_size must not exceed the validation set size.
+    minibatch_size = min(args.minibatch_size or 35, len(valset))
+    compile_kwargs = {
+        "trainset": trainset,
+        "valset": valset,
+        "minibatch": args.minibatch,
+        "minibatch_size": minibatch_size,
+    }
+    if manual:
+        compile_kwargs["num_trials"] = args.num_trials or 10
+    compiled = optimizer.compile(program, **compile_kwargs)
 
     optimized = evaluate(compiled, valset)
     print(f"Optimized zero-shot accuracy (val): {optimized:.1%}")
@@ -158,10 +182,18 @@ def run(args: argparse.Namespace) -> int:
         "config": {
             "model": args.model or config.model_name(),
             "auto": args.auto,
+            "num_candidates": args.num_candidates if manual else None,
+            "num_trials": args.num_trials if manual else None,
+            "minibatch": args.minibatch,
+            "minibatch_size": minibatch_size,
+            "max_tokens": args.max_tokens,
+            "temperature": args.temperature,
+            "num_threads": args.num_threads,
             "demos": args.demos,
             "reveal": args.reveal,
             "reveal_fraction": args.reveal_fraction,
             "val_fraction": args.val_fraction,
+            "max_examples": args.max_examples,
             "seed": args.seed,
             "n_examples": len(examples),
             "n_train": len(trainset),
@@ -188,10 +220,48 @@ def run(args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Optimize the word-solver prompt with DSPy.")
     parser.add_argument("--model", default=None, help="Override OPENAI_MODEL.")
-    parser.add_argument(
-        "--auto", choices=["light", "medium", "heavy"], default="light",
-        help="MIPROv2 search budget.",
+
+    # --- search budget (the main cost knobs) -------------------------------
+    budget = parser.add_argument_group("search budget / cost")
+    budget.add_argument(
+        "--auto", choices=["light", "medium", "heavy", "none"], default="light",
+        help="Preset search budget. 'none' = manual (--num-candidates/--num-trials).",
     )
+    budget.add_argument(
+        "--num-candidates", type=int, default=None,
+        help="Instruction candidates to propose (only when --auto none).",
+    )
+    budget.add_argument(
+        "--num-trials", type=int, default=None,
+        help="Optimization trials to run (only when --auto none).",
+    )
+    budget.add_argument(
+        "--minibatch", action=argparse.BooleanOptionalAction, default=True,
+        help="Evaluate candidates on minibatches (cheaper) vs the full valset.",
+    )
+    budget.add_argument(
+        "--minibatch-size", type=int, default=None,
+        help="Minibatch size (clamped to the valset size; default 35).",
+    )
+    budget.add_argument(
+        "--max-tokens", type=int, default=1000,
+        help="Max output tokens per LM call (caps token consumption).",
+    )
+    budget.add_argument("--temperature", type=float, default=None)
+    budget.add_argument(
+        "--num-threads", type=int, default=1,
+        help="Parallel eval threads (speed, not cost).",
+    )
+    budget.add_argument(
+        "--max-errors", type=int, default=None,
+        help="Abort after this many failing LM calls.",
+    )
+    budget.add_argument(
+        "--max-examples", type=int, default=None,
+        help="Cap the number of labelled words used (cheaper runs).",
+    )
+
+    # --- task setup --------------------------------------------------------
     parser.add_argument(
         "--demos", type=int, default=0,
         help="Max few-shot demos (0 = instruction-only prompt optimization).",
