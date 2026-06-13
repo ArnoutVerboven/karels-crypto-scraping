@@ -1,142 +1,32 @@
-# karels-crypto-scraping
+# karels-crypto
 
-Scrapes [Karel's Crypto](https://puzzelkc.standaard.be/), the weekly cryptogram
-by Karel Vereertbrugghen published every Saturday in *De Standaard*, and stores
-the puzzles as JSON datasets in this repository. A GitHub Actions workflow runs
-the scraper every Saturday and commits the refreshed data.
+Tools for **Karel's Crypto**, the weekly Dutch cryptic puzzle by Karel
+Vereertbrugghen in *De Standaard*. The repository is split into two independent
+modules:
 
-## Source
+| Module | What it does |
+| ------ | ------------ |
+| [`karels-crypto-scraping`](./karels-crypto-scraping) | Scrapes the puzzle every Saturday from De Standaard's GraphQL API and stores the puzzles as JSON datasets (`data/history.json`, `data/latest.json`). Runs on a schedule via GitHub Actions. |
+| [`karels-crypto-solving`](./karels-crypto-solving) | Solves Karel's Crypto with an LLM (prompt only, no tools/dictionaries): a single-word solver, an agentic whole-puzzle solver, and a DSPy submodule that optimizes the word-solver prompt. |
 
-The puzzle single-page-app at `https://puzzelkc.standaard.be` is backed by a
-GraphQL endpoint:
+The modules are independent (each is its own [uv](https://docs.astral.sh/uv/)
+project with its own dependencies and lockfile) and are coupled only through the
+JSON data format: the solver reads the datasets produced by the scraper.
 
-```
-POST https://puzzelkc.standaard.be/graphql
-```
-
-Two public (unauthenticated) queries are used:
-
-- **This week's Crypto** — `published_puzzle` (the home puzzle):
-
-  ```graphql
-  query getHomePuzzle { published_puzzle { ...puzzleFields } }
-  ```
-
-- **Recent Crypto's** (archive) — `puzzles(published: true, ...)`:
-
-  ```graphql
-  query getPuzzles($limit: Int, $page: Int, $published: Boolean) {
-    puzzles(limit: $limit, page: $page, published: $published) {
-      data { ...puzzleFields }
-      total
-    }
-  }
-  ```
-
-The API only keeps a handful of puzzles online at any time, so the historical
-dataset in this repo grows over time as the weekly job accumulates puzzles.
-
-### The key GraphQL fields
-
-Each puzzle node returns:
-
-| Field        | Meaning                                                            |
-| ------------ | ------------------------------------------------------------------ |
-| `id`         | Unique puzzle id.                                                  |
-| `title`      | e.g. `"Karels Crypto 13 juni"`.                                    |
-| `start_date` | Publication date (`YYYY-MM-DD HH:MM:SS`).                          |
-| `solution`   | The 19-letter word hidden vertically through the grid.            |
-| `rows[]`     | The 19 clue rows (see below).                                      |
-| `legends[]`  | Grid key: `{ number, letter }` — equal numbers mean equal letters. |
-
-Each `rows[]` entry holds: `hint` (the cryptic clue), `answer` (the solution
-word), `offset` (how far the row is shifted so its letter lines up with the
-vertical word), and `numbers[]` (`{ index }` of the cells that show a
-pre-printed help number).
-
-## Data format
-
-A dataset is a list of Crypto's. Each Crypto is an ordered list of words. Each
-word has:
-
-- `cryptogram` — the cryptic clue (`hint`).
-- `length` — the number of letters in the answer.
-- `help_numbers` — an array with one entry per letter (mostly `null`); a number
-  is the grid digit for that cell, derived from the puzzle `legends`
-  (`legend.number` for the letter at that position).
-- `offset` — the index where the central/vertical word intersects this row.
-- `solution` — the answer word, or `null` for the latest (unsolved) Crypto.
-
-Two datasets are stored under [`data/`](./data):
-
-- [`data/history.json`](./data/history.json) — historical Crypto's, **with**
-  solutions (a list).
-- [`data/latest.json`](./data/latest.json) — the latest Crypto, **without** its
-  solution (clues and help numbers are kept, as they are public hints).
-
-### Example word
-
-```json
-{
-  "cryptogram": "Italia, Ninove",
-  "length": 5,
-  "help_numbers": [15, null, null, 18, null],
-  "offset": 4,
-  "solution": "Forza"
-}
-```
-
-## Usage
-
-Dependencies are managed with [uv](https://docs.astral.sh/uv/).
+## Quick start
 
 ```bash
-uv sync                # install dependencies (creates .venv)
-uv run karels-crypto   # scrape and update data/history.json + data/latest.json
+# Scraping
+cd karels-crypto-scraping && uv sync && uv run karels-crypto
+
+# Solving (needs OPENAI_API_KEY / OPENAI_BASE_URL / OPENAI_MODEL)
+cd karels-crypto-solving && uv sync
+uv run karels-crypto-solve word --limit 20      # single-word solver
+uv run karels-crypto-solve puzzle               # agentic whole-puzzle solver
+
+# Prompt optimization (DSPy)
+cd karels-crypto-solving && uv sync --extra optimize
+uv run karels-crypto-optimize --reveal none
 ```
 
-Useful flags:
-
-```bash
-uv run karels-crypto --from-file path/to/puzzles.json   # parse a saved response
-uv run karels-crypto --endpoint https://.../graphql      # override the endpoint
-uv run karels-crypto --history data/history.json --latest data/latest.json
-```
-
-### Tests and linting
-
-```bash
-uv run pytest        # unit tests (parsing + dataset building, real fixtures)
-uv run ruff check .  # lint
-```
-
-## Automation
-
-[`.github/workflows/scrape.yml`](./.github/workflows/scrape.yml) runs every
-Saturday at 06:30 UTC (and on manual `workflow_dispatch`). It scrapes the latest
-puzzle, merges it into the datasets and commits any changes back to the repo.
-
-## Maintenance: re-discovering the data source
-
-The data source was reverse-engineered from the puzzle's Vue SPA. If the site
-ever changes and the scraper breaks, run the **recon** workflow
-([`.github/workflows/recon.yml`](./.github/workflows/recon.yml)) from the Actions
-tab. It recaptures the raw HTML, JS bundles, candidate endpoints and live
-GraphQL responses (via [`scripts/recon.py`](./scripts/recon.py) and
-[`scripts/recon_graphql.py`](./scripts/recon_graphql.py)) and uploads them as the
-`recon-output` artifact. Enable the `commit_back` input to instead commit the
-captured files to the branch (useful when artifact downloads aren't reachable).
-
-## Project layout
-
-```
-src/karels_crypto/
-  api.py         GraphQL client + queries
-  models.py      Word / Crypto dataclasses
-  transform.py   raw GraphQL node -> Crypto (derives help numbers)
-  storage.py     load / merge / save the JSON datasets
-  scraper.py     orchestration + CLI entry point
-data/            the committed JSON datasets
-scripts/         recon helpers for re-discovering the data source
-tests/           unit tests with captured fixtures
-```
+See each module's README for details.

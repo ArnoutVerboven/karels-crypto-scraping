@@ -19,6 +19,9 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-scraping
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +29,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
+          working-directory: karels-crypto-scraping
 
       - name: Sync dependencies
         run: uv sync --frozen

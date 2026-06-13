@@ -10,3 +10,7 @@ __pycache__/
 
 # recon workflow output (regenerated on demand)
 recon_output/
+
+# DSPy optimization artifacts / cache
+optimized_word_solver.json
+.dspy_cache/
