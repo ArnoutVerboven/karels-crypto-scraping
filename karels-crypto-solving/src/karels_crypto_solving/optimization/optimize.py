@@ -44,11 +44,18 @@ DEFAULT_RESULTS_DIR = _MODULE_ROOT / "optimization_results"
 def _configure_lm(model: str | None, max_tokens: int, temperature: float | None) -> None:
     import dspy
 
+    model_id = model or config.model_name()
+    # Reasoning models (gpt-5 family, o-series) require temperature=1.0 and a
+    # large token budget, otherwise the reply comes back empty.
+    if config.is_reasoning_model(model_id):
+        temperature = 1.0
+        max_tokens = max(max_tokens or 0, config.REASONING_MIN_MAX_TOKENS)
+
     kwargs = {"max_tokens": max_tokens}
     if temperature is not None:
         kwargs["temperature"] = temperature
     lm = dspy.LM(
-        f"openai/{model or config.model_name()}",
+        f"openai/{model_id}",
         api_key=os.environ.get("OPENAI_API_KEY"),
         api_base=os.environ.get("OPENAI_BASE_URL"),
         **kwargs,

@@ -1,5 +1,6 @@
 import random
 
+from karels_crypto_solving import config
 from karels_crypto_solving.models import Word
 from karels_crypto_solving.patterns import build_pattern, helper_positions
 from karels_crypto_solving.word_solver import _parse_answer
@@ -37,6 +38,13 @@ def test_build_pattern_partial_is_deterministic_with_seed():
     # Partial reveals no more than the "all" case.
     revealed = sum(c != "_" for c in a)
     assert revealed <= 2
+
+
+def test_is_reasoning_model():
+    for m in ["o3", "o4-mini", "gpt-5-2025-08-07", "gpt-5.5-2026-04-23", "gpt-5-mini-2025-08-07"]:
+        assert config.is_reasoning_model(m), m
+    for m in ["gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo", "gpt-4.1", "gpt-5-chat-latest"]:
+        assert not config.is_reasoning_model(m), m
 
 
 def test_parse_answer_variants():

@@ -57,15 +57,20 @@ def solve_word(
     client = client or config.openai_client()
     model = model or config.model_name()
 
+    reasoning = config.is_reasoning_model(model)
     system = system_prompt.format(
         cryptogram=cryptogram, length=length, pattern=pattern
     )
     kwargs = {}
-    if temperature is not None:
+    # Reasoning models reject temperature != 1; only set it otherwise.
+    if temperature is not None and not reasoning:
         kwargs["temperature"] = temperature
     if max_completion_tokens is not None:
         # `max_completion_tokens` is the unified cap (works for reasoning models
-        # too, unlike the legacy `max_tokens`).
+        # too, unlike the legacy `max_tokens`). Reasoning models need headroom,
+        # or they spend the whole budget thinking and return empty content.
+        if reasoning:
+            max_completion_tokens = max(max_completion_tokens, config.REASONING_MIN_MAX_TOKENS)
         kwargs["max_completion_tokens"] = max_completion_tokens
 
     response = client.chat.completions.create(

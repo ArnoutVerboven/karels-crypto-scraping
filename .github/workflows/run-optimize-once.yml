@@ -38,10 +38,12 @@ jobs:
         run: uv sync --frozen --extra optimize
 
       - name: Run bounded optimization
+        # gpt-5.5 is a pricey reasoning model, so keep the search tiny. The LM is
+        # auto-configured for reasoning (temperature=1.0, max_tokens>=16000).
         run: |
           uv run karels-crypto-optimize \
-            --auto none --num-candidates 3 --num-trials 4 \
-            --max-tokens 800 --reveal none
+            --auto none --num-candidates 2 --num-trials 2 \
+            --max-examples 12 --no-minibatch --reveal none
 
       - name: Commit optimization results
         run: |
