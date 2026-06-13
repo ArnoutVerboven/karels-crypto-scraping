@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: gepa-once
+  cancel-in-progress: true
+
 jobs:
   gepa-once:
     runs-on: ubuntu-latest
@@ -34,16 +38,17 @@ jobs:
       - name: Sync (with optimize extra)
         run: uv sync --frozen --extra optimize
 
-      - name: GEPA run (tuned for runtime)
+      - name: GEPA run (medium effort, limited iterations)
         run: |
           uv run karels-crypto-optimize \
-            --optimizer gepa --auto light \
+            --optimizer gepa \
+            --max-full-evals 4 \
             --model gpt-5.4-mini-2026-03-17 \
             --reflection-model gpt-5.5-2026-04-23 \
-            --reasoning-effort low \
+            --reasoning-effort medium \
             --reflection-minibatch-size 2 \
             --num-threads 16 \
-            --max-examples 14 \
+            --max-examples 12 \
             --reveal none
 
       - name: Commit results
