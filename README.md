@@ -24,6 +24,9 @@ cd karels-crypto-solving && uv sync
 uv run karels-crypto-solve word --limit 20      # single-word solver
 uv run karels-crypto-solve puzzle               # agentic whole-puzzle solver
 
+# Compare models on word solving (accuracy + estimated cost)
+uv run karels-crypto-benchmark --limit 20
+
 # Prompt optimization (DSPy)
 cd karels-crypto-solving && uv sync --extra optimize
 uv run karels-crypto-optimize --reveal none

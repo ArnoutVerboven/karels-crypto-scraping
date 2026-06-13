@@ -21,6 +21,8 @@ _ANSWER_RE = re.compile(r"answer\s*[:\-]\s*(.+)", re.IGNORECASE)
 class WordSolution:
     answer: str
     raw: str
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
 
 
 def _parse_answer(text: str) -> str:
@@ -46,6 +48,7 @@ def solve_word(
     model: str | None = None,
     system_prompt: str = WORD_SOLVER_SYSTEM,
     temperature: float | None = None,
+    max_completion_tokens: int | None = None,
 ) -> WordSolution:
     """Solve one clue. ``pattern`` is the known-letters string (``_`` = unknown)."""
     if pattern is None:
@@ -60,6 +63,10 @@ def solve_word(
     kwargs = {}
     if temperature is not None:
         kwargs["temperature"] = temperature
+    if max_completion_tokens is not None:
+        # `max_completion_tokens` is the unified cap (works for reasoning models
+        # too, unlike the legacy `max_tokens`).
+        kwargs["max_completion_tokens"] = max_completion_tokens
 
     response = client.chat.completions.create(
         model=model,
@@ -70,7 +77,13 @@ def solve_word(
         **kwargs,
     )
     raw = response.choices[0].message.content or ""
-    return WordSolution(answer=_parse_answer(raw), raw=raw)
+    usage = getattr(response, "usage", None)
+    return WordSolution(
+        answer=_parse_answer(raw),
+        raw=raw,
+        prompt_tokens=getattr(usage, "prompt_tokens", 0) or 0,
+        completion_tokens=getattr(usage, "completion_tokens", 0) or 0,
+    )
 
 
 def solve_word_in_puzzle(puzzle: Puzzle, word_index: int, **kwargs) -> WordSolution:

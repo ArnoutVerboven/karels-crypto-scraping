@@ -1,0 +1,87 @@
+name: benchmark
+
+# Manually-triggered model comparison on Karel's Crypto word solving.
+# Credentials (Settings -> Secrets and variables -> Actions):
+#   - OPENAI_API_KEY  : repository secret
+#   - OPENAI_BASE_URL : repository variable
+#   - OPENAI_MODEL    : repository variable (unused here; models come from input)
+# Results are committed to karels-crypto-solving/benchmark_results/.
+
+on:
+  workflow_dispatch:
+    inputs:
+      models:
+        description: "Space-separated model ids (blank = default set)"
+        type: string
+        default: ""
+      all_models:
+        description: "Benchmark every priced model"
+        type: boolean
+        default: false
+      limit:
+        description: "Clues per model"
+        type: string
+        default: "20"
+      reveal:
+        description: "Helper letters revealed in the pattern"
+        type: choice
+        options: ["none", "partial", "all"]
+        default: "none"
+      max_tokens:
+        description: "max_completion_tokens per call (blank = model default)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: benchmark
+  cancel-in-progress: false
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      IN_MODELS: ${{ inputs.models }}
+      IN_ALL_MODELS: ${{ inputs.all_models }}
+      IN_LIMIT: ${{ inputs.limit }}
+      IN_REVEAL: ${{ inputs.reveal }}
+      IN_MAX_TOKENS: ${{ inputs.max_tokens }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: karels-crypto-solving/uv.lock
+
+      - name: Sync dependencies
+        run: uv sync --frozen
+
+      - name: Run benchmark
+        run: |
+          ARGS="--limit $IN_LIMIT --reveal $IN_REVEAL"
+          [ "$IN_ALL_MODELS" = "true" ] && ARGS="$ARGS --all-models"
+          [ -n "$IN_MODELS" ]    && ARGS="$ARGS --models $IN_MODELS"
+          [ -n "$IN_MAX_TOKENS" ] && ARGS="$ARGS --max-tokens $IN_MAX_TOKENS"
+          echo "Running: karels-crypto-benchmark $ARGS"
+          uv run karels-crypto-benchmark $ARGS
+
+      - name: Commit benchmark results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add benchmark_results/
+          if git diff --cached --quiet; then
+            echo "No benchmark result changes."
+          else
+            git commit -m "benchmark: model comparison (reveal=${{ inputs.reveal }})"
+            git push
+          fi

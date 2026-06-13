@@ -70,6 +70,10 @@ uv run karels-crypto-solve word --reveal partial --reveal-fraction 0.5
 
 # Run the agentic puzzle solver on the most recent historical puzzle:
 uv run karels-crypto-solve puzzle
+
+# Compare OpenAI models on word solving (accuracy + estimated cost):
+uv run karels-crypto-benchmark --limit 20
+uv run karels-crypto-benchmark --models gpt-4o-mini gpt-4o o3 --limit 30
 ```
 
 LLM access uses the standard environment variables: `OPENAI_API_KEY`,
@@ -103,5 +107,16 @@ src/karels_crypto_solving/
   puzzle_solver.py  solve_puzzle (agentic loop, 2 tools)
   patterns.py       build known-letter patterns (none/partial/all)
   runner.py         CLI
+  pricing.py        OpenAI model prices (for benchmark cost estimates)
+  benchmark.py      compare models on word solving (accuracy + cost)
   optimization/     DSPy prompt optimization submodule (optional extra)
 ```
+
+## Benchmarking models
+
+`karels-crypto-benchmark` runs the word solver across several OpenAI models on
+the same sampled clues and reports zero-shot accuracy, token usage and estimated
+cost (from `pricing.py`). Results are written to `benchmark_results/`
+(`benchmark.json` + a sorted `benchmark.md` table). A model that isn't enabled on
+your gateway is reported with an error count instead of aborting the run. It can
+also be run via the **benchmark** GitHub Actions workflow (commits results back).
