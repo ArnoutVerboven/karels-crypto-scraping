@@ -31,8 +31,8 @@ the cryptic answer", "missed a specific wordplay device", "wrong length",
 "too literal / surface reading"). 
 
 Return ONLY JSON:
-{"categories": [{"name": str, "description": str, "count": int,
-                 "example_clues": [str, str]}]}
+{{"categories": [{{"name": str, "description": str, "count": int,
+                  "example_clues": [str, str]}}]}}
 The counts should sum to roughly the number of failures shown.
 
 Failures:
