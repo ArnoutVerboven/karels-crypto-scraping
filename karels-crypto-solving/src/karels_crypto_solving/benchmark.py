@@ -86,8 +86,11 @@ class ModelResult:
 
 
 def sample_clues(limit: int | None, reveal: str, reveal_fraction: float, seed: int):
-    """Return a fixed list of ``(cryptogram, length, pattern, solution)``."""
-    items = list(data.iter_solved_words(data.load_history()))
+    """Return a fixed list of ``(cryptogram, length, pattern, solution)``.
+
+    Draws from the scraped history plus the photo-ingested puzzles.
+    """
+    items = list(data.iter_solved_words(data.load_history() + data.load_ingested()))
     rng = random.Random(seed)
     rng.shuffle(items)
     if limit:
