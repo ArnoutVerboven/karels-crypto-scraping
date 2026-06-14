@@ -2,6 +2,7 @@ name: run-experiments-once
 
 # TEMPORARY one-off: research experiments for the word-solver report.
 # Phased; results committed at the end (even on failure). Removed after.
+# (re-run: COPRO dev-set fix)
 
 on:
   push:
