@@ -38,6 +38,7 @@ import json
 import logging
 import os
 import random
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -122,14 +123,20 @@ def build_examples(
     return examples
 
 
-def evaluate(program, examples) -> float:
-    """Return zero-shot accuracy of ``program`` over ``examples``."""
+def evaluate(program, examples, num_threads: int = 1) -> float:
+    """Return zero-shot accuracy of ``program`` over ``examples`` (optionally parallel)."""
     if not examples:
         return 0.0
-    hits = 0
-    for ex in examples:
+
+    def correct(ex) -> bool:
         pred = program(cryptogram=ex.cryptogram, pattern=ex.pattern)
-        hits += normalise(getattr(pred, "solution", "")) == normalise(ex.solution)
+        return normalise(getattr(pred, "solution", "")) == normalise(ex.solution)
+
+    if num_threads and num_threads > 1:
+        with ThreadPoolExecutor(max_workers=num_threads) as pool:
+            hits = sum(pool.map(correct, examples))
+    else:
+        hits = sum(correct(ex) for ex in examples)
     return hits / len(examples)
 
 
@@ -282,7 +289,7 @@ def run(args: argparse.Namespace) -> int:
         predictor = program.predictors()[0]
         predictor.signature = predictor.signature.with_instructions(args.seed_instruction)
 
-    baseline = evaluate(program, valset)
+    baseline = evaluate(program, valset, args.num_threads)
     print(f"Baseline zero-shot accuracy (val): {baseline:.1%}")
 
     # Optional separate LM for proposing/reflecting on instructions.
@@ -302,7 +309,7 @@ def run(args: argparse.Namespace) -> int:
         args, program, trainset, valset, proposer_lm, results_dir / "dspy_logs"
     )
 
-    optimized = evaluate(compiled, valset)
+    optimized = evaluate(compiled, valset, args.num_threads)
     print(f"Optimized zero-shot accuracy (val): {optimized:.1%}")
 
     instruction = extract_instruction(compiled)
