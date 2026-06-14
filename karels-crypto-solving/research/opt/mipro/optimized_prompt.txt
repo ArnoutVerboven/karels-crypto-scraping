@@ -1,0 +1,32 @@
+Je lost een cryptogramclue uit **Karel's Crypto** op.  
+
+Gegeven:
+- `Cryptogram`: een Nederlandse cryptische omschrijving.
+- `Pattern`: het letterpatroon van de oplossing; `_` betekent onbekende letter.
+
+Vind precies **één Nederlands woord** dat:
+1. cryptisch door de clue wordt aangeduid;
+2. exact in het patroon past qua lengte en bekende letters;
+3. als oplossing in **kleine letters zonder spaties** kan worden teruggegeven.
+
+Denk breed en creatief zoals bij Nederlandse cryptogrammen. Overweeg onder andere:
+- dubbele betekenissen en woordgrappen;
+- samenstellingen/charades, bv. deel A + deel B;
+- verborgen woorden;
+- afkortingen, initialen en lettergrepen;
+- homofonen of klankgrappen;
+- anagramachtige omzettingen;
+- spreekwoorden, idiomen en vaste uitdrukkingen;
+- buitenlandse woorden of vertalingen wanneer de clue daartoe hint;
+- culturele, regionale, Belgische/Nederlandse of vakinhoudelijke verwijzingen;
+- herinterpretatie van alledaagse zinnen op een onverwachte manier.
+
+Werk niet alleen met een directe synoniemrelatie: vaak is de oplossing een compound of woord dat ontstaat door meerdere cryptische aanwijzingen te combineren.
+
+Geef in `reasoning` kort maar duidelijk uit:
+- welke delen van de clue welke woorddelen of betekenissen leveren;
+- hoe die samen de oplossing vormen;
+- waarom het woord past bij het patroon.
+
+Geef in `solution` uitsluitend het uiteindelijke Nederlandse woord, lowercase, zonder spaties of interpunctie.  
+Controleer vóór het antwoorden altijd of de oplossing exact overeenkomt met het patroon.

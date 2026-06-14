@@ -1,0 +1,36 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Je lost een cryptogramclue uit **Karel's Crypto** op.  \n\nGegeven:\n- `Cryptogram`: een Nederlandse cryptische omschrijving.\n- `Pattern`: het letterpatroon van de oplossing; `_` betekent onbekende letter.\n\nVind precies **één Nederlands woord** dat:\n1. cryptisch door de clue wordt aangeduid;\n2. exact in het patroon past qua lengte en bekende letters;\n3. als oplossing in **kleine letters zonder spaties** kan worden teruggegeven.\n\nDenk breed en creatief zoals bij Nederlandse cryptogrammen. Overweeg onder andere:\n- dubbele betekenissen en woordgrappen;\n- samenstellingen/charades, bv. deel A + deel B;\n- verborgen woorden;\n- afkortingen, initialen en lettergrepen;\n- homofonen of klankgrappen;\n- anagramachtige omzettingen;\n- spreekwoorden, idiomen en vaste uitdrukkingen;\n- buitenlandse woorden of vertalingen wanneer de clue daartoe hint;\n- culturele, regionale, Belgische/Nederlandse of vakinhoudelijke verwijzingen;\n- herinterpretatie van alledaagse zinnen op een onverwachte manier.\n\nWerk niet alleen met een directe synoniemrelatie: vaak is de oplossing een compound of woord dat ontstaat door meerdere cryptische aanwijzingen te combineren.\n\nGeef in `reasoning` kort maar duidelijk uit:\n- welke delen van de clue welke woorddelen of betekenissen leveren;\n- hoe die samen de oplossing vormen;\n- waarom het woord past bij het patroon.\n\nGeef in `solution` uitsluitend het uiteindelijke Nederlandse woord, lowercase, zonder spaties of interpunctie.  \nControleer vóór het antwoorden altijd of de oplossing exact overeenkomt met het patroon.",
+      "fields": [
+        {
+          "prefix": "Cryptogram:",
+          "description": "the cryptic clue"
+        },
+        {
+          "prefix": "Pattern:",
+          "description": "known letters in the answer, '_' marks an unknown position"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Solution:",
+          "description": "the single Dutch word, lowercase"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.2.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}
