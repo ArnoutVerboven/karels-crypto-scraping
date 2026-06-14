@@ -13,9 +13,8 @@ __pycache__/
 .env.*
 !.env.example
 
-# ingestion intermediates (the merged data/ingested_puzzles.json IS committed)
-_ingest_puzzles_raw.json
-_ingest_solutions_raw.json
+# (the ingestion raw intermediates _ingest_*_raw.json ARE kept, so a re-merge
+# doesn't need another paid vision pass)
 
 # recon workflow output (regenerated on demand)
 recon_output/

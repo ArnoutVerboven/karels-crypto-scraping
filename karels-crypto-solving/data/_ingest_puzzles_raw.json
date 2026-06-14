@@ -1,0 +1,5702 @@
+[
+  {
+    "number": 83,
+    "date": "2018-05-19",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "bloemen, bomen, sleutels",
+        "numbers": [
+          10
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "nabijgelegen wijk",
+        "numbers": [
+          19,
+          14
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "Liever geen douche. Oké als ik een ...?",
+        "numbers": [
+          19,
+          3
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "toeslag voor verpakking",
+        "numbers": [
+          18,
+          16,
+          5
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "leerzame broche",
+        "numbers": [
+          10,
+          11,
+          3
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "varkenstanga",
+        "numbers": [
+          6,
+          15,
+          14,
+          20
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "herinnering",
+        "numbers": [
+          2,
+          6,
+          17,
+          20
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "tijdelijk uitstel voor de koning om te regeren",
+        "numbers": [
+          10,
+          11,
+          2,
+          5,
+          2
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "mannelijk deel van de populatie",
+        "numbers": [
+          3,
+          2,
+          11,
+          12,
+          3
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "Godzilla voor de rechter",
+        "numbers": [
+          15,
+          9,
+          1,
+          4,
+          8,
+          1
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "verre huwelijksreis tijdens dewelke de paring plaatsvindt",
+        "numbers": [
+          19,
+          14,
+          7,
+          12,
+          8
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "paardenuniversiteit",
+        "numbers": [
+          7,
+          4,
+          4,
+          15,
+          4
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "voorman tijdens de jacht (Eng.)",
+        "numbers": [
+          16,
+          17,
+          13,
+          9
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "Zei de verliefde olifant: ‘Ik zou het fijn vinden als je mijn ...’",
+        "numbers": [
+          7,
+          12,
+          3,
+          13
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "metalen haak",
+        "numbers": [
+          6,
+          20,
+          18
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "kroegballet",
+        "numbers": [
+          4,
+          9,
+          11
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "snuffelaar",
+        "numbers": [
+          13,
+          1
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "stemmer (Eng.)",
+        "numbers": [
+          2,
+          13
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "Duits van-horen-zeggen-verhaal",
+        "numbers": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "number": 85,
+    "date": "2018-06-07",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "venijnig cadeau",
+        "numbers": [
+          2,
+          8,
+          14,
+          12
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "vooruit is de weg!",
+        "numbers": [
+          18,
+          13,
+          13,
+          6,
+          6
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "binnendeur (Eng.)",
+        "numbers": [
+          8,
+          19,
+          1,
+          20,
+          20,
+          7
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "na 13.00 u.",
+        "numbers": [
+          20,
+          4,
+          6,
+          7,
+          1,
+          18,
+          2
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "rieken",
+        "numbers": [
+          3,
+          19,
+          5,
+          14,
+          14,
+          6,
+          19
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "gecastreerde rammelaar",
+        "numbers": [
+          16,
+          6,
+          13,
+          15,
+          18,
+          10,
+          6,
+          13
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "nadelige gevolgen van tabaksgebruik",
+        "numbers": [
+          7,
+          20,
+          20,
+          17,
+          3,
+          9,
+          15,
+          18,
+          1,
+          6
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "kommerlol",
+        "numbers": [
+          13,
+          6,
+          6,
+          1,
+          4,
+          6,
+          7,
+          10,
+          18,
+          18,
+          17
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "smerige instelling",
+        "numbers": [
+          10,
+          20,
+          1,
+          1,
+          6,
+          7,
+          16,
+          18,
+          19,
+          17
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "bombrommer",
+        "numbers": [
+          17,
+          19,
+          18,
+          13,
+          3,
+          9,
+          20,
+          20,
+          12,
+          6,
+          7
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "walking dinner",
+        "numbers": [
+          11,
+          18,
+          19,
+          1,
+          6,
+          13,
+          1,
+          8,
+          19,
+          6,
+          7
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "minimarket",
+        "numbers": [
+          17,
+          13,
+          6,
+          8,
+          19,
+          11,
+          8,
+          19,
+          17,
+          6,
+          13
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "doet men op de academie",
+        "numbers": [
+          17,
+          5,
+          19,
+          3,
+          12,
+          13,
+          6,
+          7,
+          6,
+          19
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "rozig worden",
+        "numbers": [
+          4,
+          6,
+          7,
+          17,
+          13,
+          6,
+          5,
+          7,
+          6,
+          19
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "een gerecht (arch.)",
+        "numbers": [
+          4,
+          8,
+          6,
+          7,
+          3,
+          9,
+          15,
+          18,
+          18,
+          7
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "... maar is nu slecht",
+        "numbers": [
+          11,
+          18,
+          3,
+          2,
+          20,
+          6,
+          1
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "lunchtijd met eten uit de pot",
+        "numbers": [
+          3,
+          9,
+          15,
+          18,
+          14,
+          12
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "Cristobals karteldarm",
+        "numbers": [
+          9,
+          20,
+          13,
+          20,
+          19
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "metalen koppakking",
+        "numbers": [
+          15,
+          6,
+          13,
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "number": 87,
+    "date": "2018-06-16",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "Duitse vrachtschepen",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "radioactieve regering (r.-k.)",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "explosieve vracht",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "haarvoedend middel",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "vrouwelijke deurwachter (Fr.)",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "amfibie in winterslaap",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "speelmuntjes",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "een overjas uittrekken",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "ploertpeil",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "stressbestendigheid",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "jachtopziener",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "legerwoordvoerder",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "zo voelt een hond zich als je hem uit wandelen neemt",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "de kroonprins mocht van zijn pa al eens ...",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "spruitje",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "homo die voor zijn geaardheid is uitgekomen (Eng.)",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "Bretonse heer",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "benig",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "eet gegarandeerd niet",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 89,
+    "date": "2018-06-30",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "geen weer",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "hoogoploper",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "ménage à trois chevaux",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "matras",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "slaplant",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "dichthouding",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "ontvlekken op z'n Frans",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "(een probleem) in de lade stoppen",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "EHBO",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "het hemelvuur te gast",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "is de braillelezer",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "verliezen, verdammen, verlokeren, verlommelen, vermortselen",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "gesloten maar niet op slot (m.b.t. deuren)",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "vleesberg",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "fiere pier",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "gereedheid",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "zakjesdoekje",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "kerkelijke boot",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "seriesluiting",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 91,
+    "date": "2018-07-14",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "Hebreeuws element",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "darrenfuik",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "molm in de scheepsromp",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "schijnvrucht",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "roofdier dat op spaarvarkens jaagt",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "groeistof",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "Republiek Trinidad en Tobago",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "onbetrouwbare hond",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "publiek gemaakt",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "castreur",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "onweerstaanbare neiging om kousen te sorteren",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "verwachting van de biotuinder",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "vervlakken",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "gemakkelijke route",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "mannelijk geslachtsorgaan (zeer vulg.)",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "hutsepot (Eng.)",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "duur ambt",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "waar de Franse Abraham de mosterd haalt",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "lijkenpikker",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 93,
+    "date": "2018-08-11",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "zwijnensnoeperij",
+        "numbers": [
+          6
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "dobber(de)weg",
+        "numbers": [
+          13,
+          17
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "rekruteringscentra",
+        "numbers": [
+          15,
+          8
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "onwillekeurige spiersamentrekking bij het urineren",
+        "numbers": [
+          16,
+          10,
+          18
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "ervaren bouwvakker",
+        "numbers": [
+          11,
+          20,
+          21
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "herschikken in andere manden",
+        "numbers": [
+          8,
+          6,
+          8,
+          2
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "trampolinemat",
+        "numbers": [
+          16,
+          14,
+          12,
+          17
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "vijvers en poelen binnen een jachtgebied",
+        "numbers": [
+          15,
+          14,
+          16,
+          1,
+          20
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "verfijnde 'canard à l'orange' (Ned.)",
+        "numbers": [
+          19,
+          13,
+          20,
+          20,
+          13
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "rechtszaak over (onwettig) slopen",
+        "numbers": [
+          17,
+          11,
+          21,
+          16,
+          21,
+          18
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "zonder panorama",
+        "numbers": [
+          9,
+          5,
+          18,
+          5,
+          10,
+          7
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "tak van de herpetologie",
+        "numbers": [
+          7,
+          10,
+          1,
+          10,
+          21
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "homofiele kluizenaar",
+        "numbers": [
+          4,
+          21,
+          19,
+          5
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "muzikale pinda",
+        "numbers": [
+          12,
+          2,
+          2,
+          5
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "heeft een dirigent",
+        "numbers": [
+          19,
+          3,
+          6
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "er zonderlinge kuren op nahouden",
+        "numbers": [
+          12,
+          14,
+          2
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "niet echt",
+        "numbers": [
+          4,
+          9
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "grove den op de golfbaan",
+        "numbers": [
+          12,
+          2
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "knollenkleur",
+        "numbers": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "number": 95,
+    "date": "2018-08-25",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "slaperige loopvogel",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "verscheen",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "(op)ruier",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "moeilijk te hanteren colli",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "sixpack",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "Duits knipsel",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "zaak voor de douane",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "beestig steekspel",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "adagio in C groot voor syrinx en schalmei",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "hoofddraad",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "vliegwijze",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "dure vogel (Regulus regulus)",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "kookstijl met veel akkervruchten",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "buitenpuiten",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "broedvrouw",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "bijzaak",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "rookmachine",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "Ali Baba's zaad",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "kopman",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 97,
+    "date": "2018-09-08",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "baardje (Lat.)",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "windzak",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "horizonono",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "op muziek zetten",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "België voor de invoering van de euro",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "Zich snel te voet voortbewegen ...",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "manager van een relatiebureau",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "sterappel",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "tijdverdrijf bij de oude Egyptenaren",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "Iris, Roos, Margriet",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "dartele vracht",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "achterklap",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "opbrengst",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "hartje",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "ankerplaats bij een waterkasteel",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "'Bodytalk'",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "broeder (Linaria flavirostris)",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "potig",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "goddelijk geurtje",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 99,
+    "date": "2018-09-22",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "hoogstand",
+        "numbers": [
+          10
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "tongbeen",
+        "numbers": [
+          6,
+          5
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "kostuum kwijt",
+        "numbers": [
+          17,
+          14
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "condensatiestreep (Eng.)",
+        "numbers": [
+          3,
+          11,
+          8
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "waterdichte muts",
+        "numbers": [
+          1,
+          3,
+          17
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "28 en 286.412 zijn deelbaar ...",
+        "numbers": [
+          1,
+          5,
+          12,
+          8
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "met de elegantie van een kasserol",
+        "numbers": [
+          13,
+          18,
+          2,
+          5
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "kollenpot",
+        "numbers": [
+          9,
+          3,
+          3,
+          15,
+          16
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "is het boek",
+        "numbers": [
+          9,
+          1,
+          12,
+          1,
+          18
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "ompraten",
+        "numbers": [
+          13,
+          8,
+          12,
+          16,
+          16,
+          8
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "Sint-Valentijn, de Drie Koningen en de Kerstman",
+        "numbers": [
+          19,
+          2,
+          15,
+          10,
+          15
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "torpedoschip",
+        "numbers": [
+          17,
+          4,
+          16,
+          4,
+          15
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "een overdaad aan opinies (scherts.)",
+        "numbers": [
+          7,
+          6,
+          15,
+          18
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "moeilijk te knotten (tuinb.)",
+        "numbers": [
+          18,
+          14,
+          9,
+          10
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "schone planten",
+        "numbers": [
+          6,
+          19,
+          10
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "percent van de staatsinkomsten aan de koning betaald",
+        "numbers": [
+          5,
+          11,
+          11
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "reglementair slijpen",
+        "numbers": [
+          19,
+          8
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "ter ziele (Lat.)",
+        "numbers": [
+          7,
+          13
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "digitale vliegenvanger",
+        "numbers": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "number": 101,
+    "date": "2018-10-06",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "opwindende trap",
+        "numbers": [
+          6
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "fiasco bij het bordspel",
+        "numbers": [
+          12,
+          12
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "mislukking (Eng.)",
+        "numbers": [
+          13,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "rookartikel dat schertsenderwijs bij gebruik ontploft",
+        "numbers": [
+          20,
+          15,
+          19
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "verpakken",
+        "numbers": [
+          16,
+          9,
+          4
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "zwoele dansplaat",
+        "numbers": [
+          19,
+          12,
+          21,
+          19
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "’s maandags",
+        "numbers": [
+          18,
+          18,
+          5,
+          11
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "Aloïs van de verfwinkel",
+        "numbers": [
+          7,
+          14,
+          10,
+          3,
+          2
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "de furie van de korenwolf",
+        "numbers": [
+          21,
+          4,
+          2,
+          3,
+          5
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "namaak",
+        "numbers": [
+          2,
+          22,
+          9,
+          10,
+          12,
+          22
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "weinig omzet in de fruitmarkt",
+        "numbers": [
+          1,
+          1,
+          13,
+          10,
+          3
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "om 69.473 te bekomen moet je 69.472 ...",
+        "numbers": [
+          8,
+          20,
+          17,
+          11,
+          20
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "emotie bij vriendschap",
+        "numbers": [
+          4,
+          22,
+          16,
+          14
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "kelderwoning",
+        "numbers": [
+          17,
+          18,
+          1,
+          15
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "jagersbal",
+        "numbers": [
+          7,
+          13,
+          13
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "korts",
+        "numbers": [
+          17,
+          14,
+          11
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "zaken waarover wordt gemarchandeerd",
+        "numbers": [
+          5,
+          6
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "zijn worstjes en walsjes",
+        "numbers": [
+          3,
+          20
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "ziltwaterhond",
+        "numbers": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "number": 103,
+    "date": "2018-10-29",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "dommeldol",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "subatomaire wrongel",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "Ficus auricularia",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "E40, A12, N21",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "animeren",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "opdracht voor het schapenjong",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "verduizend²",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "Is de Eiffeltoren en de bladspinazie",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "buikspreken, oogcontact, ruggespraak",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "cecemelverbeelding",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "koppels in een naturistenkamp",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "behoort tot de gespierde taal",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "vier violisten op tournee",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "meisjesspeelgoed ontgroeien",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "afgelopen",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "bedrogen in het ziekenhuis",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "een voor kinderen handzaam spijskaartje (Fr.)",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "Reagan en Sinatra in Lotharingen",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "pantoffeldier",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 105,
+    "date": "2018-11-03",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "zuivelletters",
+        "numbers": [
+          7
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "Engelse spekschilder",
+        "numbers": [
+          19,
+          6
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "trendy smaakmaker van bier",
+        "numbers": [
+          17,
+          6
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "het ochtendverkeer vervoegen",
+        "numbers": [
+          3,
+          10,
+          3
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "airbag",
+        "numbers": [
+          15,
+          12,
+          2
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "tanden wisselen",
+        "numbers": [
+          5,
+          7,
+          2,
+          13
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "verkiezingsscore",
+        "numbers": [
+          18,
+          19,
+          8,
+          17
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "pettenfabrikant",
+        "numbers": [
+          14,
+          20,
+          18,
+          1,
+          20
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "gelauwerde damesbroek",
+        "numbers": [
+          7,
+          1,
+          11,
+          11,
+          11
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "wielerminnend",
+        "numbers": [
+          7,
+          8,
+          11,
+          5,
+          4,
+          11
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "onderdeel van het gitaar- en vioolonderricht",
+        "numbers": [
+          3,
+          13,
+          9,
+          20,
+          20
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "oorlogsdrama",
+        "numbers": [
+          3,
+          8,
+          16,
+          13,
+          4
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "het streng africhten van vorsen",
+        "numbers": [
+          17,
+          16,
+          17,
+          4
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "uitermate leep",
+        "numbers": [
+          9,
+          21,
+          4,
+          7
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "Noord-Scandinavische scherts",
+        "numbers": [
+          10,
+          2,
+          13
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "stijgwind",
+        "numbers": [
+          10,
+          12,
+          9
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "uitleg (Eng.)",
+        "numbers": [
+          21,
+          14
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "klaar om te schieten",
+        "numbers": [
+          5,
+          15
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "ribdonor",
+        "numbers": [
+          18
+        ]
+      }
+    ]
+  },
+  {
+    "number": 107,
+    "date": "2018-11-17",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "vangnet",
+        "numbers": [
+          18
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "muzikale garnaal",
+        "numbers": [
+          19,
+          9
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "grote, luxueuze iglo",
+        "numbers": [
+          6,
+          23
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "keelnoot",
+        "numbers": [
+          8,
+          14,
+          15
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "gemeen afbreken",
+        "numbers": [
+          20,
+          16,
+          11
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "'De vrolijke avonturen van Yasmine de ursuline'",
+        "numbers": [
+          22,
+          5,
+          10,
+          12
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "moderne versie van het rouwtelegram",
+        "numbers": [
+          8,
+          2,
+          16,
+          22
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "Oostends accu",
+        "numbers": [
+          13,
+          4,
+          9,
+          15,
+          6
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "sterkwater",
+        "numbers": [
+          24,
+          10,
+          16,
+          24,
+          8
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "klantendelict",
+        "numbers": [
+          17,
+          24,
+          14,
+          5,
+          12,
+          2
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "inburgering",
+        "numbers": [
+          22,
+          21,
+          8,
+          14,
+          19
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "halssnoer met opzichtig grote kralen",
+        "numbers": [
+          24,
+          4,
+          12,
+          20,
+          20
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "20 maart",
+        "numbers": [
+          18,
+          11,
+          4,
+          17
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "Blanche-Charbon",
+        "numbers": [
+          23,
+          20,
+          7,
+          1
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "bescheiden weerstandsbeweging",
+        "numbers": [
+          21,
+          3,
+          1
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "strijdlust",
+        "numbers": [
+          2,
+          3,
+          7
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "alleenstaande moeder en deze opgave",
+        "numbers": [
+          15,
+          19
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "jobs voor wegbereiders",
+        "numbers": [
+          9,
+          2
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "vrijgevig met halve guldens",
+        "numbers": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "number": 109,
+    "date": "2018-12-08",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "groeiproduct",
+        "numbers": [
+          18
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "computersnack",
+        "numbers": [
+          9,
+          14
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "panfluitgier",
+        "numbers": [
+          7,
+          17
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "slabbetje",
+        "numbers": [
+          15,
+          14,
+          14
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "koor",
+        "numbers": [
+          15,
+          5,
+          13
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "eergevoel",
+        "numbers": [
+          8,
+          11,
+          2,
+          20
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "frisfrak",
+        "numbers": [
+          21,
+          8,
+          10,
+          11
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "verkeerd kloppen",
+        "numbers": [
+          9,
+          19,
+          19,
+          3,
+          10
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "jobbeurs",
+        "numbers": [
+          1,
+          19,
+          20,
+          5,
+          21
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "kamerprijs",
+        "numbers": [
+          4,
+          17,
+          17,
+          14,
+          17,
+          20
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "kirkleed",
+        "numbers": [
+          7,
+          7,
+          11,
+          16,
+          12
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "pipi voor het slapengaan",
+        "numbers": [
+          4,
+          8,
+          6,
+          8,
+          20
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "de woning niet verkopen",
+        "numbers": [
+          12,
+          15,
+          8,
+          12
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "futloos schapenjong",
+        "numbers": [
+          3,
+          13,
+          3,
+          2
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "rad van gebit",
+        "numbers": [
+          13,
+          18,
+          19
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "een aardje naar zijn vaartje, een ... naar haar moertje",
+        "numbers": [
+          9,
+          11,
+          16
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "een Engelse overeenkomst sluiten",
+        "numbers": [
+          6,
+          3
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "Cleopatra's speld",
+        "numbers": [
+          10,
+          6
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "groen",
+        "numbers": [
+          1,
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "number": 111,
+    "date": "2018-12-22",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "lullende fungus",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "frysk (bouwk.)",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "kunstvezel",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "casino op de camping",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "kippenspook (Vl.)",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "marien sabeldier",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "dialect",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "Stentor",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "vliegende draak",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "‘bijstaan’",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "defensie-uitgave",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "hengelen vanop een ladder",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "een vuist maken",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "na een flinke mep gaf de radio ...",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "luxueuze badkamer",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "geschikt als een gecensureerde film",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "frituurpan",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "puntschoen",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "feestnummer",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 113,
+    "date": "2019-01-05",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "duizend en negen (Lat.)",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "voor Mohammed (jongerent.)",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "oost west, steenvlas",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "muziekinstrument ter waarde van € 0,01",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "geniaal en geslepen",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "Serieus op mijn gezicht gekregen, kreunde Anion...",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "Karel Verhoeven",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "'De Vier Jaargetijden'",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "zielige poëet",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "fan van buikdansen",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "als parttime",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "erotische handelingen die de paring aankondigen (seks.)",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "bollenfabrikant",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "Kwattaschurft",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "luxueuze strandstoel",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "kleefkous",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "niet uniek",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "keuze aan mestvorken",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "stopwoord",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 115,
+    "date": "2019-01-19",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "vreemd vaatwerk",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "maritieme strik",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "poesjes lijmen",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "uit(p)luizen",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "Chinese bootsman",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "kirrend rund",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "voordrachtskunstenaar",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "resultaten van een dermatologisch onderzoek",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "de rijst was voorgekookt en de kip was ...",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "afbeelding van een bol",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "verpleger bij de transfusiedienst",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "kattenluikje",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "anti-Warschau",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "slotrede",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "op loop je maar ...",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "kuil met wild dier waarin veroordeelden werden gegooid",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "nationaal",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "haarstukje",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "bomengeslacht",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 117,
+    "date": "2019-02-02",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "brandkast",
+        "numbers": [
+          7
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "schoenmakersmiddel",
+        "numbers": [
+          11,
+          21
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "hoofdcylinder",
+        "numbers": [
+          16,
+          11
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "het dorpje Ten Brielen hoort ...",
+        "numbers": [
+          19,
+          14,
+          13
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "kattengesnor",
+        "numbers": [
+          16,
+          18,
+          19
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "koorlid",
+        "numbers": [
+          13,
+          15,
+          2,
+          10
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "mannekes! (Fr.)",
+        "numbers": [
+          13,
+          17,
+          18,
+          4
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "Is mijn gat niet schoon misschien, snauwde Frieda ...",
+        "numbers": [
+          3,
+          20,
+          5,
+          10,
+          9
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "afbeelding van een savooi",
+        "numbers": [
+          14,
+          11,
+          1,
+          14,
+          5
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "vogel met een kleiner legsel dan andere (ornith.)",
+        "numbers": [
+          13,
+          5,
+          2,
+          9,
+          7,
+          9
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "legeraanvoerder",
+        "numbers": [
+          12,
+          8,
+          21,
+          20,
+          21
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "zelfbeminnelijk",
+        "numbers": [
+          18,
+          5,
+          18,
+          9,
+          5
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "kermisattractie voor kinderen uit de bouw",
+        "numbers": [
+          20,
+          1,
+          13,
+          11
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "antiekeling",
+        "numbers": [
+          2,
+          1,
+          4,
+          3
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "nostalgie",
+        "numbers": [
+          3,
+          15,
+          6,
+          8
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "elitair",
+        "numbers": [
+          14,
+          4,
+          13
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "meer man",
+        "numbers": [
+          12,
+          1
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "proostende platvis",
+        "numbers": [
+          6,
+          7
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "reeds voorbij",
+        "numbers": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "number": 119,
+    "date": "2019-03-15",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "ramboom",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "Litouwse paringsdans",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "gezeur",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "fishstick",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "lullenland (in erectie)",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "verfcatalogus",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "Elvis Paraplu",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "pretext",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "flat van het elftal",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "aansteker",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "menu van het Hof van Cleve",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "zinsbedrieger",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "verliefde koppeltjes",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "vlammende scheet",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "boerderette",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "cijfers en letters",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "drukletters",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "El en Juliette",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "lichte woede",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 121,
+    "date": "2019-03-02",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "dode worm",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "bekendheden in Wallonië",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "onderdeel van een geweertje",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "gelukkiger",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "kooplust op de fijnevleeswarenmarkt",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "1 2 3 4 5 6 7 9 10, telde Emma ...",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "pijnscheut in het onderlichaam",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "iemand die zijn voorwaarden stelt (Eng.)",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "slotsom",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "vermakelijk slaginstrument",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "kwaliteitscontrole van ladders",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "kapper, visagiste, optieker",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "vrouw die het tot vervelens toe over haar lichaamsbouw heeft",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "wasgoed",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "Cannabis sativa",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "aanknopingspunten",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "kleurloze figuur",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "Jan de Lichtes puinhoop",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "modewoord",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 123,
+    "date": "2019-03-16",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "volgroeid door de vorst",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "snapshot",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "schijnhuwelijk",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "politische horummel",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "bronkanaal",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "pilscafé",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "nachtmerrie",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "uiterst sympathiek",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "schaarbeweging",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "uittreden",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "geneigd om iemand te benoemen",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "immigrant",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "verward als een zelfmoordterrorist",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "Wewbomb wekkewe biwwa, beaamde Koen ...",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "..., is nu man",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "niet potdicht (archeol.)",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "knoest van een vuist",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "Koest, opperwezen!",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "oogschaduwkanselier",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 125,
+    "date": "2019-03-30",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "vliespapier",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "vredesnaam",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "kliederen met strepen en punten",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "lege zaak",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "zij draagt kanten ondergoed maar ik heb het meer ...",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "afgraven",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "'serpent'",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "hesoveralen",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "worden uitgezet voor een jachtexamen",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "amputatiecomplicatie",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "wat er zoal in de buurt wordt gefluisterd",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "met gedistingeerd logo",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "Midden-Amerikaanse kloosterling",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "binnenkijken",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "woningadvies",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "... als deze is het fijn puzzelen",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "geilaard",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "eerste vrouw in rang",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "klaar",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 82,
+    "date": "2018-05-12",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "beukbeest",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "wasverbrander",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "golfstokvogel (Carduelis carduelis)",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "verlies",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "landman",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "breder gemaakt",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "dubbele salto",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "spekbank",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "beestig quatre-mains",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "mirabellenbekje",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "kernactiviteit",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "weinig beweging op de vastgoedmarkt",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "een vrouw met kraaienpootjes heeft daarom geen ...",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "op pad in open lucht",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "iemand met savoir-vivre",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "slapende Nederlander",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "monogamen doen het ...",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "bergetappe",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "branderig",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 84,
+    "date": "2018-05-26",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "paal in dennenhout",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "voormalige partner uit een living-apart-togetherrelatie",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "Is er leven ....?",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "een korte tijd onder nul",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "lijkrede",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "inentingscampagne",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "fel betwiste wielerkoers",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "bij nader toezien bleek dat de bloemen van ...",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "'leuk' op de kleuterfacebook",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "studiekost",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "vuiligheid",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "perenstruiken (Russ.)",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "luchtreis",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "honing",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "onderste ledematen (veroud.)",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "vrouwelijke bes",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "glazenmaker",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "de bus nemen (Vl.)",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "bijwoord van onverzadigbaarheid",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 86,
+    "date": "2018-06-09",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "vogelvrucht",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "stemmig werk",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "latere uitgave",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "wassen",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "zonder eten (Vl.)",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "belangrijkste mikpunt",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "luchtige outfit van revuemeisjes",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "even lief",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "advocaat van 2,09 m",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "kokkerellend koningskind",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "vlaaigrafiek",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "galmkamer",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "vermaak in open lucht",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "blokfluit",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "korzelig als een kinderviool",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "onenigheid omtrent aardappelen",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "mobilhome",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "sleutelhaarbos",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "springerig",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 88,
+    "date": "2018-06-23",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "toestemming uit Turijn",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "circus met enkel vrouwelijke acts (zelfs de dieren!)",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "piekerend inspreken",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "opslaan in een bestand",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "regeringsleidster",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "inwoner van het woiwodschap Pomorze",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "het ambt, de functie van politieman",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "fastforward op het toilet",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "onderwijsraad",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "homofilie in het klooster",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "reisgezel",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "koppelen",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "apotheker",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "uitrusten met deurknoppen",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "kuiken",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "geneigd tot voorbijsteken",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "vrolijk geil",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "belachelijk bier",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "gespierde letters",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 90,
+    "date": "2018-07-07",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "Wie? De Wereldgezondheidsorganisatie.",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "Margaretha van de zee",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "koopmannen",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "niet meer geldige volksstam",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "wat afgelopen is (veroud.)",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "extra vriendje",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "maagperforatie",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "middeleeuwse liefkozing",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "winkelhaak in een smoking",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "bevalling om 4.37 u.",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "lompe chauffeur",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "vleesmaal",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "vulgair dansen",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "is een boom in de herfst",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "hoogleraar met een parttimebaan",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "wegervaring",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "schildersmodel",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "peperland",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "onbegrijpelijke letter (Gr.)",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 92,
+    "date": "2018-08-04",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "prierboom",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "golfbeweging",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "push-up",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "slakkenfeest",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "het geheel van vensters in een gebouw",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "watervaller",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "verdommen",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "toewijzen",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "het geluk van de sekswerker",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "‘sen’ en ‘her’",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "lantaarnaansteker op een schip",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "toiletartikel van de godin Flora (myth.)",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "klapklap",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "minimaliseren",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "doen ontvlammen",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "gevangene",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "hoofd van een kathedraal",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "oude penismaal",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "bevalling als van een speer",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 94,
+    "date": "2018-08-18",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "loopgat",
+        "numbers": [
+          15
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "paardenwind",
+        "numbers": [
+          3,
+          7
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "zijns",
+        "numbers": [
+          18,
+          2
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "is de herbergier",
+        "numbers": [
+          18,
+          5,
+          4
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "kijkgat",
+        "numbers": [
+          4,
+          16,
+          17
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "een boer met mestoverschotten heeft ... (Vl.)",
+        "numbers": [
+          8,
+          15,
+          2,
+          1
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "schoonheidszaak (Eng.)",
+        "numbers": [
+          3,
+          13,
+          10,
+          20
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "elektriciteitsdraden",
+        "numbers": [
+          8,
+          15,
+          15,
+          17,
+          9
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "benedenbuur",
+        "numbers": [
+          15,
+          22,
+          16,
+          22,
+          22
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "scabreus geschrijf",
+        "numbers": [
+          13,
+          6,
+          14,
+          6,
+          19,
+          10
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "helende woorden",
+        "numbers": [
+          11,
+          8,
+          3,
+          1,
+          5
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "met de hand geschreven rekening",
+        "numbers": [
+          21,
+          14,
+          19,
+          20,
+          22
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "land van stationcars",
+        "numbers": [
+          20,
+          21,
+          1,
+          7
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "vadsig vernissen",
+        "numbers": [
+          13,
+          6,
+          11,
+          11
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "waterplant (Vl.)",
+        "numbers": [
+          12,
+          6,
+          21
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "3:17:44 op de marathon",
+        "numbers": [
+          17,
+          10,
+          9
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "briefopener",
+        "numbers": [
+          14,
+          19
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "snelwerkende drug",
+        "numbers": [
+          12,
+          5
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "kleurrijk vel",
+        "numbers": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "number": 96,
+    "date": "2018-09-01",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "schilfertjesbloem",
+        "numbers": [
+          4
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "biebol",
+        "numbers": [
+          11,
+          9
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "lesbisch stel",
+        "numbers": [
+          2,
+          21
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "vlees van 't Franse kustje",
+        "numbers": [
+          1,
+          8,
+          8
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "feestdis",
+        "numbers": [
+          17,
+          6,
+          13
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "‘Moeten Doel en Tihange dicht?’",
+        "numbers": [
+          20,
+          4,
+          4,
+          12
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "vrouwen roddelen graag ...",
+        "numbers": [
+          17,
+          7,
+          10,
+          7
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "Vlaamse busmaatschappij",
+        "numbers": [
+          20,
+          18,
+          16,
+          7,
+          11
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "nachtelijke toerist",
+        "numbers": [
+          9,
+          9,
+          15,
+          2,
+          12
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "schim",
+        "numbers": [
+          18,
+          16,
+          11,
+          12,
+          9,
+          13
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "literaire frais",
+        "numbers": [
+          15,
+          15,
+          15,
+          8,
+          20
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "is het bomvest",
+        "numbers": [
+          21,
+          3,
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "hagel",
+        "numbers": [
+          18,
+          16,
+          13,
+          19
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "inspreken",
+        "numbers": [
+          3,
+          5,
+          10,
+          10
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "uitputtende race",
+        "numbers": [
+          12,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "‘hoofd en schouder, knie en teen, knie en teen’",
+        "numbers": [
+          14,
+          6,
+          19
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "evening",
+        "numbers": [
+          9,
+          15
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "hij vermoedt een weiland (veroud.)",
+        "numbers": [
+          10,
+          8
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "iets tussen nooit en nimmer",
+        "numbers": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "number": 98,
+    "date": "2018-09-15",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "schrijversvrouw",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "het aanzien van een insect",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "rijmpje (Hol.)",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "granama",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "huwelijkscadeau",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "grondarbeid",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "(melk)vetplant",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "platmaken",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "gebeurt bij de mise-en-place van oxtailsoep",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "Vakverbond der Belgische Spruit- en Savooientelers",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "dieet",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "radio, cd-speler, smartphone",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "lommerland",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "bonte periode uit het mesozoïcum (geol.)",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "doeltrap",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "wijndepot",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "de Don Juan van de vestingbouw",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "de glorie van de eikel",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "gangbaar brouwafval",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 100,
+    "date": "2018-09-29",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "mondstuk voor informatica",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "gekke knuppel",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "minderjarige geniesoldaat",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "fluitkaart",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "behangpapier koop je ...",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "grondwaarde",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "zeemogendheid",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "geldschieter (Fr.)",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "geschikt om in te blikken",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "benefietuitzending",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "Poolse coïtushouding (Eng.)",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "met klare kijk",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "vorstelijk",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "test voor brandweermannen",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "de mevrouw van de vestiaire (beleed.)",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "achterklappen",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "loonsverhoging voor de sporter",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "bekijk het eens op deze manier",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "onvriendelijke kroegen",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 102,
+    "date": "2018-10-13",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "V",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "gaine van de burgemeester",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "bestolen op sigaarswijze",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "vogel in een pendule die bij het slaan naar buiten komt",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "zwangerschapsgordel",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "prediker",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "waar de hersenen zitten",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "gezinsuitstap",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "exitplaats",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "de Tour van 1903",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "zich kleden voor Halloween",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "kopie",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "Zjoekov bracht zijn tanks ...",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "ladderwagen",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "alle adressen waar iemand geresideerd heeft (veroud.)",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "te hoge eierproductie",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "goedkope injectie",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "de dronkenlap onder de schoonmaakartikelen",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "als een dode",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 104,
+    "date": "2018-10-27",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "fietsrelatie",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "tijdschrift van de Deutsche Ornithologen-Gesellschaft",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "tuingrens",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "met zijn nieuw baasje, een taxidermist, was Fifi al gauw erg ...",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "gestreept amfibie",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "een wilde boom door geslachtsgemeenschap veredelen",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "verkopen op z'n Engels",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "ijzerenweggewas",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "‘en als we nu eens een atoom zouden splitsen’",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "geraakt in het onderbeen",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "tragikomisch",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "munitie van de schrijver",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "one hundred and eighty",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "begin en einde van een auto",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "bepaalde uitslag bij paarden",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "stripsymbool voor ‘ik heb een idee’",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "oogbolwerken",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "niet veel soeps",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "hoofdpunten",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 106,
+    "date": "2018-11-10",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "Engels manoeuvre",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "loodgieterspannenkoek",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "serre op wieltjes",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "rudimentair urinoir",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "Doyenné du Pantoufle",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "chefnekken",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "verjongingskuur voor schapen",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "selder",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "in mineur (muz.)",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "'krimpen'",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "studie van luchtverkeer",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "positiekleding",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "pour Étienne",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "stilleven met hutsepot en ribbekens",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "afgesloten loophek voor eskimokindjes",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "declamator",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "octet - duet",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "bloemige glans",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "zeilkamp",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 108,
+    "date": "2018-12-01",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "verhoogde toon, verhoogde toon",
+        "numbers": [
+          22
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "pleziertje (Eng.)",
+        "numbers": [
+          3,
+          12
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "ziener (Fr.)",
+        "numbers": [
+          2,
+          12
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "postjesjager (Lat.)",
+        "numbers": [
+          6,
+          21,
+          1
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "granietgrill",
+        "numbers": [
+          22,
+          4,
+          18
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "de tafel afruimen",
+        "numbers": [
+          3,
+          8,
+          4,
+          4
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "Sint-Frisco, Sint-Cornetto en Sintersorbet",
+        "numbers": [
+          18,
+          11,
+          16,
+          11
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "schrijftafel van de directeur",
+        "numbers": [
+          13,
+          19,
+          10,
+          5,
+          11
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "slotwerk",
+        "numbers": [
+          4,
+          18,
+          8,
+          5,
+          21
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "entertainer",
+        "numbers": [
+          10,
+          11,
+          13,
+          9,
+          10,
+          21
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "mokkiemokkie",
+        "numbers": [
+          4,
+          3,
+          20,
+          4,
+          3,
+          20
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "zich inleven in andermans gêne",
+        "numbers": [
+          6,
+          17,
+          17,
+          10,
+          1
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "geruisloos struikelen",
+        "numbers": [
+          18,
+          8,
+          17,
+          7
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "ochtendschemering",
+        "numbers": [
+          15,
+          5,
+          20,
+          6
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "kinderboerderijdieren",
+        "numbers": [
+          1,
+          7,
+          2
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "keukengereedschap voor de bereiding van zandkoekjes",
+        "numbers": [
+          9,
+          14,
+          17
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "oppervlakkig",
+        "numbers": [
+          7,
+          14
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "de kleine man",
+        "numbers": [
+          15,
+          16
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "gitaarbunzing",
+        "numbers": [
+          19
+        ]
+      }
+    ]
+  },
+  {
+    "number": 110,
+    "date": "2018-12-15",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "geen groot licht",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "Klunzige vogels (Linaria cannabina)",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "afzet (Eng.)",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "minnelijk",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "houterige hovenier",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "klopjacht",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "zelfbewuste pensen (Vl.)",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "onbeheerste file (comp.)",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "vorm van (in)spraaktechnologie",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "godverdestraathond",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "spa voor de bazen",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "doorvoelend",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "wegen",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "hemdenmaker (Fr.)",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "spraakwater",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "Ma spreekt Grieks en ...",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "slaperig",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "handwapen",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "bomennaam",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 112,
+    "date": "2018-12-29",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "meubel op krediet",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "complimentje van een vlerk",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "inhoud van een schuif",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "bemannen",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "groentje om te roken",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "elstar met grondsmaak",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "voet korter, ...",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "stratenmaker",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "geserveerd door Salomé (Bijb.)",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "talenpracticum",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "vampier",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "tapijtenwijf",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "chef correspondentie",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "misrekenen",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "‘Hoe heet de achterbout van een varken?’",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "zich in rij voorbewegen",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "fel als vis",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "waardeloze wending",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "mondwind",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 114,
+    "date": "2019-01-12",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "zeldzaam",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "stroom der kudde",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "zekere bijslag",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "de zeemacht kan goed met zijn vlaggen -",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "is een schipper zonder schip",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "te paard",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "Klein aantal van uitgeputte gelden",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "is zware belasting, inz. bij trekdieren",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "beperking van het codegetal",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "ongeïnspireerde maaltijd",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "dansen",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "nutteloze verzorging",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "nadat de jagers de buit hebben verdeeld, blijft er nog één -",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "beïnvloedde het Franse keizerrijk",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "edelstenen",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "strohalmen",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "laag blaffende hond (Eng)",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "koppeling",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "flinke schram",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 116,
+    "date": "2019-01-26",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "land van de malussen",
+        "numbers": [
+          16
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "Grieks zootje",
+        "numbers": [
+          18,
+          5
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "lamphouder (Arab.)",
+        "numbers": [
+          11,
+          6
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "raccourci",
+        "numbers": [
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "Het Groot Dictee der Nederlandse Taal",
+        "numbers": [
+          4,
+          20,
+          9
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "excursie op het platteland",
+        "numbers": [
+          12,
+          6,
+          19,
+          20
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "nagellak",
+        "numbers": [
+          12,
+          21,
+          12,
+          1
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "pijpmeisje (veroud.)",
+        "numbers": [
+          8,
+          19,
+          8,
+          1,
+          1
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "jeugdwerk",
+        "numbers": [
+          8,
+          21,
+          7,
+          17,
+          7
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "maansikkelarij (Fr.)",
+        "numbers": [
+          18,
+          13,
+          15,
+          21,
+          13,
+          15
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "dropdrum",
+        "numbers": [
+          5,
+          4,
+          22,
+          16,
+          16
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "‘Varia animalia venor: lupos, leones et cuniculos.’",
+        "numbers": [
+          3,
+          10,
+          13,
+          11,
+          2
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "winderigheid",
+        "numbers": [
+          8,
+          23,
+          19,
+          20
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "in loop je maar ...",
+        "numbers": [
+          23,
+          15,
+          14,
+          3
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "streep tussen teller en noemer",
+        "numbers": [
+          17,
+          7,
+          2
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "gissing",
+        "numbers": [
+          13,
+          5,
+          11
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "wintervarken",
+        "numbers": [
+          2,
+          17
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "... in en ’t ander oor uit",
+        "numbers": [
+          22,
+          13
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "keyboardstem",
+        "numbers": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "number": 118,
+    "date": "2019-02-09",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "pasboord",
+        "numbers": [
+          8
+        ]
+      },
+      {
+        "label": "B",
+        "cryptogram": "zogenaamd Latijn",
+        "numbers": [
+          3,
+          13
+        ]
+      },
+      {
+        "label": "C",
+        "cryptogram": "eetbaar balkje",
+        "numbers": [
+          6,
+          4
+        ]
+      },
+      {
+        "label": "D",
+        "cryptogram": "aanbiddelijke watervogel",
+        "numbers": [
+          18,
+          9,
+          5
+        ]
+      },
+      {
+        "label": "E",
+        "cryptogram": "aanzienlijk verdagen",
+        "numbers": [
+          17,
+          14,
+          19
+        ]
+      },
+      {
+        "label": "F",
+        "cryptogram": "die vult zijn wagen met LPG",
+        "numbers": [
+          15,
+          2,
+          1,
+          10
+        ]
+      },
+      {
+        "label": "G",
+        "cryptogram": "afbeelding in de marge",
+        "numbers": [
+          1,
+          9,
+          6,
+          15
+        ]
+      },
+      {
+        "label": "H",
+        "cryptogram": "'Wie met het zwaard omgaat, zal door het zwaard vergaan'",
+        "numbers": [
+          14,
+          12,
+          10,
+          12,
+          10
+        ]
+      },
+      {
+        "label": "I",
+        "cryptogram": "is de dode violist",
+        "numbers": [
+          6,
+          15,
+          13,
+          20,
+          19
+        ]
+      },
+      {
+        "label": "J",
+        "cryptogram": "gratis voor niet-abonnees op www.standaard.be",
+        "numbers": [
+          8,
+          9,
+          3,
+          20,
+          19,
+          16
+        ]
+      },
+      {
+        "label": "K",
+        "cryptogram": "eyjafjallajökulliseren",
+        "numbers": [
+          17,
+          16,
+          5,
+          6,
+          13
+        ]
+      },
+      {
+        "label": "L",
+        "cryptogram": "stier met overspelige koe",
+        "numbers": [
+          11,
+          1,
+          5,
+          15,
+          10
+        ]
+      },
+      {
+        "label": "M",
+        "cryptogram": "An Olaerts kreeg heel wat reactie op ...",
+        "numbers": [
+          11,
+          20,
+          3,
+          4
+        ]
+      },
+      {
+        "label": "N",
+        "cryptogram": "contratenor",
+        "numbers": [
+          2,
+          15,
+          2,
+          7
+        ]
+      },
+      {
+        "label": "O",
+        "cryptogram": "verhogen in prijs",
+        "numbers": [
+          20,
+          9,
+          20
+        ]
+      },
+      {
+        "label": "P",
+        "cryptogram": "lengte van de penis",
+        "numbers": [
+          16,
+          9,
+          2
+        ]
+      },
+      {
+        "label": "Q",
+        "cryptogram": "hoofdpersoon",
+        "numbers": [
+          18,
+          12
+        ]
+      },
+      {
+        "label": "R",
+        "cryptogram": "vandien",
+        "numbers": [
+          6,
+          13
+        ]
+      },
+      {
+        "label": "S",
+        "cryptogram": "povere vertakking",
+        "numbers": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "number": 120,
+    "date": "2019-02-23",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "respectabel aantal",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "bedrijf van vertrouwen",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "enthousiast",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "keukengeschut",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "illustrator",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "voor een spannend seksleven, deze goede raad: ...",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "tand na extractie",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "wingewest",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "hersengymnastiek",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "doet de smerige kok",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "doet de wapeninstructeur",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "doet de marktkramer",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "dienstknecht",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "lusteloos kind",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "chinaasappel",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "semietelen",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "munter",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "zeildoekje",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "snel in zijn soort",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 122,
+    "date": "2019-03-09",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "grappige meisjesnaam",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "onverwachte intriges",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "O mengelmoes, o potpourri. O velerlei, ...",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "vlakke (loop)baan",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "'Ik ben daar niet zo voor.'",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "canvas",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "met pensioen",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "niet opgeven op het toilet",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "zijn de stembanden",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "Roubaix-Parijs, San Remo-Milaan, Wevelgem-Gent",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "iemand die je kent via de leesclub",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "schijfgeschrijf",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "leverancier",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "het bovenste deel van het lichaam, ...",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "woestijnvorming",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "bloemig",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "rinkelwijsje",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "gespeelde ruzie",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "erfstukje",
+        "numbers": []
+      }
+    ]
+  },
+  {
+    "number": 124,
+    "date": "2019-03-23",
+    "clues": [
+      {
+        "label": "A",
+        "cryptogram": "dromerige schrijver",
+        "numbers": []
+      },
+      {
+        "label": "B",
+        "cryptogram": "omsingeling met paté en choco",
+        "numbers": []
+      },
+      {
+        "label": "C",
+        "cryptogram": "stoffelijk overschot",
+        "numbers": []
+      },
+      {
+        "label": "D",
+        "cryptogram": "opgerichte penis bij Chinezen",
+        "numbers": []
+      },
+      {
+        "label": "E",
+        "cryptogram": "huisdier dat tegen de winter warmere streken opzoekt",
+        "numbers": []
+      },
+      {
+        "label": "F",
+        "cryptogram": "klapstok",
+        "numbers": []
+      },
+      {
+        "label": "G",
+        "cryptogram": "popje dat vol is van zichzelf (Russ.)",
+        "numbers": []
+      },
+      {
+        "label": "H",
+        "cryptogram": "aflossingswedstrijd",
+        "numbers": []
+      },
+      {
+        "label": "I",
+        "cryptogram": "muzikale touringcar",
+        "numbers": []
+      },
+      {
+        "label": "J",
+        "cryptogram": "En wat het zoenen betreft: ... beter dan mannen.",
+        "numbers": []
+      },
+      {
+        "label": "K",
+        "cryptogram": "rondetafelconferentie",
+        "numbers": []
+      },
+      {
+        "label": "L",
+        "cryptogram": "verhuizing",
+        "numbers": []
+      },
+      {
+        "label": "M",
+        "cryptogram": "artistieke tekeningen en boetseerwerkjes van kleuters",
+        "numbers": []
+      },
+      {
+        "label": "N",
+        "cryptogram": "geschikt voor de export",
+        "numbers": []
+      },
+      {
+        "label": "O",
+        "cryptogram": "dialoogvenster",
+        "numbers": []
+      },
+      {
+        "label": "P",
+        "cryptogram": "pak aan!",
+        "numbers": []
+      },
+      {
+        "label": "Q",
+        "cryptogram": "projectieplaatje (Vl.)",
+        "numbers": []
+      },
+      {
+        "label": "R",
+        "cryptogram": "Spaans badkamerinstrument",
+        "numbers": []
+      },
+      {
+        "label": "S",
+        "cryptogram": "lokmiddel",
+        "numbers": []
+      }
+    ]
+  }
+]
