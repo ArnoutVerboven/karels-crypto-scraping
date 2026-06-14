@@ -47,17 +47,17 @@ jobs:
         run: |
           uv run karels-crypto-optimize --optimizer mipro --model "$MINI" \
             --prompt-model "$BIG" --reasoning-effort medium --auto light \
-            --val-fraction 0.1 --num-threads 16 --reveal none --output-dir research/opt
+            --val-fraction 0.1 --num-threads 4 --reveal none --output-dir research/opt
       - name: Optimize COPRO
         run: |
           uv run karels-crypto-optimize --optimizer copro --model "$MINI" \
             --prompt-model "$BIG" --reasoning-effort medium --breadth 4 --depth 2 \
-            --val-fraction 0.1 --num-threads 16 --reveal none --output-dir research/opt
+            --val-fraction 0.1 --num-threads 4 --reveal none --output-dir research/opt
       - name: Optimize GEPA
         run: |
           uv run karels-crypto-optimize --optimizer gepa --model "$MINI" \
             --reflection-model "$BIG" --reasoning-effort medium --max-metric-calls 400 \
-            --reflection-minibatch-size 3 --val-fraction 0.1 --num-threads 16 \
+            --reflection-minibatch-size 3 --val-fraction 0.1 --num-threads 4 \
             --reveal none --output-dir research/opt
 
       # --- Exp 4: transfer GEPA(mini) prompt to gpt-5.5 ------------------------
@@ -65,16 +65,16 @@ jobs:
         run: |
           uv run karels-crypto-eval --program research/opt/gepa/optimized_word_solver.json \
             --model "$MINI" --reasoning-effort medium --split val --val-fraction 0.1 \
-            --num-threads 16 --output research/transfer_gepa_on_mini.json
+            --num-threads 4 --output research/transfer_gepa_on_mini.json
       - name: Eval GEPA-optimized on gpt-5.5 (val)
         run: |
           uv run karels-crypto-eval --program research/opt/gepa/optimized_word_solver.json \
             --model "$BIG" --reasoning-effort low --split val --val-fraction 0.1 \
-            --num-threads 16 --output research/transfer_gepa_on_5p5.json
+            --num-threads 4 --output research/transfer_gepa_on_5p5.json
       - name: Eval baseline on gpt-5.5 (val)
         run: |
           uv run karels-crypto-eval --model "$BIG" --reasoning-effort low \
-            --split val --val-fraction 0.1 --num-threads 16 \
+            --split val --val-fraction 0.1 --num-threads 4 \
             --output research/baseline_5p5.json
 
       - name: Commit experiment outputs
