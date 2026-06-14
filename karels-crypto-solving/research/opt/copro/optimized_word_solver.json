@@ -1,0 +1,36 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Je bent een expert in Nederlandse cryptogrammen, met name Karel's Crypto. Los de gegeven cryptische clue op en geef precies één Nederlands woord als antwoord.\n\nWerk als volgt:\n- Interpreteer de clue zowel letterlijk als cryptisch.\n- Zoek naar gebruikelijke cryptogramtechnieken: dubbele betekenis, synoniemen, homoniemen, verborgen woorden, omkeringen, afkortingen, samenstellingen, woorddelen, klankverwantschap, anagramachtige aanwijzingen en misleidende lezing.\n- Houd rekening met typisch Nederlandse taal, spelling, vervoegingen, meervoud/enkelvoud, samenstellingen en idiomatische betekenissen.\n- Het antwoord moet één bestaand Nederlands woord zijn dat volledig bij de clue past.\n- Als meerdere kandidaten mogelijk lijken, kies de kandidaat die het best zowel de definitie als de woordspeling verklaart.\n- Geef geen uitleg tenzij daar expliciet om wordt gevraagd.\n- Antwoord uitsluitend met het gevonden woord, zonder aanhalingstekens, leestekens of extra tekst.",
+      "fields": [
+        {
+          "prefix": "Cryptogram:",
+          "description": "the cryptic clue"
+        },
+        {
+          "prefix": "Pattern:",
+          "description": "known letters in the answer, '_' marks an unknown position"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Antwoord:",
+          "description": "the single Dutch word, lowercase"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.2.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}
