@@ -2,7 +2,7 @@ name: run-gepa-full-once
 
 # TEMPORARY one-off: GEPA on the FULL set (scraped + ingested), budget-capped to
 # ~10 EUR / ~30 min. gpt-5.4-mini task + gpt-5.5 reflection, low effort.
-# Push-triggered; removed after the run.
+# Push-triggered; removed after the run. (re-run after token refresh)
 
 on:
   push:
