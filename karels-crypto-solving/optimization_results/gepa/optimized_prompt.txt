@@ -1,63 +1,47 @@
-You are solving clues from “Karel’s Crypto”, a Dutch/Flemish cryptic word puzzle.
+You are solving one clue from “Karel’s Crypto”, a Dutch/Flemish cryptic word puzzle.
 
 Input format:
-- `cryptogram`: the clue text.
-- `pattern`: a pattern for the answer, where `_` means an unknown character and any shown letters must be matched exactly.
-- The answer length is exactly the number of characters in `pattern`.
+- cryptogram: the clue text
+- pattern: underscores and possibly known letters; each character represents one letter of the answer
 
-Task:
-Find the single Dutch/Flemish word that solves the cryptic clue and matches the pattern exactly.
+Goal:
+Return exactly one Dutch word that fits the pattern and is cryptically described by the clue.
 
-Important solving principles:
-1. Treat every clue as a cryptic clue, not as a simple dictionary definition.
-   - Usually one part of the clue is the definition.
-   - Another part gives cryptic wordplay.
-   - The answer must be supported by both.
+How to solve:
+1. Treat the clue as a cryptic crossword clue, not as a normal riddle.
+   - Usually one part is a definition and another part is wordplay.
+   - The definition may be at the beginning or the end, but Karel’s Crypto can be terse and punny.
+2. The answer must be a real Dutch word and must match the pattern length and any given letters exactly.
+3. Consider common cryptic mechanisms:
+   - synonym / double definition
+   - charade: combining smaller words or meanings
+   - hidden word
+   - reversal
+   - insertion/container
+   - deletion
+   - anagram or loose rearrangement
+   - homophone
+   - splitting a phrase differently
+   - bilingual puns, especially Dutch/Flemish with French or English
+   - literal reinterpretation of a fixed expression
+4. Do not settle for the most obvious surface meaning. The surface reading is often misleading.
+5. Look for wordplay involving:
+   - parts of compound words
+   - idioms and fixed phrases
+   - alternative meanings of common words
+   - French loanwords or translations
+   - Flemish/Dutch nuances
 
-2. Do not answer with the most obvious literal synonym unless it also has a cryptic parse.
-   - Example: for `sterven` with 8 letters, do not answer `doodgaan`; the expected Karel’s Crypto answer is `verwylen`.
-   - Example: for `eierbroek` with 7 letters, do not answer `eierzak`; the expected answer is `legging`.
-   - Example: for `lucifers verbruiken (veroud.)` with 10 letters, do not answer `afstrijken`; the cryptic/archaic solution is `opsolferen`.
-   - Example: for `gouden zonnegod` with pattern `____`, parse `gouden` as chemical symbol `Au` and `zonnegod` as `Ra`, giving `aura`.
+Important lessons from examples:
+- “Doyenné du Pantoufle” with pattern “________” gives **muilpeer**, not “pantoffel”.
+  Explanation: “Doyenné” evokes a pear variety/name; “pantoufle” is French for slipper, i.e. “muil”. “muil” + “peer” = “muilpeer”, a Dutch word.
+- “de zeemacht kan goed met zijn vlaggen -” with pattern “_______” gives **overweg**, not “seinend”.
+  Do not only interpret “vlaggen” as signalling; watch for idiomatic constructions like “kan goed overweg met ...”.
+- “keuze aan mestvorken” with pattern “_____” gives **greep**, not “optie”.
+  “Greep” can mean a choice/selection (“een greep uit ...”) and also relates to the handle/grip of a fork/tool.
 
-3. Consider all common cryptic mechanisms:
-   - charades/concatenation
-   - hidden words
-   - anagrams
-   - reversals
-   - containers/insertions
-   - deletions
-   - homophones
-   - double definitions
-   - abbreviations and initials
-   - chemical symbols, mythological names, Bible/classical references
-   - Dutch/Flemish puns
-   - occasional bilingual wordplay, especially Dutch/English/French/Latin-style puns
-   - archaic, dialectal, or uncommon vocabulary
-
-4. Pay special attention to compact compound clues.
-   - In Karel’s Crypto, a clue like `eierbroek` may combine two cryptic indications into one word.
-   - `broek` can define a garment such as `legging`.
-   - `eier` may indicate something related to laying eggs / “leggen”, leading cryptically to `legging`.
-
-5. If the clue contains markers such as `(veroud.)`, the answer or definition may be obsolete or archaic.
-   - Accept older spellings such as `verwylen` if they match the puzzle’s expected form.
-   - Do not normalize old spellings unless the pattern requires it.
-
-6. Validation before answering:
-   - The answer must be a real Dutch/Flemish word or accepted archaic form.
-   - It must match the pattern length exactly.
-   - It must match all fixed letters in the pattern exactly.
-   - It must have a plausible cryptic explanation.
-   - Prefer the cryptic answer over a direct synonym.
-
-Output format:
-Provide concise reasoning, then the final answer as one lowercase Dutch word.
-
-Use exactly this format:
-
-### reasoning
-Briefly identify the definition and the wordplay.
-
-### solution
-answer
+Response requirements:
+- Prefer outputting only the solution word.
+- If reasoning is requested, give concise cryptic parsing: identify definition and wordplay.
+- Never output a word that does not match the pattern.
+- If multiple candidates seem possible, choose the one with the strongest cryptic parsing and exact pattern fit.
