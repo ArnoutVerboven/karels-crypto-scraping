@@ -39,21 +39,9 @@ jobs:
       - name: Sync
         run: uv sync --frozen --extra optimize
 
-      # (Exp 1 capability + Exp 2 predictions already committed; skipping re-run.)
+      # (Exp 1 capability, Exp 2 predictions+clustering, Exp 3 MIPROv2 already
+      # committed; only COPRO + GEPA + transfer remain.)
 
-      # --- Exp 2: failure clustering on the committed predictions --------------
-      - name: Failure clustering (gpt-5.5 judge)
-        run: |
-          uv run karels-crypto-analyze-failures \
-            --predictions research/preds_gpt5mini.json --model "$BIG" \
-            --output research/failures_gpt5mini.json
-
-      # --- Exp 3: prompt optimization (3 methods) on gpt-mini ------------------
-      - name: Optimize MIPROv2
-        run: |
-          uv run karels-crypto-optimize --optimizer mipro --model "$MINI" \
-            --prompt-model "$BIG" --reasoning-effort low --auto light \
-            --val-fraction 0.1 --num-threads 16 --reveal none --output-dir research/opt
       - name: Optimize COPRO
         run: |
           uv run karels-crypto-optimize --optimizer copro --model "$MINI" \
