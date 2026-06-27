@@ -949,5 +949,321 @@
         "solution": "egel"
       }
     ]
+  },
+  {
+    "id": 869,
+    "title": "Karels Crypto 20 juni",
+    "date": "2026-06-20",
+    "solution": "stealthbommenwerper",
+    "words": [
+      {
+        "cryptogram": "Abba's noodnummer",
+        "length": 3,
+        "help_numbers": [
+          null,
+          11,
+          null
+        ],
+        "offset": 4,
+        "solution": "sos"
+      },
+      {
+        "cryptogram": "Welke gekkin heeft dit getikt? …",
+        "length": 5,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          14,
+          null
+        ],
+        "offset": 4,
+        "solution": "lotje"
+      },
+      {
+        "cryptogram": "razend groeien",
+        "length": 6,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          15,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "tieren"
+      },
+      {
+        "cryptogram": "… der Auwera is radiopresentatrice",
+        "length": 7,
+        "help_numbers": [
+          6,
+          null,
+          15,
+          null,
+          19,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "caravan"
+      },
+      {
+        "cryptogram": "is galgenhumor",
+        "length": 8,
+        "help_numbers": [
+          18,
+          null,
+          null,
+          18,
+          null,
+          null,
+          null,
+          22
+        ],
+        "offset": 2,
+        "solution": "doodleuk"
+      },
+      {
+        "cryptogram": "Antoine, de scheidsrechter",
+        "length": 9,
+        "help_numbers": [
+          13,
+          null,
+          16,
+          3,
+          null,
+          null,
+          null,
+          null,
+          5
+        ],
+        "offset": 2,
+        "solution": "fluittoon"
+      },
+      {
+        "cryptogram": "parttime",
+        "length": 10,
+        "help_numbers": [
+          null,
+          1,
+          21,
+          null,
+          null,
+          null,
+          null,
+          9,
+          19,
+          null
+        ],
+        "offset": 1,
+        "solution": "ambtshalve"
+      },
+      {
+        "cryptogram": "koppig rammen",
+        "length": 11,
+        "help_numbers": [
+          18,
+          20,
+          12,
+          null,
+          null,
+          null,
+          null,
+          16,
+          22,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "dwarsbeuken"
+      },
+      {
+        "cryptogram": "reizende boeren",
+        "length": 12,
+        "help_numbers": [
+          12,
+          2,
+          null,
+          null,
+          8,
+          null,
+          null,
+          null,
+          3,
+          null,
+          1,
+          null
+        ],
+        "offset": 1,
+        "solution": "agrotoerisme"
+      },
+      {
+        "cryptogram": "advocaat in een tv-serie",
+        "length": 13,
+        "help_numbers": [
+          17,
+          6,
+          10,
+          null,
+          15,
+          null,
+          null,
+          null,
+          null,
+          17,
+          null,
+          null,
+          15
+        ],
+        "offset": 0,
+        "solution": "schermmeester"
+      },
+      {
+        "cryptogram": "urinestaal",
+        "length": 12,
+        "help_numbers": [
+          20,
+          12,
+          null,
+          null,
+          null,
+          null,
+          11,
+          5,
+          17,
+          null,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "watermonster"
+      },
+      {
+        "cryptogram": "wijn via Bol.com",
+        "length": 11,
+        "help_numbers": [
+          13,
+          9,
+          null,
+          null,
+          null,
+          null,
+          5,
+          4,
+          null,
+          null,
+          8
+        ],
+        "offset": 1,
+        "solution": "flessenpost"
+      },
+      {
+        "cryptogram": "lied van de tuimelaar (Tursiops truncatus)",
+        "length": 10,
+        "help_numbers": [
+          18,
+          11,
+          null,
+          13,
+          null,
+          null,
+          null,
+          15,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "dolfinaria"
+      },
+      {
+        "cryptogram": "schaduwauto",
+        "length": 9,
+        "help_numbers": [
+          19,
+          null,
+          null,
+          2,
+          null,
+          null,
+          2,
+          7,
+          null
+        ],
+        "offset": 2,
+        "solution": "volgwagen"
+      },
+      {
+        "cryptogram": "huisjonker (Eng.)",
+        "length": 8,
+        "help_numbers": [
+          10,
+          null,
+          null,
+          null,
+          4,
+          null,
+          2,
+          null
+        ],
+        "offset": 3,
+        "solution": "homepage"
+      },
+      {
+        "cryptogram": "brachten haar ter wereld",
+        "length": 7,
+        "help_numbers": [
+          21,
+          null,
+          null,
+          null,
+          18,
+          7,
+          null
+        ],
+        "offset": 3,
+        "solution": "baarden"
+      },
+      {
+        "cryptogram": "hoenderharing",
+        "length": 6,
+        "help_numbers": [
+          22,
+          null,
+          null,
+          null,
+          7,
+          null
+        ],
+        "offset": 4,
+        "solution": "kipper"
+      },
+      {
+        "cryptogram": "Arabische cheque",
+        "length": 5,
+        "help_numbers": [
+          null,
+          14,
+          null,
+          3,
+          null
+        ],
+        "offset": 4,
+        "solution": "sjeik"
+      },
+      {
+        "cryptogram": "papegaaienprimaat",
+        "length": 4,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "lori"
+      }
+    ]
   }
 ]
