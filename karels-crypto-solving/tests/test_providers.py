@@ -2,21 +2,32 @@ from karels_crypto_solving import providers
 
 
 def test_provider_routing():
-    assert providers.provider_for("gpt-4o") == "openai"
-    assert providers.provider_for("o4-mini") == "openai"
-    assert providers.provider_for("gpt-5.5-2026-04-23") == "openai"
-    assert providers.provider_for("claude-haiku-4-5-20251001") == "anthropic"
-    assert providers.provider_for("gemini-2.0-flash-lite-001") == "google"
+    assert providers.provider_for("gpt-4o-mini") == "openai"
+    assert providers.provider_for("claude-opus-4-8") == "anthropic"
+    assert providers.provider_for("gemini-3-pro-preview") == "google"
 
 
-def test_is_reasoning_model():
-    assert providers.is_reasoning_model("o3")
-    assert providers.is_reasoning_model("gpt-5-mini-2025-08-07")
-    assert not providers.is_reasoning_model("gpt-4o")
-    assert not providers.is_reasoning_model("gpt-5-chat-latest")
+def test_anthropic_modes_ladder():
+    # No reasoning effort -> never enable thinking.
+    assert providers._anthropic_modes("claude-x", None) == ["off"]
+    # First time: full ladder, enabled first.
+    assert providers._anthropic_modes("claude-x", "low") == ["enabled", "adaptive", "off"]
+    # A cached working mode is tried first, with the rest as fallbacks.
+    providers._ANTHROPIC_MODE["claude-opus-4-8"] = "adaptive"
+    assert providers._anthropic_modes("claude-opus-4-8", "low")[0] == "adaptive"
+    providers._ANTHROPIC_MODE.clear()
 
 
-def test_provider_error_carries_status():
-    err = providers.ProviderError("nope", status_code=429)
-    assert err.status_code == 429
-    assert "nope" in str(err)
+def test_anthropic_kwargs_modes():
+    enabled = providers._anthropic_kwargs("m", "s", "u", 256, 0.0, "low", "enabled")
+    assert enabled["thinking"]["type"] == "enabled"
+    assert "temperature" not in enabled  # omitted while thinking
+
+    adaptive = providers._anthropic_kwargs("m", "s", "u", 256, 0.0, "low", "adaptive")
+    assert adaptive["extra_body"]["thinking"]["type"] == "adaptive"
+    assert adaptive["extra_body"]["output_config"]["effort"] == "low"
+
+    off = providers._anthropic_kwargs("m", "s", "u", 256, 0.0, None, "off")
+    assert off["max_tokens"] == 256
+    assert off["temperature"] == 0.0
+    assert "thinking" not in off

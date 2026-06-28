@@ -1,0 +1,109 @@
+name: run-cross-provider-bc-once
+
+# Re-run of cross-provider Tiers B and C after the Anthropic (adaptive thinking)
+# and Google (per-thread client) fixes. Tier A is already committed; the merge
+# step re-combines A + B + C. Triggers on push to this file + dispatch.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/run-cross-provider-bc-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL || secrets.ANTHROPIC_BASE_URL }}
+      GOOGLE_BASE_URL: ${{ vars.GOOGLE_BASE_URL || secrets.GOOGLE_BASE_URL }}
+      EFFORT: low
+      THREADS: "6"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Sync
+        run: uv sync --frozen
+
+      - name: Tier B - mid models (n=60)
+        if: always()
+        run: |
+          uv run karels-crypto-benchmark \
+            --models gpt-5-2025-08-07 gemini-3.5-flash gemini-3-pro-preview \
+                     claude-sonnet-4-5-20250929 \
+            --limit 60 --seed 0 --reasoning-effort "$EFFORT" --num-threads "$THREADS" \
+            --output-dir research/cross_provider/tier_b
+
+      - name: Tier C - frontier models (n=30)
+        if: always()
+        run: |
+          uv run karels-crypto-benchmark \
+            --models gpt-5.5-2026-04-23 claude-opus-4-8 \
+            --limit 30 --seed 0 --reasoning-effort "$EFFORT" --num-threads "$THREADS" \
+            --output-dir research/cross_provider/tier_c
+
+      - name: Merge tiers into one table
+        if: always()
+        run: |
+          uv run python - <<'PY'
+          import json
+          from pathlib import Path
+          from karels_crypto_solving import providers
+
+          base = Path("research/cross_provider")
+          results, cfg = [], {}
+          for tier in ("tier_a", "tier_b", "tier_c"):
+              p = base / tier / "benchmark.json"
+              if not p.exists():
+                  continue
+              payload = json.loads(p.read_text())
+              cfg[tier] = payload["config"]
+              results.extend(payload["results"])
+
+          results.sort(key=lambda r: r["accuracy"], reverse=True)
+          n_max = max((r["total"] for r in results), default=0)
+          lines = [
+              "| Model | Provider | Acc | Correct/Total | Errors | Est. cost (USD) | In/Out tok |",
+              "| --- | --- | ---: | ---: | ---: | ---: | ---: |",
+          ]
+          total_cost = 0.0
+          for r in results:
+              prov = providers.provider_for(r["model"])
+              cost = r.get("est_cost_usd")
+              total_cost += cost or 0.0
+              star = "" if r["total"] == n_max else f" *(n={r['total']})*"
+              cost_s = f"${cost:.4f}" if cost is not None else "n/a"
+              lines.append(
+                  f"| {r['model']}{star} | {prov} | {r['accuracy']:.1%} | "
+                  f"{r['correct']}/{r['total']} | {r['errors']} | {cost_s} | "
+                  f"{r['prompt_tokens']}/{r['completion_tokens']} |"
+              )
+          lines.append("")
+          lines.append(f"Total estimated cost: ${total_cost:.2f}")
+          (base / "benchmark.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+          (base / "benchmark.json").write_text(
+              json.dumps({"config": cfg, "results": results}, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+          )
+          print("\n".join(lines))
+          PY
+
+      - name: Commit results
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add karels-crypto-solving/research/cross_provider
+          git commit -m "Cross-provider benchmark: Tiers B+C (after provider fixes)" || echo "no changes"
+          git push

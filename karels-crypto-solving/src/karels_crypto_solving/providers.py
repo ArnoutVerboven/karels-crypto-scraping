@@ -17,6 +17,7 @@ vs. crash on.
 from __future__ import annotations
 
 import os
+import threading
 from dataclasses import dataclass
 
 # Map a reasoning-effort label to an approximate "thinking" token budget, used
@@ -114,6 +115,44 @@ def _openai_chat(model, system, user, max_tokens, temperature, reasoning_effort)
 # --- Anthropic ------------------------------------------------------------
 
 _anthropic_client = None
+# Which "thinking" API a given model accepts. Older models use
+# thinking={"type":"enabled","budget_tokens":N}; newer ones (e.g. opus-4-8)
+# require thinking={"type":"adaptive"} + output_config.effort. We probe per
+# model and cache the mode that works ("off" = no thinking).
+_ANTHROPIC_MODE: dict[str, str] = {}
+_anthropic_lock = threading.Lock()
+
+
+def _anthropic_modes(model: str, reasoning_effort: str | None) -> list[str]:
+    if not reasoning_effort:
+        return ["off"]
+    cached = _ANTHROPIC_MODE.get(model)
+    ladder = ["enabled", "adaptive", "off"]
+    if cached:
+        return [cached] + [m for m in ladder if m != cached]
+    return ladder
+
+
+def _anthropic_kwargs(model, system, user, max_tokens, temperature, reasoning_effort, mode) -> dict:
+    kwargs = {"model": model, "system": system, "messages": [{"role": "user", "content": user}]}
+    if mode == "enabled":
+        budget = _THINKING_BUDGET.get(reasoning_effort, 4000)
+        kwargs["thinking"] = {"type": "enabled", "budget_tokens": budget}
+        kwargs["max_tokens"] = (max_tokens or 0) + budget + 1024  # must exceed the budget
+        # temperature must be default when thinking is enabled -> omit it.
+    elif mode == "adaptive":
+        effort = "low" if reasoning_effort == "minimal" else reasoning_effort
+        kwargs["max_tokens"] = max(max_tokens or 0, 8192)
+        # Pass via extra_body so older SDKs that don't model these fields still send them.
+        kwargs["extra_body"] = {
+            "thinking": {"type": "adaptive"},
+            "output_config": {"effort": effort},
+        }
+    else:  # off
+        kwargs["max_tokens"] = max_tokens or 1024
+        if temperature is not None:
+            kwargs["temperature"] = temperature
+    return kwargs
 
 
 def _anthropic_chat(model, system, user, max_tokens, temperature, reasoning_effort) -> ChatResult:
@@ -121,48 +160,56 @@ def _anthropic_chat(model, system, user, max_tokens, temperature, reasoning_effo
     import anthropic
 
     if _anthropic_client is None:
-        _anthropic_client = anthropic.Anthropic(
-            base_url=os.environ["ANTHROPIC_BASE_URL"], api_key=os.environ["OPENAI_API_KEY"]
+        with _anthropic_lock:
+            if _anthropic_client is None:
+                _anthropic_client = anthropic.Anthropic(
+                    base_url=os.environ["ANTHROPIC_BASE_URL"], api_key=os.environ["OPENAI_API_KEY"]
+                )
+    modes = _anthropic_modes(model, reasoning_effort)
+    last_exc: Exception | None = None
+    for i, mode in enumerate(modes):
+        kwargs = _anthropic_kwargs(
+            model, system, user, max_tokens, temperature, reasoning_effort, mode
         )
-    kwargs = {"model": model, "system": system, "messages": [{"role": "user", "content": user}]}
-    if reasoning_effort:
-        budget = _THINKING_BUDGET.get(reasoning_effort, 4000)
-        kwargs["thinking"] = {"type": "enabled", "budget_tokens": budget}
-        kwargs["max_tokens"] = (max_tokens or 0) + budget + 1024  # must exceed the budget
-        # temperature must be default (1) when thinking is enabled -> omit it.
-    else:
-        kwargs["max_tokens"] = max_tokens or 1024
-        if temperature is not None:
-            kwargs["temperature"] = temperature
-    try:
-        resp = _anthropic_client.messages.create(**kwargs)
-    except anthropic.APIStatusError as exc:
-        raise ProviderError(str(exc), getattr(exc, "status_code", None)) from exc
-    except anthropic.APIError as exc:
-        raise ProviderError(str(exc), None) from exc
-    text = "".join(b.text for b in resp.content if getattr(b, "type", None) == "text")
-    usage = resp.usage
-    return ChatResult(
-        text=text,
-        prompt_tokens=getattr(usage, "input_tokens", 0) or 0,
-        completion_tokens=getattr(usage, "output_tokens", 0) or 0,
-    )
+        try:
+            resp = _anthropic_client.messages.create(**kwargs)
+        except anthropic.BadRequestError as exc:
+            # A 400 usually means this thinking mode is unsupported; try the next.
+            last_exc = exc
+            if i < len(modes) - 1:
+                continue
+            raise ProviderError(str(exc), 400) from exc
+        except anthropic.APIStatusError as exc:
+            raise ProviderError(str(exc), getattr(exc, "status_code", None)) from exc
+        except anthropic.APIError as exc:
+            raise ProviderError(str(exc), None) from exc
+        _ANTHROPIC_MODE[model] = mode
+        text = "".join(b.text for b in resp.content if getattr(b, "type", None) == "text")
+        usage = resp.usage
+        return ChatResult(
+            text=text,
+            prompt_tokens=getattr(usage, "input_tokens", 0) or 0,
+            completion_tokens=getattr(usage, "output_tokens", 0) or 0,
+        )
+    raise ProviderError(str(last_exc), 400)  # pragma: no cover - loop always returns/raises
 
 
 # --- Google (Vertex via gateway) ------------------------------------------
 
-_google_client = None
+# The google-genai client is not safe to share across threads here (the gateway
+# + SDK retries can leave a shared client closed: "Cannot send a request, as the
+# client has been closed"). Keep one client per thread instead.
+_google_tls = threading.local()
 
 
-def _google_chat(model, system, user, max_tokens, temperature, reasoning_effort) -> ChatResult:
-    global _google_client
+def _google_get_client():
     from google import genai
     from google.genai import types
-    from google.genai.errors import APIError
     from google.oauth2.credentials import Credentials
 
-    if _google_client is None:
-        _google_client = genai.Client(
+    client = getattr(_google_tls, "client", None)
+    if client is None:
+        client = genai.Client(
             vertexai=True,
             project="aigateway",
             location="global",
@@ -171,6 +218,15 @@ def _google_chat(model, system, user, max_tokens, temperature, reasoning_effort)
             ),
             credentials=Credentials(os.environ["OPENAI_API_KEY"]),
         )
+        _google_tls.client = client
+    return client
+
+
+def _google_chat(model, system, user, max_tokens, temperature, reasoning_effort) -> ChatResult:
+    from google.genai import types
+    from google.genai.errors import APIError
+
+    client = _google_get_client()
     cfg = types.GenerateContentConfig(system_instruction=system)
     if max_tokens is not None:
         cfg.max_output_tokens = max_tokens
@@ -181,7 +237,7 @@ def _google_chat(model, system, user, max_tokens, temperature, reasoning_effort)
             thinking_budget=_THINKING_BUDGET.get(reasoning_effort, 4000)
         )
     try:
-        resp = _google_client.models.generate_content(model=model, contents=user, config=cfg)
+        resp = client.models.generate_content(model=model, contents=user, config=cfg)
     except APIError as exc:
         raise ProviderError(str(exc), getattr(exc, "code", None)) from exc
     meta = getattr(resp, "usage_metadata", None)
