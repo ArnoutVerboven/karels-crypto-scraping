@@ -32,7 +32,14 @@ def _registry() -> dict[str, Price]:
     if not path.exists():
         return {}
     raw = json.loads(path.read_text(encoding="utf-8"))
-    return {m: Price(float(v["input"]), float(v["output"])) for m, v in raw.items() if "input" in v}
+    # Only registry entries with a real (non-zero) input+output price override the
+    # built-in table; zero/missing prices mean "available, price unknown" and fall
+    # back to PRICING.
+    return {
+        m: Price(float(v["input"]), float(v["output"]))
+        for m, v in raw.items()
+        if v.get("input") and v.get("output")
+    }
 
 
 # Keyed by model id. Aliases that share a price are listed separately so a
