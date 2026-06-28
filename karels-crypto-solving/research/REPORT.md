@@ -120,7 +120,52 @@ the tuned prompts, the instructions that move the needle for *this* puzzle:
   reasoning itself), i.e. **diminishing returns** from prompt scaffolding as base
   capability rises.
 
-## 5. Next steps
+## 5. Cross-provider comparison — accuracy & cost (low effort)
+
+Data: `research/cross_provider/` (total **$5.38**). To include the strongest
+models affordably, sample size is **tiered** (cheap models n=120, mid n=60,
+frontier n=30) on the same seed (smaller sets are subsets of the larger). All at
+`reasoning_effort=low`. `*(n=…)*` marks the smaller tiers.
+
+| Model | Provider | Acc | Correct/Total | Cost/correct† | In/Out tok |
+| --- | --- | ---: | ---: | ---: | ---: |
+| gemini-3.5-flash *(n=60)* | Google | **46.7%** | 28/60 | $0.023 | 5080/69894 |
+| gpt-5.5-2026-04-23 *(n=30)* | OpenAI | 43.3% | 13/30 | $0.044 | 2749/18437 |
+| gemini-3-flash-preview | Google | 40.8% | 49/120 | **$0.016** | 10107/255225 |
+| gpt-5-2025-08-07 *(n=60)* | OpenAI | 38.3% | 23/60 | $0.050 | 5486/113632 |
+| claude-opus-4-8 *(n=30)* | Anthropic | 36.7% | 11/30 | $0.038 | 4359/15794 |
+| gpt-5-mini-2025-08-07 | OpenAI | 19.2% | 23/120 | $0.008 | 10918/95624 |
+| claude-sonnet-4-5-20250929 *(n=60)* | Anthropic | 16.7% | 10/60 | $0.078 | 7937/50297 |
+| gpt-4.1 | OpenAI | 13.3% | 16/120 | $0.018 | 11038/33733 |
+| claude-haiku-4-5-20251001 | Anthropic | 7.5% | 9/120 | $0.064 | 15833/111516 |
+| gpt-4o-mini | OpenAI | 5.8% | 7/120 | $0.002 | 11038/17796 |
+
+†*Cost/correct = est. USD ÷ correct answers; comparable across tiers since both
+scale with n. Absolute per-run cost is **not** comparable (different n).*
+
+Insights:
+- **No single provider dominates — the frontier of each clusters ~37–47%.**
+  `gemini-3.5-flash` (47%), `gpt-5.5` (43%), `gemini-3-flash` (41%), `gpt-5` (38%)
+  and `claude-opus-4-8` (37%) are a near-tie (and within each other's CIs at these
+  n: ±~9 pp at n=30, ±~6 pp at n=60). The §1 story holds: **thinking/reasoning is
+  the lever** — every top model is a reasoning model.
+- **Google's `gemini-flash` line is the value winner.** `gemini-3-flash-preview`
+  is both strong (41%) and the cheapest per correct among capable models
+  ($0.016), and `gemini-3.5-flash` tops accuracy. Caveat: gemini "thinks" heavily
+  by **default** (gemini-3-flash burned ~2,130 output tok/clue — its cost is mostly
+  hidden reasoning), so it's effectively always at non-trivial effort.
+- **Anthropic underperforms its price at low effort.** `claude-haiku` (7.5%) and
+  `claude-sonnet-4-5` (17%) lag same-tier rivals; only `claude-opus-4-8` (37%)
+  competes. Claude appears to **under-think** this Dutch cryptic task unless it's
+  the strongest model — its newer models also need the `thinking:adaptive` API
+  (handled in `providers.py`), and a higher effort/budget might close the gap.
+- **Cheapest viable solver:** `gpt-5-mini` at **$0.008/correct** (19% acc) — best
+  $/solve if you don't need top accuracy; `gpt-4o-mini`/`gpt-4.1` are cheap but
+  weak (non-reasoning).
+- Caveats: tiered, small n (wide CIs); `gemini-3-pro-preview` is in the registry
+  but returned **404 (no project access)** on this gateway, so it's excluded.
+
+## 6. Next steps
 
 - **Bigger/cleaner eval:** evaluate on the full 874 (not samples) with seeds/CIs;
   current val=88/120 gives ±~5 pp noise.
@@ -136,3 +181,7 @@ the tuned prompts, the instructions that move the needle for *this* puzzle:
   `reveal=none`; capture the key (better OCR) to study partial-letter assistance.
 - **Few-shot demos:** all runs are instruction-only; allowing demos (esp. in MIPROv2)
   is the obvious next lever but trades off the "no vocabulary" constraint.
+- **Cross-provider follow-ups (§5):** larger n for tighter CIs; an effort sweep on
+  Claude (its low-effort numbers look budget-starved); restore `gemini-3-pro`
+  access (404 today); and optimize a prompt *per provider* (the GEPA prompt was
+  tuned on OpenAI — it may transfer differently to Gemini/Claude).

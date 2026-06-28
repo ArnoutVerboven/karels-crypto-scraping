@@ -1,15 +1,21 @@
-name: run-cross-provider-once
+name: cross-provider-benchmark
 
-# Cross-provider word-solver benchmark (Roadmap #3). Tiered sample sizes so the
-# expensive frontier models are still included, just on fewer clues (same seed =>
-# subset of the cheaper tiers). Commits results to research/cross_provider/.
-# Triggers on push to this file (so it runs without manual dispatch) + dispatch.
+# Cross-provider word-solver benchmark (Roadmap #3 / REPORT §5). Tiered sample
+# sizes so the expensive frontier models are still included on fewer clues (same
+# seed => subset of the cheaper tiers). Commits results to research/cross_provider/.
+# Manual: Actions tab -> Run workflow.
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/run-cross-provider-once.yml"
+    inputs:
+      effort:
+        description: "reasoning_effort for reasoning/thinking models"
+        type: choice
+        options: [minimal, low, medium, high]
+        default: low
+      threads:
+        description: "concurrent requests per model"
+        default: "6"
 
 permissions:
   contents: write
@@ -25,8 +31,8 @@ jobs:
       OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
       ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL || secrets.ANTHROPIC_BASE_URL }}
       GOOGLE_BASE_URL: ${{ vars.GOOGLE_BASE_URL || secrets.GOOGLE_BASE_URL }}
-      EFFORT: low
-      THREADS: "6"
+      EFFORT: ${{ inputs.effort || 'low' }}
+      THREADS: ${{ inputs.threads || '6' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -37,6 +43,7 @@ jobs:
         run: uv sync --frozen
 
       - name: Tier A - cheap models (n=120)
+        if: always()
         run: |
           uv run karels-crypto-benchmark \
             --models gpt-4o-mini gpt-4.1 gpt-5-mini-2025-08-07 \
@@ -48,7 +55,7 @@ jobs:
         if: always()
         run: |
           uv run karels-crypto-benchmark \
-            --models gpt-5-2025-08-07 gemini-3.5-flash gemini-3-pro-preview \
+            --models gpt-5-2025-08-07 gemini-3.5-flash \
                      claude-sonnet-4-5-20250929 \
             --limit 60 --seed 0 --reasoning-effort "$EFFORT" --num-threads "$THREADS" \
             --output-dir research/cross_provider/tier_b
