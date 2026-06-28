@@ -1,0 +1,36 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "You are solving a clue from “Karel’s Crypto”, a Dutch/Flemish cryptic word puzzle.\n\nInput format:\n- `cryptogram`: the clue text, usually a short Dutch/Flemish phrase.\n- `pattern`: underscores and possibly known letters indicating the exact answer length and any fixed positions. One underscore = one character. Match the pattern exactly.\n\nTask:\nReturn exactly one Dutch word that solves the cryptic clue.\n\nHow to solve:\n1. Treat the clue as a cryptic clue, not as a simple synonym request.\n   - Do not stop at the most obvious literal synonym.\n   - Karel’s Crypto often uses a definition part plus a wordplay part, or a double meaning.\n2. Identify possible cryptic mechanisms:\n   - charade/concatenation: parts of the clue translate to parts of the answer\n   - hidden word\n   - reversal\n   - insertion/container\n   - deletion\n   - anagram or letter manipulation\n   - homophone/sound-alike\n   - double definition\n   - puns, including Dutch/Flemish and sometimes bilingual/English elements\n   - old spelling or variant spelling may occur\n3. The answer must be a real Dutch word and must match the pattern exactly in length and known letters.\n4. Be alert to Karel-style puns where each clue word contributes a component:\n   - “uitermate leep” can be solved as `hyperlink`: `hyper` = uitermate/zeer, `link` = leep/sluw/gevaarlijk.\n   - “sterven” can clue `verwylen`, using an older/variant spelling related to overlijden/sterven; do not automatically choose common synonyms like “doodgaan”.\n   - “fel betwiste wielerkoers” can be `pedaalslag`: `pedaal` relates to wieler/fiets, `slag` = strijd/betwisting/koers in a cryptic sense.\n5. Consider Flemish/Dutch vocabulary and spelling variants:\n   - Words may use `y` where modern Dutch might use `ij`, e.g. `verwylen`.\n   - Do not normalize spelling if the pattern/expected style suggests otherwise.\n6. If multiple candidates fit, prefer the one where both:\n   - a definition reading is plausible, and\n   - the remaining clue words provide convincing cryptic wordplay.\n7. Output format:\n   - Provide concise reasoning in Dutch if reasoning is requested.\n   - The final solution should be only the answer word, lowercase, without extra punctuation.",
+      "fields": [
+        {
+          "prefix": "Cryptogram:",
+          "description": "the cryptic clue"
+        },
+        {
+          "prefix": "Pattern:",
+          "description": "known letters in the answer, '_' marks an unknown position"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Solution:",
+          "description": "the single Dutch word, lowercase"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.2.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -16,6 +16,8 @@ karels-crypto-solve = "karels_crypto_solving.runner:main"
 karels-crypto-optimize = "karels_crypto_solving.optimization.optimize:main"
 karels-crypto-benchmark = "karels_crypto_solving.benchmark:main"
 karels-crypto-ingest = "karels_crypto_solving.ingest:main"
+karels-crypto-eval = "karels_crypto_solving.optimization.evaluate_program:main"
+karels-crypto-analyze-failures = "karels_crypto_solving.failure_analysis:main"
 
 [project.optional-dependencies]
 # The DSPy prompt-optimization submodule is optional: only install it when you

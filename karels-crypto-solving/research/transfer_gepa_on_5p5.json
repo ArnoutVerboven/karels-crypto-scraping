@@ -1,0 +1,714 @@
+{
+  "model": "gpt-5.5-2026-04-23",
+  "program": "research/opt/gepa/optimized_word_solver.json",
+  "split": "val",
+  "n": 88,
+  "correct": 46,
+  "accuracy": 0.5227272727272727,
+  "predictions": [
+    {
+      "cryptogram": "‘sen’ en ‘her’",
+      "pattern": "_____________",
+      "expected": "hersenhelften",
+      "predicted": "hersenhelften",
+      "normalised": "hersenhelften",
+      "correct": true
+    },
+    {
+      "cryptogram": "gemakkelijke route",
+      "pattern": "_________",
+      "expected": "simpelweg",
+      "predicted": "simpelweg",
+      "normalised": "simpelweg",
+      "correct": true
+    },
+    {
+      "cryptogram": "Klunzige vogels (Linaria cannabina)",
+      "pattern": "_____",
+      "expected": "kneus",
+      "predicted": "kneus",
+      "normalised": "kneus",
+      "correct": true
+    },
+    {
+      "cryptogram": "futloos schapenjong",
+      "pattern": "_________",
+      "expected": "lammeling",
+      "predicted": "lamlendig",
+      "normalised": "lamlendig",
+      "correct": false
+    },
+    {
+      "cryptogram": "minimaliseren",
+      "pattern": "_________",
+      "expected": "kleineren",
+      "predicted": "verkleinen",
+      "normalised": "verkleinen",
+      "correct": false
+    },
+    {
+      "cryptogram": "kippenspook (Vl.)",
+      "pattern": "________",
+      "expected": "kiekeboe",
+      "predicted": "kiekeboe",
+      "normalised": "kiekeboe",
+      "correct": true
+    },
+    {
+      "cryptogram": "zakjesdoekje",
+      "pattern": "______",
+      "expected": "pochet",
+      "predicted": "pochet",
+      "normalised": "pochet",
+      "correct": true
+    },
+    {
+      "cryptogram": "even lief",
+      "pattern": "____________",
+      "expected": "gelijkaardig",
+      "predicted": "gelijkaardig",
+      "normalised": "gelijkaardig",
+      "correct": true
+    },
+    {
+      "cryptogram": "fastforward op het toilet",
+      "pattern": "___________",
+      "expected": "doorspoelen",
+      "predicted": "doorspoelen",
+      "normalised": "doorspoelen",
+      "correct": true
+    },
+    {
+      "cryptogram": "geniaal en geslepen",
+      "pattern": "________",
+      "expected": "briljant",
+      "predicted": "briljant",
+      "normalised": "briljant",
+      "correct": true
+    },
+    {
+      "cryptogram": "speelmuntjes",
+      "pattern": "__________",
+      "expected": "kindergeld",
+      "predicted": "spelmunten",
+      "normalised": "spelmunten",
+      "correct": false
+    },
+    {
+      "cryptogram": "benig",
+      "pattern": "_____",
+      "expected": "potig",
+      "predicted": "mager",
+      "normalised": "mager",
+      "correct": false
+    },
+    {
+      "cryptogram": "golfstokvogel (Carduelis carduelis)",
+      "pattern": "______",
+      "expected": "putter",
+      "predicted": "putter",
+      "normalised": "putter",
+      "correct": true
+    },
+    {
+      "cryptogram": "watervaller",
+      "pattern": "_________",
+      "expected": "cascadeur",
+      "predicted": "cascadeur",
+      "normalised": "cascadeur",
+      "correct": true
+    },
+    {
+      "cryptogram": "homofiele kluizenaar",
+      "pattern": "__________",
+      "expected": "heremietje",
+      "predicted": "sodomieter",
+      "normalised": "sodomieter",
+      "correct": false
+    },
+    {
+      "cryptogram": "een voor kinderen handzaam spijskaartje (Fr.)",
+      "pattern": "______",
+      "expected": "menuet",
+      "predicted": "menuke",
+      "normalised": "menuke",
+      "correct": false
+    },
+    {
+      "cryptogram": "ziltwaterhond",
+      "pattern": "____",
+      "expected": "brak",
+      "predicted": "brak",
+      "normalised": "brak",
+      "correct": true
+    },
+    {
+      "cryptogram": "met de hand geschreven rekening",
+      "pattern": "___________",
+      "expected": "manufactuur",
+      "predicted": "handschrift",
+      "normalised": "handschrift",
+      "correct": false
+    },
+    {
+      "cryptogram": "28 en 286.412 zijn deelbaar ...",
+      "pattern": "_________",
+      "expected": "doorzeven",
+      "predicted": "tweedelig",
+      "normalised": "tweedelig",
+      "correct": false
+    },
+    {
+      "cryptogram": "kommerlol",
+      "pattern": "___________",
+      "expected": "leedvermaak",
+      "predicted": "leedvermaak",
+      "normalised": "leedvermaak",
+      "correct": true
+    },
+    {
+      "cryptogram": "de kleine man",
+      "pattern": "_____",
+      "expected": "dwerg",
+      "predicted": "dwerg",
+      "normalised": "dwerg",
+      "correct": true
+    },
+    {
+      "cryptogram": "als parttime",
+      "pattern": "____________",
+      "expected": "beroepshalve",
+      "predicted": "gelijktijdig",
+      "normalised": "gelijktijdig",
+      "correct": false
+    },
+    {
+      "cryptogram": "canvas",
+      "pattern": "_________",
+      "expected": "kunststof",
+      "predicted": "tekenvlak",
+      "normalised": "tekenvlak",
+      "correct": false
+    },
+    {
+      "cryptogram": "trendy smaakmaker van bier",
+      "pattern": "______",
+      "expected": "hiphop",
+      "predicted": "hiphop",
+      "normalised": "hiphop",
+      "correct": true
+    },
+    {
+      "cryptogram": "stopwoord",
+      "pattern": "____",
+      "expected": "amen",
+      "predicted": "halt",
+      "normalised": "halt",
+      "correct": false
+    },
+    {
+      "cryptogram": "galmkamer",
+      "pattern": "___________",
+      "expected": "echolocatie",
+      "predicted": "echovertrek",
+      "normalised": "echovertrek",
+      "correct": false
+    },
+    {
+      "cryptogram": "gangbaar brouwafval",
+      "pattern": "____",
+      "expected": "draf",
+      "predicted": "draf",
+      "normalised": "draf",
+      "correct": true
+    },
+    {
+      "cryptogram": "belangrijkste zijde van een single",
+      "pattern": "_____",
+      "expected": "akant",
+      "predicted": "akant",
+      "normalised": "akant",
+      "correct": true
+    },
+    {
+      "cryptogram": "test voor brandweermannen",
+      "pattern": "_________",
+      "expected": "vuurproef",
+      "predicted": "vuurproef",
+      "normalised": "vuurproef",
+      "correct": true
+    },
+    {
+      "cryptogram": "Engels manoeuvre",
+      "pattern": "____",
+      "expected": "move",
+      "predicted": "move",
+      "normalised": "move",
+      "correct": true
+    },
+    {
+      "cryptogram": "die vult zijn wagen met LPG",
+      "pattern": "_________",
+      "expected": "gastanker",
+      "predicted": "gastanker",
+      "normalised": "gastanker",
+      "correct": true
+    },
+    {
+      "cryptogram": "klopjacht",
+      "pattern": "_________",
+      "expected": "slagschip",
+      "predicted": "slagschip",
+      "normalised": "slagschip",
+      "correct": true
+    },
+    {
+      "cryptogram": "vermakelijk slaginstrument",
+      "pattern": "_____________",
+      "expected": "moppentrommel",
+      "predicted": "billenkletser",
+      "normalised": "billenkletser",
+      "correct": false
+    },
+    {
+      "cryptogram": "spraakwater",
+      "pattern": "________",
+      "expected": "kletsnat",
+      "predicted": "speeksel",
+      "normalised": "speeksel",
+      "correct": false
+    },
+    {
+      "cryptogram": "geen weer",
+      "pattern": "____",
+      "expected": "heen",
+      "predicted": "neeg",
+      "normalised": "neeg",
+      "correct": false
+    },
+    {
+      "cryptogram": "aangekleed als door een vriendelijke hond",
+      "pattern": "________",
+      "expected": "afgelikt",
+      "predicted": "opgelikt",
+      "normalised": "opgelikt",
+      "correct": false
+    },
+    {
+      "cryptogram": "lantaarnaansteker op een schip",
+      "pattern": "____________",
+      "expected": "lichtmatroos",
+      "predicted": "lichtmatroos",
+      "normalised": "lichtmatroos",
+      "correct": true
+    },
+    {
+      "cryptogram": "nadelige gevolgen van tabaksgebruik",
+      "pattern": "__________",
+      "expected": "rookschade",
+      "predicted": "rookschade",
+      "normalised": "rookschade",
+      "correct": true
+    },
+    {
+      "cryptogram": "vangnet",
+      "pattern": "___",
+      "expected": "web",
+      "predicted": "web",
+      "normalised": "web",
+      "correct": true
+    },
+    {
+      "cryptogram": "Margaretha van de zee",
+      "pattern": "_____",
+      "expected": "griet",
+      "predicted": "griet",
+      "normalised": "griet",
+      "correct": true
+    },
+    {
+      "cryptogram": "geilaard",
+      "pattern": "______",
+      "expected": "luster",
+      "predicted": "minnaar",
+      "normalised": "minnaar",
+      "correct": false
+    },
+    {
+      "cryptogram": "popje dat vol is van zichzelf (Russ.)",
+      "pattern": "__________",
+      "expected": "matroesjka",
+      "predicted": "matroesjka",
+      "normalised": "matroesjka",
+      "correct": true
+    },
+    {
+      "cryptogram": "doen ontvlammen",
+      "pattern": "________",
+      "expected": "aanvuren",
+      "predicted": "aanmaken",
+      "normalised": "aanmaken",
+      "correct": false
+    },
+    {
+      "cryptogram": "opwindende trap",
+      "pattern": "____",
+      "expected": "kick",
+      "predicted": "kick",
+      "normalised": "kick",
+      "correct": true
+    },
+    {
+      "cryptogram": "de Tour van 1903",
+      "pattern": "_____________",
+      "expected": "openingsronde",
+      "predicted": "openingsronde",
+      "normalised": "openingsronde",
+      "correct": true
+    },
+    {
+      "cryptogram": "de glorie van de eikel",
+      "pattern": "_____",
+      "expected": "glans",
+      "predicted": "glans",
+      "normalised": "glans",
+      "correct": true
+    },
+    {
+      "cryptogram": "duizend en negen (Lat.)",
+      "pattern": "___",
+      "expected": "mix",
+      "predicted": "mix",
+      "normalised": "mix",
+      "correct": true
+    },
+    {
+      "cryptogram": "hesoveralen",
+      "pattern": "___________",
+      "expected": "verhaspelen",
+      "predicted": "aalscholver",
+      "normalised": "aalscholver",
+      "correct": false
+    },
+    {
+      "cryptogram": "schoenmakersmiddel",
+      "pattern": "_____",
+      "expected": "leest",
+      "predicted": "leest",
+      "normalised": "leest",
+      "correct": true
+    },
+    {
+      "cryptogram": "EHBO",
+      "pattern": "____________",
+      "expected": "pleisterwerk",
+      "predicted": "beginletters",
+      "normalised": "beginletters",
+      "correct": false
+    },
+    {
+      "cryptogram": "is de herbergier",
+      "pattern": "_______",
+      "expected": "waardig",
+      "predicted": "waardin",
+      "normalised": "waardin",
+      "correct": false
+    },
+    {
+      "cryptogram": "'leuk' op de kleuterfacebook",
+      "pattern": "____________",
+      "expected": "kleinduimpje",
+      "predicted": "vindikkeleuk",
+      "normalised": "vindikkeleuk",
+      "correct": false
+    },
+    {
+      "cryptogram": "kleefkous",
+      "pattern": "_______",
+      "expected": "collant",
+      "predicted": "plaksok",
+      "normalised": "plaksok",
+      "correct": false
+    },
+    {
+      "cryptogram": "octet - duet",
+      "pattern": "______",
+      "expected": "sextet",
+      "predicted": "sextet",
+      "normalised": "sextet",
+      "correct": true
+    },
+    {
+      "cryptogram": "metalen koppakking",
+      "pattern": "____",
+      "expected": "helm",
+      "predicted": "helm",
+      "normalised": "helm",
+      "correct": true
+    },
+    {
+      "cryptogram": "voet korter, ...",
+      "pattern": "__________",
+      "expected": "handlanger",
+      "predicted": "verkorting",
+      "normalised": "verkorting",
+      "correct": false
+    },
+    {
+      "cryptogram": "ontvlekken op z'n Frans",
+      "pattern": "__________",
+      "expected": "detacheren",
+      "predicted": "detacheren",
+      "normalised": "detacheren",
+      "correct": true
+    },
+    {
+      "cryptogram": "na een flinke mep gaf de radio ...",
+      "pattern": "_________",
+      "expected": "weerklank",
+      "predicted": "weerklank",
+      "normalised": "weerklank",
+      "correct": true
+    },
+    {
+      "cryptogram": "grove den op de golfbaan",
+      "pattern": "_____",
+      "expected": "green",
+      "predicted": "green",
+      "normalised": "green",
+      "correct": true
+    },
+    {
+      "cryptogram": "gebeurt bij de mise-en-place van oxtailsoep",
+      "pattern": "____________",
+      "expected": "staartdeling",
+      "predicted": "staartdeling",
+      "normalised": "staartdeling",
+      "correct": true
+    },
+    {
+      "cryptogram": "dienstknecht",
+      "pattern": "__________",
+      "expected": "misdienaar",
+      "predicted": "misdienaar",
+      "normalised": "misdienaar",
+      "correct": true
+    },
+    {
+      "cryptogram": "geen groot licht",
+      "pattern": "___",
+      "expected": "led",
+      "predicted": "dom",
+      "normalised": "dom",
+      "correct": false
+    },
+    {
+      "cryptogram": "is een boom in de herfst",
+      "pattern": "_________",
+      "expected": "losbladig",
+      "predicted": "afvallige",
+      "normalised": "afvallige",
+      "correct": false
+    },
+    {
+      "cryptogram": "wielerminnend",
+      "pattern": "_____________",
+      "expected": "koersgevoelig",
+      "predicted": "wielerminnaar",
+      "normalised": "wielerminnaar",
+      "correct": false
+    },
+    {
+      "cryptogram": "bedrijf van vertrouwen",
+      "pattern": "_____",
+      "expected": "trust",
+      "predicted": "trust",
+      "normalised": "trust",
+      "correct": true
+    },
+    {
+      "cryptogram": "zeemogendheid",
+      "pattern": "__________",
+      "expected": "waterstaat",
+      "predicted": "waterstaat",
+      "normalised": "waterstaat",
+      "correct": true
+    },
+    {
+      "cryptogram": "ménage à trois chevaux",
+      "pattern": "______",
+      "expected": "manege",
+      "predicted": "manege",
+      "normalised": "manege",
+      "correct": true
+    },
+    {
+      "cryptogram": "beïnvloedde het Franse keizerrijk",
+      "pattern": "_________",
+      "expected": "empirisch",
+      "predicted": "stempelde",
+      "normalised": "stempelde",
+      "correct": false
+    },
+    {
+      "cryptogram": "zonder panorama",
+      "pattern": "____________",
+      "expected": "uitzichtloos",
+      "predicted": "uitzichtloos",
+      "normalised": "uitzichtloos",
+      "correct": true
+    },
+    {
+      "cryptogram": "slabbetje",
+      "pattern": "_______",
+      "expected": "spatlap",
+      "predicted": "bavetje",
+      "normalised": "bavetje",
+      "correct": false
+    },
+    {
+      "cryptogram": "rechtszaak over (onwettig) slopen",
+      "pattern": "_____________",
+      "expected": "afbraakproces",
+      "predicted": "afbraakproces",
+      "normalised": "afbraakproces",
+      "correct": true
+    },
+    {
+      "cryptogram": "opslaan in een bestand",
+      "pattern": "_______",
+      "expected": "fileren",
+      "predicted": "bewaren",
+      "normalised": "bewaren",
+      "correct": false
+    },
+    {
+      "cryptogram": "jagersbal",
+      "pattern": "________",
+      "expected": "knalfuif",
+      "predicted": "wilddans",
+      "normalised": "wilddans",
+      "correct": false
+    },
+    {
+      "cryptogram": "nachtelijke toerist",
+      "pattern": "____________",
+      "expected": "maanreiziger",
+      "predicted": "nachtvlinder",
+      "normalised": "nachtvlinder",
+      "correct": false
+    },
+    {
+      "cryptogram": "koorlid",
+      "pattern": "_________",
+      "expected": "meezinger",
+      "predicted": "koororgel",
+      "normalised": "koororgel",
+      "correct": false
+    },
+    {
+      "cryptogram": "honing",
+      "pattern": "__________",
+      "expected": "bijproduct",
+      "predicted": "bijproduct",
+      "normalised": "bijproduct",
+      "correct": true
+    },
+    {
+      "cryptogram": "dialect",
+      "pattern": "__________",
+      "expected": "plaatstaal",
+      "predicted": "streektaal",
+      "normalised": "streektaal",
+      "correct": false
+    },
+    {
+      "cryptogram": "het bovenste deel van het lichaam, ...",
+      "pattern": "_________",
+      "expected": "heethoofd",
+      "predicted": "hoofdstuk",
+      "normalised": "hoofdstuk",
+      "correct": false
+    },
+    {
+      "cryptogram": "aanzienlijk verdagen",
+      "pattern": "________",
+      "expected": "verweken",
+      "predicted": "beduidend",
+      "normalised": "beduidend",
+      "correct": false
+    },
+    {
+      "cryptogram": "aanknopingspunten",
+      "pattern": "_______",
+      "expected": "eindjes",
+      "predicted": "houvast",
+      "normalised": "houvast",
+      "correct": false
+    },
+    {
+      "cryptogram": "wassen",
+      "pattern": "_______",
+      "expected": "citeren",
+      "predicted": "groeien",
+      "normalised": "groeien",
+      "correct": false
+    },
+    {
+      "cryptogram": "reisgezel",
+      "pattern": "____________",
+      "expected": "samentrekker",
+      "predicted": "medereiziger",
+      "normalised": "medereiziger",
+      "correct": false
+    },
+    {
+      "cryptogram": "ribdonor",
+      "pattern": "____",
+      "expected": "adam",
+      "predicted": "adam",
+      "normalised": "adam",
+      "correct": true
+    },
+    {
+      "cryptogram": "toeslag voor verpakking",
+      "pattern": "_______",
+      "expected": "zakgeld",
+      "predicted": "bijslag",
+      "normalised": "bijslag",
+      "correct": false
+    },
+    {
+      "cryptogram": "verward als een zelfmoordterrorist",
+      "pattern": "__________",
+      "expected": "opgeblazen",
+      "predicted": "opgeblazen",
+      "normalised": "opgeblazen",
+      "correct": true
+    },
+    {
+      "cryptogram": "laag blaffende hond (Eng)",
+      "pattern": "______",
+      "expected": "woofer",
+      "predicted": "basset",
+      "normalised": "basset",
+      "correct": false
+    },
+    {
+      "cryptogram": "boerderette",
+      "pattern": "________",
+      "expected": "fermette",
+      "predicted": "fermette",
+      "normalised": "fermette",
+      "correct": true
+    },
+    {
+      "cryptogram": "En wat het zoenen betreft: ... beter dan mannen.",
+      "pattern": "_____________",
+      "expected": "vrouwentongen",
+      "predicted": "vrouwenkussen",
+      "normalised": "vrouwenkussen",
+      "correct": false
+    }
+  ]
+}

@@ -224,8 +224,10 @@ def _compile_copro(args, program, trainset, valset, prompt_lm, log_dir):
         kwargs["prompt_model"] = prompt_lm
     optimizer = COPRO(**kwargs)
     eval_kwargs = {"num_threads": args.num_threads, "display_progress": True, "display_table": 0}
-    # COPRO evaluates candidates on the trainset it is given.
-    return optimizer.compile(program, trainset=trainset + valset, eval_kwargs=eval_kwargs)
+    # COPRO re-scores every candidate on its whole devset, so cap it (otherwise
+    # breadth*depth * |devset| calls explodes).
+    devset = valset[: args.copro_devset_size]
+    return optimizer.compile(program, trainset=devset, eval_kwargs=eval_kwargs)
 
 
 def _compile_gepa(args, program, trainset, valset, reflection_lm, log_dir):
@@ -406,6 +408,8 @@ def build_parser() -> argparse.ArgumentParser:
                         help="COPRO: coordinate-ascent rounds.")
     budget.add_argument("--init-temperature", type=float, default=1.4,
                         help="COPRO: proposal temperature (diversity).")
+    budget.add_argument("--copro-devset-size", type=int, default=60,
+                        help="COPRO: cap the dev set used to score candidates.")
     budget.add_argument("--reflection-minibatch-size", type=int, default=8,
                         help="GEPA: failing examples analysed per reflection.")
     budget.add_argument("--max-full-evals", type=int, default=None,

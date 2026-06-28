@@ -1,0 +1,72 @@
+{
+  "source": "research/preds_gpt5mini.json",
+  "model_evaluated": "gpt-5-mini-2025-08-07",
+  "quantitative": {
+    "total": 874,
+    "correct": 142,
+    "accuracy": 0.16247139588100687,
+    "failures": 732,
+    "blank_or_unparseable": 1,
+    "wrong_length": 108,
+    "right_length_wrong_word": 623
+  },
+  "clusters": {
+    "categories": [
+      {
+        "name": "Surface-definition answers",
+        "description": "The model answered the clue as a normal definition or surface description, rather than looking for the cryptic or joking answer intended by the puzzle.",
+        "count": 36,
+        "example_clues": [
+          "platmaken",
+          "weinig omzet in de fruitmarkt"
+        ]
+      },
+      {
+        "name": "Compound/charade pun not built",
+        "description": "The correct answer is a compound or constructed phrase combining two readings of clue elements; the model failed to decompose and recombine the parts cryptically.",
+        "count": 30,
+        "example_clues": [
+          "paardenuniversiteit",
+          "flat van het elftal"
+        ]
+      },
+      {
+        "name": "Foreign, regional, abbreviation cue missed",
+        "description": "Markers such as Eng., Fr., Gr., Vl., place names, acronyms, or Belgian/Dutch cultural references were ignored or handled in the wrong language/register.",
+        "count": 12,
+        "example_clues": [
+          "uitleg (Eng.)",
+          "Wie? De Wereldgezondheidsorganisatie."
+        ]
+      },
+      {
+        "name": "Letter/sound-level manipulation missed",
+        "description": "The solution depends on hidden letters, sound-alikes, spelling changes, resegmentation, or other word-level mechanics; the model stayed at the semantic level.",
+        "count": 9,
+        "example_clues": [
+          "O mengelmoes, o potpourri. O velerlei, ...",
+          "uitermate leep"
+        ]
+      },
+      {
+        "name": "Malformed or copied clue fragments",
+        "description": "The model produced a non-answer by copying, concatenating, or slightly altering words from the clue, sometimes yielding a non-word or tautological answer.",
+        "count": 7,
+        "example_clues": [
+          "Oostends accu",
+          "klantendelict"
+        ]
+      },
+      {
+        "name": "Wrong sense, register, or domain of an ambiguous word",
+        "description": "The model chose a plausible sense of the clue word, but the intended answer relies on a less obvious meaning, register, idiom, or specialist domain.",
+        "count": 6,
+        "example_clues": [
+          "groen",
+          "verlies"
+        ]
+      }
+    ],
+    "clustered_items": 100
+  }
+}
