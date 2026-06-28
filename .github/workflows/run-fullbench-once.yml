@@ -35,15 +35,8 @@ jobs:
           cache-dependency-glob: karels-crypto-solving/uv.lock
       - name: Sync
         run: uv sync --frozen
-      - name: Capability benchmark (full 874)
-        run: |
-          uv run karels-crypto-benchmark \
-            --limit 1000 --reveal none --reasoning-effort low --num-threads 16 \
-            --output-dir research/capability_full \
-            --models \
-              gpt-3.5-turbo gpt-4o-mini gpt-4o gpt-4.1-mini gpt-4.1 \
-              o4-mini gpt-5-nano-2025-08-07 gpt-5-mini-2025-08-07 gpt-5-2025-08-07 \
-              gpt-5.4-mini-2026-03-17 gpt-5.5-2026-04-23
+      - name: Cancelled (cost gate — awaiting confirmation)
+        run: echo "Full-874 benchmark paused pending cost confirmation (~EUR 40+)."
       - name: Commit
         if: always()
         run: |
