@@ -9,7 +9,7 @@ section = one issue, `Priority` → the board's priority field).
 | - | ----- | ----------------- | ------ | ---------------- |
 | 1 | Human solver benchmark | **High** | M | needs your input (worksheet) |
 | 2 | Human/expert feedback into optimization | **High** | M | needs your input |
-| 3 | Cross-provider model benchmark (+cost) | **High** | M | **blocked: need your provider keys/config** |
+| 3 | Cross-provider model benchmark (+cost) | **High** | M | **done** (REPORT §5); follow-ups: bigger n, Claude effort sweep, gemini-3-pro access |
 | 4 | Pre-filled-letters (reveal) difficulty sweep | **High** | M | blocked on #5 (grid key) |
 | 5 | Capture the grid key (hint cells + vertical word) | **High** | M | better OCR / re-ingest |
 | 6 | Full-874 capability eval (CIs) | Med | S | **in progress** |
@@ -57,14 +57,17 @@ Measure the effect of *your* expert feedback on prompt optimization (human-in-th
   metric = val accuracy + transfer to gpt-5.5.
 - **Collection format:** one small CSV/markdown you fill in.
 
-## 3. Cross-provider model benchmark with cost (High) — BLOCKED
-Benchmark non-OpenAI providers (Anthropic, Google, etc.) against the OpenAI set,
-adding **cost** as a reported axis.
-- **Needs from you:** for each provider — base URL, API key (as secrets), model
-  ids, and price (input/output per 1M). *Please share the setup and I'll wire it.*
-- **Code:** generalize `config.py` (currently single `OPENAI_BASE_URL`/key) to a
-  per-model provider map; extend `pricing.py`; the benchmark already reports
-  accuracy + est. cost. Add a cost-vs-accuracy Pareto plot.
+## 3. Cross-provider model benchmark with cost (High) — DONE
+Benchmark non-OpenAI providers (Anthropic, Google) against the OpenAI set, with
+**cost** as a reported axis. **Results in REPORT §5** (`research/cross_provider/`).
+- **Done:** `providers.py` routes OpenAI/Anthropic/Google via the gateway (shared
+  key, per-provider base URLs); `pricing.py` reads `model_registry.json`; the
+  benchmark reports accuracy + est. cost; ran 10 models tiered by cost ($5.38).
+- **Finding:** provider frontiers cluster ~37–47%; `gemini-flash` is the value
+  winner; Claude underperforms its price at low effort.
+- **Follow-ups:** larger n (tighter CIs); a reasoning-effort sweep on Claude;
+  restore `gemini-3-pro` access (404 on this project today); a cost-vs-accuracy
+  Pareto plot; optimize a prompt per provider.
 
 ## 4. Pre-filled-letters (reveal) difficulty sweep (High) — needs #5
 How much does revealing letters help, as a function of #revealed (and length)?

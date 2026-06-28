@@ -24,10 +24,9 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-import openai
-
 from . import config, data, pricing
 from .patterns import build_pattern
+from .providers import ProviderError
 from .word_solver import solve_word
 
 logger = logging.getLogger(__name__)
@@ -35,17 +34,10 @@ logger = logging.getLogger(__name__)
 _MODULE_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_RESULTS_DIR = _MODULE_ROOT / "benchmark_results"
 
-# Per-model API failures we expect during a sweep and want to skip (the model
-# isn't enabled on the gateway, rate limiting, transient network/server issues).
-# Everything else - bad requests / wrong parameters (400), auth (401), and any
-# non-API bug - is left to propagate and crash, so real problems surface.
-EXPECTED_API_ERRORS = (
-    openai.APIConnectionError,  # includes APITimeoutError
-    openai.RateLimitError,
-    openai.PermissionDeniedError,  # 403: model not allowed
-    openai.NotFoundError,  # 404: unknown model
-    openai.InternalServerError,  # 5xx
-)
+# Status codes we treat as "expected" per-model failures during a sweep (model
+# not enabled on the gateway, rate limiting, transient server issues) -> log &
+# skip. Bad request / auth (400/401) and any non-provider bug propagate & crash.
+_SKIP_STATUS = {403, 404, 408, 409, 429, 500, 502, 503, 504, None}
 
 # A representative spread of "main" models across generations. Override with
 # --models, or use --all-models for everything in the pricing table.
@@ -107,7 +99,6 @@ def benchmark_model(
     model,
     clues,
     *,
-    client,
     max_completion_tokens,
     reasoning_effort=None,
     num_threads=1,
@@ -123,14 +114,17 @@ def benchmark_model(
                 cryptogram,
                 length,
                 pattern,
-                client=client,
                 model=model,
                 max_completion_tokens=max_completion_tokens,
                 reasoning_effort=reasoning_effort,
             )
             return result, solution, None
-        except EXPECTED_API_ERRORS as exc:
-            logger.warning("Skipping a clue for model %s due to API error: %s", model, exc)
+        except ProviderError as exc:
+            # Expected per-model failures (unavailable/rate-limited/transient) are
+            # skipped; bad request / auth (400/401) propagate and crash.
+            if exc.status_code not in _SKIP_STATUS:
+                raise
+            logger.warning("Skipping a clue for model %s (%s): %s", model, exc.status_code, exc)
             return None, solution, str(exc)
 
     start = time.perf_counter()
@@ -176,18 +170,15 @@ def run_benchmark(
     max_completion_tokens=None,
     reasoning_effort=None,
     num_threads=1,
-    client=None,
     solve_fn=solve_word,
 ) -> list[ModelResult]:
     clues = sample_clues(limit, reveal, reveal_fraction, seed)
-    client = client or config.openai_client()
     results = []
     for model in models:
         print(f"Benchmarking {model} on {len(clues)} clues ...", flush=True)
         result = benchmark_model(
             model,
             clues,
-            client=client,
             max_completion_tokens=max_completion_tokens,
             reasoning_effort=reasoning_effort,
             num_threads=num_threads,

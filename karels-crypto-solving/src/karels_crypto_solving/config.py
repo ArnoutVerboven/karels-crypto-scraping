@@ -1,12 +1,16 @@
 """LLM configuration.
 
-Credentials are read from the standard OpenAI environment variables, which are
-expected to be provided (e.g. via GitHub secrets):
+All providers go through one company gateway with the **same key**
+(``OPENAI_API_KEY``); only the base URL differs per provider:
 
-* ``OPENAI_API_KEY``  - the API key.
-* ``OPENAI_BASE_URL`` - the API base URL (the ``openai`` client reads this
-  automatically; useful for self-hosted / proxied models).
-* ``OPENAI_MODEL``    - the model name to use (defaults to ``gpt-4o-mini``).
+* ``OPENAI_API_KEY``     - the gateway token (used by every provider).
+* ``OPENAI_BASE_URL``    - OpenAI base URL.
+* ``ANTHROPIC_BASE_URL`` - Anthropic base URL (for ``claude-*`` models).
+* ``GOOGLE_BASE_URL``    - Google/Vertex base URL (for ``gemini-*`` models).
+* ``OPENAI_MODEL``       - default model name (``gpt-4o-mini``).
+
+Routing by model id and the per-provider call details live in
+:mod:`karels_crypto_solving.providers`.
 """
 
 from __future__ import annotations

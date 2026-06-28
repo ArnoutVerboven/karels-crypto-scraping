@@ -1,0 +1,188 @@
+{
+  "config": {
+    "tier_a": {
+      "timestamp": "2026-06-28T21:40:14.405845+00:00",
+      "n_clues": 120,
+      "limit": 120,
+      "reveal": "none",
+      "reveal_fraction": 0.5,
+      "seed": 0,
+      "max_tokens": null,
+      "reasoning_effort": "low",
+      "num_threads": 6,
+      "models": [
+        "gpt-4o-mini",
+        "gpt-4.1",
+        "gpt-5-mini-2025-08-07",
+        "gemini-3-flash-preview",
+        "claude-haiku-4-5-20251001"
+      ]
+    },
+    "tier_b": {
+      "timestamp": "2026-06-28T22:09:54.219459+00:00",
+      "n_clues": 60,
+      "limit": 60,
+      "reveal": "none",
+      "reveal_fraction": 0.5,
+      "seed": 0,
+      "max_tokens": null,
+      "reasoning_effort": "low",
+      "num_threads": 6,
+      "models": [
+        "gpt-5-2025-08-07",
+        "gemini-3.5-flash",
+        "gemini-3-pro-preview",
+        "claude-sonnet-4-5-20250929"
+      ]
+    },
+    "tier_c": {
+      "timestamp": "2026-06-28T22:12:42.478884+00:00",
+      "n_clues": 30,
+      "limit": 30,
+      "reveal": "none",
+      "reveal_fraction": 0.5,
+      "seed": 0,
+      "max_tokens": null,
+      "reasoning_effort": "low",
+      "num_threads": 6,
+      "models": [
+        "gpt-5.5-2026-04-23",
+        "claude-opus-4-8"
+      ]
+    }
+  },
+  "results": [
+    {
+      "model": "gemini-3.5-flash",
+      "correct": 28,
+      "total": 60,
+      "errors": 0,
+      "prompt_tokens": 5080,
+      "completion_tokens": 69894,
+      "elapsed_s": 101.75,
+      "accuracy": 0.4666666666666667,
+      "est_cost_usd": 0.636666,
+      "last_error": null
+    },
+    {
+      "model": "gpt-5.5-2026-04-23",
+      "correct": 13,
+      "total": 30,
+      "errors": 0,
+      "prompt_tokens": 2749,
+      "completion_tokens": 18437,
+      "elapsed_s": 105.48,
+      "accuracy": 0.43333333333333335,
+      "est_cost_usd": 0.566855,
+      "last_error": null
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "correct": 49,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 10107,
+      "completion_tokens": 255225,
+      "elapsed_s": 332.33,
+      "accuracy": 0.4083333333333333,
+      "est_cost_usd": 0.7707284999999999,
+      "last_error": null
+    },
+    {
+      "model": "gpt-5-2025-08-07",
+      "correct": 23,
+      "total": 60,
+      "errors": 0,
+      "prompt_tokens": 5486,
+      "completion_tokens": 113632,
+      "elapsed_s": 388.94,
+      "accuracy": 0.38333333333333336,
+      "est_cost_usd": 1.1431775,
+      "last_error": null
+    },
+    {
+      "model": "claude-opus-4-8",
+      "correct": 11,
+      "total": 30,
+      "errors": 0,
+      "prompt_tokens": 4359,
+      "completion_tokens": 15794,
+      "elapsed_s": 62.34,
+      "accuracy": 0.36666666666666664,
+      "est_cost_usd": 0.416645,
+      "last_error": null
+    },
+    {
+      "model": "gpt-5-mini-2025-08-07",
+      "correct": 23,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 10918,
+      "completion_tokens": 95624,
+      "elapsed_s": 262.36,
+      "accuracy": 0.19166666666666668,
+      "est_cost_usd": 0.1939775,
+      "last_error": null
+    },
+    {
+      "model": "claude-sonnet-4-5-20250929",
+      "correct": 10,
+      "total": 60,
+      "errors": 0,
+      "prompt_tokens": 7937,
+      "completion_tokens": 50297,
+      "elapsed_s": 211.68,
+      "accuracy": 0.16666666666666666,
+      "est_cost_usd": 0.778266,
+      "last_error": null
+    },
+    {
+      "model": "gpt-4.1",
+      "correct": 16,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 11038,
+      "completion_tokens": 33733,
+      "elapsed_s": 84.75,
+      "accuracy": 0.13333333333333333,
+      "est_cost_usd": 0.29194,
+      "last_error": null
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "correct": 9,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 15833,
+      "completion_tokens": 111516,
+      "elapsed_s": 217.11,
+      "accuracy": 0.075,
+      "est_cost_usd": 0.573413,
+      "last_error": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "correct": 7,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 11038,
+      "completion_tokens": 17796,
+      "elapsed_s": 72.26,
+      "accuracy": 0.058333333333333334,
+      "est_cost_usd": 0.012333299999999998,
+      "last_error": null
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "correct": 0,
+      "total": 60,
+      "errors": 60,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "elapsed_s": 2.09,
+      "accuracy": 0.0,
+      "est_cost_usd": 0.0,
+      "last_error": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher model `projects/proj-01jvmm0swckhp/locations/global/publishers/google/models/gemini-3-pro-preview` was not found or your project does not have access to it. Ensure you are using a valid model name and that the model is available in the specified region. For more information, see: https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/locations.', 'status': 'NOT_FOUND'}}"
+    }
+  ]
+}

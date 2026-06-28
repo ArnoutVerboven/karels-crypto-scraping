@@ -10,7 +10,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from . import config
+from . import config, providers
 from .models import Puzzle
 from .prompts import WORD_SOLVER_SYSTEM, render_word_pattern
 
@@ -44,55 +44,36 @@ def solve_word(
     length: int,
     pattern: str | None = None,
     *,
-    client=None,
+    client=None,  # deprecated/ignored; kept for backwards compatibility
     model: str | None = None,
     system_prompt: str = WORD_SOLVER_SYSTEM,
     temperature: float | None = None,
     max_completion_tokens: int | None = None,
     reasoning_effort: str | None = None,
 ) -> WordSolution:
-    """Solve one clue. ``pattern`` is the known-letters string (``_`` = unknown)."""
+    """Solve one clue via the generic provider interface (OpenAI/Anthropic/Google).
+
+    ``pattern`` is the known-letters string (``_`` = unknown). Provider-specific
+    param handling (thinking, temperature, token budget) lives in ``providers``.
+    """
     if pattern is None:
         pattern = "_" * length
-
-    client = client or config.openai_client()
     model = model or config.model_name()
+    system = system_prompt.format(cryptogram=cryptogram, length=length, pattern=pattern)
 
-    reasoning = config.is_reasoning_model(model)
-    system = system_prompt.format(
-        cryptogram=cryptogram, length=length, pattern=pattern
+    result = providers.chat(
+        model,
+        system,
+        "Solve the clue.",
+        max_tokens=max_completion_tokens,
+        temperature=temperature,
+        reasoning_effort=reasoning_effort,
     )
-    kwargs = {}
-    # Reasoning models reject temperature != 1; only set it otherwise.
-    if temperature is not None and not reasoning:
-        kwargs["temperature"] = temperature
-    if max_completion_tokens is not None:
-        # `max_completion_tokens` is the unified cap (works for reasoning models
-        # too, unlike the legacy `max_tokens`). Reasoning models need headroom,
-        # or they spend the whole budget thinking and return empty content.
-        if reasoning:
-            max_completion_tokens = max(max_completion_tokens, config.REASONING_MIN_MAX_TOKENS)
-        kwargs["max_completion_tokens"] = max_completion_tokens
-    # reasoning_effort caps how much reasoning models "think" (low = much faster
-    # and cheaper). Only valid for reasoning models.
-    if reasoning_effort and reasoning:
-        kwargs["reasoning_effort"] = reasoning_effort
-
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": "Solve the clue."},
-        ],
-        **kwargs,
-    )
-    raw = response.choices[0].message.content or ""
-    usage = getattr(response, "usage", None)
     return WordSolution(
-        answer=_parse_answer(raw),
-        raw=raw,
-        prompt_tokens=getattr(usage, "prompt_tokens", 0) or 0,
-        completion_tokens=getattr(usage, "completion_tokens", 0) or 0,
+        answer=_parse_answer(result.text),
+        raw=result.text,
+        prompt_tokens=result.prompt_tokens,
+        completion_tokens=result.completion_tokens,
     )
 
 

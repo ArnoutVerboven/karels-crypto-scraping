@@ -17,6 +17,8 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL || secrets.ANTHROPIC_BASE_URL }}
+      GOOGLE_BASE_URL: ${{ vars.GOOGLE_BASE_URL || secrets.GOOGLE_BASE_URL }}
       OPENAI_MODEL: ${{ vars.OPENAI_MODEL || secrets.OPENAI_MODEL }}
     steps:
       - uses: actions/checkout@v4
@@ -31,13 +33,33 @@ jobs:
         run: |
           python - <<'PY'
           import os
-          print("base_url set:", bool(os.environ.get("OPENAI_BASE_URL")))
-          print("api_key set:", bool(os.environ.get("OPENAI_API_KEY")))
+          for k in ("OPENAI_API_KEY", "OPENAI_BASE_URL", "ANTHROPIC_BASE_URL", "GOOGLE_BASE_URL"):
+              print(f"{k:20} set={bool(os.environ.get(k))}")
           print("model:", os.environ.get("OPENAI_MODEL") or "(default)")
           PY
 
       - name: Word solver smoke (openai path, 2 clues)
         run: uv run karels-crypto-solve word --limit 2
+
+      - name: Multi-provider probe (OpenAI / Anthropic / Google)
+        if: always()
+        run: |
+          uv run python - <<'PY'
+          from karels_crypto_solving import providers
+          targets = {
+              "openai": "gpt-4o-mini",
+              "anthropic": "claude-haiku-4-5-20251001",
+              "google": "gemini-3-flash-preview",
+          }
+          for prov, model in targets.items():
+              try:
+                  r = providers.chat(model=model, system="You are concise.",
+                                     user="Reply with one Dutch word for 'house'.",
+                                     max_tokens=256, temperature=0.0)
+                  print(f"[OK]   {prov:9} {model:32} -> {r.text!r}")
+              except Exception as exc:  # noqa: BLE001
+                  print(f"[FAIL] {prov:9} {model:32} -> {type(exc).__name__}: {exc}")
+          PY
 
       - name: DSPy smoke (1 LLM call)
         if: always()
