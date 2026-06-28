@@ -1,0 +1,36 @@
+{
+  "predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Solve the Dutch cryptic clue from Karel's Crypto. Interpret the clue using Dutch cryptogram mechanisms such as double definitions, compound decomposition, literal reinterpretation, synonyms, idioms, homophones, hidden wordplay, or cultural/domain knowledge. Find exactly one Dutch word that fits the given pattern, where `_` is an unknown letter and any shown letters must match. Provide brief reasoning explaining the cryptic link, then output only the final answer as a lowercase single Dutch word.",
+      "fields": [
+        {
+          "prefix": "Cryptogram:",
+          "description": "the cryptic clue"
+        },
+        {
+          "prefix": "Pattern:",
+          "description": "known letters in the answer, '_' marks an unknown position"
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Solution:",
+          "description": "the single Dutch word, lowercase"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "3.2.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}

@@ -79,6 +79,13 @@ uv run karels-crypto-benchmark --models gpt-4o-mini gpt-4o o3 --limit 30
 uv run karels-crypto-ingest puzzles   --model gpt-5.5-2026-04-23
 uv run karels-crypto-ingest solutions --model gpt-5.5-2026-04-23
 uv run karels-crypto-ingest merge
+
+# Research tooling: per-word predictions for a model, then cluster failures:
+uv run karels-crypto-eval --model gpt-5-mini-2025-08-07 --split all --output preds.json
+uv run karels-crypto-analyze-failures --predictions preds.json --output failures.json
+# Transfer an optimized prompt to another model:
+uv run karels-crypto-eval --program research/opt/gepa/optimized_word_solver.json \
+    --model gpt-5.5-2026-04-23 --split val --output transfer.json
 ```
 
 ## Ingesting puzzle photos
@@ -169,7 +176,10 @@ src/karels_crypto_solving/
   puzzle_solver.py  solve_puzzle (agentic loop, 2 tools)
   patterns.py       build known-letter patterns (none/partial/all)
   ingest.py         vision-LLM ingestion of puzzle photos -> data format
+  failure_analysis.py  quantitative + LLM-clustered failure modes
   runner.py         CLI
+  research/         experiment outputs + REPORT.md (capability, failures,
+                    optimization, transfer); raw JSONs for plots
   pricing.py        OpenAI model prices (for benchmark cost estimates)
   benchmark.py      compare models on word solving (accuracy + cost)
   optimization/     DSPy prompt optimization submodule (optional extra)

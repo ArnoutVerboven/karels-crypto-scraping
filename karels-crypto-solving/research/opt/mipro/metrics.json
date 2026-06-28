@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-06-14T22:36:19.634332+00:00",
+  "config": {
+    "optimizer": "mipro",
+    "model": "gpt-5-mini-2025-08-07",
+    "prompt_model": "gpt-5.5-2026-04-23",
+    "reflection_model": null,
+    "seed_instruction": false,
+    "auto": "none",
+    "breadth": 10,
+    "depth": 3,
+    "init_temperature": 1.4,
+    "reflection_minibatch_size": 8,
+    "max_full_evals": null,
+    "max_metric_calls": null,
+    "num_candidates": 4,
+    "num_trials": 4,
+    "max_tokens": 1000,
+    "temperature": null,
+    "reasoning_effort": "low",
+    "num_threads": 16,
+    "demos": 0,
+    "ingested": true,
+    "reveal": "none",
+    "reveal_fraction": 0.5,
+    "val_fraction": 0.1,
+    "max_examples": null,
+    "seed": 0,
+    "n_examples": 874,
+    "n_train": 786,
+    "n_val": 88
+  },
+  "baseline_accuracy": 0.19318181818181818,
+  "optimized_accuracy": 0.25,
+  "best_val_score": 25.0,
+  "total_lm_calls": 0,
+  "training_curve": [
+    {
+      "trial": 1,
+      "minibatch_score": null,
+      "full_eval_score": 19.32,
+      "eval_calls_so_far": 88
+    },
+    {
+      "trial": 2,
+      "minibatch_score": 20.0,
+      "full_eval_score": null,
+      "eval_calls_so_far": 118
+    },
+    {
+      "trial": 3,
+      "minibatch_score": 13.33,
+      "full_eval_score": null,
+      "eval_calls_so_far": 148
+    },
+    {
+      "trial": 4,
+      "minibatch_score": 20.0,
+      "full_eval_score": null,
+      "eval_calls_so_far": 178
+    },
+    {
+      "trial": 5,
+      "minibatch_score": 13.33,
+      "full_eval_score": null,
+      "eval_calls_so_far": 208
+    },
+    {
+      "trial": 6,
+      "minibatch_score": null,
+      "full_eval_score": 25.0,
+      "eval_calls_so_far": 296
+    }
+  ]
+}

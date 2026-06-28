@@ -1,0 +1,145 @@
+{
+  "notes": {
+    "capability": "basic prompt, reasoning_effort=low, n=300 sampled from 874 (scraped+ingested)",
+    "failure_analysis": "gpt-5-mini, basic prompt, low effort, full set n=874; clusters judged by gpt-5.5",
+    "optimization": "task=gpt-5-mini low effort, proposer/reflection=gpt-5.5, val=88; bounded budgets",
+    "transfer": "GEPA prompt optimized on gpt-5-mini, evaluated on val=88"
+  },
+  "capability": [
+    {
+      "model": "gpt-5.5-2026-04-23",
+      "accuracy": 0.4,
+      "correct": 120,
+      "total": 300,
+      "est_cost_usd": 5.9360895
+    },
+    {
+      "model": "gpt-5-2025-08-07",
+      "accuracy": 0.2833333333333333,
+      "correct": 85,
+      "total": 300,
+      "est_cost_usd": 4.7952337499999995
+    },
+    {
+      "model": "gpt-5.4-mini-2026-03-17",
+      "accuracy": 0.17333333333333334,
+      "correct": 52,
+      "total": 300,
+      "est_cost_usd": 0.7989522750000001
+    },
+    {
+      "model": "o4-mini",
+      "accuracy": 0.16333333333333333,
+      "correct": 49,
+      "total": 300,
+      "est_cost_usd": 1.8086673
+    },
+    {
+      "model": "gpt-5-mini-2025-08-07",
+      "accuracy": 0.15666666666666668,
+      "correct": 47,
+      "total": 300,
+      "est_cost_usd": 0.45266875
+    },
+    {
+      "model": "gpt-4.1",
+      "accuracy": 0.09666666666666666,
+      "correct": 29,
+      "total": 300,
+      "est_cost_usd": 0.69131
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "accuracy": 0.08333333333333333,
+      "correct": 25,
+      "total": 300,
+      "est_cost_usd": 0.20572600000000002
+    },
+    {
+      "model": "gpt-4o",
+      "accuracy": 0.07,
+      "correct": 21,
+      "total": 300,
+      "est_cost_usd": 0.4755575
+    },
+    {
+      "model": "gpt-5-nano-2025-08-07",
+      "accuracy": 0.06333333333333334,
+      "correct": 19,
+      "total": 300,
+      "est_cost_usd": 0.11182735
+    },
+    {
+      "model": "gpt-3.5-turbo",
+      "accuracy": 0.02666666666666667,
+      "correct": 8,
+      "total": 300,
+      "est_cost_usd": 0.030248999999999998
+    },
+    {
+      "model": "gpt-4o-mini",
+      "accuracy": 0.023333333333333334,
+      "correct": 7,
+      "total": 300,
+      "est_cost_usd": 0.02842665
+    }
+  ],
+  "failure_quantitative": {
+    "total": 874,
+    "correct": 142,
+    "accuracy": 0.16247139588100687,
+    "failures": 732,
+    "blank_or_unparseable": 1,
+    "wrong_length": 108,
+    "right_length_wrong_word": 623
+  },
+  "failure_clusters": [
+    {
+      "name": "Surface-definition answers",
+      "count": 36
+    },
+    {
+      "name": "Compound/charade pun not built",
+      "count": 30
+    },
+    {
+      "name": "Foreign, regional, abbreviation cue missed",
+      "count": 12
+    },
+    {
+      "name": "Letter/sound-level manipulation missed",
+      "count": 9
+    },
+    {
+      "name": "Malformed or copied clue fragments",
+      "count": 7
+    },
+    {
+      "name": "Wrong sense, register, or domain of an ambiguous word",
+      "count": 6
+    }
+  ],
+  "optimization": {
+    "mipro": {
+      "baseline": 0.19318181818181818,
+      "optimized": 0.25,
+      "n_val": 88
+    },
+    "copro": {
+      "baseline": 0.19318181818181818,
+      "optimized": 0.20454545454545456,
+      "n_val": 88
+    },
+    "gepa": {
+      "baseline": 0.19318181818181818,
+      "optimized": 0.2727272727272727,
+      "n_val": 88
+    }
+  },
+  "transfer": {
+    "gpt5mini_baseline": 0.19318181818181818,
+    "gpt5mini_gepa": 0.2727272727272727,
+    "gpt55_baseline": 0.48863636363636365,
+    "gpt55_gepa_prompt": 0.5227272727272727
+  }
+}
