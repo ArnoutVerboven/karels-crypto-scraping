@@ -1,0 +1,60 @@
+name: reveal-analysis
+
+# Letter-reveal difficulty sweep (Roadmap #4 / REPORT). Randomized reveals (no
+# grid key needed), analyzed by word length, OpenAI models only. Commits results
+# to research/reveal/. Triggers on push to this file (to run now) + dispatch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      per_bucket:
+        description: "words sampled per length bucket"
+        default: "30"
+      effort:
+        description: "reasoning_effort for reasoning models"
+        type: choice
+        options: [minimal, low, medium, high]
+        default: low
+  push:
+    paths:
+      - ".github/workflows/reveal-analysis.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+      PER_BUCKET: ${{ inputs.per_bucket || '30' }}
+      EFFORT: ${{ inputs.effort || 'low' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Sync
+        run: uv sync --frozen
+
+      - name: Reveal sweep (OpenAI models)
+        run: |
+          uv run karels-crypto-reveal-analysis \
+            --models gpt-5-mini-2025-08-07 gpt-5-2025-08-07 gpt-4.1 \
+            --per-bucket "$PER_BUCKET" --fractions 0 0.25 0.5 0.75 \
+            --reasoning-effort "$EFFORT" --num-threads 6 --seed 0
+
+      - name: Commit results
+        if: always()
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add karels-crypto-solving/research/reveal
+          git commit -m "Letter-reveal sweep results (randomized reveals, by length)" || echo "no changes"
+          git push
