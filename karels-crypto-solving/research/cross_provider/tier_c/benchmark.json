@@ -1,0 +1,43 @@
+{
+  "config": {
+    "timestamp": "2026-06-28T22:12:42.478884+00:00",
+    "n_clues": 30,
+    "limit": 30,
+    "reveal": "none",
+    "reveal_fraction": 0.5,
+    "seed": 0,
+    "max_tokens": null,
+    "reasoning_effort": "low",
+    "num_threads": 6,
+    "models": [
+      "gpt-5.5-2026-04-23",
+      "claude-opus-4-8"
+    ]
+  },
+  "results": [
+    {
+      "model": "gpt-5.5-2026-04-23",
+      "correct": 13,
+      "total": 30,
+      "errors": 0,
+      "prompt_tokens": 2749,
+      "completion_tokens": 18437,
+      "elapsed_s": 105.48,
+      "accuracy": 0.43333333333333335,
+      "est_cost_usd": 0.566855,
+      "last_error": null
+    },
+    {
+      "model": "claude-opus-4-8",
+      "correct": 11,
+      "total": 30,
+      "errors": 0,
+      "prompt_tokens": 4359,
+      "completion_tokens": 15794,
+      "elapsed_s": 62.34,
+      "accuracy": 0.36666666666666664,
+      "est_cost_usd": 0.416645,
+      "last_error": null
+    }
+  ]
+}
