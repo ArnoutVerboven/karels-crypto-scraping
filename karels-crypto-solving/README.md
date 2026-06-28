@@ -124,6 +124,25 @@ LLM access uses the standard environment variables: `OPENAI_API_KEY`,
 Actions, `OPENAI_API_KEY` is a repository **secret**, while `OPENAI_BASE_URL`
 and `OPENAI_MODEL` are repository **variables** (they aren't sensitive).
 
+### Multiple providers (one gateway)
+
+The solver/benchmark run any of three providers through `providers.chat`, routed
+by model id: `gpt-*`/`o*` → OpenAI, `claude-*` → Anthropic, `gemini-*` → Google
+(Vertex). All use the **same** `OPENAI_API_KEY` (the gateway token); set the base
+URLs per provider: `OPENAI_BASE_URL`, `ANTHROPIC_BASE_URL`, `GOOGLE_BASE_URL`.
+`providers.py` normalizes the per-provider differences (message shape,
+thinking/`reasoning_effort`, temperature, token-usage accounting) and raises a
+uniform `ProviderError(status_code=…)`. So e.g. `karels-crypto-benchmark
+--models gpt-5-mini-2025-08-07 claude-haiku-4-5-20251001 gemini-2.0-flash-lite-001`
+works across providers.
+
+### Model registry / pricing (from a gateway HTML page)
+
+Drop the gateway's "models" HTML page at `uploads/model_gateway/models.html`; a
+parser turns it into `model_registry.json` (`{model: {input, output}}`), which
+`pricing.estimate_cost` consults (overriding the built-in table) so cross-provider
+cost is tracked. Override the registry path with `KARELS_CRYPTO_MODEL_REGISTRY`.
+
 Locally you can put them in a `.env` file (copy `.env.example`) in this folder or
 the repo root — it's loaded automatically. Real environment variables override
 the file, and `.env` is git-ignored.

@@ -8,13 +8,31 @@ search pricing are ignored).
 
 from __future__ import annotations
 
+import functools
+import json
+import os
 from dataclasses import dataclass
+from pathlib import Path
 
 
 @dataclass(frozen=True)
 class Price:
     input: float  # USD per 1M input tokens
     output: float  # USD per 1M output tokens
+
+
+# A generated registry (e.g. parsed from the gateway's models HTML) can extend
+# or override the built-in table. JSON shape: {"<model>": {"input": x, "output": y}}.
+_REGISTRY_PATH = Path(__file__).resolve().parents[2] / "model_registry.json"
+
+
+@functools.cache
+def _registry() -> dict[str, Price]:
+    path = Path(os.environ.get("KARELS_CRYPTO_MODEL_REGISTRY", str(_REGISTRY_PATH)))
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return {m: Price(float(v["input"]), float(v["output"])) for m, v in raw.items() if "input" in v}
 
 
 # Keyed by model id. Aliases that share a price are listed separately so a
@@ -82,9 +100,14 @@ PRICING: dict[str, Price] = {
 }
 
 
+def price_for(model: str) -> Price | None:
+    """Look up a model's price: generated registry first, then the built-in table."""
+    return _registry().get(model) or PRICING.get(model)
+
+
 def estimate_cost(model: str, prompt_tokens: int, completion_tokens: int) -> float | None:
     """USD cost for a model given token counts, or ``None`` if price unknown."""
-    price = PRICING.get(model)
+    price = price_for(model)
     if price is None:
         return None
     return prompt_tokens / 1_000_000 * price.input + completion_tokens / 1_000_000 * price.output
