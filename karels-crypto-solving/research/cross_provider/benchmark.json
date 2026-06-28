@@ -1,0 +1,84 @@
+{
+  "config": {
+    "tier_a": {
+      "timestamp": "2026-06-28T21:40:14.405845+00:00",
+      "n_clues": 120,
+      "limit": 120,
+      "reveal": "none",
+      "reveal_fraction": 0.5,
+      "seed": 0,
+      "max_tokens": null,
+      "reasoning_effort": "low",
+      "num_threads": 6,
+      "models": [
+        "gpt-4o-mini",
+        "gpt-4.1",
+        "gpt-5-mini-2025-08-07",
+        "gemini-3-flash-preview",
+        "claude-haiku-4-5-20251001"
+      ]
+    }
+  },
+  "results": [
+    {
+      "model": "gemini-3-flash-preview",
+      "correct": 49,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 10107,
+      "completion_tokens": 255225,
+      "elapsed_s": 332.33,
+      "accuracy": 0.4083333333333333,
+      "est_cost_usd": 0.7707284999999999,
+      "last_error": null
+    },
+    {
+      "model": "gpt-5-mini-2025-08-07",
+      "correct": 23,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 10918,
+      "completion_tokens": 95624,
+      "elapsed_s": 262.36,
+      "accuracy": 0.19166666666666668,
+      "est_cost_usd": 0.1939775,
+      "last_error": null
+    },
+    {
+      "model": "gpt-4.1",
+      "correct": 16,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 11038,
+      "completion_tokens": 33733,
+      "elapsed_s": 84.75,
+      "accuracy": 0.13333333333333333,
+      "est_cost_usd": 0.29194,
+      "last_error": null
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "correct": 9,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 15833,
+      "completion_tokens": 111516,
+      "elapsed_s": 217.11,
+      "accuracy": 0.075,
+      "est_cost_usd": 0.573413,
+      "last_error": null
+    },
+    {
+      "model": "gpt-4o-mini",
+      "correct": 7,
+      "total": 120,
+      "errors": 0,
+      "prompt_tokens": 11038,
+      "completion_tokens": 17796,
+      "elapsed_s": 72.26,
+      "accuracy": 0.058333333333333334,
+      "est_cost_usd": 0.012333299999999998,
+      "last_error": null
+    }
+  ]
+}
