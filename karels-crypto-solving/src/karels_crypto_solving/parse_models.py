@@ -20,7 +20,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 _MODEL_RE = re.compile(r"^[a-z0-9][a-z0-9.\-:_]{3,}$", re.IGNORECASE)
-_PRICE_RE = re.compile(r"\$?\s*([0-9]+(?:\.[0-9]+)?)")
+_PRICE_RE = re.compile(r"\$\s*([0-9]+(?:\.[0-9]+)?)")  # only $-prefixed amounts
 _DEFAULT_HTML = Path("uploads/model_gateway/models.html")
 _DEFAULT_OUT = Path(__file__).resolve().parents[2] / "model_registry.json"
 
@@ -72,12 +72,7 @@ def extract_registry(html: str) -> dict[str, dict]:
         model = next((c for c in row if _looks_like_model(c)), None)
         if not model:
             continue
-        prices = [
-            float(m) for c in row for m in _PRICE_RE.findall(c) if "$" in c or "/" in c.lower()
-        ]
-        # fall back: any numeric cells if no $-tagged ones found
-        if len(prices) < 2:
-            prices = [float(m.group(1)) for c in row for m in [_PRICE_RE.search(c)] if m]
+        prices = [float(m) for c in row for m in _PRICE_RE.findall(c)]
         entry: dict = {"available": True}
         if len(prices) >= 2:
             entry["input"], entry["output"] = prices[0], prices[1]
