@@ -43,3 +43,23 @@ def test_reveal_pattern_is_nested_and_uses_solution():
 def test_permutation_is_deterministic():
     word = _word()
     assert ra._permutation(word, 0) == ra._permutation(word, 0)
+
+
+def test_render_markdown_reads_config_fractions():
+    report = {
+        "config": {"fractions": [0.0, 0.5]},
+        "models": [
+            {
+                "model": "gpt-x",
+                "n_words": 2,
+                "reasoning_effort": "low",
+                "est_cost_usd": 0.1,
+                "by_fraction": {"0": {"correct": 0, "total": 2, "accuracy": 0.0},
+                                "0.5": {"correct": 1, "total": 2, "accuracy": 0.5}},
+                "by_cell": {"3-4@0": {"correct": 0, "total": 1, "accuracy": 0.0},
+                            "3-4@0.5": {"correct": 1, "total": 1, "accuracy": 1.0}},
+            }
+        ],
+    }
+    md = ra.render_markdown(report)
+    assert "gpt-x" in md and "overall" in md and "0%" in md and "50%" in md

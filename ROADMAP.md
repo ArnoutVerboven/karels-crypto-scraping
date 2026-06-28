@@ -10,7 +10,7 @@ section = one issue, `Priority` → the board's priority field).
 | 1 | Human solver benchmark | **High** | M | needs your input (worksheet) |
 | 2 | Human/expert feedback into optimization | **High** | M | needs your input |
 | 3 | Cross-provider model benchmark (+cost) | **High** | M | **done** (REPORT §5); follow-ups: bigger n, Claude effort sweep, gemini-3-pro access |
-| 4 | Pre-filled-letters (reveal) difficulty sweep | **High** | M | blocked on #5 (grid key) |
+| 4 | Pre-filled-letters (reveal) difficulty sweep | **High** | M | **done** (REPORT §6, randomized reveals); legal-cell version still needs #5 |
 | 5 | Capture the grid key (hint cells + vertical word) | **High** | M | better OCR / re-ingest |
 | 6 | Full-874 capability eval (CIs) | Med | S | **in progress** |
 | 7 | Decent-reasoning (medium/high) optimization | Med | M | CI-intractable; run longer/local |
@@ -69,15 +69,15 @@ Benchmark non-OpenAI providers (Anthropic, Google) against the OpenAI set, with
   restore `gemini-3-pro` access (404 on this project today); a cost-vs-accuracy
   Pareto plot; optimize a prompt per provider.
 
-## 4. Pre-filled-letters (reveal) difficulty sweep (High) — needs #5
+## 4. Pre-filled-letters (reveal) difficulty sweep (High) — DONE (randomized)
 How much does revealing letters help, as a function of #revealed (and length)?
-- **Setup:** sweep reveal ∈ {0,1,2,… letters, or 0/25/50/75%}; only legal cells
-  (hint-tagged + the vertical-word letter). Measure accuracy per (length ×
-  #revealed). `patterns.build_pattern` already supports none/partial/all; add a
-  per-count mode.
-- **Output:** a length × reveal heatmap of accuracy = an empirical **difficulty
-  model**. Tooling (`karels-crypto-eval --reveal …`) mostly exists.
-- **Blocker:** needs the grid key for enough puzzles (#5).
+- **Done (REPORT §6):** `karels-crypto-reveal-analysis` sweeps reveal ∈
+  {0,25,50,75%} with **randomized** positions (nested), by length bucket, for
+  gpt-5/gpt-5-mini/gpt-4.1 (~$10.70). Result: reveals are the biggest accuracy
+  lever (25% ≈ doubles acc; 75% → 74–93%) and **erase the length penalty**
+  (difficulty ≈ unknown-letter count). Output: `research/reveal/`.
+- **Follow-up (needs #5):** rerun on the puzzle's **legal** hint cells (not random
+  positions) to remove the proxy, and add an absolute-count (0,1,2,… letters) view.
 
 ## 5. Capture the grid key (hint cells + vertical word) (High)
 Ingestion currently OCRs clues+answers but **not** the numbered grid (help cells

@@ -176,7 +176,7 @@ def evaluate_model(
 
 
 def render_markdown(report: dict) -> str:
-    fractions = report["fractions"]
+    fractions = report["config"]["fractions"]
     cols = [f"{f:g}" for f in fractions]
     header = "| length \\ reveal | " + " | ".join(f"{int(f * 100)}%" for f in fractions) + " |"
     sep = "| --- | " + " | ".join(["---:"] * len(fractions)) + " |"
