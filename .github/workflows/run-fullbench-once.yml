@@ -1,0 +1,56 @@
+name: run-fullbench-once
+
+# TEMPORARY one-off: capability benchmark on the FULL 874-clue set (basic prompt,
+# low effort) across the model spread. Long-running. Removed after.
+
+on:
+  push:
+    branches:
+      - "cursor/**"
+    paths:
+      - ".github/workflows/run-fullbench-once.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fullbench
+  cancel-in-progress: true
+
+jobs:
+  fullbench:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: karels-crypto-solving/uv.lock
+      - name: Sync
+        run: uv sync --frozen
+      - name: Capability benchmark (full 874)
+        run: |
+          uv run karels-crypto-benchmark \
+            --limit 1000 --reveal none --reasoning-effort low --num-threads 16 \
+            --output-dir research/capability_full \
+            --models \
+              gpt-3.5-turbo gpt-4o-mini gpt-4o gpt-4.1-mini gpt-4.1 \
+              o4-mini gpt-5-nano-2025-08-07 gpt-5-mini-2025-08-07 gpt-5-2025-08-07 \
+              gpt-5.4-mini-2026-03-17 gpt-5.5-2026-04-23
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/ || true
+          if git diff --cached --quiet; then echo "nothing"; else
+            git commit -m "research: full-874 capability benchmark [skip ci]"
+            git push
+          fi
