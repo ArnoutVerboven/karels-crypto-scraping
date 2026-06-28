@@ -1,0 +1,81 @@
+{
+  "model": "gpt-5-mini-2025-08-07",
+  "n": 874,
+  "by_bucket": {
+    "3-4": {
+      "correct": 25,
+      "total": 92,
+      "accuracy": 0.2717391304347826
+    },
+    "5-6": {
+      "correct": 53,
+      "total": 177,
+      "accuracy": 0.2994350282485876
+    },
+    "7-8": {
+      "correct": 21,
+      "total": 181,
+      "accuracy": 0.11602209944751381
+    },
+    "9-10": {
+      "correct": 18,
+      "total": 186,
+      "accuracy": 0.0967741935483871
+    },
+    "11+": {
+      "correct": 25,
+      "total": 238,
+      "accuracy": 0.10504201680672269
+    }
+  },
+  "by_length": {
+    "3": {
+      "correct": 9,
+      "total": 30
+    },
+    "4": {
+      "correct": 16,
+      "total": 62
+    },
+    "5": {
+      "correct": 34,
+      "total": 89
+    },
+    "6": {
+      "correct": 19,
+      "total": 88
+    },
+    "7": {
+      "correct": 12,
+      "total": 87
+    },
+    "8": {
+      "correct": 9,
+      "total": 94
+    },
+    "9": {
+      "correct": 8,
+      "total": 93
+    },
+    "10": {
+      "correct": 10,
+      "total": 93
+    },
+    "11": {
+      "correct": 13,
+      "total": 87
+    },
+    "12": {
+      "correct": 7,
+      "total": 101
+    },
+    "13": {
+      "correct": 5,
+      "total": 47
+    },
+    "14": {
+      "correct": 0,
+      "total": 3
+    }
+  }
+}

@@ -48,6 +48,18 @@ LLM-clustered failure types (gpt-5.5 judge, top categories by count):
 Key insight: failures are overwhelmingly **"too literal"** — the model treats clues
 as definitions, not cryptic constructions.
 
+### Word length (gpt-5-mini, n=874) — `length_analysis_gpt5mini.json`
+
+Accuracy drops sharply with length; there's a **cliff after 6 letters**:
+
+| length | 3–4 | 5–6 | 7–8 | 9–10 | 11+ |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| accuracy | 27% | 30% | 12% | 10% | 11% |
+
+- **Short answers (≤6 letters) are ~3× easier** than long ones (≥7). Length is a
+  strong, cheap proxy for difficulty (combine with letters-revealed for a fuller
+  difficulty model — see roadmap).
+
 ## 3. Effect of prompt optimization (gpt-5-mini, val=88, baseline 19.3%)
 
 | Method | Optimized | Δ vs baseline |
@@ -69,6 +81,29 @@ as definitions, not cryptic constructions.
     failures** (e.g. `uitermate leep → hyperlink` = hyper+link; archaic spelling
     `sterven → verwylen`; `fel betwiste wielerkoers → pedaalslag`) and Flemish
     spelling notes (`y` vs `ij`). The richer, example-grounded prompt is the most effective.
+
+### What instructions actually work (original → optimized)
+
+Comparing the bare baseline ("solve this cryptic clue, return the word") against
+the tuned prompts, the instructions that move the needle for *this* puzzle:
+
+- **"Don't stop at the obvious/surface synonym."** Highest-leverage line — it
+  directly attacks the dominant failure (§2: 85% surface-definition answers).
+  Present in both winners (GEPA, MIPROv2).
+- **Name the cryptic mechanisms explicitly** (charade/compound, hidden word,
+  reversal, container, deletion, anagram, homophone, double definition). All three
+  optimizers added an explicit device list; the vague baseline wasn't enough.
+- **Frame as definition + wordplay**, and especially **"build the answer from
+  parts" (charade/compound decomposition)** — targets the 2nd-biggest failure.
+- **Concrete worked examples beat abstract advice.** GEPA's edge came from
+  embedding solved Karel clues *with* their decomposition (`hyper`+`link`), i.e.
+  instruction-level "few-shot" grounding, not just a device list.
+- **Encode Flemish/Dutch specifics**: archaic/variant spelling (`y`↔`ij`),
+  bilingual puns (`(Fr.)`,`(Eng.)`), Belgian references — targets the
+  "foreign/regional cue missed" cluster.
+- **Less important:** strict length/format reminders (only ~15% of errors were
+  length-related) and prompt *language* — COPRO wrote a fully-Dutch prompt yet
+  gained least, so mechanism-specificity + examples matter more than language.
 
 ## 4. Transfer: optimize small → apply to large (val=88)
 
