@@ -1,6 +1,6 @@
 {
   "notes": {
-    "capability": "basic prompt, reasoning_effort=low, n=120 sampled from 874 (scraped+ingested)",
+    "capability": "basic prompt, reasoning_effort=low, n=300 sampled from 874 (scraped+ingested)",
     "failure_analysis": "gpt-5-mini, basic prompt, low effort, full set n=874; clusters judged by gpt-5.5",
     "optimization": "task=gpt-5-mini low effort, proposer/reflection=gpt-5.5, val=88; bounded budgets",
     "transfer": "GEPA prompt optimized on gpt-5-mini, evaluated on val=88"
@@ -8,80 +8,80 @@
   "capability": [
     {
       "model": "gpt-5.5-2026-04-23",
-      "accuracy": 0.3333333333333333,
-      "correct": 40,
-      "total": 120,
-      "est_cost_usd": 2.4157485
+      "accuracy": 0.4,
+      "correct": 120,
+      "total": 300,
+      "est_cost_usd": 5.9360895
     },
     {
       "model": "gpt-5-2025-08-07",
       "accuracy": 0.2833333333333333,
-      "correct": 34,
-      "total": 120,
-      "est_cost_usd": 2.0305162500000002
-    },
-    {
-      "model": "o4-mini",
-      "accuracy": 0.13333333333333333,
-      "correct": 16,
-      "total": 120,
-      "est_cost_usd": 0.8072559
+      "correct": 85,
+      "total": 300,
+      "est_cost_usd": 4.7952337499999995
     },
     {
       "model": "gpt-5.4-mini-2026-03-17",
-      "accuracy": 0.11666666666666667,
-      "correct": 14,
-      "total": 120,
-      "est_cost_usd": 0.405932175
+      "accuracy": 0.17333333333333334,
+      "correct": 52,
+      "total": 300,
+      "est_cost_usd": 0.7989522750000001
+    },
+    {
+      "model": "o4-mini",
+      "accuracy": 0.16333333333333333,
+      "correct": 49,
+      "total": 300,
+      "est_cost_usd": 1.8086673
     },
     {
       "model": "gpt-5-mini-2025-08-07",
-      "accuracy": 0.10833333333333334,
-      "correct": 13,
-      "total": 120,
-      "est_cost_usd": 0.19468725
+      "accuracy": 0.15666666666666668,
+      "correct": 47,
+      "total": 300,
+      "est_cost_usd": 0.45266875
     },
     {
       "model": "gpt-4.1",
-      "accuracy": 0.06666666666666667,
-      "correct": 8,
-      "total": 120,
-      "est_cost_usd": 0.297058
+      "accuracy": 0.09666666666666666,
+      "correct": 29,
+      "total": 300,
+      "est_cost_usd": 0.69131
     },
     {
       "model": "gpt-4.1-mini",
-      "accuracy": 0.05,
-      "correct": 6,
-      "total": 120,
-      "est_cost_usd": 0.0897044
-    },
-    {
-      "model": "gpt-5-nano-2025-08-07",
-      "accuracy": 0.03333333333333333,
-      "correct": 4,
-      "total": 120,
-      "est_cost_usd": 0.04747345
+      "accuracy": 0.08333333333333333,
+      "correct": 25,
+      "total": 300,
+      "est_cost_usd": 0.20572600000000002
     },
     {
       "model": "gpt-4o",
-      "accuracy": 0.016666666666666666,
-      "correct": 2,
-      "total": 120,
-      "est_cost_usd": 0.18740250000000003
+      "accuracy": 0.07,
+      "correct": 21,
+      "total": 300,
+      "est_cost_usd": 0.4755575
+    },
+    {
+      "model": "gpt-5-nano-2025-08-07",
+      "accuracy": 0.06333333333333334,
+      "correct": 19,
+      "total": 300,
+      "est_cost_usd": 0.11182735
     },
     {
       "model": "gpt-3.5-turbo",
-      "accuracy": 0.008333333333333333,
-      "correct": 1,
-      "total": 120,
-      "est_cost_usd": 0.0114625
+      "accuracy": 0.02666666666666667,
+      "correct": 8,
+      "total": 300,
+      "est_cost_usd": 0.030248999999999998
     },
     {
       "model": "gpt-4o-mini",
-      "accuracy": 0.0,
-      "correct": 0,
-      "total": 120,
-      "est_cost_usd": 0.011587949999999998
+      "accuracy": 0.023333333333333334,
+      "correct": 7,
+      "total": 300,
+      "est_cost_usd": 0.02842665
     }
   ],
   "failure_quantitative": {

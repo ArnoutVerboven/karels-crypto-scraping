@@ -11,22 +11,23 @@ Setup notes:
   **gpt-5.5**, held-out val = 88, bounded search budgets.
 - Caveat: small val sets → ±~5 pp noise; treat deltas as indicative.
 
-## 1. General capability (basic prompt, n=120)
+## 1. General capability (basic prompt, n=300, low effort)
 
-- The task is **hard**: best model **gpt-5.5 = 33%**, gpt-5 = 28%; everything else ≤ 13%.
-- **Reasoning models dominate.** Non-reasoning models are near-zero: gpt-4.1 6.7%,
-  gpt-4.1-mini 5.0%, gpt-4o 1.7%, gpt-3.5-turbo 0.8%, gpt-4o-mini 0%.
-- Clear capability ladder: `gpt-5.5 ≫ gpt-5 ≫ o4-mini ≈ gpt-5.4-mini ≈ gpt-5-mini ≫ 4.x family`.
-- Model strength is by far the biggest lever (orders of magnitude more than prompt).
+Data: `research/capability_n300/` (~$15 total). Headline:
+- The task is **hard**: best model **gpt-5.5 = 40%**, gpt-5 = 28%; everything else ≤ 17%.
+- **Reasoning models dominate.** Non-reasoning models stay low: gpt-4.1 9.7%,
+  gpt-4o 7.0%, gpt-3.5-turbo 2.7%, gpt-4o-mini 2.3%.
+- Capability ladder: `gpt-5.5 ≫ gpt-5 ≫ gpt-5.4-mini ≈ o4-mini ≈ gpt-5-mini ≫ 4.x ≫ 3.5/4o-mini`.
+- Model strength is by far the biggest lever (≫ prompt; cf. §3).
 
 | Model | Acc | Model | Acc |
 | --- | ---: | --- | ---: |
-| gpt-5.5 | 33.3% | gpt-4.1 | 6.7% |
-| gpt-5 | 28.3% | gpt-4.1-mini | 5.0% |
-| o4-mini | 13.3% | gpt-5-nano | 3.3% |
-| gpt-5.4-mini | 11.7% | gpt-4o | 1.7% |
-| gpt-5-mini | 10.8% | gpt-3.5-turbo | 0.8% |
-| | | gpt-4o-mini | 0.0% |
+| gpt-5.5 | 40.0% | gpt-4.1 | 9.7% |
+| gpt-5 | 28.3% | gpt-4.1-mini | 8.3% |
+| gpt-5.4-mini | 17.3% | gpt-4o | 7.0% |
+| o4-mini | 16.3% | gpt-5-nano | 6.3% |
+| gpt-5-mini | 15.7% | gpt-3.5-turbo | 2.7% |
+| | | gpt-4o-mini | 2.3% |
 
 ## 2. Failure modes (gpt-5-mini, full set n=874, acc 16.2%)
 
