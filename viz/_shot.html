@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="puzzle-charts.css" />
+  <style> html, body { margin: 0; background: #f5d000; } #c { display: inline-block; } </style>
+</head>
+<body>
+  <div id="c"></div>
+  <script src="puzzle-charts.js"></script>
+  <script>
+    const which = new URLSearchParams(location.search).get("c") || "bar";
+    if (which === "bar") {
+      PuzzleCharts.bar("#c", {
+        title: "Model accuracy", subtitle: "single-word solver · low effort",
+        unit: "%", step: 10, hintEvery: 2, labelWidth: 200,
+        data: [
+          { label: "gemini-3.5-flash", value: 46.7 }, { label: "gpt-5.5", value: 43.3 },
+          { label: "gemini-3-flash", value: 40.8 }, { label: "gpt-5", value: 38.3 },
+          { label: "claude-opus-4-8", value: 36.7 }, { label: "gpt-5-mini", value: 19.2 },
+          { label: "claude-sonnet-4-5", value: 16.7 }, { label: "gpt-4.1", value: 13.3 },
+          { label: "claude-haiku-4-5", value: 7.5 }, { label: "gpt-4o-mini", value: 5.8 },
+        ],
+      });
+    } else if (which === "scatter") {
+      PuzzleCharts.scatter("#c", {
+        title: "Cost-efficiency vs accuracy",
+        xLabel: "→  cost per correct answer (USD)", yLabel: "accuracy (%)  ↑",
+        xUnit: "", yUnit: "%", xMin: 0, xMax: 0.08, yMin: 0, yMax: 50,
+        cols: 15, rows: 12, legendCols: 2,
+        points: [
+          { label: "gemini-3.5-flash", x: 0.023, y: 46.7 }, { label: "gpt-5.5", x: 0.044, y: 43.3 },
+          { label: "gemini-3-flash", x: 0.016, y: 40.8 }, { label: "gpt-5", x: 0.050, y: 38.3 },
+          { label: "claude-opus-4-8", x: 0.038, y: 36.7 }, { label: "gpt-5-mini", x: 0.008, y: 19.2 },
+          { label: "claude-sonnet-4-5", x: 0.078, y: 16.7 }, { label: "gpt-4.1", x: 0.018, y: 13.3 },
+          { label: "claude-haiku-4-5", x: 0.064, y: 7.5 }, { label: "gpt-4o-mini", x: 0.002, y: 5.8 },
+        ],
+      });
+    } else {
+      PuzzleCharts.heatmap("#c", {
+        title: "Accuracy: length × reveal", subtitle: "gpt-5-mini",
+        unit: "%", colTitle: "reveal %",
+        colLabels: ["0%", "25%", "50%", "75%"], rowLabels: ["3-4", "5-6", "7-8", "9-10", "11+"],
+        values: [[37,67,83,90],[40,70,73,93],[13,40,57,80],[7,40,60,90],[13,23,63,77]],
+      });
+    }
+  </script>
+</body>
+</html>
