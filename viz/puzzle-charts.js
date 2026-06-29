@@ -88,8 +88,8 @@
     const container = resolve(el);
     container.innerHTML = "";
     const o = Object.assign(
-      { cols: 14, rows: 11, xLabel: "x", yLabel: "y", unit: "", xUnit: "", yUnit: "",
-        xMin: null, xMax: null, yMin: null, yMax: null, legendCols: 2, cell: null },
+      { cols: 14, rows: 12, xLabel: "x", yLabel: "y", unit: "", xUnit: "", yUnit: "",
+        xMin: null, xMax: null, yMin: null, yMax: null, flipX: false, cell: null },
       opts
     );
     const pts = o.points;
@@ -99,7 +99,11 @@
     const yMin = o.yMin != null ? o.yMin : Math.min(0, ...ys);
     const yMax = o.yMax != null ? o.yMax : Math.max(...ys);
     const C = o.cols, R = o.rows;
-    const col = (x) => 1 + Math.round(((x - xMin) / (xMax - xMin || 1)) * (C - 2)); // col 0 = y-axis
+    const col = (x) => {
+      let f = (x - xMin) / (xMax - xMin || 1);
+      if (o.flipX) f = 1 - f;                       // lower-is-better: small x on the right
+      return 1 + Math.round(f * (C - 2));            // col 0 = y-axis
+    };
     const row = (y) => R - 2 - Math.round(((y - yMin) / (yMax - yMin || 1)) * (R - 2)); // last row = x-axis
 
     const p = panel(container, o);
@@ -135,23 +139,21 @@
       if (c === 0 || r === R - 1) sq.classList.add("pz-axis"); // bordered light-yellow cross
       cells[r + "," + c] = sq;
     }
-    // axis ticks: hint-styled (italic grey, bottom-right of the cell) at min/mid/max
-    const xtick = (frac, val) => {
-      const c = 1 + Math.round(frac * (C - 2));
-      make("pz-hint", cells[(R - 1) + "," + c], fmt(val, o.xUnit));
-    };
-    const ytick = (frac, val) => {
-      const r = R - 2 - Math.round(frac * (R - 2));
-      make("pz-hint", cells[r + ",0"], fmt(val, o.yUnit));
-    };
-    [0, 0.5, 1].forEach((f) => { xtick(f, xMin + f * (xMax - xMin)); ytick(f, yMin + f * (yMax - yMin)); });
+    // axis ticks: centred + bold in the axis cells (like the heatmap headers),
+    // placed with the same mapping as the data so spacing stays consistent.
+    [0, 0.5, 1].forEach((f) => {
+      const xv = xMin + f * (xMax - xMin);
+      make("pz-axval", cells[(R - 1) + "," + col(xv)], fmt(xv, o.xUnit));
+      const yv = yMin + f * (yMax - yMin);
+      make("pz-axval", cells[row(yv) + ",0"], fmt(yv, o.yUnit));
+    });
 
-    // points
+    // points: number is bottom-right + light (hint style)
     pts.forEach((pt, i) => {
       const [r, c] = place(Math.min(R - 2, Math.max(0, row(pt.y))), Math.min(C - 1, Math.max(1, col(pt.x))));
       const sq = cells[r + "," + c];
       sq.className = "pz-sq pz-pt";
-      sq.textContent = String(i + 1);
+      make("pz-hint", sq, String(i + 1));
     });
 
     // legend: overlaid top-right of the plot — just numbers + labels, no cells.
@@ -180,35 +182,39 @@
     const container = resolve(el);
     container.innerHTML = "";
     const o = Object.assign(
-      { unit: "", cell: 50, colTitle: "", min: null, max: null }, opts
+      { unit: "", cell: 50, colTitle: "", rowTitle: "", min: null, max: null }, opts
     );
     const vals = o.values.flat().filter((v) => v != null);
     const lo = o.min != null ? o.min : Math.min(...vals);
     const hi = o.max != null ? o.max : Math.max(...vals);
     const p = panel(container, o);
-
     const cols = o.colLabels.length;
-    const hm = make("pz-hm", p);
+
+    // column-axis title, centred over the data columns (above the headers)
+    if (o.colTitle) {
+      const top = make("pz-hm-coltitle", p, o.colTitle);
+      top.style.marginLeft = ((o.rowTitle ? 18 : 0) + o.cell) + "px";
+      top.style.width = cols * o.cell + "px";
+    }
+
+    const body = make("pz-hm-body", p);
+    if (o.rowTitle) make("pz-hm-rowtitle", body, o.rowTitle); // vertical row-axis title
+    const hm = make("pz-hm", body);
     hm.style.setProperty("--pz-cell", o.cell + "px");
     hm.style.gridTemplateColumns = `repeat(${cols + 1}, ${o.cell}px)`; // square header + cells
 
-    // header row: corner + column labels
     make("pz-hm-head pz-hm-corner", hm);
     o.colLabels.forEach((cl) => make("pz-hm-head", hm, cl));
-
     o.rowLabels.forEach((rl, r) => {
       make("pz-hm-head", hm, rl);
       o.colLabels.forEach((_, c) => {
         const v = o.values[r][c];
         const cell = make("pz-hm-cell", hm);
         if (v == null) { cell.style.background = "transparent"; cell.style.borderColor = "transparent"; return; }
-        const t = (v - lo) / (hi - lo || 1);
-        cell.style.background = ramp(t);                 // greyscale ramp
-        const hint = make("pz-hint", cell, fmt(v, o.unit)); // the "hint value" = the number
-        if (t > 0.55) hint.classList.add("on-dark");     // light hint on dark cells
+        cell.style.background = ramp((v - lo) / (hi - lo || 1)); // light greyscale ramp
+        make("pz-hint", cell, fmt(v, o.unit));                   // value; dark text via CSS
       });
     });
-    if (o.colTitle) make("pz-hm-axis-title", p, o.colTitle);
     return p;
   }
 

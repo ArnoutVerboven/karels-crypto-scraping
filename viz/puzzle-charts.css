@@ -13,10 +13,13 @@
   --pz-hint: #8f8a73;            /* the small italic "hint" numbers */
   --pz-hint-on-dark: #e7e3d2;    /* hint numbers on dark heatmap cells */
   --pz-cell-bg: #ffffff;         /* puzzle cell fill */
+  --pz-legend-bg: rgba(246, 210, 10, 0.82); /* subtle backdrop behind the scatter legend */
 
-  /* heatmap ramp — greyscale (low -> high). Axes stay yellow (--pz-light). */
-  --pz-hm-low: 240, 239, 234;    /* near-white */
-  --pz-hm-high: 51, 50, 46;      /* near-black */
+  /* heatmap ramp — light greyscale only (low -> high), so dark text reads on
+     every cell. Axes stay yellow (--pz-light). */
+  --pz-hm-low: 249, 248, 244;    /* near-white */
+  --pz-hm-high: 166, 165, 158;   /* light-medium grey */
+  --pz-hm-text: #211f18;         /* heatmap value text (dark, everywhere) */
 
   --pz-cell: 30px;               /* default cell size */
   --pz-border: 1.6px;            /* gridline thickness */
@@ -42,7 +45,6 @@
   font-style: italic;
   color: var(--pz-hint);
 }
-.pz-hint.on-dark { color: var(--pz-hint-on-dark); }
 
 /* ---- bar chart -------------------------------------------------------- */
 .pz-bar-row { display: flex; align-items: center; margin: 0 0 9px; }
@@ -78,18 +80,29 @@
   margin: calc(var(--pz-border) * -1) 0 0 calc(var(--pz-border) * -1);
 }
 .pz-grid .pz-sq.pz-axis { background: var(--pz-light); border-color: var(--pz-ink); }  /* bordered cross */
-.pz-grid .pz-sq.pz-pt {
-  background: var(--pz-cell-bg); border-color: var(--pz-ink);
-  display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;
+.pz-grid .pz-sq.pz-pt { background: var(--pz-cell-bg); border-color: var(--pz-ink); }
+.pz-axval {                      /* axis tick value: centred + bold (like heatmap headers) */
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--pz-ink);
 }
-.pz-legend-ov {                  /* overlaid, top-right, no cells — just numbers + labels */
+.pz-legend-ov {                  /* overlaid, top-right, no cells — numbers + left-aligned labels */
   position: absolute; top: 4px; right: 4px;
-  text-align: right; font-size: 11px; line-height: 1.4; color: var(--pz-ink);
+  font-size: 11px; line-height: 1.4; text-align: left;
+  background: var(--pz-legend-bg); padding: 5px 7px; /* subtle backdrop so it reads over points */
 }
-.pz-legend-ov .n { font-weight: 800; margin-right: 5px; }
+.pz-legend-ov > div { display: flex; gap: 6px; }
+.pz-legend-ov .n { font-weight: 800; min-width: 14px; text-align: right; }
 .pz-legend-ov .l { color: #3f3b27; }
 
 /* ---- heatmap --------------------------------------------------------- */
+.pz-hm-body { display: flex; align-items: stretch; }
+.pz-hm-rowtitle {                /* vertical "length" title on the left */
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  display: flex; align-items: center; justify-content: center;
+  width: 18px; font-size: 12px; font-weight: 800;
+}
+.pz-hm-coltitle { text-align: center; font-size: 12px; font-weight: 800; margin-bottom: 5px; box-sizing: border-box; }
 .pz-hm { display: inline-grid; }
 .pz-hm-cell, .pz-hm-head {
   width: var(--pz-cell); height: var(--pz-cell);
@@ -101,4 +114,4 @@
 }
 .pz-hm-head { font-size: 12px; font-weight: 700; background: var(--pz-light); }   /* axes stay yellow */
 .pz-hm-corner { background: transparent; border-color: transparent; }
-.pz-hm-axis-title { font-size: 12px; font-weight: 800; margin-top: 8px; }
+.pz-hm-cell .pz-hint { color: var(--pz-hm-text); }   /* dark value text on every (light) cell */

@@ -25,9 +25,9 @@
     } else if (which === "scatter") {
       PuzzleCharts.scatter("#c", {
         title: "Cost-efficiency vs accuracy",
-        xLabel: "→  cost per correct answer (USD)", yLabel: "accuracy (%)  ↑",
+        xLabel: "cost per correct answer (USD) — cheaper \u2192", yLabel: "accuracy (%)",
         xUnit: "", yUnit: "%", xMin: 0, xMax: 0.08, yMin: 0, yMax: 50,
-        cols: 15, rows: 12, legendCols: 2,
+        cols: 14, rows: 12, flipX: true,
         points: [
           { label: "gemini-3.5-flash", x: 0.023, y: 46.7 }, { label: "gpt-5.5", x: 0.044, y: 43.3 },
           { label: "gemini-3-flash", x: 0.016, y: 40.8 }, { label: "gpt-5", x: 0.050, y: 38.3 },
@@ -39,7 +39,7 @@
     } else {
       PuzzleCharts.heatmap("#c", {
         title: "Accuracy: length × reveal", subtitle: "gpt-5-mini",
-        unit: "%", colTitle: "reveal %",
+        unit: "%", colTitle: "reveal %", rowTitle: "length",
         colLabels: ["0%", "25%", "50%", "75%"], rowLabels: ["3-4", "5-6", "7-8", "9-10", "11+"],
         values: [[37,67,83,90],[40,70,73,93],[13,40,57,80],[7,40,60,90],[13,23,63,77]],
       });

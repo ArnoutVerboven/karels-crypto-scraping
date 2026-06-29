@@ -54,9 +54,10 @@ numbered white cell; a legend maps numbers → labels (+ coordinates).
 | `xLabel`, `yLabel` | `"x"`,`"y"` | axis titles |
 | `xUnit`, `yUnit` | `""` | tick/legend units |
 | `xMin/xMax/yMin/yMax` | auto | axis range |
-| `cols`, `rows` | `14`, `11` | grid resolution |
-| `legendCols` | `2` | legend columns |
-| `showCoords` | `true` | show `(x, y)` in the legend |
+| `cols`, `rows` | `14`, `12` | grid resolution (keep `cols`/`rows` even so the 0/mid/max ticks are evenly spaced) |
+| `flipX` | `false` | reverse the x-axis (e.g. cost, where lower = better → small values on the right) |
+
+Axis tick values render centred + bold in the axis cells; point numbers render bottom-right (hint style); the legend is overlaid top-right (numbers + left-aligned labels).
 
 ## Heatmap — `PuzzleCharts.heatmap(el, opts)`
 A grid shaded in yellows (pale→gold); the **hint value is the number** in each
@@ -68,8 +69,11 @@ cell.
 | `values` | — | 2-D array `[rows][cols]` (use `null` to blank a cell) |
 | `unit` | `""` | appended to each value |
 | `min`, `max` | auto | color-ramp bounds |
-| `colTitle` | `""` | label under the grid |
-| `cell` | `46` | cell size in px |
+| `colTitle` | `""` | column-axis title (centred above the columns) |
+| `rowTitle` | `""` | row-axis title (vertical, left) |
+| `cell` | `50` | cell size in px |
+
+Cells use a light greyscale ramp (axes stay yellow) so the dark value text is readable on every cell.
 
 ## Plugging in the real research data
 The example data mirrors the report:
