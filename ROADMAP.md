@@ -7,7 +7,7 @@ section = one issue, `Priority` → the board's priority field).
 
 | # | Issue | Priority (impact) | Effort | Status / blocker |
 | - | ----- | ----------------- | ------ | ---------------- |
-| 1 | Human solver benchmark | **High** | M | needs your input (worksheet) |
+| 1 | Human solver benchmark | **High** | M | **worksheet ready** (randomized reveals, no grid-key dep); awaiting your answers |
 | 2 | Human/expert feedback into optimization | **High** | M | needs your input |
 | 3 | Cross-provider model benchmark (+cost) | **High** | M | **done** (REPORT §5); follow-ups: bigger n, Claude effort sweep, gemini-3-pro access |
 | 4 | Pre-filled-letters (reveal) difficulty sweep | **High** | M | **done** (REPORT §6, randomized reveals); legal-cell version still needs #5 |
@@ -21,24 +21,25 @@ section = one issue, `Priority` → the board's priority field).
 
 ---
 
-## 1. Human solver benchmark (High)
+## 1. Human solver benchmark (High) — WORKSHEET READY
 Establish the human ceiling across the difficulty grid to anchor model numbers.
 
-**Data-collection plan (designed for minimal of your time, ~30–45 min for ~100):**
-- **Grid:** word-length {≤4, 5–6, 7–8, ≥9} × reveal {0 letters, ~⅓, ~⅔ of legal
-  cells}. *Legal-to-reveal cells = only hint-tagged cells (`help_numbers`) + the
-  one vertical-word letter.* Stratified ~100 clues (~8/cell) from historical data.
-- **Format:** one CSV, one row per clue. Pre-filled columns: `id, puzzle, label,
-  clue, length, pattern` (e.g. `g__el`, or `_____` for none), `reveal_count`.
-  You fill: **`answer`**, **`seen_before`** (y/n), optional `confidence` (1–3).
-- **Dedup/bias:** rows you mark `seen_before=y` are excluded from scoring (and
-  counted), to avoid memorization bias.
-- **Scoring:** normalized exact match → human accuracy per grid cell + overall,
-  plotted against the model curves.
-- **Dependency:** reveal-rows need puzzles with the grid key → start 0-reveal on
-  any clue, reveal-rows on the keyed subset (see #5).
-- **Deliverable:** agent generates `human_benchmark_worksheet.csv`; you fill 2
-  columns; agent emits `human_vs_model.json` + a report section.
+**Unblocked from #5:** reveals are **randomized** (same nested-random method as
+the model reveal sweep, REPORT §6), so this no longer depends on the puzzles'
+real grid key. Human and model numbers are measured on the same kind of task.
+
+**Status / how to run:**
+- `karels-crypto-human-benchmark generate` → `research/human/human_benchmark_worksheet.csv`
+  (100 clues, 5 length-buckets × reveal {0/25/50/75%} × 5 each) + a separate
+  `answer_key.json` (solutions kept out of the worksheet).
+- **You fill** `answer` (+ `seen_before` y/n, optional `confidence` 1–3). Each
+  answer word appears **once**, at a single reveal level, interleaved.
+- `karels-crypto-human-benchmark score` → `human_vs_model.json` + a length×reveal
+  table comparing your accuracy to the model grid (`research/reveal/`).
+- **Dedup/bias:** `seen_before=y` rows are excluded from scoring.
+
+> 🔴 **Input needed from you:** fill the worksheet's `answer`/`seen_before`
+> columns (~100 clues; do more by raising `--per-cell`).
 
 ## 2. Human/expert feedback into optimization (High)
 Measure the effect of *your* expert feedback on prompt optimization (human-in-the-loop).
