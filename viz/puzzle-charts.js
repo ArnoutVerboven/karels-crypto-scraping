@@ -104,11 +104,14 @@
 
     const p = panel(container, o);
     const wrap = make("pz-scatter-wrap", p);
-    const yl = make("pz-ylabel", wrap, o.yLabel);
-    yl.style.gridRow = "1"; yl.style.gridColumn = "1";
 
-    const grid = make("pz-grid", wrap);
-    grid.style.gridColumn = "2"; grid.style.gridRow = "1";
+    // y-axis label: an upright up-arrow (always points up) above vertical text.
+    const yl = make("pz-ylabel", wrap);
+    make("pz-yarrow", yl, "\u2191");
+    make("pz-ytext", yl, (o.yLabel || "").replace(/[\u2191\u2193\u2192\u2190]/g, "").trim());
+
+    const plot = make("pz-plot", wrap);
+    const grid = make("pz-grid", plot);
     const cs = o.cell || 30;
     grid.style.gridTemplateColumns = `repeat(${C}, ${cs}px)`;
     grid.style.gridTemplateRows = `repeat(${R}, ${cs}px)`;
@@ -129,19 +132,17 @@
     const cells = {};
     for (let r = 0; r < R; r++) for (let c = 0; c < C; c++) {
       const sq = make("pz-sq", grid);
-      if (c === 0 || r === R - 1) sq.classList.add("pz-axis"); // the light-yellow cross
+      if (c === 0 || r === R - 1) sq.classList.add("pz-axis"); // bordered light-yellow cross
       cells[r + "," + c] = sq;
     }
-    // axis ticks (hint numbers) at min/mid/max
+    // axis ticks: hint-styled (italic grey, bottom-right of the cell) at min/mid/max
     const xtick = (frac, val) => {
       const c = 1 + Math.round(frac * (C - 2));
-      const t = document.createElement("div"); t.className = "pz-tick x"; t.textContent = fmt(val, o.xUnit);
-      cells[(R - 1) + "," + c].appendChild(t);
+      make("pz-hint", cells[(R - 1) + "," + c], fmt(val, o.xUnit));
     };
     const ytick = (frac, val) => {
       const r = R - 2 - Math.round(frac * (R - 2));
-      const t = document.createElement("div"); t.className = "pz-tick y"; t.textContent = fmt(val, o.yUnit);
-      cells[r + ",0"].appendChild(t);
+      make("pz-hint", cells[r + ",0"], fmt(val, o.yUnit));
     };
     [0, 0.5, 1].forEach((f) => { xtick(f, xMin + f * (xMax - xMin)); ytick(f, yMin + f * (yMax - yMin)); });
 
@@ -153,18 +154,16 @@
       sq.textContent = String(i + 1);
     });
 
-    make("pz-xlabel", wrap, o.xLabel);
-
-    // legend
-    const legend = make("pz-legend", p);
-    legend.style.setProperty("--pz-legend-cols", o.legendCols);
+    // legend: overlaid top-right of the plot — just numbers + labels, no cells.
+    const legend = make("pz-legend-ov", plot);
     pts.forEach((pt, i) => {
-      const item = make("pz-legend-item", legend);
-      make("pz-chip", item, String(i + 1));
-      const txt = pt.label +
-        (o.showCoords === false ? "" : `  (${fmt(pt.x, o.xUnit)}, ${fmt(pt.y, o.yUnit)})`);
-      item.appendChild(document.createTextNode(txt));
+      const item = make("", legend);
+      const n = document.createElement("span"); n.className = "n"; n.textContent = String(i + 1);
+      const l = document.createElement("span"); l.className = "l"; l.textContent = pt.label;
+      item.appendChild(n); item.appendChild(l);
     });
+
+    make("pz-xlabel", wrap, o.xLabel);
     return p;
   }
 
@@ -181,7 +180,7 @@
     const container = resolve(el);
     container.innerHTML = "";
     const o = Object.assign(
-      { unit: "", cell: 46, rowTitle: "", colTitle: "", min: null, max: null }, opts
+      { unit: "", cell: 50, colTitle: "", min: null, max: null }, opts
     );
     const vals = o.values.flat().filter((v) => v != null);
     const lo = o.min != null ? o.min : Math.min(...vals);
@@ -190,11 +189,11 @@
 
     const cols = o.colLabels.length;
     const hm = make("pz-hm", p);
-    hm.style.gridTemplateColumns = `auto repeat(${cols}, ${o.cell}px)`;
+    hm.style.setProperty("--pz-cell", o.cell + "px");
+    hm.style.gridTemplateColumns = `repeat(${cols + 1}, ${o.cell}px)`; // square header + cells
 
     // header row: corner + column labels
-    const corner = make("pz-hm-head pz-hm-corner", hm);
-    corner.textContent = o.colTitle && o.rowTitle ? "" : "";
+    make("pz-hm-head pz-hm-corner", hm);
     o.colLabels.forEach((cl) => make("pz-hm-head", hm, cl));
 
     o.rowLabels.forEach((rl, r) => {
@@ -202,14 +201,14 @@
       o.colLabels.forEach((_, c) => {
         const v = o.values[r][c];
         const cell = make("pz-hm-cell", hm);
-        cell.style.height = o.cell + "px";
         if (v == null) { cell.style.background = "transparent"; cell.style.borderColor = "transparent"; return; }
         const t = (v - lo) / (hi - lo || 1);
-        cell.style.background = ramp(t);
-        make("pz-hint", cell, fmt(v, o.unit)); // the "hint value" = the number
+        cell.style.background = ramp(t);                 // greyscale ramp
+        const hint = make("pz-hint", cell, fmt(v, o.unit)); // the "hint value" = the number
+        if (t > 0.55) hint.classList.add("on-dark");     // light hint on dark cells
       });
     });
-    if (o.colTitle) make("pz-hm-axis-title", p, o.colTitle).style.marginTop = "8px";
+    if (o.colTitle) make("pz-hm-axis-title", p, o.colTitle);
     return p;
   }
 

@@ -1,17 +1,25 @@
 /* Karel's Crypto — puzzle-themed chart styles (no dependencies).
    Theme: De Standaard "Karels Crypto": vivid yellow ground, white puzzle cells
-   with shared dark gridlines, small corner "hint" numbers, clue-style labels. */
+   with shared dark gridlines, small corner "hint" numbers, clue-style labels.
 
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │ ALL COLORS ARE CONFIGURED HERE. Change these to re-theme every chart. │
+   └─────────────────────────────────────────────────────────────────────┘ */
 :root {
-  --pz-yellow: #f5d000;        /* puzzle ground */
-  --pz-light: #fbec9c;         /* highlighted "solution word" cells / axes */
-  --pz-ink: #14130f;           /* gridlines + text */
-  --pz-hint: #4a4634;          /* corner hint numbers */
-  --pz-cell: 30px;             /* default cell size */
-  --pz-border: 1.6px;          /* gridline thickness */
-  /* heatmap ramp (pale -> deep gold) */
-  --pz-hm-low: 255, 248, 209;
-  --pz-hm-high: 226, 150, 0;
+  --pz-yellow: #f5d000;          /* puzzle ground (all chart backgrounds) */
+  --pz-light: #fbec9c;           /* highlighted "solution word" cells / axes */
+  --pz-ink: #14130f;             /* gridlines + primary text */
+  --pz-muted: #6a6320;           /* subtitles + bar value labels */
+  --pz-hint: #8f8a73;            /* the small italic "hint" numbers */
+  --pz-hint-on-dark: #e7e3d2;    /* hint numbers on dark heatmap cells */
+  --pz-cell-bg: #ffffff;         /* puzzle cell fill */
+
+  /* heatmap ramp — greyscale (low -> high). Axes stay yellow (--pz-light). */
+  --pz-hm-low: 240, 239, 234;    /* near-white */
+  --pz-hm-high: 51, 50, 46;      /* near-black */
+
+  --pz-cell: 30px;               /* default cell size */
+  --pz-border: 1.6px;            /* gridline thickness */
 }
 
 .pz {
@@ -19,46 +27,29 @@
   color: var(--pz-ink);
   -webkit-font-smoothing: antialiased;
 }
+.pz-panel { background: var(--pz-yellow); padding: 26px 30px; display: inline-block; box-sizing: border-box; }
+.pz-title { margin: 0 0 4px; font-size: 20px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; }
+.pz-subtitle { margin: 0 0 18px; font-size: 12px; color: var(--pz-muted); }
 
-.pz-panel {
-  background: var(--pz-yellow);
-  padding: 26px 30px;
-  display: inline-block;
-  box-sizing: border-box;
-}
-
-.pz-title {
-  margin: 0 0 4px;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-}
-.pz-subtitle { margin: 0 0 18px; font-size: 12px; color: #6a6320; }
-
-/* shared cell ----------------------------------------------------------- */
-.pz-sq {
-  width: var(--pz-cell);
-  height: var(--pz-cell);
-  box-sizing: border-box;
-  position: relative;
-}
-.pz-hint {
+/* shared cell + hint ---------------------------------------------------- */
+.pz-sq { width: var(--pz-cell); height: var(--pz-cell); box-sizing: border-box; position: relative; }
+.pz-hint {                       /* light grey, italic, bottom-right of the cell */
   position: absolute;
-  top: 1px;
-  left: 3px;
+  right: 3px;
+  bottom: 2px;
   font-size: 9px;
   line-height: 1;
-  font-weight: 700;
+  font-style: italic;
   color: var(--pz-hint);
 }
+.pz-hint.on-dark { color: var(--pz-hint-on-dark); }
 
 /* ---- bar chart -------------------------------------------------------- */
 .pz-bar-row { display: flex; align-items: center; margin: 0 0 9px; }
 .pz-bar-row:last-child { margin-bottom: 0; }
 .pz-bar-label {
   flex: 0 0 var(--pz-label-w, 240px);
-  text-align: right;
+  text-align: left;              /* labels are left-aligned */
   padding-right: 14px;
   font-size: 14px;
   line-height: 1.15;
@@ -67,54 +58,47 @@
 .pz-track { display: flex; }
 .pz-track .pz-sq {
   border: var(--pz-border) solid var(--pz-ink);
-  background: #fff;
-  margin-left: calc(var(--pz-border) * -1); /* share gridlines */
+  background: var(--pz-cell-bg);
+  margin-left: calc(var(--pz-border) * -1);   /* share gridlines */
 }
 .pz-track .pz-sq:first-child { margin-left: 0; }
-.pz-bar-val { margin-left: 9px; font-size: 12px; color: #6a6320; align-self: center; }
+.pz-bar-val { margin-left: 9px; font-size: 12px; color: var(--pz-muted); align-self: center; }
 
 /* ---- scatter --------------------------------------------------------- */
 .pz-scatter-wrap { display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; align-items: center; }
-.pz-ylabel {
-  writing-mode: vertical-rl; transform: rotate(180deg);
-  text-align: center; font-size: 13px; font-weight: 700; padding-right: 8px;
-}
-.pz-xlabel { grid-column: 2; text-align: center; font-size: 13px; font-weight: 700; padding-top: 8px; }
-.pz-grid { display: grid; }
-.pz-grid .pz-sq.pz-axis { background: var(--pz-light); }
-.pz-grid .pz-sq.pz-pt {
-  background: #fff;
-  border: var(--pz-border) solid var(--pz-ink);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; font-weight: 800;
-}
-.pz-tick { position: absolute; font-size: 9px; font-weight: 700; color: var(--pz-hint); }
-.pz-tick.x { bottom: 2px; right: 3px; }
-.pz-tick.y { top: 2px; left: 3px; }
+.pz-ylabel { grid-row: 1; grid-column: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-right: 8px; }
+.pz-yarrow { font-size: 15px; font-weight: 700; margin-bottom: 6px; }      /* upright up-arrow */
+.pz-ytext { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 13px; font-weight: 700; }
+.pz-xlabel { grid-column: 2; grid-row: 2; text-align: center; font-size: 13px; font-weight: 700; padding-top: 8px; }
 
-.pz-legend { margin-top: 16px; display: grid; grid-template-columns: repeat(var(--pz-legend-cols, 2), auto); gap: 4px 18px; font-size: 12px; }
-.pz-legend-item { display: flex; align-items: center; gap: 7px; }
-.pz-chip {
-  width: 20px; height: 20px; border: var(--pz-border) solid var(--pz-ink);
-  background: #fff; font-size: 11px; font-weight: 800;
-  display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+.pz-plot { position: relative; grid-column: 2; grid-row: 1; }
+.pz-grid { display: grid; }
+.pz-grid .pz-sq {                /* every cell reserves a (transparent) border so the grid aligns */
+  border: var(--pz-border) solid transparent;
+  margin: calc(var(--pz-border) * -1) 0 0 calc(var(--pz-border) * -1);
 }
+.pz-grid .pz-sq.pz-axis { background: var(--pz-light); border-color: var(--pz-ink); }  /* bordered cross */
+.pz-grid .pz-sq.pz-pt {
+  background: var(--pz-cell-bg); border-color: var(--pz-ink);
+  display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800;
+}
+.pz-legend-ov {                  /* overlaid, top-right, no cells — just numbers + labels */
+  position: absolute; top: 4px; right: 4px;
+  text-align: right; font-size: 11px; line-height: 1.4; color: var(--pz-ink);
+}
+.pz-legend-ov .n { font-weight: 800; margin-right: 5px; }
+.pz-legend-ov .l { color: #3f3b27; }
 
 /* ---- heatmap --------------------------------------------------------- */
 .pz-hm { display: inline-grid; }
-.pz-hm-cell {
+.pz-hm-cell, .pz-hm-head {
+  width: var(--pz-cell); height: var(--pz-cell);
   box-sizing: border-box;
   border: var(--pz-border) solid var(--pz-ink);
   margin: calc(var(--pz-border) * -1) 0 0 calc(var(--pz-border) * -1);
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; position: relative;
+  position: relative;
 }
-.pz-hm-head {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; font-weight: 700; background: var(--pz-light);
-  box-sizing: border-box; border: var(--pz-border) solid var(--pz-ink);
-  margin: calc(var(--pz-border) * -1) 0 0 calc(var(--pz-border) * -1);
-  padding: 2px 6px;
-}
+.pz-hm-head { font-size: 12px; font-weight: 700; background: var(--pz-light); }   /* axes stay yellow */
 .pz-hm-corner { background: transparent; border-color: transparent; }
-.pz-hm-axis-title { font-size: 12px; font-weight: 800; }
+.pz-hm-axis-title { font-size: 12px; font-weight: 800; margin-top: 8px; }
