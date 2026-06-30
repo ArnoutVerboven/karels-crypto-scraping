@@ -18,6 +18,7 @@ section = one issue, `Priority` → the board's priority field).
 | 9 | Few-shot demos vs instruction-only | Med | S | trades off "no vocabulary" |
 | 10 | Word-length analysis (extend) | Low | S | **baseline done** (in REPORT) |
 | 11 | Automatic scraping health | Low | S | **verified working**; add monitoring |
+| 12 | Puzzle-themed report visuals (HTML charts) | Med | M | **template done** (`viz/`): bar, scatter, heatmap |
 
 ---
 
@@ -108,6 +109,15 @@ vocabulary" constraint — quantify the gain and the trade-off.
 ## 10. Word-length analysis — extend (Low)
 Baseline done (REPORT §2, `length_analysis_gpt5mini.json`): ≤6 letters ≈ 3× the
 accuracy of ≥7. Extend across models + add CIs; cross with reveal (#4).
+
+## 12. Puzzle-themed report visuals (Med) — TEMPLATE DONE
+Dependency-free HTML/CSS/JS (`viz/`) to render charts in the Karel's Crypto theme
+(yellow ground, white puzzle cells, corner hint numbers, clue-style labels):
+- **Bar** (sorted, squares-as-bar, cropped last cell, hint-number ticks, `A./B.` labels),
+- **Scatter** (light-yellow axis cross, numbered point cells + legend),
+- **Heatmap** (yellow shades, hint values = the numbers).
+Demo `viz/index.html`, README, and screenshots. Table type intentionally skipped
+(markdown). Follow-up: a tiny adapter from the research JSONs → chart data.
 
 ## 11. Automatic scraping health (Low) — VERIFIED
 Scheduled scraper confirmed working: weekly bot commits on `main`

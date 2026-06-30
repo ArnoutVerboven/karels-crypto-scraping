@@ -1,0 +1,117 @@
+/* Karel's Crypto — puzzle-themed chart styles (no dependencies).
+   Theme: De Standaard "Karels Crypto": vivid yellow ground, white puzzle cells
+   with shared dark gridlines, small corner "hint" numbers, clue-style labels.
+
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │ ALL COLORS ARE CONFIGURED HERE. Change these to re-theme every chart. │
+   └─────────────────────────────────────────────────────────────────────┘ */
+:root {
+  --pz-yellow: #f5d000;          /* puzzle ground (all chart backgrounds) */
+  --pz-light: #fbec9c;           /* highlighted "solution word" cells / axes */
+  --pz-ink: #14130f;             /* gridlines + primary text */
+  --pz-muted: #6a6320;           /* subtitles + bar value labels */
+  --pz-hint: #8f8a73;            /* the small italic "hint" numbers */
+  --pz-hint-on-dark: #e7e3d2;    /* hint numbers on dark heatmap cells */
+  --pz-cell-bg: #ffffff;         /* puzzle cell fill */
+  --pz-legend-bg: rgba(246, 210, 10, 0.82); /* subtle backdrop behind the scatter legend */
+
+  /* heatmap ramp — light greyscale only (low -> high), so dark text reads on
+     every cell. Axes stay yellow (--pz-light). */
+  --pz-hm-low: 249, 248, 244;    /* near-white */
+  --pz-hm-high: 166, 165, 158;   /* light-medium grey */
+  --pz-hm-text: #211f18;         /* heatmap value text (dark, everywhere) */
+
+  --pz-cell: 30px;               /* default cell size */
+  --pz-border: 1.6px;            /* gridline thickness */
+}
+
+.pz {
+  font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+  color: var(--pz-ink);
+  -webkit-font-smoothing: antialiased;
+}
+.pz-panel { background: var(--pz-yellow); padding: 26px 30px; display: inline-block; box-sizing: border-box; }
+.pz-title { margin: 0 0 4px; font-size: 20px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; }
+.pz-subtitle { margin: 0 0 18px; font-size: 12px; color: var(--pz-muted); }
+
+/* shared cell + hint ---------------------------------------------------- */
+.pz-sq { width: var(--pz-cell); height: var(--pz-cell); box-sizing: border-box; position: relative; }
+.pz-hint {                       /* light grey, italic, bottom-right of the cell */
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+  font-size: 9px;
+  line-height: 1;
+  font-style: italic;
+  color: var(--pz-hint);
+}
+
+/* ---- bar chart -------------------------------------------------------- */
+.pz-bar-row { display: flex; align-items: center; margin: 0 0 9px; }
+.pz-bar-row:last-child { margin-bottom: 0; }
+.pz-bar-label {
+  flex: 0 0 var(--pz-label-w, 240px);
+  text-align: left;              /* labels are left-aligned */
+  padding-right: 14px;
+  font-size: 14px;
+  line-height: 1.15;
+}
+.pz-bar-label .pz-letter { font-weight: 800; }
+.pz-track { display: flex; }
+.pz-track .pz-sq {
+  border: var(--pz-border) solid var(--pz-ink);
+  background: var(--pz-cell-bg);
+  margin-left: calc(var(--pz-border) * -1);   /* share gridlines */
+}
+.pz-track .pz-sq:first-child { margin-left: 0; }
+.pz-bar-val { margin-left: 9px; font-size: 12px; color: var(--pz-muted); align-self: center; }
+
+/* ---- scatter --------------------------------------------------------- */
+.pz-scatter-wrap { display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; align-items: center; }
+.pz-ylabel { grid-row: 1; grid-column: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-right: 8px; }
+.pz-yarrow { font-size: 15px; font-weight: 700; margin-bottom: 6px; }      /* upright up-arrow */
+.pz-ytext { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 13px; font-weight: 700; }
+.pz-xlabel { grid-column: 2; grid-row: 2; text-align: center; font-size: 13px; font-weight: 700; padding-top: 8px; }
+
+.pz-plot { position: relative; grid-column: 2; grid-row: 1; }
+.pz-grid { display: grid; }
+.pz-grid .pz-sq {                /* every cell reserves a (transparent) border so the grid aligns */
+  border: var(--pz-border) solid transparent;
+  margin: calc(var(--pz-border) * -1) 0 0 calc(var(--pz-border) * -1);
+}
+.pz-grid .pz-sq.pz-axis { background: var(--pz-light); border-color: var(--pz-ink); }  /* bordered cross */
+.pz-grid .pz-sq.pz-pt { background: var(--pz-cell-bg); border-color: var(--pz-ink); }
+.pz-axval {                      /* axis tick value: centred + bold (like heatmap headers) */
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--pz-ink);
+}
+.pz-legend-ov {                  /* overlaid, top-right, no cells — numbers + left-aligned labels */
+  position: absolute; top: 4px; right: 4px;
+  font-size: 11px; line-height: 1.4; text-align: left;
+  background: var(--pz-legend-bg); padding: 5px 7px; /* subtle backdrop so it reads over points */
+}
+.pz-legend-ov > div { display: flex; gap: 6px; }
+.pz-legend-ov .n { font-weight: 800; min-width: 14px; text-align: right; }
+.pz-legend-ov .l { color: #3f3b27; }
+
+/* ---- heatmap --------------------------------------------------------- */
+.pz-hm-body { display: flex; align-items: stretch; }
+.pz-hm-rowtitle {                /* vertical "length" title on the left */
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  display: flex; align-items: center; justify-content: center;
+  width: 18px; font-size: 12px; font-weight: 800;
+}
+.pz-hm-coltitle { text-align: center; font-size: 12px; font-weight: 800; margin-bottom: 5px; box-sizing: border-box; }
+.pz-hm { display: inline-grid; }
+.pz-hm-cell, .pz-hm-head {
+  width: var(--pz-cell); height: var(--pz-cell);
+  box-sizing: border-box;
+  border: var(--pz-border) solid var(--pz-ink);
+  margin: calc(var(--pz-border) * -1) 0 0 calc(var(--pz-border) * -1);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.pz-hm-head { font-size: 12px; font-weight: 700; background: var(--pz-light); }   /* axes stay yellow */
+.pz-hm-corner { background: transparent; border-color: transparent; }
+.pz-hm-cell .pz-hint { color: var(--pz-hm-text); }   /* dark value text on every (light) cell */
