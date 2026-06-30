@@ -7,10 +7,10 @@ section = one issue, `Priority` → the board's priority field).
 
 | # | Issue | Priority (impact) | Effort | Status / blocker |
 | - | ----- | ----------------- | ------ | ---------------- |
-| 1 | Human solver benchmark | **High** | M | needs your input (worksheet) |
+| 1 | Human solver benchmark | **High** | M | **worksheet ready** (randomized reveals, no grid-key dep); awaiting your answers |
 | 2 | Human/expert feedback into optimization | **High** | M | needs your input |
 | 3 | Cross-provider model benchmark (+cost) | **High** | M | **done** (REPORT §5); follow-ups: bigger n, Claude effort sweep, gemini-3-pro access |
-| 4 | Pre-filled-letters (reveal) difficulty sweep | **High** | M | blocked on #5 (grid key) |
+| 4 | Pre-filled-letters (reveal) difficulty sweep | **High** | M | **done** (REPORT §6, randomized reveals); legal-cell version still needs #5 |
 | 5 | Capture the grid key (hint cells + vertical word) | **High** | M | better OCR / re-ingest |
 | 6 | Full-874 capability eval (CIs) | Med | S | **in progress** |
 | 7 | Decent-reasoning (medium/high) optimization | Med | M | CI-intractable; run longer/local |
@@ -21,24 +21,25 @@ section = one issue, `Priority` → the board's priority field).
 
 ---
 
-## 1. Human solver benchmark (High)
+## 1. Human solver benchmark (High) — WORKSHEET READY
 Establish the human ceiling across the difficulty grid to anchor model numbers.
 
-**Data-collection plan (designed for minimal of your time, ~30–45 min for ~100):**
-- **Grid:** word-length {≤4, 5–6, 7–8, ≥9} × reveal {0 letters, ~⅓, ~⅔ of legal
-  cells}. *Legal-to-reveal cells = only hint-tagged cells (`help_numbers`) + the
-  one vertical-word letter.* Stratified ~100 clues (~8/cell) from historical data.
-- **Format:** one CSV, one row per clue. Pre-filled columns: `id, puzzle, label,
-  clue, length, pattern` (e.g. `g__el`, or `_____` for none), `reveal_count`.
-  You fill: **`answer`**, **`seen_before`** (y/n), optional `confidence` (1–3).
-- **Dedup/bias:** rows you mark `seen_before=y` are excluded from scoring (and
-  counted), to avoid memorization bias.
-- **Scoring:** normalized exact match → human accuracy per grid cell + overall,
-  plotted against the model curves.
-- **Dependency:** reveal-rows need puzzles with the grid key → start 0-reveal on
-  any clue, reveal-rows on the keyed subset (see #5).
-- **Deliverable:** agent generates `human_benchmark_worksheet.csv`; you fill 2
-  columns; agent emits `human_vs_model.json` + a report section.
+**Unblocked from #5:** reveals are **randomized** (same nested-random method as
+the model reveal sweep, REPORT §6), so this no longer depends on the puzzles'
+real grid key. Human and model numbers are measured on the same kind of task.
+
+**Status / how to run:**
+- `karels-crypto-human-benchmark generate` → `research/human/human_benchmark_worksheet.csv`
+  (100 clues, 5 length-buckets × reveal {0/25/50/75%} × 5 each) + a separate
+  `answer_key.json` (solutions kept out of the worksheet).
+- **You fill** `answer` (+ `seen_before` y/n, optional `confidence` 1–3). Each
+  answer word appears **once**, at a single reveal level, interleaved.
+- `karels-crypto-human-benchmark score` → `human_vs_model.json` + a length×reveal
+  table comparing your accuracy to the model grid (`research/reveal/`).
+- **Dedup/bias:** `seen_before=y` rows are excluded from scoring.
+
+> 🔴 **Input needed from you:** fill the worksheet's `answer`/`seen_before`
+> columns (~100 clues; do more by raising `--per-cell`).
 
 ## 2. Human/expert feedback into optimization (High)
 Measure the effect of *your* expert feedback on prompt optimization (human-in-the-loop).
@@ -69,15 +70,15 @@ Benchmark non-OpenAI providers (Anthropic, Google) against the OpenAI set, with
   restore `gemini-3-pro` access (404 on this project today); a cost-vs-accuracy
   Pareto plot; optimize a prompt per provider.
 
-## 4. Pre-filled-letters (reveal) difficulty sweep (High) — needs #5
+## 4. Pre-filled-letters (reveal) difficulty sweep (High) — DONE (randomized)
 How much does revealing letters help, as a function of #revealed (and length)?
-- **Setup:** sweep reveal ∈ {0,1,2,… letters, or 0/25/50/75%}; only legal cells
-  (hint-tagged + the vertical-word letter). Measure accuracy per (length ×
-  #revealed). `patterns.build_pattern` already supports none/partial/all; add a
-  per-count mode.
-- **Output:** a length × reveal heatmap of accuracy = an empirical **difficulty
-  model**. Tooling (`karels-crypto-eval --reveal …`) mostly exists.
-- **Blocker:** needs the grid key for enough puzzles (#5).
+- **Done (REPORT §6):** `karels-crypto-reveal-analysis` sweeps reveal ∈
+  {0,25,50,75%} with **randomized** positions (nested), by length bucket, for
+  gpt-5/gpt-5-mini/gpt-4.1 (~$10.70). Result: reveals are the biggest accuracy
+  lever (25% ≈ doubles acc; 75% → 74–93%) and **erase the length penalty**
+  (difficulty ≈ unknown-letter count). Output: `research/reveal/`.
+- **Follow-up (needs #5):** rerun on the puzzle's **legal** hint cells (not random
+  positions) to remove the proxy, and add an absolute-count (0,1,2,… letters) view.
 
 ## 5. Capture the grid key (hint cells + vertical word) (High)
 Ingestion currently OCRs clues+answers but **not** the numbered grid (help cells

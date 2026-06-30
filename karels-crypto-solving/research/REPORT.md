@@ -165,7 +165,55 @@ Insights:
 - Caveats: tiered, small n (wide CIs); `gemini-3-pro-preview` is in the registry
   but returned **404 (no project access)** on this gateway, so it's excluded.
 
-## 6. Next steps
+## 6. Letter reveals × word length (difficulty model)
+
+Data: `research/reveal/` (~$10.70). How much does revealing some letters help,
+and how does it interact with length? The source grid key (which cells are
+legally revealable) is mostly missing, so we **randomize** positions: per word,
+reveal a *fraction* of letters at random (nested — more reveal is a superset),
+solve each word at every level. 150 words, stratified 30/length-bucket, low effort.
+
+Overall accuracy by reveal fraction:
+
+| Model | 0% | 25% | 50% | 75% |
+| --- | ---: | ---: | ---: | ---: |
+| gpt-5 | 41% | 67% | 84% | 93% |
+| gpt-5-mini | 22% | 48% | 67% | 86% |
+| gpt-4.1 | 15% | 28% | 53% | 74% |
+
+gpt-5-mini accuracy by **length × reveal** (the difficulty grid — others in
+`reveal_analysis.md`):
+
+| length \ reveal | 0% | 25% | 50% | 75% |
+| --- | ---: | ---: | ---: | ---: |
+| 3-4 | 37% | 67% | 83% | 90% |
+| 5-6 | 40% | 70% | 73% | 93% |
+| 7-8 | 13% | 40% | 57% | 80% |
+| 9-10 | 7% | 40% | 60% | 90% |
+| 11+ | 13% | 23% | 63% | 77% |
+
+Insights:
+- **Reveals help a lot, monotonically.** Just 25% revealed roughly **doubles**
+  accuracy (gpt-5-mini 22→48%, gpt-4.1 15→28%); at 75% every model is 74–93%. A
+  few known letters are the single biggest accuracy lever measured here — bigger
+  than model choice (§1) or prompt optimization (§3).
+- **Reveals erase the length penalty.** At 0% reveal, long words are far harder
+  (gpt-5-mini: 37% at 3–4 vs 13% at 7–8 / 11+; cf. §2's length cliff). By 75% all
+  length buckets converge to ~77–100%, because a fixed *fraction* uncovers more
+  absolute letters on longer words. So **difficulty ≈ unknown-letter count**, not
+  raw length — length and reveal trade off directly.
+- **Length × reveal is a usable difficulty model.** e.g. gpt-5-mini on a 7–8
+  letter word: 13% (none) → 40% (25%) → 57% (50%) → 80% (75%). This grid is what
+  the human benchmark should sample against.
+- **Reveals are an equalizer but don't flip the ranking.** The non-reasoning
+  gpt-4.1 gains most in relative terms (15→74%) yet stays last at every level;
+  gpt-5 > gpt-5-mini > gpt-4.1 throughout. The gap narrows as reveals rise (at 75%
+  the puzzle is mostly pattern-completion, which needs less cryptic reasoning).
+- Caveat: positions are **random**, not the puzzle's legal hint cells, so these
+  are an unbiased proxy (real reveals cluster on specific cells); small per-cell n
+  (~30) → ±~9 pp.
+
+## 7. Next steps
 
 - **Bigger/cleaner eval:** evaluate on the full 874 (not samples) with seeds/CIs;
   current val=88/120 gives ±~5 pp noise.
