@@ -1,106 +1,240 @@
 {
-  "id": 870,
-  "title": "Karels Crypto 27 juni",
-  "date": "2026-06-27",
+  "id": 871,
+  "title": "Karels Crypto 4 juli",
+  "date": "2026-07-04",
   "solution": null,
   "words": [
     {
-      "cryptogram": "korenafscheid",
+      "cryptogram": "onverstandig kerkgebouw",
       "length": 3,
       "help_numbers": [
+        4,
         null,
-        null,
-        16
+        null
       ],
       "offset": 5,
       "solution": null
     },
     {
-      "cryptogram": "kapot (Fr.)",
+      "cryptogram": "3,1415-klak",
       "length": 5,
       "help_numbers": [
-        4,
         null,
+        22,
         null,
-        null,
-        14
+        21,
+        null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "laagste stem in het palingenkoor",
+      "cryptogram": "onduidelijke dwarsmat",
       "length": 6,
-      "help_numbers": [
-        6,
-        null,
-        null,
-        null,
-        null,
-        13
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "1000,00 kg",
-      "length": 7,
       "help_numbers": [
         14,
         null,
-        2,
         null,
         null,
-        2,
+        19,
+        null
+      ],
+      "offset": 4,
+      "solution": null
+    },
+    {
+      "cryptogram": "ingrediënt van stopverf",
+      "length": 7,
+      "help_numbers": [
+        null,
+        null,
+        5,
+        null,
+        10,
+        22,
         null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "Ik weet echt ... je het over hebt.",
+      "cryptogram": "ballen opdienen",
       "length": 8,
       "help_numbers": [
         2,
         null,
-        8,
         null,
-        21,
-        null,
-        null,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "drama in orkest: blazer ...",
-      "length": 9,
-      "help_numbers": [
-        11,
-        null,
-        15,
+        16,
         null,
         null,
         null,
-        null,
-        12,
-        2
+        7
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "handstetson",
-      "length": 10,
+      "cryptogram": "vers in braille",
+      "length": 9,
       "help_numbers": [
         18,
         null,
+        7,
+        null,
+        null,
+        22,
+        null,
+        15,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "theaterruimte voor hartpatiënten",
+      "length": 10,
+      "help_numbers": [
+        12,
+        3,
+        null,
+        null,
+        null,
+        null,
+        10,
+        null,
+        19,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "de woede van de zwemvogel",
+      "length": 11,
+      "help_numbers": [
+        17,
+        9,
+        null,
+        null,
+        null,
+        null,
+        null,
+        14,
+        22,
+        20,
+        null
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "het gelaat van de rakelaar",
+      "length": 12,
+      "help_numbers": [
+        18,
+        13,
+        8,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        12,
+        null,
+        1
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "aantekening waarover geen overeenstemming bestaat",
+      "length": 13,
+      "help_numbers": [
+        4,
+        null,
+        null,
+        12,
+        6,
+        null,
+        null,
+        null,
+        21,
+        null,
+        13,
+        1,
+        null
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "woeste tintenkiller",
+      "length": 12,
+      "help_numbers": [
+        8,
+        null,
+        null,
+        6,
+        null,
+        5,
+        null,
+        null,
+        2,
+        1,
+        null,
+        null
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "bovenkamer",
+      "length": 11,
+      "help_numbers": [
+        15,
+        null,
         null,
         20,
+        4,
         null,
         null,
-        17,
+        3,
+        3,
+        null,
+        null
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "zeldzame vorm van tuberculose die gepaard gaat met schilfertjes",
+      "length": 10,
+      "help_numbers": [
+        14,
+        null,
+        null,
+        2,
+        null,
+        null,
+        14,
+        null,
+        7,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "optiekzaak",
+      "length": 9,
+      "help_numbers": [
+        null,
+        11,
+        null,
+        9,
+        null,
+        7,
         null,
         null,
         10
@@ -109,206 +243,72 @@
       "solution": null
     },
     {
-      "cryptogram": "sardar",
-      "length": 11,
-      "help_numbers": [
-        19,
-        13,
-        null,
-        null,
-        20,
-        null,
-        null,
-        15,
-        null,
-        4,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "een trucje voor de verziende boekenlezer: hou je ...",
-      "length": 12,
-      "help_numbers": [
-        null,
-        null,
-        3,
-        15,
-        null,
-        null,
-        9,
-        null,
-        17,
-        null,
-        null,
-        12
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "badkameraccessoire in het peperkoeken huisje",
-      "length": 13,
-      "help_numbers": [
-        null,
-        1,
-        null,
-        3,
-        null,
-        12,
-        null,
-        19,
-        null,
-        null,
-        20,
-        null,
-        13
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "puntkunst (Seurat, Signac)",
-      "length": 12,
-      "help_numbers": [
-        19,
-        5,
-        null,
-        null,
-        null,
-        null,
-        13,
-        13,
-        null,
-        null,
-        11,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "(heraldische) figuur die te koop loopt met zijn opvallende mannelijke lid",
-      "length": 11,
-      "help_numbers": [
-        3,
-        null,
-        5,
-        14,
-        null,
-        null,
-        null,
-        7,
-        null,
-        8,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "die stond erbij en keek ernaar",
-      "length": 10,
-      "help_numbers": [
-        5,
-        5,
-        null,
-        null,
-        null,
-        null,
-        1,
-        9,
-        null,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "de naden tussen bakstenen dichtmaken",
-      "length": 9,
-      "help_numbers": [
-        14,
-        null,
-        null,
-        18,
-        null,
-        null,
-        20,
-        null,
-        2
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "galgenkoord, wurgtouw (Eng.)",
+      "cryptogram": "zich verlustigen in de lente",
       "length": 8,
       "help_numbers": [
+        16,
+        null,
+        14,
         null,
         null,
-        7,
+        22,
         null,
-        null,
-        9,
-        2,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "iemand een wedde uitbetalen",
-      "length": 7,
-      "help_numbers": [
-        6,
-        8,
-        null,
-        null,
-        null,
-        8,
         null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "verdwenen scheepsvloer",
+      "cryptogram": "gemaaid met een werktuig dat kleiner is dan een zeis maar groter dan een sikkel",
+      "length": 7,
+      "help_numbers": [
+        19,
+        null,
+        17,
+        null,
+        null,
+        15,
+        null
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "Basmati, arborio, pandan zijn je niet onbekend. Maar ken je de koshihikari ...",
       "length": 6,
       "help_numbers": [
-        21,
-        null,
-        null,
-        10,
-        null,
-        null
-      ],
-      "offset": 4,
-      "solution": null
-    },
-    {
-      "cryptogram": "klauterende schilder (1862-1918)",
-      "length": 5,
-      "help_numbers": [
-        3,
-        null,
         null,
         11,
+        null,
+        null,
+        3,
         null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "sprookjesachtig honorarium (Eng.)",
-      "length": 3,
+      "cryptogram": "soep schatten (Jap.)",
+      "length": 5,
       "help_numbers": [
-        16,
         null,
+        3,
+        null,
+        21,
         null
       ],
-      "offset": 5,
+      "offset": 4,
+      "solution": null
+    },
+    {
+      "cryptogram": "de eerste vrouw en vele anderen",
+      "length": 3,
+      "help_numbers": [
+        null,
+        16,
+        null
+      ],
+      "offset": 6,
       "solution": null
     }
   ]

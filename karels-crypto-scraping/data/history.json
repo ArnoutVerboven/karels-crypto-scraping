@@ -1265,5 +1265,320 @@
         "solution": "lori"
       }
     ]
+  },
+  {
+    "id": 870,
+    "title": "Karels Crypto 27 juni",
+    "date": "2026-06-27",
+    "solution": "apartheidsideologie",
+    "words": [
+      {
+        "cryptogram": "korenafscheid",
+        "length": 3,
+        "help_numbers": [
+          null,
+          null,
+          16
+        ],
+        "offset": 5,
+        "solution": "kaf"
+      },
+      {
+        "cryptogram": "kapot (Fr.)",
+        "length": 5,
+        "help_numbers": [
+          4,
+          null,
+          null,
+          null,
+          14
+        ],
+        "offset": 4,
+        "solution": "capot"
+      },
+      {
+        "cryptogram": "laagste stem in het palingenkoor",
+        "length": 6,
+        "help_numbers": [
+          6,
+          null,
+          null,
+          null,
+          null,
+          13
+        ],
+        "offset": 3,
+        "solution": "basaal"
+      },
+      {
+        "cryptogram": "1000,00 kg",
+        "length": 7,
+        "help_numbers": [
+          14,
+          null,
+          2,
+          null,
+          null,
+          2,
+          null
+        ],
+        "offset": 3,
+        "solution": "tonrond"
+      },
+      {
+        "cryptogram": "Ik weet echt ... je het over hebt.",
+        "length": 8,
+        "help_numbers": [
+          2,
+          null,
+          8,
+          null,
+          21,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "nietwaar"
+      },
+      {
+        "cryptogram": "drama in orkest: blazer ...",
+        "length": 9,
+        "help_numbers": [
+          11,
+          null,
+          15,
+          null,
+          null,
+          null,
+          null,
+          12,
+          2
+        ],
+        "offset": 2,
+        "solution": "misthoorn"
+      },
+      {
+        "cryptogram": "handstetson",
+        "length": 10,
+        "help_numbers": [
+          18,
+          null,
+          null,
+          20,
+          null,
+          null,
+          17,
+          null,
+          null,
+          10
+        ],
+        "offset": 2,
+        "solution": "vingerhoed"
+      },
+      {
+        "cryptogram": "sardar",
+        "length": 11,
+        "help_numbers": [
+          19,
+          13,
+          null,
+          null,
+          20,
+          null,
+          null,
+          15,
+          null,
+          4,
+          null
+        ],
+        "offset": 1,
+        "solution": "plaaginsect"
+      },
+      {
+        "cryptogram": "een trucje voor de verziende boekenlezer: hou je ...",
+        "length": 12,
+        "help_numbers": [
+          null,
+          null,
+          3,
+          15,
+          null,
+          null,
+          9,
+          null,
+          17,
+          null,
+          null,
+          12
+        ],
+        "offset": 1,
+        "solution": "tekstdichter"
+      },
+      {
+        "cryptogram": "badkameraccessoire in het peperkoeken huisje",
+        "length": 13,
+        "help_numbers": [
+          null,
+          1,
+          null,
+          3,
+          null,
+          12,
+          null,
+          19,
+          null,
+          null,
+          20,
+          null,
+          13
+        ],
+        "offset": 0,
+        "solution": "suikerspiegel"
+      },
+      {
+        "cryptogram": "puntkunst (Seurat, Signac)",
+        "length": 12,
+        "help_numbers": [
+          19,
+          5,
+          null,
+          null,
+          null,
+          null,
+          13,
+          13,
+          null,
+          null,
+          11,
+          null
+        ],
+        "offset": 1,
+        "solution": "pointillisme"
+      },
+      {
+        "cryptogram": "(heraldische) figuur die te koop loopt met zijn opvallende mannelijke lid",
+        "length": 11,
+        "help_numbers": [
+          3,
+          null,
+          5,
+          14,
+          null,
+          null,
+          null,
+          7,
+          null,
+          8,
+          null
+        ],
+        "offset": 1,
+        "solution": "knotsdrager"
+      },
+      {
+        "cryptogram": "die stond erbij en keek ernaar",
+        "length": 10,
+        "help_numbers": [
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          1,
+          9,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "ooggetuige"
+      },
+      {
+        "cryptogram": "de naden tussen bakstenen dichtmaken",
+        "length": 9,
+        "help_numbers": [
+          14,
+          null,
+          null,
+          18,
+          null,
+          null,
+          20,
+          null,
+          2
+        ],
+        "offset": 2,
+        "solution": "toevoegen"
+      },
+      {
+        "cryptogram": "galgenkoord, wurgtouw (Eng.)",
+        "length": 8,
+        "help_numbers": [
+          null,
+          null,
+          7,
+          null,
+          null,
+          9,
+          2,
+          null
+        ],
+        "offset": 2,
+        "solution": "deadline"
+      },
+      {
+        "cryptogram": "iemand een wedde uitbetalen",
+        "length": 7,
+        "help_numbers": [
+          6,
+          8,
+          null,
+          null,
+          null,
+          8,
+          null
+        ],
+        "offset": 3,
+        "solution": "belonen"
+      },
+      {
+        "cryptogram": "verdwenen scheepsvloer",
+        "length": 6,
+        "help_numbers": [
+          21,
+          null,
+          null,
+          10,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "wegdek"
+      },
+      {
+        "cryptogram": "klauterende schilder (1862-1918)",
+        "length": 5,
+        "help_numbers": [
+          3,
+          null,
+          null,
+          11,
+          null
+        ],
+        "offset": 4,
+        "solution": "klimt"
+      },
+      {
+        "cryptogram": "sprookjesachtig honorarium (Eng.)",
+        "length": 3,
+        "help_numbers": [
+          16,
+          null,
+          null
+        ],
+        "offset": 5,
+        "solution": "fee"
+      }
+    ]
   }
 ]
