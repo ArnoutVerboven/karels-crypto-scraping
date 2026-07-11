@@ -1,25 +1,2 @@
-# Python
 __pycache__/
-*.py[cod]
-*.egg-info/
-.pytest_cache/
-.ruff_cache/
-
-# uv / virtual envs
-.venv/
-
-# local secrets
-.env
-.env.*
-!.env.example
-
-# (the ingestion raw intermediates _ingest_*_raw.json ARE kept, so a re-merge
-# doesn't need another paid vision pass)
-
-# recon workflow output (regenerated on demand)
-recon_output/
-
-# DSPy intermediate logs / cache (the curated artifacts in
-# optimization_results/ ARE tracked; these per-trial dumps are not)
-dspy_logs/
-.dspy_cache/
+*.pyc
