@@ -1580,5 +1580,320 @@
         "solution": "fee"
       }
     ]
+  },
+  {
+    "id": 871,
+    "title": "Karels Crypto 4 juli",
+    "date": "2026-07-04",
+    "solution": "opvoedingsoptimisme",
+    "words": [
+      {
+        "cryptogram": "onverstandig kerkgebouw",
+        "length": 3,
+        "help_numbers": [
+          4,
+          null,
+          null
+        ],
+        "offset": 5,
+        "solution": "dom"
+      },
+      {
+        "cryptogram": "3,1415-klak",
+        "length": 5,
+        "help_numbers": [
+          null,
+          22,
+          null,
+          21,
+          null
+        ],
+        "offset": 4,
+        "solution": "pipet"
+      },
+      {
+        "cryptogram": "onduidelijke dwarsmat",
+        "length": 6,
+        "help_numbers": [
+          14,
+          null,
+          null,
+          null,
+          19,
+          null
+        ],
+        "offset": 4,
+        "solution": "ravage"
+      },
+      {
+        "cryptogram": "ingrediënt van stopverf",
+        "length": 7,
+        "help_numbers": [
+          null,
+          null,
+          5,
+          null,
+          10,
+          22,
+          null
+        ],
+        "offset": 3,
+        "solution": "remolie"
+      },
+      {
+        "cryptogram": "ballen opdienen",
+        "length": 8,
+        "help_numbers": [
+          2,
+          null,
+          null,
+          16,
+          null,
+          null,
+          null,
+          7
+        ],
+        "offset": 2,
+        "solution": "serveren"
+      },
+      {
+        "cryptogram": "vers in braille",
+        "length": 9,
+        "help_numbers": [
+          18,
+          null,
+          7,
+          null,
+          null,
+          22,
+          null,
+          15,
+          null
+        ],
+        "offset": 2,
+        "solution": "puntdicht"
+      },
+      {
+        "cryptogram": "theaterruimte voor hartpatiënten",
+        "length": 10,
+        "help_numbers": [
+          12,
+          3,
+          null,
+          null,
+          null,
+          null,
+          10,
+          null,
+          19,
+          null
+        ],
+        "offset": 2,
+        "solution": "cardiologe"
+      },
+      {
+        "cryptogram": "de woede van de zwemvogel",
+        "length": 11,
+        "help_numbers": [
+          17,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          14,
+          22,
+          20,
+          null
+        ],
+        "offset": 1,
+        "solution": "zwanendrift"
+      },
+      {
+        "cryptogram": "het gelaat van de rakelaar",
+        "length": 12,
+        "help_numbers": [
+          18,
+          13,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          12,
+          null,
+          1
+        ],
+        "offset": 1,
+        "solution": "pokergezicht"
+      },
+      {
+        "cryptogram": "aantekening waarover geen overeenstemming bestaat",
+        "length": 13,
+        "help_numbers": [
+          4,
+          null,
+          null,
+          12,
+          6,
+          null,
+          null,
+          null,
+          21,
+          null,
+          13,
+          1,
+          null
+        ],
+        "offset": 0,
+        "solution": "discussienota"
+      },
+      {
+        "cryptogram": "woeste tintenkiller",
+        "length": 12,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          6,
+          null,
+          5,
+          null,
+          null,
+          2,
+          1,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "kleurmonster"
+      },
+      {
+        "cryptogram": "bovenkamer",
+        "length": 11,
+        "help_numbers": [
+          15,
+          null,
+          null,
+          20,
+          4,
+          null,
+          null,
+          3,
+          3,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "hoofdplaats"
+      },
+      {
+        "cryptogram": "zeldzame vorm van tuberculose die gepaard gaat met schilfertjes",
+        "length": 10,
+        "help_numbers": [
+          14,
+          null,
+          null,
+          2,
+          null,
+          null,
+          14,
+          null,
+          7,
+          null
+        ],
+        "offset": 2,
+        "solution": "roostering"
+      },
+      {
+        "cryptogram": "optiekzaak",
+        "length": 9,
+        "help_numbers": [
+          null,
+          11,
+          null,
+          9,
+          null,
+          7,
+          null,
+          null,
+          10
+        ],
+        "offset": 2,
+        "solution": "kykwinkel"
+      },
+      {
+        "cryptogram": "zich verlustigen in de lente",
+        "length": 8,
+        "help_numbers": [
+          16,
+          null,
+          14,
+          null,
+          null,
+          22,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "vermeien"
+      },
+      {
+        "cryptogram": "gemaaid met een werktuig dat kleiner is dan een zeis maar groter dan een sikkel",
+        "length": 7,
+        "help_numbers": [
+          19,
+          null,
+          17,
+          null,
+          null,
+          15,
+          null
+        ],
+        "offset": 3,
+        "solution": "gezicht"
+      },
+      {
+        "cryptogram": "Basmati, arborio, pandan zijn je niet onbekend. Maar ken je de koshihikari ...",
+        "length": 6,
+        "help_numbers": [
+          null,
+          11,
+          null,
+          null,
+          3,
+          null
+        ],
+        "offset": 4,
+        "solution": "rystal"
+      },
+      {
+        "cryptogram": "soep schatten (Jap.)",
+        "length": 5,
+        "help_numbers": [
+          null,
+          3,
+          null,
+          21,
+          null
+        ],
+        "offset": 4,
+        "solution": "ramen"
+      },
+      {
+        "cryptogram": "de eerste vrouw en vele anderen",
+        "length": 3,
+        "help_numbers": [
+          null,
+          16,
+          null
+        ],
+        "offset": 6,
+        "solution": "eva"
+      }
+    ]
   }
 ]
