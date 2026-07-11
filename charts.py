@@ -2,6 +2,8 @@
 file under `report_images/` and the function returns the relative path, so the
 Markdown report renders correctly on GitHub."""
 
+import hashlib
+import io
 import os
 
 import matplotlib
@@ -45,10 +47,20 @@ def _eur(x, _=None):
 
 
 def _save(fig, name):
+    """Save the figure with a content-hash in the filename. The hash makes the
+    URL change whenever the chart changes, which defeats GitHub's aggressive
+    image cache; identical charts keep the same name, so a no-op regenerate
+    produces no git diff."""
     os.makedirs(IMAGES_DIR, exist_ok=True)
-    rel = f"{IMAGES_DIR}/{name}.png"
-    fig.savefig(rel, format="png", bbox_inches="tight")
+    buf = io.BytesIO()
+    # fixed metadata -> deterministic bytes -> stable hash for unchanged charts
+    fig.savefig(buf, format="png", bbox_inches="tight", metadata={"Software": ""})
     plt.close(fig)
+    data = buf.getvalue()
+    h = hashlib.md5(data).hexdigest()[:8]
+    rel = f"{IMAGES_DIR}/{name}.{h}.png"
+    with open(rel, "wb") as f:
+        f.write(data)
     return rel
 
 

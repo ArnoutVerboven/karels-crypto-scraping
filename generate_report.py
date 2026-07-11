@@ -418,6 +418,12 @@ def _qualitative(A, results):
 
 
 def main():
+    # clear old chart files so stale (content-hashed) images don't accumulate
+    import glob
+    import os
+    for f in glob.glob(os.path.join(charts.IMAGES_DIR, "*.png")):
+        os.remove(f)
+
     A = Assumptions()
     results = run_all(A)
     grid = winner_grid(A)

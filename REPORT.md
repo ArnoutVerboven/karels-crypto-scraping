@@ -24,7 +24,7 @@
 
 ## 1 · How much wealth each path builds
 
-![Exhibit 1 — terminal net worth](report_images/01_net_worth.png)
+![Exhibit 1 — terminal net worth](report_images/01_net_worth.7b8ed6c2.png)
 
 *Exhibit 1 — Net worth at the 30-year horizon. Left: absolute values are nearly identical because every scenario owns the same fully paid-off home (worth €1,815,968). Right: the same data as a difference vs. the weakest scenario — this is where the decision actually matters.*
 
@@ -32,11 +32,11 @@
 
 Only factors that **differ** between scenarios are shown, in today's money (present value, discounted at the investment return so each euro is scored at its opportunity cost). Bars below zero destroy value; the *property value vs investing* bar is the net payoff from owning bricks after charging the opportunity cost of the equity tied up in them.
 
-![Exhibit 2 — value bridge](report_images/02_value_bridge.png)
+![Exhibit 2 — value bridge](report_images/02_value_bridge.566bf8d4.png)
 
 *Exhibit 2 — Present-value contribution of each driver. Note: for S1/S2 the lijfrente annuity (shown separately) is effectively the instalment price of the home, so read it together with the property-value bar.*
 
-![Exhibit 3 — cash out of pocket](report_images/03_cash_out.png)
+![Exhibit 3 — cash out of pocket](report_images/03_cash_out.9a567ba7.png)
 
 *Exhibit 3 — Total cash actually paid out over the horizon, by category (nominal). Excludes down payment and mortgage principal, which are recoverable as home equity. Clearest view of the €2,220/mo annuity, rent and interest burden.*
 
@@ -64,15 +64,15 @@ Legend: **S1** = Lijfrente + rent, then move in · **S2** = Lijfrente + rent, th
 
 ## 4 · Timing: wealth and cash-flow over the years
 
-![Exhibit 4 — net-worth trajectory](report_images/04_net_worth_path.png)
+![Exhibit 4 — net-worth trajectory](report_images/04_net_worth_path.3e314fdd.png)
 
 *Exhibit 4 — Net-worth trajectory. Lines converge as homes are paid off and appreciate identically; the ordering is set by investing behaviour along the way.*
 
-![Exhibit 5 — monthly outflow vs budget](report_images/05_outflow.png)
+![Exhibit 5 — monthly outflow vs budget](report_images/05_outflow.dceb27a9.png)
 
 *Exhibit 5 — Monthly housing outflow vs. the €3,600 budget. A high line is not the same as unaffordable: when the mortgage is cheaper than investing, the rational choice is to keep cash invested and let it cover the gap. S2 looks heavy (small mortgage + the continuing €2,220/mo annuity), but its true strain is small — its funding gap is only €63,275 because the home-1 sale proceeds sit in the portfolio (Exhibit 6) and cover it.*
 
-![Exhibit 6 — investment portfolio balance](report_images/06_portfolio_path.png)
+![Exhibit 6 — investment portfolio balance](report_images/06_portfolio_path.454a4d40.png)
 
 *Exhibit 6 — The investment-portfolio balance that sits behind the outflow. This is the cushion that funds any month where housing costs exceed the €3,600 budget. A line dipping below zero is the real red flag (money you'd have to borrow on top of the budget); staying well above zero means the high outflow is comfortably self-funded.*
 
@@ -80,11 +80,11 @@ Legend: **S1** = Lijfrente + rent, then move in · **S2** = Lijfrente + rent, th
 
 The ranking hinges almost entirely on two uncertain numbers: what you earn investing, and how fast houses appreciate.
 
-![Exhibit 7 — sensitivity grid](report_images/07_sensitivity_grid.png)
+![Exhibit 7 — sensitivity grid](report_images/07_sensitivity_grid.1ab1dc88.png)
 
 *Exhibit 7 — Winning scenario by investment return (rows) and house appreciation (columns); your base case is outlined. When appreciation approaches or exceeds investment return, owning property earlier/cheaper (S1/S2) takes over.*
 
-![Exhibit 8 — sensitivity lines](report_images/08_sensitivity_lines.png)
+![Exhibit 8 — sensitivity lines](report_images/08_sensitivity_lines.87274a46.png)
 
 *Exhibit 8 — Net worth of each scenario as one assumption varies (the other held at base). Where lines cross, the recommendation changes.*
 
