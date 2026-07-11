@@ -64,10 +64,18 @@ class Assumptions:
     # ------------------------------------------------------------------ #
     mortgage_rate_annual: float = 0.0375        # user estimate; market avg ~4.0%
     mortgage_term_years: int = 25
-    # Target own-funds down payment as a share of the financed price. Whatever
-    # cash you have beyond (down payment + transaction costs) stays invested;
-    # if you have less, you simply put in all you have.
-    down_payment_pct: float = 0.20
+    # How the down payment is sized at each purchase:
+    #   "roll_equity"  -> put down all available cash beyond `cash_buffer`
+    #                     (realistic: savings and any sale proceeds roll into the
+    #                     new home, so a "sell one, buy the next" move carries only
+    #                     a small second mortgage). This is the default.
+    #   "target_down"  -> put down a fixed `down_payment_pct` and keep the rest
+    #                     invested (maximum leverage; optimal only when the
+    #                     investment return safely beats the mortgage rate).
+    financing_mode: str = "roll_equity"
+    down_payment_pct: float = 0.20              # used only in "target_down" mode
+    # Liquid cash kept invested at each purchase (emergency buffer) in "roll_equity".
+    cash_buffer: float = 25_000.0
 
     # ------------------------------------------------------------------ #
     #  TRANSACTION & OWNERSHIP COSTS                                       #

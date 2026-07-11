@@ -13,14 +13,14 @@
 
 ## The answer, up front
 
-> Under the base-case assumptions, **Rent, then buy normal (S3)** maximises long-run wealth (€1,908,805 at 30y), and **Buy normal now (S4)** is weakest (€1,794,845).
+> Under the base-case assumptions, **Lijfrente + rent, then move in (S1)** maximises long-run wealth (€1,876,557 at 30y), and **Lijfrente + rent, then sell & buy normal (S2)** is weakest (€1,724,696).
 >
-> Ranking: **S3** (€1,908,805) > **S1** (€1,884,624) > **S2** (€1,860,744) > **S4** (€1,794,845). The gap between best and worst is **€113,960** (~6% of net worth). All four scenarios end owning the **same debt-free home**, so *every difference is opportunity cost, financing and fees — not the house itself.*
+> Ranking: **S1** (€1,876,557) > **S3** (€1,847,014) > **S4** (€1,797,150) > **S2** (€1,724,696). The gap between best and worst is **€151,861** (~9% of net worth). All four scenarios end owning the **same debt-free home**, so *every difference is opportunity cost, financing and fees — not the house itself.*
 
 **Two findings dominate:**
 
-1. **The lijfrente is priced attractively.** Its total outlay (€699,600 = €300,000 up front + €2,220 × 180 months) is *below* the €750,000 market value and is spread over 15 years — effectively cheap financing for the very same asset. That is why **buying a normal home now (S4) is dominated**: it is the most expensive way to own the identical house.
-2. **The tie-breaker between the two front-runners** (S1 lijfrente vs S3 rent-then-buy) is whether your investment return (5%) beats house appreciation (3%). It does in the base case, so keeping the €200,000 invested longer (S3) edges ahead; flip that relationship and the lijfrente (S1) wins (see Exhibit 6).
+1. **The lijfrente is priced attractively.** Its total outlay (€699,600 = €300,000 up front + €2,220 × 180 months) is *below* the €750,000 market value, is spread over 15 years, and needs almost no mortgage — effectively cheap financing for the very same asset. Conversely, **buying a normal home now (S4)** is the most expensive way to own the identical house: the biggest mortgage and the most interest (€328,148).
+2. **The two leaders — S1 and S3 — are within €29,543 of each other** (~2%), so which one wins is a close call that turns on two levers you control (both editable in `config.py`): **(i)** whether you roll spare cash into the home or keep it invested (`financing_mode`, here *roll_equity*), and **(ii)** whether your investment return (5%) beats house appreciation (3%). Keeping cash invested and a high investment return favour the rent-then-buy route (S3); rolling cash into the home favours the low-mortgage lijfrente (S1). See Exhibits 6–7.
 
 ## 1 · How much wealth each path builds
 
@@ -40,25 +40,25 @@ Only factors that **differ** between scenarios are shown, in today's money (pres
 
 *Exhibit 3 — Total cash actually paid out over the horizon, by category (nominal). Excludes down payment and mortgage principal, which are recoverable as home equity. Clearest view of the €2,220/mo annuity, rent and interest burden.*
 
-> **Watch the paradox:** S4 has the *lowest* cash out of pocket (€717,132) yet the *lowest* net worth — because it sinks the most capital into a home appreciating at 3% instead of investments earning 5%. Out-of-pocket cost and wealth are not the same thing; opportunity cost is invisible in a bank statement.
+> **Watch the paradox:** S2 has the *lowest* cash out of pocket (€1,180,779) yet the *lowest* net worth — because it sinks the most capital into a home appreciating at 3% instead of investments earning 5%. Out-of-pocket cost and wealth are not the same thing; opportunity cost is invisible in a bank statement.
 
 ## 3 · The numbers
 
 Legend: **S1** = Lijfrente + rent, then move in · **S2** = Lijfrente + rent, then sell & buy normal · **S3** = Rent, then buy normal · **S4** = Buy normal now.
 
-| Metric | S1 | S2 | **S3 ✅** | S4 |
+| Metric | **S1 ✅** | S2 | S3 | S4 |
 |---|---|---|---|---|
-| Net worth at horizon (nominal) | €1,884,624 | €1,860,744 | €1,908,805 | €1,794,845 |
-| Net worth in today's money (PV) | €437,836 | €432,288 | €443,454 | €416,979 |
-| Peak monthly housing outflow | €4,863 | €6,767 | €5,089 | €4,390 |
-| Peak cumulative funding gap \* | €156,869 | €31,310 | €0 | €133,216 |
-| Total mortgage interest | €130,174 | €419,424 | €377,270 | €325,436 |
+| Net worth at horizon (nominal) | €1,876,557 | €1,724,696 | €1,847,014 | €1,797,150 |
+| Net worth in today's money (PV) | €435,962 | €400,681 | €429,099 | €417,514 |
+| Peak monthly housing outflow | €4,773 | €4,880 | €4,210 | €4,416 |
+| Peak cumulative funding gap \* | €169,276 | €135,569 | €0 | €131,410 |
+| Total mortgage interest | €120,683 | €217,271 | €284,474 | €328,148 |
 | Total rent paid | €84,278 | €84,278 | €84,278 | €0 |
 | Total lijfrente annuity | €399,600 | €399,600 | €0 | €0 |
 | Total transaction/selling fees | €97,500 | €158,298 | €34,778 | €30,000 |
 | Total upkeep & property tax | €321,333 | €321,333 | €321,333 | €361,696 |
 
-✅ = recommended scenario (Rent, then buy normal). Note that lower is better for the cost rows, so the recommended column is *not* the smallest in every row — the whole point is that it makes the best overall trade-off.
+✅ = recommended scenario (Lijfrente + rent, then move in). Note that lower is better for the cost rows, so the recommended column is *not* the smallest in every row — the whole point is that it makes the best overall trade-off.
 
 \* Peak cumulative funding gap = the largest amount by which required spending has exceeded the €3,600/mo budget on a compounding basis, i.e. extra savings/borrowing needed on top of budget. A red flag for *affordability*, not for final wealth.
 
@@ -70,7 +70,7 @@ Legend: **S1** = Lijfrente + rent, then move in · **S2** = Lijfrente + rent, th
 
 ![Exhibit 5 — monthly outflow vs budget](report_images/05_outflow.png)
 
-*Exhibit 5 — Monthly housing outflow vs. the €3,600 budget. S1/S2 breach the budget heavily in the first years (rent + annuity + mortgage at once).*
+*Exhibit 5 — Monthly housing outflow vs. the €3,600 budget. S1/S2 exceed the budget in the first 5 years (rent + annuity + mortgage together). After year 5, S2 rolls its home-1 sale proceeds into home 2, so its outflow is small mortgage + the continuing €2,220/mo annuity — not a second full mortgage.*
 
 ## 5 · What could change the answer — sensitivity
 
@@ -86,26 +86,35 @@ The ranking hinges almost entirely on two uncertain numbers: what you earn inves
 
 ## 6 · Risks & qualitative considerations
 
-Ordered best-to-worst on the base-case finances. The financial gaps are modest (~6%) relative to these non-financial factors, which may matter more.
-
-### S3 · Rent, then buy normal
-
-*Rent for 5 years, then buy a normal home.*
-
-- **Lowest strain, most flexible (upside).** Comfortably within budget (peak €5,089/mo, no funding gap). Renting keeps you mobile for 5 years and your €200k stays invested and compounding.
-- **Timing / price risk (high).** You buy in 5 years at an unknown price. If homes appreciate faster than assumed you pay more and this advantage shrinks or reverses (see Exhibit 6).
-- **Rate risk (medium).** The mortgage rate in 5 years is unknown; a materially higher rate would erode the edge.
-- **Rent is 'lost' money (medium).** ≈€84k of rent over 5 years buys no equity — but the invested capital more than compensates while returns exceed appreciation.
+Ordered best-to-worst on the base-case finances. The financial gaps are modest (~9%) relative to these non-financial factors, which may matter more.
 
 ### S1 · Lijfrente + rent, then move in
 
 *Buy the lijfrente home now, rent for 5 years, then move into the lijfrente home and keep it.*
 
-- **Cash-flow strain (high).** For 5 years you pay rent *and* the annuity *and* a mortgage simultaneously — peak outflow €4,863/mo and a cumulative funding gap up to €156,869 that must come from extra savings or income beyond the €3.6k budget.
+- **Cash-flow strain (high).** For 5 years you pay rent *and* the annuity *and* a mortgage simultaneously — peak outflow €4,773/mo and a cumulative funding gap up to €169,276 that must come from extra savings or income beyond the €3.6k budget.
 - **5-year lock-in (high).** You are committed to the lijfrente home and its location years before you can live there. If your life plans change (job, family, city) you are stuck or must sell into scenario 2.
 - **Transaction-tax risk (high).** The home is not your occupied sole dwelling at purchase, so it likely attracts the ~12% registration duty, not the 2% own-home rate. Confirm with a notary — this is ~€75k of swing.
 - **Counterparty / annuity risk (medium).** The construct depends on the seller and contract terms (indexation, what happens on early death, security on the property). Have the deed reviewed.
 - **Upside.** You lock in today's price on a €750k home for a low up-front outlay and spread payments over 15 years — attractive if prices rise or you value certainty of that specific home.
+
+### S3 · Rent, then buy normal
+
+*Rent for 5 years, then buy a normal home.*
+
+- **Lowest strain, most flexible (upside).** Comfortably within budget (peak €4,210/mo, no funding gap). Renting keeps you mobile for 5 years and your €200k stays invested and compounding.
+- **Timing / price risk (high).** You buy in 5 years at an unknown price. If homes appreciate faster than assumed you pay more and this advantage shrinks or reverses (see Exhibit 6).
+- **Rate risk (medium).** The mortgage rate in 5 years is unknown; a materially higher rate would erode the edge.
+- **Rent is 'lost' money (medium).** ≈€84k of rent over 5 years buys no equity — but the invested capital more than compensates while returns exceed appreciation.
+
+### S4 · Buy normal now
+
+*Buy a normal home now and live in it.*
+
+- **Simplest & most secure (upside).** One transaction, no lock-in games, you own and live in your home immediately with full price certainty and stability.
+- **Opportunity cost is the catch (high).** €200k plus every spare euro is tied up in an asset appreciating at 3% instead of investments at 5%; the biggest mortgage means €328,148 of interest.
+- **Budget is tight long-term (medium).** Mortgage + rising upkeep can exceed the €3.6k budget in later years (funding gap up to €131,410), assuming the budget is not raised with income growth.
+- **Wins if property outperforms.** If appreciation meets or beats your investment return, buying now becomes the strongest option — it has the most exposure to the home.
 
 ### S2 · Lijfrente + rent, then sell & buy normal
 
@@ -115,15 +124,6 @@ Ordered best-to-worst on the base-case finances. The financial gaps are modest (
 - **Annuity may continue after sale (high).** Unless the annuity legally transfers to the buyer, you keep paying €2,220/mo for the remaining 10 years on a home you no longer own. Model default assumes it continues; verify the contract.
 - **Only makes sense as a fallback.** This is essentially scenario 1 gone wrong — choose it only if you deliberately want the lijfrente as a 5-year financial bridge and always intended to buy elsewhere.
 - **Speculative CGT risk.** Selling a non-primary home within 5 years can trigger 16.5% capital-gains tax in Belgium. Timing the sale just past 5 years matters.
-
-### S4 · Buy normal now
-
-*Buy a normal home now and live in it.*
-
-- **Simplest & most secure (upside).** One transaction, no lock-in games, you own and live in your home immediately with full price certainty and stability.
-- **Opportunity cost is the catch (high).** €200k plus every spare euro is tied up in an asset appreciating at 3% instead of investments at 5%; the biggest mortgage means €325,436 of interest.
-- **Budget is tight long-term (medium).** Mortgage + rising upkeep can exceed the €3.6k budget in later years (funding gap up to €133,216), assuming the budget is not raised with income growth.
-- **Wins if property outperforms.** If appreciation meets or beats your investment return, buying now becomes the strongest option — it has the most exposure to the home.
 
 ## 7 · Key assumptions
 
@@ -139,7 +139,9 @@ All of these live in `config.py` and can be changed centrally; re-run `python ge
 | Lijfrente annuity | €2,220 / month for 15 years |
 | Move-in delay (seller usufruct) | 5 years |
 | Mortgage rate / term | 3.75% fixed over 25 years |
-| Target down payment | 20% of financed price |
+| Financing mode | `roll_equity` — roll savings & sale proceeds into the home, keep a cash buffer |
+| Cash buffer kept invested at purchase | €25,000 |
+| Target down payment (target_down mode) | 20% of financed price |
 | Buy costs — own home (Flanders) | 4% of price |
 | Buy costs — lijfrente (non-primary) | 13% of value |
 | Selling costs | 3% of price |

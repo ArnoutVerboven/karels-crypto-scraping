@@ -38,7 +38,9 @@ def _eur(x, _=None):
     if ax >= 1e6:
         return f"€{x/1e6:.2f}M"
     if ax >= 1e3:
-        return f"€{x/1e3:.0f}k"
+        v = x / 1e3
+        s = f"{v:.0f}k" if abs(v - round(v)) < 1e-9 else f"{v:.1f}k"
+        return "€" + s
     return f"€{x:.0f}"
 
 

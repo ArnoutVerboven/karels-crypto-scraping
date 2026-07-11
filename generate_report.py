@@ -112,23 +112,28 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
       f"the **same debt-free home**, so *every difference is opportunity cost, "
       f"financing and fees — not the house itself.*")
     w()
+    second = ranked[1]
+    gap_top2 = nw[best] - nw[second]
     w("**Two findings dominate:**")
     w()
     w(f"1. **The lijfrente is priced attractively.** Its total outlay "
       f"({eur(lij_total)} = {eur(A.lijfrente_upfront)} up front + "
       f"{eur(A.lijfrente_monthly)} × {A.lijfrente_years * 12} months) is *below* the "
-      f"{eur(A.valuation_now)} market value and is spread over {A.lijfrente_years} "
-      f"years — effectively cheap financing for the very same asset. That is why "
-      f"**buying a normal home now ({sc('s4_buy_normal_now')}) is dominated**: it is "
-      f"the most expensive way to own the identical house.")
-    w(f"2. **The tie-breaker between the two front-runners** "
-      f"({sc('s1_lijfrente_movein')} lijfrente vs {sc('s3_rent_then_normal')} "
-      f"rent-then-buy) is whether your investment return "
-      f"({pct(A.investment_return_annual)}) beats house appreciation "
-      f"({pct(A.house_appreciation_annual)}). It does in the base case, so keeping the "
-      f"{eur(A.cash_capital)} invested longer ({sc('s3_rent_then_normal')}) edges ahead; "
-      f"flip that relationship and the lijfrente ({sc('s1_lijfrente_movein')}) wins "
-      f"(see Exhibit 6).")
+      f"{eur(A.valuation_now)} market value, is spread over {A.lijfrente_years} years, "
+      f"and needs almost no mortgage — effectively cheap financing for the very same "
+      f"asset. Conversely, **buying a normal home now ({sc('s4_buy_normal_now')})** is "
+      f"the most expensive way to own the identical house: the biggest mortgage and the "
+      f"most interest ({eur(results['s4_buy_normal_now'].summary['total_interest'])}).")
+    w(f"2. **The two leaders — {sc(best)} and {sc(second)} — are within "
+      f"{eur(gap_top2)} of each other** (~{gap_top2 / nw[second] * 100:.0f}%), so which "
+      f"one wins is a close call that turns on two levers you control (both editable in "
+      f"`config.py`): **(i)** whether you roll spare cash into the home or keep it "
+      f"invested (`financing_mode`, here *{A.financing_mode}*), and **(ii)** whether your "
+      f"investment return ({pct(A.investment_return_annual)}) beats house appreciation "
+      f"({pct(A.house_appreciation_annual)}). Keeping cash invested and a high investment "
+      f"return favour the rent-then-buy route ({sc('s3_rent_then_normal')}); rolling cash "
+      f"into the home favours the low-mortgage lijfrente ({sc('s1_lijfrente_movein')}). "
+      f"See Exhibits 6–7.")
     w()
 
     # ---------------- exhibit 1 ----------------
@@ -221,8 +226,11 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
     w(f"![Exhibit 5 — monthly outflow vs budget]({p_out})")
     w()
     w(f"*Exhibit 5 — Monthly housing outflow vs. the {eur(A.monthly_budget)} budget. "
-      f"{sc('s1_lijfrente_movein')}/{sc('s2_lijfrente_then_normal')} breach the budget "
-      f"heavily in the first years (rent + annuity + mortgage at once).*")
+      f"{sc('s1_lijfrente_movein')}/{sc('s2_lijfrente_then_normal')} exceed the budget "
+      f"in the first 5 years (rent + annuity + mortgage together). After year 5, "
+      f"{sc('s2_lijfrente_then_normal')} rolls its home-1 sale proceeds into home 2, so "
+      f"its outflow is small mortgage + the continuing {eur(A.lijfrente_monthly)}/mo "
+      f"annuity — not a second full mortgage.*")
     w()
 
     # ---------------- sensitivity ----------------
@@ -275,7 +283,13 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
         ("Lijfrente annuity", eur(A.lijfrente_monthly) + f" / month for {A.lijfrente_years} years"),
         ("Move-in delay (seller usufruct)", f"{A.move_in_delay_years} years"),
         ("Mortgage rate / term", f"{pct(A.mortgage_rate_annual)} fixed over {A.mortgage_term_years} years"),
-        ("Target down payment", pct(A.down_payment_pct) + " of financed price"),
+        ("Financing mode", f"`{A.financing_mode}`" + (
+            " — roll savings & sale proceeds into the home, keep a cash buffer"
+            if A.financing_mode == "roll_equity"
+            else " — fixed % down, keep the rest invested")),
+        ("Cash buffer kept invested at purchase", eur(A.cash_buffer)
+            if A.financing_mode == "roll_equity" else "n/a"),
+        ("Target down payment (target_down mode)", pct(A.down_payment_pct) + " of financed price"),
         ("Buy costs — own home (Flanders)", pct(A.buy_cost_pct_primary) + " of price"),
         ("Buy costs — lijfrente (non-primary)", pct(A.lijfrente_buy_cost_pct) + " of value"),
         ("Selling costs", pct(A.sell_cost_pct) + " of price"),
