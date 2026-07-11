@@ -94,7 +94,9 @@ class Assumptions:
     # ------------------------------------------------------------------ #
     #  MARKET RETURNS (the two biggest swing factors)                     #
     # ------------------------------------------------------------------ #
-    investment_return_annual: float = 0.03      # diversified portfolio, nominal
+    investment_return_annual: float = 0.0375     # set equal to the mortgage rate
+                                                  # (treat investing at the risk-free
+                                                  # /mortgage hurdle: no risk premium)
     house_appreciation_annual: float = 0.03     # Belgian long-run nominal
 
     # ------------------------------------------------------------------ #
