@@ -154,6 +154,22 @@ def net_worth_path(results, A):
     return _save(fig, "04_net_worth_path")
 
 
+def portfolio_path(results, A):
+    fig, ax = plt.subplots(figsize=(9.5, 4.8))
+    yrs = [m / 12 for m in range(A.horizon_months)]
+    for k in KEYS:
+        ax.plot(yrs, results[k].portfolio, color=COLORS[k], label=SHORT[k], lw=2)
+    ax.axhline(0, color="#444", lw=0.8)
+    ax.yaxis.set_major_formatter(FuncFormatter(_eur))
+    ax.set_xlabel("Years from now")
+    ax.set_ylabel("Investment portfolio (€)")
+    ax.axvline(A.move_in_delay_years, color="#999", ls="--", lw=1)
+    ax.set_title("Investment portfolio balance (the cushion behind the outflow)",
+                 fontweight="bold", loc="left")
+    ax.legend(frameon=False, ncol=4, fontsize=9)
+    return _save(fig, "06_portfolio_path")
+
+
 def outflow_path(results, A):
     fig, ax = plt.subplots(figsize=(9.5, 4.8))
     yrs = [m / 12 for m in range(A.horizon_months)]
@@ -201,7 +217,7 @@ def sensitivity_heatmap(grid, A):
         ax.add_patch(plt.Rectangle((j, i), 1, 1, fill=False, edgecolor="black", lw=3))
         ax.text(j + 0.5, i + 0.14, "base", ha="center", va="center",
                 color="white", fontsize=8)
-    return _save(fig, "06_sensitivity_grid")
+    return _save(fig, "07_sensitivity_grid")
 
 
 def sensitivity_lines(sweep_inv, sweep_app, A):
@@ -229,4 +245,4 @@ def sensitivity_lines(sweep_inv, sweep_app, A):
                       f"{A.investment_return_annual:.0%})",
                       fontweight="bold", loc="left", fontsize=10)
     axes[1].legend(frameon=False, ncol=2, fontsize=8)
-    return _save(fig, "07_sensitivity_lines")
+    return _save(fig, "08_sensitivity_lines")

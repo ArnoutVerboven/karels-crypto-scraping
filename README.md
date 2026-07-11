@@ -69,9 +69,11 @@ and fees* — which is exactly what the value bridge isolates.
   continuing. Toggle `lijfrente_annuity_continues_after_sale`.
 - The monthly **budget is fixed in nominal terms** (no income growth) and
   portfolio surpluses/shortfalls both accrue at the investment return.
-- **Financing mode** (`financing_mode`) is pivotal to the S1-vs-S3 ranking:
-  `roll_equity` (default) rolls savings and any sale proceeds into the home
-  (so a "sell one, buy the next" move carries only a small second mortgage);
-  `target_down` instead keeps cash invested behind a minimum down payment.
+- **Financing mode** (`financing_mode`) is pivotal to the S1-vs-S3 ranking. The
+  default `rational` puts down the bank minimum (`min_down_pct`, 15%) and only
+  puts down more when the mortgage rate exceeds the investment return (i.e. when
+  paying down debt beats investing). Alternatives: `roll_equity` (always sink
+  savings + sale proceeds into the home) and `target_down` (fixed % down, keep
+  the rest invested).
 
 Not financial advice — a planning model to compare structural trade-offs.

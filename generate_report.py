@@ -75,6 +75,7 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
     p_cash = charts.nominal_cashout(results)
     p_path = charts.net_worth_path(results, A)
     p_out = charts.outflow_path(results, A)
+    p_port = charts.portfolio_path(results, A)
     p_heat = charts.sensitivity_heatmap(grid, A)
     p_lines = charts.sensitivity_lines(sweep_inv, sweep_app, A)
 
@@ -124,16 +125,19 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
       f"asset. Conversely, **buying a normal home now ({sc('s4_buy_normal_now')})** is "
       f"the most expensive way to own the identical house: the biggest mortgage and the "
       f"most interest ({eur(results['s4_buy_normal_now'].summary['total_interest'])}).")
+    invest_beats_rate = A.investment_return_annual > A.mortgage_rate_annual
     w(f"2. **The two leaders — {sc(best)} and {sc(second)} — are within "
-      f"{eur(gap_top2)} of each other** (~{gap_top2 / nw[second] * 100:.0f}%), so which "
-      f"one wins is a close call that turns on two levers you control (both editable in "
-      f"`config.py`): **(i)** whether you roll spare cash into the home or keep it "
-      f"invested (`financing_mode`, here *{A.financing_mode}*), and **(ii)** whether your "
-      f"investment return ({pct(A.investment_return_annual)}) beats house appreciation "
-      f"({pct(A.house_appreciation_annual)}). Keeping cash invested and a high investment "
-      f"return favour the rent-then-buy route ({sc('s3_rent_then_normal')}); rolling cash "
-      f"into the home favours the low-mortgage lijfrente ({sc('s1_lijfrente_movein')}). "
-      f"See Exhibits 6–7.")
+      f"{eur(gap_top2)} of each other** (~{gap_top2 / nw[second] * 100:.0f}%), and which "
+      f"one wins comes down to a single comparison: **your investment return "
+      f"({pct(A.investment_return_annual)}) vs. your mortgage rate "
+      f"({pct(A.mortgage_rate_annual)}).** With the *rational* financing rule, whenever "
+      f"investing beats the mortgage you borrow the maximum and keep cash invested — "
+      f"which favours the rent-and-invest route ({sc('s3_rent_then_normal')}); when the "
+      f"mortgage is dearer you pay it down, which favours the near-mortgage-free lijfrente "
+      f"({sc('s1_lijfrente_movein')}). Here investing "
+      f"{'beats' if invest_beats_rate else 'trails'} the mortgage, so **{sc(best)} leads**. "
+      f"House appreciation vs. your investment return is the second lever (it decides "
+      f"rent-vs-own timing). See Exhibits 7–8.")
     w()
 
     # ---------------- exhibit 1 ----------------
@@ -226,11 +230,20 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
     w(f"![Exhibit 5 — monthly outflow vs budget]({p_out})")
     w()
     w(f"*Exhibit 5 — Monthly housing outflow vs. the {eur(A.monthly_budget)} budget. "
-      f"{sc('s1_lijfrente_movein')}/{sc('s2_lijfrente_then_normal')} exceed the budget "
-      f"in the first 5 years (rent + annuity + mortgage together). After year 5, "
-      f"{sc('s2_lijfrente_then_normal')} rolls its home-1 sale proceeds into home 2, so "
-      f"its outflow is small mortgage + the continuing {eur(A.lijfrente_monthly)}/mo "
-      f"annuity — not a second full mortgage.*")
+      f"A high line is not the same as unaffordable: when the mortgage is cheaper than "
+      f"investing, the rational choice is to keep cash invested and let it cover the gap. "
+      f"{sc('s2_lijfrente_then_normal')} looks heavy (small mortgage + the continuing "
+      f"{eur(A.lijfrente_monthly)}/mo annuity), but its true strain is small — its funding "
+      f"gap is only {eur(results['s2_lijfrente_then_normal'].summary['peak_funding_gap'])} "
+      f"because the home-1 sale proceeds sit in the portfolio (Exhibit 6) and cover it.*")
+    w()
+    w(f"![Exhibit 6 — investment portfolio balance]({p_port})")
+    w()
+    w(f"*Exhibit 6 — The investment-portfolio balance that sits behind the outflow. This "
+      f"is the cushion that funds any month where housing costs exceed the "
+      f"{eur(A.monthly_budget)} budget. A line dipping below zero is the real red flag "
+      f"(money you'd have to borrow on top of the budget); staying well above zero means "
+      f"the high outflow is comfortably self-funded.*")
     w()
 
     # ---------------- sensitivity ----------------
@@ -239,15 +252,15 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
     w("The ranking hinges almost entirely on two uncertain numbers: what you earn "
       "investing, and how fast houses appreciate.")
     w()
-    w(f"![Exhibit 6 — sensitivity grid]({p_heat})")
+    w(f"![Exhibit 7 — sensitivity grid]({p_heat})")
     w()
-    w("*Exhibit 6 — Winning scenario by investment return (rows) and house appreciation "
+    w("*Exhibit 7 — Winning scenario by investment return (rows) and house appreciation "
       "(columns); your base case is outlined. When appreciation approaches or exceeds "
       "investment return, owning property earlier/cheaper (S1/S2) takes over.*")
     w()
-    w(f"![Exhibit 7 — sensitivity lines]({p_lines})")
+    w(f"![Exhibit 8 — sensitivity lines]({p_lines})")
     w()
-    w("*Exhibit 7 — Net worth of each scenario as one assumption varies (the other held "
+    w("*Exhibit 8 — Net worth of each scenario as one assumption varies (the other held "
       "at base). Where lines cross, the recommendation changes.*")
     w()
 
@@ -284,12 +297,10 @@ def build_markdown(A, results, grid, sweep_inv, sweep_app):
         ("Move-in delay (seller usufruct)", f"{A.move_in_delay_years} years"),
         ("Mortgage rate / term", f"{pct(A.mortgage_rate_annual)} fixed over {A.mortgage_term_years} years"),
         ("Financing mode", f"`{A.financing_mode}`" + (
-            " — roll savings & sale proceeds into the home, keep a cash buffer"
-            if A.financing_mode == "roll_equity"
-            else " — fixed % down, keep the rest invested")),
-        ("Cash buffer kept invested at purchase", eur(A.cash_buffer)
-            if A.financing_mode == "roll_equity" else "n/a"),
-        ("Target down payment (target_down mode)", pct(A.down_payment_pct) + " of financed price"),
+            " — bank-minimum down payment; put down more only when the mortgage rate "
+            "exceeds the investment return (then invest vs. pay-down is a real choice)"
+            if A.financing_mode == "rational" else "")),
+        ("Bank minimum down payment", pct(A.min_down_pct) + " of financed price"),
         ("Buy costs — own home (Flanders)", pct(A.buy_cost_pct_primary) + " of price"),
         ("Buy costs — lijfrente (non-primary)", pct(A.lijfrente_buy_cost_pct) + " of value"),
         ("Selling costs", pct(A.sell_cost_pct) + " of price"),
@@ -379,7 +390,7 @@ def _qualitative(A, results):
              f"invested and compounding."),
             ("Timing / price risk (high)", "You buy in 5 years at an unknown price. If "
              "homes appreciate faster than assumed you pay more and this advantage shrinks "
-             "or reverses (see Exhibit 6)."),
+             "or reverses (see Exhibit 7)."),
             ("Rate risk (medium)", "The mortgage rate in 5 years is unknown; a materially "
              "higher rate would erode the edge."),
             ("Rent is 'lost' money (medium)", "≈€84k of rent over 5 years buys no equity — "

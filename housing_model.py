@@ -143,8 +143,22 @@ def simulate(key: str, A: Assumptions) -> Result:
         """Spend cash on down payment + costs, borrow the rest. Mutates state."""
         nonlocal portfolio, mortgage
         costs = cost_base * cost_pct
-        if A.financing_mode == "roll_equity":
-            # roll savings + any sale proceeds into the home, keep a cash buffer
+        if A.financing_mode == "rational":
+            min_down = A.min_down_pct * price_for_finance
+            if A.mortgage_rate_annual > A.investment_return_annual:
+                # debt costs more than investing -> sink all spare cash into home
+                avail = max(0.0, portfolio - costs - A.cash_buffer)
+                down = min(price_for_finance, avail)
+            else:
+                # investing beats the mortgage -> borrow the max, keep cash invested
+                down = min_down
+            # respect the bank minimum whenever the cash is there to meet it
+            if portfolio - costs >= min_down:
+                down = max(down, min_down)
+            else:                           # can't meet the minimum: put in all we can
+                down = max(0.0, portfolio - costs)
+        elif A.financing_mode == "roll_equity":
+            # always roll savings + any sale proceeds into the home, keep a buffer
             down = min(price_for_finance,
                        max(0.0, portfolio - costs - A.cash_buffer))
         else:                               # "target_down": fixed % down, invest rest
