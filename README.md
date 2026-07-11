@@ -1,40 +1,79 @@
-# karels-crypto
+# Housing decision simulator — buy vs. rent vs. lijfrente
 
-Tools for **Karel's Crypto**, the weekly Dutch cryptic puzzle by Karel
-Vereertbrugghen in *De Standaard*. The repository is split into two independent
-modules:
+A small, transparent financial model that compares four housing strategies for a
+couple in Belgium and produces a **Markdown report** (`REPORT.md`, renders on
+GitHub with images) covering a value bridge, sensitivity analysis and a
+qualitative risk assessment.
 
-| Module | What it does |
-| ------ | ------------ |
-| [`karels-crypto-scraping`](./karels-crypto-scraping) | Scrapes the puzzle every Saturday from De Standaard's GraphQL API and stores the puzzles as JSON datasets (`data/history.json`, `data/latest.json`). Runs on a schedule via GitHub Actions. |
-| [`karels-crypto-solving`](./karels-crypto-solving) | Solves Karel's Crypto with an LLM (prompt only, no tools/dictionaries): a single-word solver, an agentic whole-puzzle solver, a model benchmark, photo ingestion (vision), and a DSPy submodule that optimizes the word-solver prompt. Research findings: [`research/REPORT.md`](./karels-crypto-solving/research/REPORT.md). |
+**➡️ Read the analysis: [`REPORT.md`](REPORT.md)**
 
-The modules are independent (each is its own [uv](https://docs.astral.sh/uv/)
-project with its own dependencies and lockfile) and are coupled only through the
-JSON data format: the solver reads the datasets produced by the scraper.
+## The four scenarios
+
+| # | Strategy |
+|---|----------|
+| **S1** | Buy the *lijfrente* home now, rent for 5 years, then **move into** the lijfrente home and keep it. |
+| **S2** | Buy the *lijfrente* home now, rent for 5 years, then **sell** it and **buy a normal home**. |
+| **S3** | **Rent** for 5 years, then **buy a normal home**. |
+| **S4** | **Buy a normal home now** and live in it. |
+
+Both the lijfrente home and the normal home have the same, appreciation-adjusted
+market value.
 
 ## Quick start
 
 ```bash
-# Scraping
-cd karels-crypto-scraping && uv sync && uv run karels-crypto
-
-# Solving (needs OPENAI_API_KEY / OPENAI_BASE_URL / OPENAI_MODEL)
-cd karels-crypto-solving && uv sync
-uv run karels-crypto-solve word --limit 20      # single-word solver
-uv run karels-crypto-solve puzzle               # agentic whole-puzzle solver
-
-# Compare models on word solving (accuracy + estimated cost)
-uv run karels-crypto-benchmark --limit 20
-
-# Ingest puzzle/solution photos (vision LLM) -> data format
-uv run karels-crypto-ingest puzzles && uv run karels-crypto-ingest solutions && uv run karels-crypto-ingest merge
-
-# Prompt optimization (DSPy: mipro/copro/gepa)
-cd karels-crypto-solving && uv sync --extra optimize
-uv run karels-crypto-optimize --optimizer gepa --reveal none
+pip install -r requirements.txt
+python generate_report.py      # writes REPORT.md + report_images/*.png
 ```
 
-See each module's README for details, and
-[`karels-crypto-solving/research/REPORT.md`](./karels-crypto-solving/research/REPORT.md)
-for the word-solver research findings.
+Then open `REPORT.md` (on GitHub or any Markdown viewer). Charts are saved as
+PNGs under `report_images/` and referenced from the report.
+
+You can also print a quick console summary of the engine:
+
+```bash
+python housing_model.py
+```
+
+## How it works
+
+- **`config.py`** — every assumption in one place (home value, cash, budget,
+  rent, the lijfrente terms, mortgage rate/term, transaction & ownership costs,
+  investment return, house appreciation, horizon, and the sensitivity grid).
+  Change a number here and re-run to regenerate the whole report.
+- **`housing_model.py`** — a monthly cash-flow engine. Each month it pays the
+  housing outflows (rent, annuity, upkeep, mortgage principal & interest) from a
+  fixed monthly budget, invests any surplus and draws down on any shortfall.
+  Terminal **net worth = investment portfolio + home equity**. It also produces
+  an exact, reconciling **value-bridge** decomposition (self-checked to the cent).
+- **`charts.py`** — renders all figures to PNGs under `report_images/`.
+- **`generate_report.py`** — runs the scenarios + sensitivity and assembles
+  `REPORT.md`.
+
+## Why all four end up close in absolute terms
+
+Over a 30-year horizon every scenario ends up owning the **same debt-free home**,
+so the differences in net worth come entirely from *opportunity cost, financing
+and fees* — which is exactly what the value bridge isolates.
+
+## Key modelling choices & caveats
+
+- **Validated (Jul 2026):** Belgian 25y fixed mortgage market average ≈ 4.0%
+  (model uses the user's 3.75%); Flanders own-home transaction cost ≈ 4%,
+  non-primary ≈ 13%; selling ≈ 3%; no capital-gains tax on a private main home.
+- The **lijfrente transaction tax** is modelled at the non-primary rate because
+  the seller keeps usufruct for 5 years (you don't occupy it). This is the single
+  biggest tax assumption — confirm with a notary and adjust
+  `lijfrente_buy_cost_pct` in `config.py`.
+- The lijfrente **annuity** is treated as fixed and, if the home is sold (S2), as
+  continuing. Toggle `lijfrente_annuity_continues_after_sale`.
+- The monthly **budget is fixed in nominal terms** (no income growth) and
+  portfolio surpluses/shortfalls both accrue at the investment return.
+- **Financing mode** (`financing_mode`) is pivotal to the S1-vs-S3 ranking. The
+  default `rational` puts down the bank minimum (`min_down_pct`, 15%) and only
+  puts down more when the mortgage rate exceeds the investment return (i.e. when
+  paying down debt beats investing). Alternatives: `roll_equity` (always sink
+  savings + sale proceeds into the home) and `target_down` (fixed % down, keep
+  the rest invested).
+
+Not financial advice — a planning model to compare structural trade-offs.
