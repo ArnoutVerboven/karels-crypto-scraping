@@ -1,8 +1,8 @@
-"""Chart rendering for the housing report. Every figure returns a base64 PNG
-so the final HTML is fully self-contained (no external files, no CDNs)."""
+"""Chart rendering for the housing report. Every figure is written to a PNG
+file under `report_images/` and the function returns the relative path, so the
+Markdown report renders correctly on GitHub."""
 
-import base64
-import io
+import os
 
 import matplotlib
 matplotlib.use("Agg")
@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
 from config import SCENARIOS
+
+IMAGES_DIR = "report_images"
 
 # One colour per scenario, reused everywhere for instant recognition.
 COLORS = {
@@ -40,12 +42,12 @@ def _eur(x, _=None):
     return f"€{x:.0f}"
 
 
-def _fig_to_b64(fig):
-    buf = io.BytesIO()
-    fig.savefig(buf, format="png", bbox_inches="tight")
+def _save(fig, name):
+    os.makedirs(IMAGES_DIR, exist_ok=True)
+    rel = f"{IMAGES_DIR}/{name}.png"
+    fig.savefig(rel, format="png", bbox_inches="tight")
     plt.close(fig)
-    buf.seek(0)
-    return base64.b64encode(buf.read()).decode("ascii")
+    return rel
 
 
 def net_worth_bar(results):
@@ -81,7 +83,7 @@ def net_worth_bar(results):
     fig.suptitle("Terminal net worth by scenario", fontweight="bold",
                  x=0.02, ha="left", fontsize=13)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
-    return _fig_to_b64(fig)
+    return _save(fig, "01_net_worth")
 
 
 def component_bridge(results):
@@ -105,7 +107,7 @@ def component_bridge(results):
     ax.set_title("What drives the differences — value bridge (present value)",
                  fontweight="bold", loc="left")
     ax.legend(ncol=4, loc="lower center", frameon=False, bbox_to_anchor=(0.5, -0.22))
-    return _fig_to_b64(fig)
+    return _save(fig, "02_value_bridge")
 
 
 def nominal_cashout(results):
@@ -130,7 +132,7 @@ def nominal_cashout(results):
     ax.set_title("Cash out of pocket over the horizon (excludes recoverable capital)",
                  fontweight="bold", loc="left")
     ax.legend(frameon=False, fontsize=9, loc="upper left")
-    return _fig_to_b64(fig)
+    return _save(fig, "03_cash_out")
 
 
 def net_worth_path(results, A):
@@ -147,7 +149,7 @@ def net_worth_path(results, A):
             "year 5\n(move / buy)", fontsize=8, color="#666")
     ax.set_title("Net-worth trajectory", fontweight="bold", loc="left")
     ax.legend(frameon=False, ncol=4, fontsize=9)
-    return _fig_to_b64(fig)
+    return _save(fig, "04_net_worth_path")
 
 
 def outflow_path(results, A):
@@ -165,7 +167,7 @@ def outflow_path(results, A):
     ax.set_title("Monthly housing outflow vs. budget (cash-flow strain)",
                  fontweight="bold", loc="left")
     ax.legend(frameon=False, ncol=4, fontsize=9)
-    return _fig_to_b64(fig)
+    return _save(fig, "05_outflow")
 
 
 def sensitivity_heatmap(grid, A):
@@ -197,7 +199,7 @@ def sensitivity_heatmap(grid, A):
         ax.add_patch(plt.Rectangle((j, i), 1, 1, fill=False, edgecolor="black", lw=3))
         ax.text(j + 0.5, i + 0.14, "base", ha="center", va="center",
                 color="white", fontsize=8)
-    return _fig_to_b64(fig)
+    return _save(fig, "06_sensitivity_grid")
 
 
 def sensitivity_lines(sweep_inv, sweep_app, A):
@@ -225,4 +227,4 @@ def sensitivity_lines(sweep_inv, sweep_app, A):
                       f"{A.investment_return_annual:.0%})",
                       fontweight="bold", loc="left", fontsize=10)
     axes[1].legend(frameon=False, ncol=2, fontsize=8)
-    return _fig_to_b64(fig)
+    return _save(fig, "07_sensitivity_lines")

@@ -1,8 +1,11 @@
 # Housing decision simulator — buy vs. rent vs. lijfrente
 
 A small, transparent financial model that compares four housing strategies for a
-couple in Belgium and produces a self-contained **HTML report** with charts,
-a value bridge, sensitivity analysis and a qualitative risk assessment.
+couple in Belgium and produces a **Markdown report** (`REPORT.md`, renders on
+GitHub with images) covering a value bridge, sensitivity analysis and a
+qualitative risk assessment.
+
+**➡️ Read the analysis: [`REPORT.md`](REPORT.md)**
 
 ## The four scenarios
 
@@ -20,11 +23,11 @@ market value.
 
 ```bash
 pip install -r requirements.txt
-python generate_report.py      # writes report.html
+python generate_report.py      # writes REPORT.md + report_images/*.png
 ```
 
-Open `report.html` in any browser. Everything (charts included) is embedded in
-that one file.
+Then open `REPORT.md` (on GitHub or any Markdown viewer). Charts are saved as
+PNGs under `report_images/` and referenced from the report.
 
 You can also print a quick console summary of the engine:
 
@@ -43,9 +46,9 @@ python housing_model.py
   fixed monthly budget, invests any surplus and draws down on any shortfall.
   Terminal **net worth = investment portfolio + home equity**. It also produces
   an exact, reconciling **value-bridge** decomposition (self-checked to the cent).
-- **`charts.py`** — renders all figures to base64 PNGs (no external files/CDNs).
+- **`charts.py`** — renders all figures to PNGs under `report_images/`.
 - **`generate_report.py`** — runs the scenarios + sensitivity and assembles
-  `report.html`.
+  `REPORT.md`.
 
 ## Why all four end up close in absolute terms
 
