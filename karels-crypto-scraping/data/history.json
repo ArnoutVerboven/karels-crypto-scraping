@@ -1895,5 +1895,321 @@
         "solution": "eva"
       }
     ]
+  },
+  {
+    "id": 872,
+    "title": "Karels Crypto 11 juli",
+    "date": "2026-07-11",
+    "solution": "televisiejournalist",
+    "words": [
+      {
+        "cryptogram": "polyethyleentereftalaatklak",
+        "length": 3,
+        "help_numbers": [
+          20,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "pet"
+      },
+      {
+        "cryptogram": "Vlaamse bijnaam",
+        "length": 5,
+        "help_numbers": [
+          7,
+          null,
+          null,
+          3,
+          null
+        ],
+        "offset": 4,
+        "solution": "bieke"
+      },
+      {
+        "cryptogram": "Mara, Goossen en De Tremmerie",
+        "length": 6,
+        "help_numbers": [
+          20,
+          6,
+          null,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "pollen"
+      },
+      {
+        "cryptogram": "rare buitenlander",
+        "length": 7,
+        "help_numbers": [
+          18,
+          null,
+          null,
+          null,
+          12,
+          11,
+          null
+        ],
+        "offset": 3,
+        "solution": "vreemde"
+      },
+      {
+        "cryptogram": "oppoken",
+        "length": 8,
+        "help_numbers": [
+          8,
+          8,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "aanvuren"
+      },
+      {
+        "cryptogram": "vrouwelijk toiletartikel",
+        "length": 9,
+        "help_numbers": [
+          null,
+          4,
+          null,
+          20,
+          null,
+          null,
+          21,
+          null,
+          14
+        ],
+        "offset": 2,
+        "solution": "zyspiegel"
+      },
+      {
+        "cryptogram": "eerste loper van het estafetteteam uit Glasgow",
+        "length": 10,
+        "help_numbers": [
+          null,
+          null,
+          8,
+          13,
+          null,
+          null,
+          5,
+          17,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "startschot"
+      },
+      {
+        "cryptogram": "flikkenkriek",
+        "length": 11,
+        "help_numbers": [
+          20,
+          null,
+          14,
+          null,
+          15,
+          null,
+          null,
+          3,
+          null,
+          null,
+          16
+        ],
+        "offset": 1,
+        "solution": "politiekers"
+      },
+      {
+        "cryptogram": "niet te verplaatsen",
+        "length": 12,
+        "help_numbers": [
+          6,
+          null,
+          18,
+          null,
+          null,
+          19,
+          null,
+          15,
+          7,
+          null,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "onverzetbaar"
+      },
+      {
+        "cryptogram": "pofkleur",
+        "length": 13,
+        "help_numbers": [
+          3,
+          null,
+          16,
+          15,
+          null,
+          null,
+          null,
+          9,
+          null,
+          13,
+          1,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "kastanjebruin"
+      },
+      {
+        "cryptogram": "ramkraak waarbij gebruikgemaakt wordt  van het openbaar vervoer",
+        "length": 12,
+        "help_numbers": [
+          15,
+          null,
+          null,
+          10,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          8,
+          14
+        ],
+        "offset": 1,
+        "solution": "treinoverval"
+      },
+      {
+        "cryptogram": "Je bent maar ten volle mens dank …",
+        "length": 11,
+        "help_numbers": [
+          null,
+          4,
+          11,
+          null,
+          5,
+          null,
+          null,
+          15,
+          null,
+          null,
+          13
+        ],
+        "offset": 1,
+        "solution": "zydecultuur"
+      },
+      {
+        "cryptogram": "woordvoerster van het vrouwenklooster",
+        "length": 10,
+        "help_numbers": [
+          null,
+          6,
+          null,
+          18,
+          null,
+          null,
+          7,
+          null,
+          null,
+          14
+        ],
+        "offset": 1,
+        "solution": "nonverbaal"
+      },
+      {
+        "cryptogram": "onderwerping aan buitenaardse wezens",
+        "length": 9,
+        "help_numbers": [
+          8,
+          14,
+          null,
+          null,
+          null,
+          8,
+          15,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "alienatie"
+      },
+      {
+        "cryptogram": "Belgische zeevis",
+        "length": 8,
+        "help_numbers": [
+          7,
+          null,
+          17,
+          null,
+          null,
+          10,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "beharing"
+      },
+      {
+        "cryptogram": "frigide",
+        "length": 7,
+        "help_numbers": [
+          19,
+          null,
+          2,
+          null,
+          null,
+          null,
+          16
+        ],
+        "offset": 3,
+        "solution": "zinloos"
+      },
+      {
+        "cryptogram": "Duitse violist (1882-1945)",
+        "length": 6,
+        "help_numbers": [
+          21,
+          null,
+          null,
+          21,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "geiger"
+      },
+      {
+        "cryptogram": "openingswoordje (Ar.)",
+        "length": 5,
+        "help_numbers": [
+          null,
+          9,
+          null,
+          null,
+          12
+        ],
+        "offset": 4,
+        "solution": "sesam"
+      },
+      {
+        "cryptogram": "spraakvermogen in het onderwijs",
+        "length": 4,
+        "help_numbers": [
+          null,
+          null,
+          null,
+          12
+        ],
+        "offset": 5,
+        "solution": "stem"
+      }
+    ]
   }
 ]
