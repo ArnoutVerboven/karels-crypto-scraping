@@ -2211,5 +2211,321 @@
         "solution": "stem"
       }
     ]
+  },
+  {
+    "id": 873,
+    "title": "Karels Crypto 18 juli",
+    "date": "2026-07-18",
+    "solution": "hoogovenslakkenzand",
+    "words": [
+      {
+        "cryptogram": "waardeloze cannabis",
+        "length": 4,
+        "help_numbers": [
+          17,
+          null,
+          null,
+          null
+        ],
+        "offset": 5,
+        "solution": "shit"
+      },
+      {
+        "cryptogram": "Frans rêveriedepartement",
+        "length": 5,
+        "help_numbers": [
+          22,
+          null,
+          null,
+          16,
+          null
+        ],
+        "offset": 4,
+        "solution": "drome"
+      },
+      {
+        "cryptogram": "populair eten, bv. avocado",
+        "length": 6,
+        "help_numbers": [
+          null,
+          19,
+          null,
+          null,
+          null,
+          4
+        ],
+        "offset": 3,
+        "solution": "invoer"
+      },
+      {
+        "cryptogram": "niet-correct maatglas",
+        "length": 7,
+        "help_numbers": [
+          16,
+          null,
+          11,
+          null,
+          1,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "matglas"
+      },
+      {
+        "cryptogram": "wagenspel",
+        "length": 8,
+        "help_numbers": [
+          null,
+          5,
+          null,
+          null,
+          15,
+          null,
+          null,
+          14
+        ],
+        "offset": 3,
+        "solution": "autogame"
+      },
+      {
+        "cryptogram": "makelaarster",
+        "length": 9,
+        "help_numbers": [
+          12,
+          null,
+          6,
+          null,
+          null,
+          4,
+          null,
+          null,
+          21
+        ],
+        "offset": 2,
+        "solution": "huisvrouw"
+      },
+      {
+        "cryptogram": "een gewaarwording in de ingewanden",
+        "length": 10,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          3,
+          15,
+          null,
+          13,
+          null,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "buikgevoel"
+      },
+      {
+        "cryptogram": "ruzie op het toneel",
+        "length": 11,
+        "help_numbers": [
+          9,
+          null,
+          1,
+          null,
+          8,
+          null,
+          17,
+          10,
+          null,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "balkonscene"
+      },
+      {
+        "cryptogram": "pijpenkiezer",
+        "length": 12,
+        "help_numbers": [
+          8,
+          null,
+          15,
+          null,
+          1,
+          null,
+          null,
+          null,
+          16,
+          16,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "orgelstemmer"
+      },
+      {
+        "cryptogram": "de firma Yale",
+        "length": 13,
+        "help_numbers": [
+          17,
+          null,
+          null,
+          5,
+          11,
+          null,
+          null,
+          null,
+          null,
+          22,
+          null,
+          2,
+          20
+        ],
+        "offset": 0,
+        "solution": "sleutelbedryf"
+      },
+      {
+        "cryptogram": "bevat in België de voorschriften aangaande uitzendingen",
+        "length": 12,
+        "help_numbers": [
+          7,
+          null,
+          8,
+          15,
+          null,
+          null,
+          null,
+          null,
+          null,
+          21,
+          null,
+          11
+        ],
+        "offset": 1,
+        "solution": "programmawet"
+      },
+      {
+        "cryptogram": "tegen rolschaatsen maar voor dwarskrachtcompensatie",
+        "length": 11,
+        "help_numbers": [
+          18,
+          null,
+          null,
+          6,
+          17,
+          null,
+          18,
+          null,
+          6,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "antiskating"
+      },
+      {
+        "cryptogram": "kostelijke chiropractor",
+        "length": 10,
+        "help_numbers": [
+          7,
+          null,
+          2,
+          null,
+          null,
+          null,
+          18,
+          null,
+          14,
+          null
+        ],
+        "offset": 2,
+        "solution": "pryskraker"
+      },
+      {
+        "cryptogram": "vergisten (veroud.)",
+        "length": 9,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          12,
+          null,
+          20,
+          20,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "verheffen"
+      },
+      {
+        "cryptogram": "Nieuwenhuyse is een rokkenjager (It.)",
+        "length": 8,
+        "help_numbers": [
+          10,
+          null,
+          17,
+          null,
+          null,
+          null,
+          13,
+          null
+        ],
+        "offset": 2,
+        "solution": "casanova"
+      },
+      {
+        "cryptogram": "sector voor 'alleenstaande minderjarige asielzoekers'",
+        "length": 7,
+        "help_numbers": [
+          18,
+          null,
+          18,
+          null,
+          null,
+          19,
+          null
+        ],
+        "offset": 3,
+        "solution": "amazone"
+      },
+      {
+        "cryptogram": "kuifpaling",
+        "length": 6,
+        "help_numbers": [
+          null,
+          8,
+          3,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "lokaal"
+      },
+      {
+        "cryptogram": "naar Nikolaas (Eng.)",
+        "length": 5,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          null,
+          10
+        ],
+        "offset": 4,
+        "solution": "tonic"
+      },
+      {
+        "cryptogram": "Vind dat in je korf!",
+        "length": 3,
+        "help_numbers": [
+          7,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "pad"
+      }
+    ]
   }
 ]
