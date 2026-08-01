@@ -2527,5 +2527,321 @@
         "solution": "pad"
       }
     ]
+  },
+  {
+    "id": 874,
+    "title": "Karels Crypto 25 juli",
+    "date": "2026-07-25",
+    "solution": "plattelandsomgeving",
+    "words": [
+      {
+        "cryptogram": "voormalig kamersanitair",
+        "length": 4,
+        "help_numbers": [
+          null,
+          20,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "expo"
+      },
+      {
+        "cryptogram": "gelatineachtig vogelproduct",
+        "length": 5,
+        "help_numbers": [
+          5,
+          null,
+          null,
+          null,
+          15
+        ],
+        "offset": 4,
+        "solution": "gelei"
+      },
+      {
+        "cryptogram": "de erfenis van een pauselijke gezant",
+        "length": 6,
+        "help_numbers": [
+          17,
+          null,
+          5,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "legaat"
+      },
+      {
+        "cryptogram": "Neem voedsel tot u, poes. (gemeenz.)",
+        "length": 7,
+        "help_numbers": [
+          6,
+          null,
+          14,
+          null,
+          23,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "fretkat"
+      },
+      {
+        "cryptogram": "reekijkers",
+        "length": 8,
+        "help_numbers": [
+          1,
+          null,
+          null,
+          null,
+          11,
+          null,
+          null,
+          22
+        ],
+        "offset": 3,
+        "solution": "hertogen"
+      },
+      {
+        "cryptogram": "zomerscheet",
+        "length": 9,
+        "help_numbers": [
+          3,
+          11,
+          null,
+          null,
+          null,
+          7,
+          null,
+          null,
+          16
+        ],
+        "offset": 2,
+        "solution": "zonnewind"
+      },
+      {
+        "cryptogram": "gat in een sok",
+        "length": 10,
+        "help_numbers": [
+          null,
+          null,
+          null,
+          4,
+          4,
+          null,
+          13,
+          13,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "stopplaats"
+      },
+      {
+        "cryptogram": "Volkswagen om een ramkraak mee te plegen",
+        "length": 11,
+        "help_numbers": [
+          15,
+          null,
+          12,
+          null,
+          null,
+          null,
+          23,
+          null,
+          11,
+          null,
+          6
+        ],
+        "offset": 1,
+        "solution": "inbraakgolf"
+      },
+      {
+        "cryptogram": "Daar komt een wielerwedstrijd aan!",
+        "length": 12,
+        "help_numbers": [
+          null,
+          null,
+          14,
+          9,
+          null,
+          null,
+          null,
+          3,
+          null,
+          10,
+          1,
+          null
+        ],
+        "offset": 0,
+        "solution": "koersinzicht"
+      },
+      {
+        "cryptogram": "tekstverwerker",
+        "length": 13,
+        "help_numbers": [
+          null,
+          15,
+          22,
+          16,
+          null,
+          null,
+          null,
+          null,
+          10,
+          18,
+          null,
+          21,
+          null
+        ],
+        "offset": 0,
+        "solution": "eindredacteur"
+      },
+      {
+        "cryptogram": "lawaaierig keukenapparaat",
+        "length": 12,
+        "help_numbers": [
+          5,
+          null,
+          null,
+          21,
+          null,
+          16,
+          null,
+          8,
+          null,
+          20,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "geluidsmixer"
+      },
+      {
+        "cryptogram": "vlugge spits (Eng.)",
+        "length": 11,
+        "help_numbers": [
+          null,
+          null,
+          19,
+          18,
+          null,
+          null,
+          9,
+          7,
+          null,
+          9,
+          null
+        ],
+        "offset": 1,
+        "solution": "fastforward"
+      },
+      {
+        "cryptogram": "Basic-Fit-gepeupel",
+        "length": 10,
+        "help_numbers": [
+          null,
+          4,
+          null,
+          14,
+          null,
+          null,
+          13,
+          null,
+          null,
+          13
+        ],
+        "offset": 1,
+        "solution": "spiermassa"
+      },
+      {
+        "cryptogram": "verplichting",
+        "length": 9,
+        "help_numbers": [
+          null,
+          12,
+          17,
+          null,
+          null,
+          13,
+          18,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "obligatie"
+      },
+      {
+        "cryptogram": "het aantal voorstellingen doen toenemen",
+        "length": 8,
+        "help_numbers": [
+          null,
+          4,
+          2,
+          null,
+          null,
+          9,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "opvoeren"
+      },
+      {
+        "cryptogram": "rundsdactylus",
+        "length": 7,
+        "help_numbers": [
+          23,
+          11,
+          null,
+          null,
+          11,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "koevoet"
+      },
+      {
+        "cryptogram": "lentespar",
+        "length": 6,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          16,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "meiden"
+      },
+      {
+        "cryptogram": "tennisster van Milo",
+        "length": 5,
+        "help_numbers": [
+          2,
+          null,
+          null,
+          null,
+          19
+        ],
+        "offset": 4,
+        "solution": "venus"
+      },
+      {
+        "cryptogram": "Turks herenfornuis",
+        "length": 3,
+        "help_numbers": [
+          13,
+          null,
+          13
+        ],
+        "offset": 5,
+        "solution": "aga"
+      }
+    ]
   }
 ]

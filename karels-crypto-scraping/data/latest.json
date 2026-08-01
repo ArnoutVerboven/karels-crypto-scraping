@@ -1,242 +1,72 @@
 {
-  "id": 874,
-  "title": "Karels Crypto 25 juli",
-  "date": "2026-07-25",
+  "id": 875,
+  "title": "Karels Crypto 1 augustus",
+  "date": "2026-08-01",
   "solution": null,
   "words": [
     {
-      "cryptogram": "voormalig kamersanitair",
-      "length": 4,
+      "cryptogram": "balpen ter identificatie van een bank",
+      "length": 3,
       "help_numbers": [
         null,
-        20,
         null,
-        null
+        1
       ],
-      "offset": 4,
+      "offset": 6,
       "solution": null
     },
     {
-      "cryptogram": "gelatineachtig vogelproduct",
+      "cryptogram": "waterplant",
       "length": 5,
       "help_numbers": [
-        5,
+        8,
+        11,
         null,
         null,
-        null,
-        15
+        null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "de erfenis van een pauselijke gezant",
+      "cryptogram": "paardenboerderijen",
       "length": 6,
       "help_numbers": [
-        17,
-        null,
-        5,
-        null,
-        null,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "Neem voedsel tot u, poes. (gemeenz.)",
-      "length": 7,
-      "help_numbers": [
-        6,
-        null,
-        14,
-        null,
-        23,
-        null,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "reekijkers",
-      "length": 8,
-      "help_numbers": [
-        1,
-        null,
-        null,
-        null,
-        11,
-        null,
-        null,
-        22
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "zomerscheet",
-      "length": 9,
-      "help_numbers": [
-        3,
-        11,
-        null,
-        null,
-        null,
         7,
         null,
-        null,
-        16
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "gat in een sok",
-      "length": 10,
-      "help_numbers": [
-        null,
-        null,
-        null,
-        4,
-        4,
-        null,
-        13,
-        13,
-        null,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "Volkswagen om een ramkraak mee te plegen",
-      "length": 11,
-      "help_numbers": [
-        15,
-        null,
-        12,
-        null,
-        null,
-        null,
-        23,
-        null,
-        11,
-        null,
-        6
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "Daar komt een wielerwedstrijd aan!",
-      "length": 12,
-      "help_numbers": [
-        null,
-        null,
-        14,
-        9,
-        null,
-        null,
-        null,
-        3,
-        null,
-        10,
-        1,
-        null
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "tekstverwerker",
-      "length": 13,
-      "help_numbers": [
-        null,
-        15,
-        22,
-        16,
-        null,
-        null,
-        null,
-        null,
-        10,
-        18,
-        null,
-        21,
-        null
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "lawaaierig keukenapparaat",
-      "length": 12,
-      "help_numbers": [
-        5,
-        null,
-        null,
-        21,
-        null,
-        16,
         null,
         8,
         null,
-        20,
-        null,
         null
       ],
-      "offset": 0,
+      "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "vlugge spits (Eng.)",
-      "length": 11,
+      "cryptogram": "iedereen behalve Jan",
+      "length": 7,
       "help_numbers": [
+        11,
         null,
         null,
-        19,
-        18,
         null,
-        null,
-        9,
-        7,
-        null,
-        9,
+        3,
+        11,
         null
       ],
-      "offset": 1,
+      "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "Basic-Fit-gepeupel",
-      "length": 10,
+      "cryptogram": "overlijden (Lat.) + overlijden (Ned.)",
+      "length": 8,
       "help_numbers": [
-        null,
-        4,
-        null,
-        14,
-        null,
-        null,
-        13,
-        null,
-        null,
-        13
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "verplichting",
-      "length": 9,
-      "help_numbers": [
+        3,
         null,
         12,
         17,
         null,
         null,
-        13,
-        18,
         null,
         null
       ],
@@ -244,72 +74,241 @@
       "solution": null
     },
     {
-      "cryptogram": "het aantal voorstellingen doen toenemen",
-      "length": 8,
+      "cryptogram": "haan (levend!), te winnen op onze tombola!",
+      "length": 9,
       "help_numbers": [
-        null,
         4,
-        2,
+        12,
+        14,
         null,
         null,
-        9,
         null,
-        null
+        null,
+        null,
+        21
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "rundsdactylus",
-      "length": 7,
+      "cryptogram": "kamerjassen",
+      "length": 10,
       "help_numbers": [
-        23,
-        11,
+        7,
         null,
         null,
-        11,
         null,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "lentespar",
-      "length": 6,
-      "help_numbers": [
         8,
         null,
         null,
-        16,
+        21,
         null,
-        null
+        9
       ],
-      "offset": 4,
+      "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "tennisster van Milo",
-      "length": 5,
+      "cryptogram": "lanslakei, degendienaar, houwitserhulpje",
+      "length": 11,
       "help_numbers": [
+        16,
+        11,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        7,
+        null
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "bepaalde gymnastiekoefening",
+      "length": 12,
+      "help_numbers": [
+        20,
+        null,
+        null,
+        null,
         2,
         null,
+        null,
+        4,
+        12,
         null,
         null,
         19
       ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "speelplaats",
+      "length": 13,
+      "help_numbers": [
+        null,
+        null,
+        9,
+        null,
+        2,
+        12,
+        null,
+        4,
+        null,
+        15,
+        null,
+        18,
+        null
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "spraakwaterval",
+      "length": 12,
+      "help_numbers": [
+        5,
+        null,
+        21,
+        21,
+        null,
+        null,
+        19,
+        null,
+        null,
+        21,
+        null,
+        null
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "het Bijbelse verhaal van de mooie Inse",
+      "length": 11,
+      "help_numbers": [
+        10,
+        null,
+        17,
+        null,
+        4,
+        null,
+        null,
+        null,
+        20,
+        null,
+        5
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "land van het politiebusje",
+      "length": 10,
+      "help_numbers": [
+        null,
+        6,
+        null,
+        20,
+        null,
+        null,
+        11,
+        null,
+        null,
+        2
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "kaderdringer",
+      "length": 9,
+      "help_numbers": [
+        5,
+        14,
+        null,
+        null,
+        null,
+        18,
+        16,
+        null,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "eeuwige rustplaats",
+      "length": 8,
+      "help_numbers": [
+        7,
+        null,
+        3,
+        null,
+        null,
+        20,
+        null,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "lullige kloostergemeenschap",
+      "length": 7,
+      "help_numbers": [
+        null,
+        10,
+        13,
+        null,
+        null,
+        15,
+        null
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "noodopvang",
+      "length": 6,
+      "help_numbers": [
+        null,
+        11,
+        null,
+        null,
+        2,
+        null
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "piano-examen",
+      "length": 5,
+      "help_numbers": [
+        null,
+        6,
+        null,
+        null,
+        17
+      ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "Turks herenfornuis",
+      "cryptogram": "uienkilt",
       "length": 3,
       "help_numbers": [
-        13,
+        null,
         null,
         13
       ],
-      "offset": 5,
+      "offset": 6,
       "solution": null
     }
   ]
