@@ -2843,5 +2843,320 @@
         "solution": "aga"
       }
     ]
+  },
+  {
+    "id": 875,
+    "title": "Karels Crypto 1 augustus",
+    "date": "2026-08-01",
+    "solution": "breedbekstrandloper",
+    "words": [
+      {
+        "cryptogram": "balpen ter identificatie van een bank",
+        "length": 3,
+        "help_numbers": [
+          null,
+          null,
+          1
+        ],
+        "offset": 6,
+        "solution": "bic"
+      },
+      {
+        "cryptogram": "waterplant",
+        "length": 5,
+        "help_numbers": [
+          8,
+          11,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "varen"
+      },
+      {
+        "cryptogram": "paardenboerderijen",
+        "length": 6,
+        "help_numbers": [
+          7,
+          null,
+          null,
+          8,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "hoeven"
+      },
+      {
+        "cryptogram": "iedereen behalve Jan",
+        "length": 7,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          null,
+          3,
+          11,
+          null
+        ],
+        "offset": 3,
+        "solution": "alleman"
+      },
+      {
+        "cryptogram": "overlijden (Lat.) + overlijden (Ned.)",
+        "length": 8,
+        "help_numbers": [
+          3,
+          null,
+          12,
+          17,
+          null,
+          null,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "morsdood"
+      },
+      {
+        "cryptogram": "haan (levend!), te winnen op onze tombola!",
+        "length": 9,
+        "help_numbers": [
+          4,
+          12,
+          14,
+          null,
+          null,
+          null,
+          null,
+          null,
+          21
+        ],
+        "offset": 2,
+        "solution": "prysbeest"
+      },
+      {
+        "cryptogram": "kamerjassen",
+        "length": 10,
+        "help_numbers": [
+          7,
+          null,
+          null,
+          null,
+          8,
+          null,
+          null,
+          21,
+          null,
+          9
+        ],
+        "offset": 1,
+        "solution": "huisvesten"
+      },
+      {
+        "cryptogram": "lanslakei, degendienaar, houwitserhulpje",
+        "length": 11,
+        "help_numbers": [
+          16,
+          11,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          7,
+          null
+        ],
+        "offset": 1,
+        "solution": "wapenknecht"
+      },
+      {
+        "cryptogram": "bepaalde gymnastiekoefening",
+        "length": 12,
+        "help_numbers": [
+          20,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
+          4,
+          12,
+          null,
+          null,
+          19
+        ],
+        "offset": 0,
+        "solution": "bokkensprong"
+      },
+      {
+        "cryptogram": "speelplaats",
+        "length": 13,
+        "help_numbers": [
+          null,
+          null,
+          9,
+          null,
+          2,
+          12,
+          null,
+          4,
+          null,
+          15,
+          null,
+          18,
+          null
+        ],
+        "offset": 0,
+        "solution": "concertpodium"
+      },
+      {
+        "cryptogram": "spraakwaterval",
+        "length": 12,
+        "help_numbers": [
+          5,
+          null,
+          21,
+          21,
+          null,
+          null,
+          19,
+          null,
+          null,
+          21,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "lettergieter"
+      },
+      {
+        "cryptogram": "het Bijbelse verhaal van de mooie Inse",
+        "length": 11,
+        "help_numbers": [
+          10,
+          null,
+          17,
+          null,
+          4,
+          null,
+          null,
+          null,
+          20,
+          null,
+          5
+        ],
+        "offset": 1,
+        "solution": "inseparabel"
+      },
+      {
+        "cryptogram": "land van het politiebusje",
+        "length": 10,
+        "help_numbers": [
+          null,
+          6,
+          null,
+          20,
+          null,
+          null,
+          11,
+          null,
+          null,
+          2
+        ],
+        "offset": 1,
+        "solution": "combinatie"
+      },
+      {
+        "cryptogram": "kaderdringer",
+        "length": 9,
+        "help_numbers": [
+          5,
+          14,
+          null,
+          null,
+          null,
+          18,
+          16,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "lystduwer"
+      },
+      {
+        "cryptogram": "eeuwige rustplaats",
+        "length": 8,
+        "help_numbers": [
+          7,
+          null,
+          3,
+          null,
+          null,
+          20,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "hemelbed"
+      },
+      {
+        "cryptogram": "lullige kloostergemeenschap",
+        "length": 7,
+        "help_numbers": [
+          null,
+          10,
+          13,
+          null,
+          null,
+          15,
+          null
+        ],
+        "offset": 3,
+        "solution": "pikorde"
+      },
+      {
+        "cryptogram": "noodopvang",
+        "length": 6,
+        "help_numbers": [
+          null,
+          11,
+          null,
+          null,
+          2,
+          null
+        ],
+        "offset": 3,
+        "solution": "pamper"
+      },
+      {
+        "cryptogram": "piano-examen",
+        "length": 5,
+        "help_numbers": [
+          null,
+          6,
+          null,
+          null,
+          17
+        ],
+        "offset": 4,
+        "solution": "toets"
+      },
+      {
+        "cryptogram": "uienkilt",
+        "length": 3,
+        "help_numbers": [
+          null,
+          null,
+          13
+        ],
+        "offset": 6,
+        "solution": "rok"
+      }
+    ]
   }
 ]
