@@ -3158,5 +3158,321 @@
         "solution": "rok"
       }
     ]
+  },
+  {
+    "id": 876,
+    "title": "Karels Crypto 8 augustus",
+    "date": "2026-08-08",
+    "solution": "immigratiewetgeving",
+    "words": [
+      {
+        "cryptogram": "huil heet",
+        "length": 4,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "snik"
+      },
+      {
+        "cryptogram": "inlegger",
+        "length": 5,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          null,
+          7
+        ],
+        "offset": 4,
+        "solution": "zomer"
+      },
+      {
+        "cryptogram": "(Arabische) snoepsport",
+        "length": 6,
+        "help_numbers": [
+          14,
+          null,
+          null,
+          20,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "gombal"
+      },
+      {
+        "cryptogram": "binnenkijk",
+        "length": 7,
+        "help_numbers": [
+          null,
+          5,
+          9,
+          null,
+          null,
+          8,
+          null
+        ],
+        "offset": 3,
+        "solution": "inzicht"
+      },
+      {
+        "cryptogram": "Hitler aan de galg",
+        "length": 8,
+        "help_numbers": [
+          8,
+          1,
+          null,
+          null,
+          null,
+          null,
+          19,
+          null
+        ],
+        "offset": 3,
+        "solution": "hangsnor"
+      },
+      {
+        "cryptogram": "leegeten (gemeenz.)",
+        "length": 9,
+        "help_numbers": [
+          17,
+          null,
+          12,
+          15,
+          null,
+          null,
+          12,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "uitvreten"
+      },
+      {
+        "cryptogram": "klimplanten",
+        "length": 10,
+        "help_numbers": [
+          null,
+          10,
+          null,
+          null,
+          18,
+          null,
+          13,
+          13,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "opgewassen"
+      },
+      {
+        "cryptogram": "Ivan Pavlov (Eng.)",
+        "length": 11,
+        "help_numbers": [
+          21,
+          19,
+          null,
+          2,
+          null,
+          null,
+          null,
+          19,
+          null,
+          3,
+          null
+        ],
+        "offset": 1,
+        "solution": "conditioner"
+      },
+      {
+        "cryptogram": "stiptheidsactie",
+        "length": 12,
+        "help_numbers": [
+          10,
+          null,
+          null,
+          21,
+          null,
+          13,
+          null,
+          null,
+          18,
+          null,
+          null,
+          6
+        ],
+        "offset": 0,
+        "solution": "precisiewerk"
+      },
+      {
+        "cryptogram": "bandietenstreek",
+        "length": 13,
+        "help_numbers": [
+          null,
+          21,
+          null,
+          17,
+          null,
+          6,
+          null,
+          5,
+          null,
+          null,
+          1,
+          1,
+          null
+        ],
+        "offset": 0,
+        "solution": "schurkenstaat"
+      },
+      {
+        "cryptogram": "teljorenchauffeur",
+        "length": 12,
+        "help_numbers": [
+          20,
+          null,
+          null,
+          2,
+          null,
+          5,
+          null,
+          1,
+          null,
+          16,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "bordenwarmer"
+      },
+      {
+        "cryptogram": "onbesuisd staakt-het-vuren",
+        "length": 11,
+        "help_numbers": [
+          18,
+          4,
+          null,
+          null,
+          20,
+          null,
+          13,
+          null,
+          1,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "wildbestand"
+      },
+      {
+        "cryptogram": "daarmee opent een acteur zijn carrière",
+        "length": 10,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          17,
+          null,
+          null,
+          null,
+          7,
+          19,
+          null
+        ],
+        "offset": 2,
+        "solution": "sleutelrol"
+      },
+      {
+        "cryptogram": "financiële kwestie in Zuid-Afrika",
+        "length": 9,
+        "help_numbers": [
+          7,
+          null,
+          null,
+          2,
+          null,
+          null,
+          15,
+          null,
+          11
+        ],
+        "offset": 2,
+        "solution": "randgeval"
+      },
+      {
+        "cryptogram": "spijkerverf",
+        "length": 8,
+        "help_numbers": [
+          5,
+          null,
+          14,
+          null,
+          null,
+          null,
+          null,
+          6
+        ],
+        "offset": 3,
+        "solution": "nagellak"
+      },
+      {
+        "cryptogram": "is familie van de kuifmees",
+        "length": 7,
+        "help_numbers": [
+          11,
+          19,
+          null,
+          null,
+          4,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "lokvink"
+      },
+      {
+        "cryptogram": "... is D",
+        "length": 6,
+        "help_numbers": [
+          2,
+          null,
+          16,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "domino"
+      },
+      {
+        "cryptogram": "vat (Lat.)",
+        "length": 5,
+        "help_numbers": [
+          12,
+          null,
+          null,
+          17,
+          null
+        ],
+        "offset": 4,
+        "solution": "tonus"
+      },
+      {
+        "cryptogram": "(Er is) elektriciteit, gas en water in de eengezinswoning",
+        "length": 3,
+        "help_numbers": [
+          3,
+          null,
+          null
+        ],
+        "offset": 5,
+        "solution": "egw"
+      }
+    ]
   }
 ]
