@@ -1,207 +1,207 @@
 {
-  "id": 878,
-  "title": "Karels Crypto 22 augustus",
-  "date": "2026-08-22",
+  "id": 879,
+  "title": "Karels Crypto 29 augustus",
+  "date": "2026-08-29",
   "solution": null,
   "words": [
     {
-      "cryptogram": "vogel met gebit",
+      "cryptogram": "Duitse beekcomponist",
       "length": 4,
       "help_numbers": [
+        13,
         null,
         null,
-        1,
         null
       ],
-      "offset": 5,
+      "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "tienerjongen verdacht van moord blijft …",
+      "cryptogram": "buizentip",
       "length": 5,
       "help_numbers": [
         19,
         null,
         null,
-        8,
+        21,
         null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "mevrouw (Roald) Dahl",
+      "cryptogram": "piekerkuipen",
       "length": 6,
       "help_numbers": [
-        23,
-        null,
-        null,
-        null,
         19,
-        null
+        null,
+        null,
+        null,
+        null,
+        2
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "sport voor mietjes",
+      "cryptogram": "Het kan gek klinken maar bijen houden ons …",
       "length": 7,
       "help_numbers": [
-        5,
+        17,
         null,
-        7,
+        18,
         null,
+        8,
         null,
-        22,
         null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "toiletartikel voor hoenders",
+      "cryptogram": "een dar torsen",
       "length": 8,
       "help_numbers": [
-        2,
+        null,
+        10,
+        22,
+        null,
+        21,
         null,
         null,
-        null,
-        null,
-        15,
-        null,
-        9
+        null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "gesprek over alimentatiegelden",
+      "cryptogram": "hevige buikloop (Eng.)",
       "length": 9,
       "help_numbers": [
         null,
-        14,
+        7,
+        17,
         null,
-        8,
         null,
-        2,
         null,
-        1,
+        12,
+        6,
         null
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "insectenlarfjes zonder ouders",
+      "cryptogram": "pianoschaapje",
       "length": 10,
       "help_numbers": [
-        20,
+        8,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        21,
+        5
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "die spreekt geen standaardtaal (Lat.)",
+      "length": 11,
+      "help_numbers": [
+        22,
+        null,
+        null,
+        18,
+        null,
+        null,
+        19,
+        null,
+        null,
+        1,
+        20
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "beursslot",
+      "length": 12,
+      "help_numbers": [
         3,
         null,
         null,
+        9,
         null,
-        10,
+        18,
         null,
-        17,
         null,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "Dinky toy",
-      "length": 11,
-      "help_numbers": [
-        15,
         19,
         null,
-        23,
         null,
-        null,
-        null,
-        22,
-        6,
-        null,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "is de feestelijke maar bedrogen kostuumdrager",
-      "length": 12,
-      "help_numbers": [
-        null,
-        7,
-        null,
-        null,
-        11,
-        null,
-        16,
-        null,
-        4,
-        null,
-        null,
-        23
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "alles opmerkend",
-      "length": 13,
-      "help_numbers": [
-        null,
-        null,
-        8,
-        4,
-        5,
-        null,
-        null,
-        4,
-        17,
-        null,
-        8,
-        null,
-        null
+        14
       ],
       "offset": 0,
       "solution": null
     },
     {
-      "cryptogram": "knoetbeestje",
-      "length": 12,
+      "cryptogram": "lijfwacht",
+      "length": 13,
       "help_numbers": [
-        6,
+        13,
+        null,
+        null,
+        11,
+        7,
+        null,
         null,
         5,
+        8,
         null,
-        3,
         null,
         null,
+        4
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "het door inspanning en arbeid verkrijgen van een klein grof gesneden",
+      "length": 12,
+      "help_numbers": [
+        13,
+        6,
+        null,
+        null,
+        22,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        14
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "Het ... al jaren op zijn portie boenwas",
+      "length": 11,
+      "help_numbers": [
+        9,
+        null,
+        6,
         null,
         16,
         null,
-        13,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "uit het vliegtuig gedoken maar parachute vergeten",
-      "length": 11,
-      "help_numbers": [
-        23,
-        21,
-        23,
+        4,
         null,
-        null,
-        null,
-        18,
-        null,
-        21,
+        11,
         null,
         null
       ],
@@ -209,107 +209,108 @@
       "solution": null
     },
     {
-      "cryptogram": "Dat was het gelijkvloers. Zal ik je dan nu de …?",
+      "cryptogram": "half-om-half",
       "length": 10,
       "help_numbers": [
-        11,
-        21,
-        20,
+        15,
+        null,
+        15,
         null,
         null,
+        15,
         null,
-        21,
-        null,
+        15,
         null,
         null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "ik wist hem eindelijk te … zijn kat te begra-ven; ze was door een vrachtwagen …",
-      "length": 9,
-      "help_numbers": [
-        21,
-        20,
-        null,
-        null,
-        null,
-        null,
-        23,
-        null,
-        14
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "pogo: wilde dans …",
-      "length": 8,
+      "cryptogram": "postfractuur",
+      "length": 9,
       "help_numbers": [
-        null,
-        18,
-        3,
+        20,
         null,
         10,
         null,
         null,
-        null
+        null,
+        16,
+        null,
+        3
       ],
-      "offset": 3,
+      "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "voorloper van de moderne schaatsschoen",
-      "length": 7,
+      "cryptogram": "is de weduwe",
+      "length": 8,
       "help_numbers": [
         12,
-        null,
-        null,
-        null,
-        null,
-        9,
-        18
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "kijkje",
-      "length": 6,
-      "help_numbers": [
-        11,
-        null,
-        null,
         null,
         13,
+        null,
+        5,
+        null,
+        null,
         null
       ],
-      "offset": 4,
+      "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "vrouwenzender",
-      "length": 5,
-      "help_numbers": [
-        null,
-        12,
-        null,
-        null,
-        4
-      ],
-      "offset": 4,
-      "solution": null
-    },
-    {
-      "cryptogram": "bescheiden periculeus gewichtsverlies",
-      "length": 3,
+      "cryptogram": "patroon van een achteloze vrouw",
+      "length": 7,
       "help_numbers": [
         15,
         null,
+        12,
+        null,
+        null,
+        null,
+        6
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "griffelhert",
+      "length": 6,
+      "help_numbers": [
+        null,
+        2,
+        19,
+        null,
+        null,
         null
       ],
-      "offset": 5,
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "pappen",
+      "length": 5,
+      "help_numbers": [
+        13,
+        6,
+        null,
+        null,
+        null
+      ],
+      "offset": 4,
+      "solution": null
+    },
+    {
+      "cryptogram": "twaalft - eent",
+      "length": 4,
+      "help_numbers": [
+        16,
+        null,
+        null,
+        null
+      ],
+      "offset": 4,
       "solution": null
     }
   ]

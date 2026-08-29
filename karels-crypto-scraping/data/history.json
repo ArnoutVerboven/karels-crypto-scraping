@@ -3790,5 +3790,321 @@
         "solution": "iel"
       }
     ]
+  },
+  {
+    "id": 878,
+    "title": "Karels Crypto 22 augustus",
+    "date": "2026-08-22",
+    "solution": "achtergrondstraling",
+    "words": [
+      {
+        "cryptogram": "vogel met gebit",
+        "length": 4,
+        "help_numbers": [
+          null,
+          null,
+          1,
+          null
+        ],
+        "offset": 5,
+        "solution": "kauw"
+      },
+      {
+        "cryptogram": "tienerjongen verdacht van moord blijft …",
+        "length": 5,
+        "help_numbers": [
+          19,
+          null,
+          null,
+          8,
+          null
+        ],
+        "offset": 4,
+        "solution": "incel"
+      },
+      {
+        "cryptogram": "mevrouw (Roald) Dahl",
+        "length": 6,
+        "help_numbers": [
+          23,
+          null,
+          null,
+          null,
+          19,
+          null
+        ],
+        "offset": 4,
+        "solution": "dahlia"
+      },
+      {
+        "cryptogram": "sport voor mietjes",
+        "length": 7,
+        "help_numbers": [
+          5,
+          null,
+          7,
+          null,
+          null,
+          22,
+          null
+        ],
+        "offset": 3,
+        "solution": "softbal"
+      },
+      {
+        "cryptogram": "toiletartikel voor hoenders",
+        "length": 8,
+        "help_numbers": [
+          2,
+          null,
+          null,
+          null,
+          null,
+          15,
+          null,
+          9
+        ],
+        "offset": 3,
+        "solution": "hanenkam"
+      },
+      {
+        "cryptogram": "gesprek over alimentatiegelden",
+        "length": 9,
+        "help_numbers": [
+          null,
+          14,
+          null,
+          8,
+          null,
+          2,
+          null,
+          1,
+          null
+        ],
+        "offset": 2,
+        "solution": "onderhoud"
+      },
+      {
+        "cryptogram": "insectenlarfjes zonder ouders",
+        "length": 10,
+        "help_numbers": [
+          20,
+          3,
+          null,
+          null,
+          null,
+          10,
+          null,
+          17,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "vliegwezen"
+      },
+      {
+        "cryptogram": "Dinky toy",
+        "length": 11,
+        "help_numbers": [
+          15,
+          19,
+          null,
+          23,
+          null,
+          null,
+          null,
+          22,
+          6,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "kinderwagen"
+      },
+      {
+        "cryptogram": "is de feestelijke maar bedrogen kostuumdrager",
+        "length": 12,
+        "help_numbers": [
+          null,
+          7,
+          null,
+          null,
+          11,
+          null,
+          16,
+          null,
+          4,
+          null,
+          null,
+          23
+        ],
+        "offset": 1,
+        "solution": "afgeborsteld"
+      },
+      {
+        "cryptogram": "alles opmerkend",
+        "length": 13,
+        "help_numbers": [
+          null,
+          null,
+          8,
+          4,
+          5,
+          null,
+          null,
+          4,
+          17,
+          null,
+          8,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "nietsontziend"
+      },
+      {
+        "cryptogram": "knoetbeestje",
+        "length": 12,
+        "help_numbers": [
+          6,
+          null,
+          5,
+          null,
+          3,
+          null,
+          null,
+          null,
+          16,
+          null,
+          13,
+          null
+        ],
+        "offset": 1,
+        "solution": "geseldiertje"
+      },
+      {
+        "cryptogram": "uit het vliegtuig gedoken maar parachute vergeten",
+        "length": 11,
+        "help_numbers": [
+          23,
+          21,
+          23,
+          null,
+          null,
+          null,
+          18,
+          null,
+          21,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "dodensprong"
+      },
+      {
+        "cryptogram": "Dat was het gelijkvloers. Zal ik je dan nu de …?",
+        "length": 10,
+        "help_numbers": [
+          11,
+          21,
+          20,
+          null,
+          null,
+          null,
+          21,
+          null,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "boventonen"
+      },
+      {
+        "cryptogram": "ik wist hem eindelijk te … zijn kat te begra-ven; ze was door een vrachtwagen …",
+        "length": 9,
+        "help_numbers": [
+          21,
+          20,
+          null,
+          null,
+          null,
+          null,
+          23,
+          null,
+          14
+        ],
+        "offset": 2,
+        "solution": "overreden"
+      },
+      {
+        "cryptogram": "pogo: wilde dans …",
+        "length": 8,
+        "help_numbers": [
+          null,
+          18,
+          3,
+          null,
+          10,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "oplawaai"
+      },
+      {
+        "cryptogram": "voorloper van de moderne schaatsschoen",
+        "length": 7,
+        "help_numbers": [
+          12,
+          null,
+          null,
+          null,
+          null,
+          9,
+          18
+        ],
+        "offset": 3,
+        "solution": "ysklomp"
+      },
+      {
+        "cryptogram": "kijkje",
+        "length": 6,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          null,
+          13,
+          null
+        ],
+        "offset": 4,
+        "solution": "blikje"
+      },
+      {
+        "cryptogram": "vrouwenzender",
+        "length": 5,
+        "help_numbers": [
+          null,
+          12,
+          null,
+          null,
+          4
+        ],
+        "offset": 4,
+        "solution": "zynet"
+      },
+      {
+        "cryptogram": "bescheiden periculeus gewichtsverlies",
+        "length": 3,
+        "help_numbers": [
+          15,
+          null,
+          null
+        ],
+        "offset": 5,
+        "solution": "kga"
+      }
+    ]
   }
 ]
