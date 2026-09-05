@@ -4106,5 +4106,322 @@
         "solution": "kga"
       }
     ]
+  },
+  {
+    "id": 879,
+    "title": "Karels Crypto 29 augustus",
+    "date": "2026-08-29",
+    "solution": "cybersecuritybedryf",
+    "words": [
+      {
+        "cryptogram": "Duitse beekcomponist",
+        "length": 4,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "bach"
+      },
+      {
+        "cryptogram": "buizentip",
+        "length": 5,
+        "help_numbers": [
+          19,
+          null,
+          null,
+          21,
+          null
+        ],
+        "offset": 4,
+        "solution": "tuyau"
+      },
+      {
+        "cryptogram": "piekerkuipen",
+        "length": 6,
+        "help_numbers": [
+          19,
+          null,
+          null,
+          null,
+          null,
+          2
+        ],
+        "offset": 4,
+        "solution": "tobben"
+      },
+      {
+        "cryptogram": "Het kan gek klinken maar bijen houden ons …",
+        "length": 7,
+        "help_numbers": [
+          17,
+          null,
+          18,
+          null,
+          8,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "inleven"
+      },
+      {
+        "cryptogram": "een dar torsen",
+        "length": 8,
+        "help_numbers": [
+          null,
+          10,
+          22,
+          null,
+          21,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "bydragen"
+      },
+      {
+        "cryptogram": "hevige buikloop (Eng.)",
+        "length": 9,
+        "help_numbers": [
+          null,
+          7,
+          17,
+          null,
+          null,
+          null,
+          12,
+          6,
+          null
+        ],
+        "offset": 2,
+        "solution": "shitstorm"
+      },
+      {
+        "cryptogram": "pianoschaapje",
+        "length": 10,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          21,
+          5
+        ],
+        "offset": 1,
+        "solution": "vleugellam"
+      },
+      {
+        "cryptogram": "die spreekt geen standaardtaal (Lat.)",
+        "length": 11,
+        "help_numbers": [
+          22,
+          null,
+          null,
+          18,
+          null,
+          null,
+          19,
+          null,
+          null,
+          1,
+          20
+        ],
+        "offset": 1,
+        "solution": "dialecticus"
+      },
+      {
+        "cryptogram": "beursslot",
+        "length": 12,
+        "help_numbers": [
+          3,
+          null,
+          null,
+          9,
+          null,
+          18,
+          null,
+          null,
+          19,
+          null,
+          null,
+          14
+        ],
+        "offset": 0,
+        "solution": "knipsluiting"
+      },
+      {
+        "cryptogram": "lijfwacht",
+        "length": 13,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          11,
+          7,
+          null,
+          null,
+          5,
+          8,
+          null,
+          null,
+          null,
+          4
+        ],
+        "offset": 0,
+        "solution": "beschermvrouw"
+      },
+      {
+        "cryptogram": "het door inspanning en arbeid verkrijgen van een klein grof gesneden",
+        "length": 12,
+        "help_numbers": [
+          13,
+          6,
+          null,
+          null,
+          22,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          14
+        ],
+        "offset": 0,
+        "solution": "broodwinning"
+      },
+      {
+        "cryptogram": "Het ... al jaren op zijn portie boenwas",
+        "length": 11,
+        "help_numbers": [
+          9,
+          null,
+          6,
+          null,
+          16,
+          null,
+          4,
+          null,
+          11,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "parketwacht"
+      },
+      {
+        "cryptogram": "half-om-half",
+        "length": 10,
+        "help_numbers": [
+          15,
+          null,
+          15,
+          null,
+          null,
+          15,
+          null,
+          15,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "fiftyfifty"
+      },
+      {
+        "cryptogram": "postfractuur",
+        "length": 9,
+        "help_numbers": [
+          20,
+          null,
+          10,
+          null,
+          null,
+          null,
+          16,
+          null,
+          3
+        ],
+        "offset": 2,
+        "solution": "stylbreuk"
+      },
+      {
+        "cryptogram": "is de weduwe",
+        "length": 8,
+        "help_numbers": [
+          12,
+          null,
+          13,
+          null,
+          5,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "onbemand"
+      },
+      {
+        "cryptogram": "patroon van een achteloze vrouw",
+        "length": 7,
+        "help_numbers": [
+          15,
+          null,
+          12,
+          null,
+          null,
+          null,
+          6
+        ],
+        "offset": 3,
+        "solution": "flodder"
+      },
+      {
+        "cryptogram": "griffelhert",
+        "length": 6,
+        "help_numbers": [
+          null,
+          2,
+          19,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "entree"
+      },
+      {
+        "cryptogram": "pappen",
+        "length": 5,
+        "help_numbers": [
+          13,
+          6,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "bryen"
+      },
+      {
+        "cryptogram": "twaalft - eent",
+        "length": 4,
+        "help_numbers": [
+          16,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "elft"
+      }
+    ]
   }
 ]
