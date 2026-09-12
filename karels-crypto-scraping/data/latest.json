@@ -1,315 +1,314 @@
 {
-  "id": 880,
-  "title": "Karels Crypto 5 september",
-  "date": "2026-09-05",
+  "id": 881,
+  "title": "Karels Crypto 12 september",
+  "date": "2026-09-12",
   "solution": null,
   "words": [
     {
-      "cryptogram": "explosief dat kan barsten",
+      "cryptogram": "de kiekendief onder de vlinders",
       "length": 3,
       "help_numbers": [
-        6,
         null,
+        16,
         null
       ],
-      "offset": 4,
+      "offset": 6,
       "solution": null
     },
     {
-      "cryptogram": "praktijkleertijd bij het Engelse toneel",
+      "cryptogram": "heilig familielid",
       "length": 5,
       "help_numbers": [
+        9,
         null,
-        3,
         null,
-        13,
-        null
+        null,
+        18
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "de hoogste waarden voor een koningin",
+      "cryptogram": "voor enkele ogenblikken zuidoostelijk",
       "length": 6,
       "help_numbers": [
-        18,
+        null,
+        15,
         null,
         null,
-        null,
-        18,
+        4,
         null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "padvinderen",
+      "cryptogram": "mevrouw die haar beurt overslaat bij het kleurenwiezen",
       "length": 7,
       "help_numbers": [
+        5,
         null,
-        19,
-        1,
+        9,
         null,
         null,
-        21,
+        18,
         null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "tirettelen",
+      "cryptogram": "erectie",
       "length": 8,
       "help_numbers": [
-        9,
         null,
-        null,
-        4,
-        null,
-        5,
-        null,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "op adem komen met een kaars",
-      "length": 9,
-      "help_numbers": [
-        11,
-        null,
-        null,
-        6,
-        null,
-        2,
-        8,
-        null,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "draait vlug",
-      "length": 10,
-      "help_numbers": [
-        17,
         null,
         14,
         null,
+        8,
         null,
         null,
-        null,
-        9,
-        null,
-        20
+        8
       ],
-      "offset": 1,
+      "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "(een machine) aanzetten",
-      "length": 11,
+      "cryptogram": "1, 2, 3, 4, 5, 6, 7, 9, 10",
+      "length": 9,
       "help_numbers": [
-        10,
         null,
-        4,
-        null,
-        12,
-        null,
-        16,
-        null,
-        5,
-        null,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "niet bij elkaar blijvend",
-      "length": 12,
-      "help_numbers": [
+        11,
+        21,
         null,
         null,
         3,
         null,
+        22,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "filetempo (gewoonlijk stilstaand of stapvoets)",
+      "length": 10,
+      "help_numbers": [
         null,
-        14,
+        12,
+        null,
+        13,
+        null,
+        null,
+        21,
+        null,
+        null,
+        14
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "consumptief feestartikel",
+      "length": 11,
+      "help_numbers": [
+        5,
+        null,
+        null,
+        17,
+        6,
         null,
         1,
         null,
         null,
-        14,
-        15
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "commotiegehijg",
-      "length": 13,
-      "help_numbers": [
-        4,
-        null,
-        14,
-        4,
-        null,
-        null,
-        null,
-        null,
-        8,
-        11,
-        19,
-        null,
-        null
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "waterpolitie",
-      "length": 12,
-      "help_numbers": [
-        null,
-        19,
-        12,
-        null,
-        null,
-        20,
-        null,
-        2,
-        13,
-        null,
-        null,
-        null
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "wangedrocht van de planeetwachter",
-      "length": 11,
-      "help_numbers": [
-        18,
-        null,
-        null,
-        null,
-        18,
-        null,
-        null,
-        4,
-        3,
-        null,
-        9
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "aalzwalm",
-      "length": 10,
-      "help_numbers": [
-        13,
-        10,
-        null,
-        null,
-        null,
-        null,
-        2,
-        null,
-        11,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "verdwenen talent",
-      "length": 9,
-      "help_numbers": [
-        17,
-        null,
-        13,
-        null,
-        null,
-        null,
-        5,
         null,
         13
       ],
-      "offset": 2,
+      "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "slappe kost",
-      "length": 8,
+      "cryptogram": "snuifcirkel",
+      "length": 12,
       "help_numbers": [
-        17,
         null,
+        null,
+        20,
+        6,
+        6,
+        null,
+        7,
         null,
         16,
         null,
         null,
-        null,
-        11
+        null
       ],
-      "offset": 2,
+      "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "heeft een professionele skiër",
-      "length": 7,
+      "cryptogram": "(de) teler loven",
+      "length": 13,
       "help_numbers": [
+        15,
         null,
-        5,
+        3,
+        19,
+        null,
+        null,
+        null,
+        null,
+        3,
+        null,
+        3,
+        null,
+        13
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "schilderij met aantrekkingskracht",
+      "length": 12,
+      "help_numbers": [
+        2,
+        20,
+        null,
+        9,
+        null,
+        18,
+        null,
+        10,
+        null,
+        null,
+        null,
+        null
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "moordpoging met natriumchloride",
+      "length": 11,
+      "help_numbers": [
+        4,
+        null,
+        null,
+        8,
+        null,
+        null,
+        13,
+        null,
         7,
+        null,
+        10
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "tatami",
+      "length": 10,
+      "help_numbers": [
+        15,
+        null,
+        16,
+        null,
+        null,
+        2,
         null,
         null,
         null,
         14
       ],
-      "offset": 3,
+      "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "imkerij",
-      "length": 6,
+      "cryptogram": "niet echt vloeiend, wel erg vleiend",
+      "length": 9,
       "help_numbers": [
+        null,
+        8,
+        null,
+        16,
+        null,
+        17,
+        null,
+        22,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "gelaatstrekken (Eng.)",
+      "length": 8,
+      "help_numbers": [
+        null,
+        1,
+        11,
+        null,
+        null,
+        22,
+        null,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "slecht gemak (Fr.)",
+      "length": 7,
+      "help_numbers": [
+        18,
         null,
         7,
         null,
         null,
-        null,
-        16
+        9,
+        null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "doet het met pijp en paling",
+      "cryptogram": "corridor in het Winterpaleis",
+      "length": 6,
+      "help_numbers": [
+        12,
+        null,
+        null,
+        null,
+        13,
+        null
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "maatstaf",
       "length": 5,
       "help_numbers": [
+        19,
         null,
-        1,
         null,
-        21,
-        null
+        null,
+        13
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "adviescollege",
-      "length": 4,
+      "cryptogram": "een doetje dat die knoop verkeerd legt",
+      "length": 3,
       "help_numbers": [
         null,
-        null,
-        null,
-        15
+        20,
+        null
       ],
-      "offset": 4,
+      "offset": 6,
       "solution": null
     }
   ]
