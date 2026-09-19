@@ -4739,5 +4739,320 @@
         "solution": "raad"
       }
     ]
+  },
+  {
+    "id": 881,
+    "title": "Karels Crypto 12 september",
+    "date": "2026-09-12",
+    "solution": "voedselbewaarplaats",
+    "words": [
+      {
+        "cryptogram": "de kiekendief onder de vlinders",
+        "length": 3,
+        "help_numbers": [
+          null,
+          16,
+          null
+        ],
+        "offset": 6,
+        "solution": "vos"
+      },
+      {
+        "cryptogram": "heilig familielid",
+        "length": 5,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          null,
+          18
+        ],
+        "offset": 4,
+        "solution": "stoom"
+      },
+      {
+        "cryptogram": "voor enkele ogenblikken zuidoostelijk",
+        "length": 6,
+        "help_numbers": [
+          null,
+          15,
+          null,
+          null,
+          4,
+          null
+        ],
+        "offset": 4,
+        "solution": "evenzo"
+      },
+      {
+        "cryptogram": "mevrouw die haar beurt overslaat bij het kleurenwiezen",
+        "length": 7,
+        "help_numbers": [
+          5,
+          null,
+          9,
+          null,
+          null,
+          18,
+          null
+        ],
+        "offset": 3,
+        "solution": "pasdame"
+      },
+      {
+        "cryptogram": "erectie",
+        "length": 8,
+        "help_numbers": [
+          null,
+          null,
+          14,
+          null,
+          8,
+          null,
+          null,
+          8
+        ],
+        "offset": 3,
+        "solution": "lidstaat"
+      },
+      {
+        "cryptogram": "1, 2, 3, 4, 5, 6, 7, 9, 10",
+        "length": 9,
+        "help_numbers": [
+          null,
+          11,
+          21,
+          null,
+          null,
+          3,
+          null,
+          22,
+          null
+        ],
+        "offset": 2,
+        "solution": "achteruit"
+      },
+      {
+        "cryptogram": "filetempo (gewoonlijk stilstaand of stapvoets)",
+        "length": 10,
+        "help_numbers": [
+          null,
+          12,
+          null,
+          13,
+          null,
+          null,
+          21,
+          null,
+          null,
+          14
+        ],
+        "offset": 1,
+        "solution": "rysnelheid"
+      },
+      {
+        "cryptogram": "consumptief feestartikel",
+        "length": 11,
+        "help_numbers": [
+          5,
+          null,
+          null,
+          17,
+          6,
+          null,
+          1,
+          null,
+          null,
+          null,
+          13
+        ],
+        "offset": 1,
+        "solution": "proefballon"
+      },
+      {
+        "cryptogram": "snuifcirkel",
+        "length": 12,
+        "help_numbers": [
+          null,
+          null,
+          20,
+          6,
+          6,
+          null,
+          7,
+          null,
+          16,
+          null,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "snuffelronde"
+      },
+      {
+        "cryptogram": "(de) teler loven",
+        "length": 13,
+        "help_numbers": [
+          15,
+          null,
+          3,
+          19,
+          null,
+          null,
+          null,
+          null,
+          3,
+          null,
+          3,
+          null,
+          13
+        ],
+        "offset": 0,
+        "solution": "verbouwereren"
+      },
+      {
+        "cryptogram": "schilderij met aantrekkingskracht",
+        "length": 12,
+        "help_numbers": [
+          2,
+          20,
+          null,
+          9,
+          null,
+          18,
+          null,
+          10,
+          null,
+          null,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "kunstmagneet"
+      },
+      {
+        "cryptogram": "moordpoging met natriumchloride",
+        "length": 11,
+        "help_numbers": [
+          4,
+          null,
+          null,
+          8,
+          null,
+          null,
+          13,
+          null,
+          7,
+          null,
+          10
+        ],
+        "offset": 1,
+        "solution": "zoutaanslag"
+      },
+      {
+        "cryptogram": "tatami",
+        "length": 10,
+        "help_numbers": [
+          15,
+          null,
+          16,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          14
+        ],
+        "offset": 2,
+        "solution": "vloerkleed"
+      },
+      {
+        "cryptogram": "niet echt vloeiend, wel erg vleiend",
+        "length": 9,
+        "help_numbers": [
+          null,
+          8,
+          null,
+          16,
+          null,
+          17,
+          null,
+          22,
+          null
+        ],
+        "offset": 2,
+        "solution": "stroperig"
+      },
+      {
+        "cryptogram": "gelaatstrekken (Eng.)",
+        "length": 8,
+        "help_numbers": [
+          null,
+          1,
+          11,
+          null,
+          null,
+          22,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "facelift"
+      },
+      {
+        "cryptogram": "slecht gemak (Fr.)",
+        "length": 7,
+        "help_numbers": [
+          18,
+          null,
+          7,
+          null,
+          null,
+          9,
+          null
+        ],
+        "offset": 3,
+        "solution": "malaise"
+      },
+      {
+        "cryptogram": "corridor in het Winterpaleis",
+        "length": 6,
+        "help_numbers": [
+          12,
+          null,
+          null,
+          null,
+          13,
+          null
+        ],
+        "offset": 3,
+        "solution": "ysgang"
+      },
+      {
+        "cryptogram": "maatstaf",
+        "length": 5,
+        "help_numbers": [
+          19,
+          null,
+          null,
+          null,
+          13
+        ],
+        "offset": 4,
+        "solution": "baton"
+      },
+      {
+        "cryptogram": "een doetje dat die knoop verkeerd legt",
+        "length": 3,
+        "help_numbers": [
+          null,
+          20,
+          null
+        ],
+        "offset": 6,
+        "solution": "sul"
+      }
+    ]
   }
 ]
