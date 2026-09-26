@@ -5054,5 +5054,321 @@
         "solution": "sul"
       }
     ]
+  },
+  {
+    "id": 882,
+    "title": "Karels Crypto 19 september",
+    "date": "2026-09-19",
+    "solution": "theologiehoogleraar",
+    "words": [
+      {
+        "cryptogram": "snoezig beeldpuntje",
+        "length": 3,
+        "help_numbers": [
+          4,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "dot"
+      },
+      {
+        "cryptogram": "Hij bewoont een Limburgse deelgemeente. Waar woont hij?",
+        "length": 5,
+        "help_numbers": [
+          null,
+          2,
+          null,
+          17,
+          null
+        ],
+        "offset": 4,
+        "solution": "inham"
+      },
+      {
+        "cryptogram": "feestend loslaten",
+        "length": 6,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          3,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "vieren"
+      },
+      {
+        "cryptogram": "op muziek zetten",
+        "length": 7,
+        "help_numbers": [
+          13,
+          null,
+          7,
+          null,
+          2,
+          null,
+          2
+        ],
+        "offset": 3,
+        "solution": "betonen"
+      },
+      {
+        "cryptogram": "is een verse postzegel",
+        "length": 8,
+        "help_numbers": [
+          12,
+          null,
+          15,
+          null,
+          null,
+          null,
+          18,
+          null
+        ],
+        "offset": 2,
+        "solution": "ongelikt"
+      },
+      {
+        "cryptogram": "op de globe passen",
+        "length": 9,
+        "help_numbers": [
+          13,
+          null,
+          11,
+          8,
+          null,
+          null,
+          4,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "bolhoeden"
+      },
+      {
+        "cryptogram": "zwengelamfibie (Bufo girlanda)",
+        "length": 10,
+        "help_numbers": [
+          10,
+          null,
+          19,
+          null,
+          null,
+          14,
+          null,
+          null,
+          null,
+          4
+        ],
+        "offset": 2,
+        "solution": "slingerpad"
+      },
+      {
+        "cryptogram": "ijzerhoudendegrondbeginsel",
+        "length": 11,
+        "help_numbers": [
+          12,
+          null,
+          null,
+          1,
+          null,
+          null,
+          2,
+          6,
+          null,
+          1,
+          null
+        ],
+        "offset": 1,
+        "solution": "oerprincipe"
+      },
+      {
+        "cryptogram": "duif met olijftak op grootmoeders wijze",
+        "length": 12,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          4,
+          null,
+          15,
+          null,
+          null,
+          null,
+          null,
+          8,
+          7
+        ],
+        "offset": 0,
+        "solution": "vredegerecht"
+      },
+      {
+        "cryptogram": "kafttaks",
+        "length": 13,
+        "help_numbers": [
+          12,
+          null,
+          10,
+          null,
+          17,
+          null,
+          null,
+          null,
+          16,
+          16,
+          null,
+          2,
+          null
+        ],
+        "offset": 0,
+        "solution": "omslagheffing"
+      },
+      {
+        "cryptogram": "hulde brengen aan de International Criminal Police Organisation",
+        "length": 12,
+        "help_numbers": [
+          19,
+          null,
+          7,
+          null,
+          3,
+          null,
+          null,
+          11,
+          null,
+          3,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "interpoleren"
+      },
+      {
+        "cryptogram": "g-sterrenkunde",
+        "length": 11,
+        "help_numbers": [
+          15,
+          null,
+          10,
+          null,
+          3,
+          null,
+          null,
+          null,
+          5,
+          19,
+          null
+        ],
+        "offset": 1,
+        "solution": "gastronomie"
+      },
+      {
+        "cryptogram": "coïterende echtgenoot",
+        "length": 10,
+        "help_numbers": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          14,
+          null,
+          null,
+          null,
+          11
+        ],
+        "offset": 2,
+        "solution": "pompgemaal"
+      },
+      {
+        "cryptogram": "de (rol)trap nemen",
+        "length": 9,
+        "help_numbers": [
+          null,
+          10,
+          6,
+          17,
+          null,
+          null,
+          3,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "escaleren"
+      },
+      {
+        "cryptogram": "door en door verachtelijk",
+        "length": 8,
+        "help_numbers": [
+          17,
+          null,
+          15,
+          null,
+          5,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "algemeen"
+      },
+      {
+        "cryptogram": "omtrent hoofdkaas",
+        "length": 7,
+        "help_numbers": [
+          null,
+          9,
+          null,
+          null,
+          18,
+          null,
+          1
+        ],
+        "offset": 3,
+        "solution": "overkop"
+      },
+      {
+        "cryptogram": "schijtschande",
+        "length": 6,
+        "help_numbers": [
+          null,
+          16,
+          null,
+          null,
+          2,
+          null
+        ],
+        "offset": 3,
+        "solution": "afgang"
+      },
+      {
+        "cryptogram": "koninklijke munt (gesch.)",
+        "length": 5,
+        "help_numbers": [
+          null,
+          14,
+          null,
+          null,
+          11
+        ],
+        "offset": 4,
+        "solution": "reaal"
+      },
+      {
+        "cryptogram": "muntnaam (gesch.)",
+        "length": 4,
+        "help_numbers": [
+          5,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "mark"
+      }
+    ]
   }
 ]
