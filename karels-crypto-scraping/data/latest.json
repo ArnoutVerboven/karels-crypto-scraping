@@ -1,316 +1,314 @@
 {
-  "id": 883,
-  "title": "Karels Crypto 26 september",
-  "date": "2026-09-26",
+  "id": 884,
+  "title": "Karels Crypto 3 oktober",
+  "date": "2026-10-03",
   "solution": null,
   "words": [
     {
-      "cryptogram": "noodnummer van The Beatles",
-      "length": 4,
+      "cryptogram": "zee(p)water",
+      "length": 3,
       "help_numbers": [
-        4,
         null,
         null,
-        null
+        5
       ],
-      "offset": 4,
+      "offset": 6,
       "solution": null
     },
     {
-      "cryptogram": "taptakel",
+      "cryptogram": "springschuif",
       "length": 5,
-      "help_numbers": [
-        1,
-        null,
-        null,
-        null,
-        21
-      ],
-      "offset": 4,
-      "solution": null
-    },
-    {
-      "cryptogram": "mannetjes werpen",
-      "length": 6,
       "help_numbers": [
         11,
         null,
         null,
-        20,
-        null,
+        7,
         null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "strandfiets (dial.)",
-      "length": 7,
+      "cryptogram": "universele atmosferische gesteldheid",
+      "length": 6,
       "help_numbers": [
-        12,
-        null,
-        null,
         null,
         7,
+        1,
         null,
-        8
+        null,
+        null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "pand van de Brugse voetbalploeg",
-      "length": 8,
+      "cryptogram": "Aline van de dienst public relations",
+      "length": 7,
       "help_numbers": [
-        17,
-        null,
-        null,
-        10,
+        5,
         null,
         null,
         null,
-        19
+        4,
+        14,
+        null
       ],
-      "offset": 2,
+      "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "gevolg in de Ronde",
-      "length": 9,
+      "cryptogram": "reclamesmile",
+      "length": 8,
       "help_numbers": [
+        6,
         null,
-        21,
-        18,
+        17,
         null,
         null,
         null,
-        9,
-        20,
+        8,
         null
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "vliegenier op stage",
+      "cryptogram": "verraden",
+      "length": 9,
+      "help_numbers": [
+        12,
+        null,
+        null,
+        13,
+        null,
+        6,
+        6,
+        null,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "zuigelingen onder de wapens",
       "length": 10,
       "help_numbers": [
         null,
-        14,
-        19,
         null,
-        3,
+        16,
+        20,
         null,
-        22,
+        9,
         null,
+        18,
         null,
         null
       ],
-      "offset": 1,
+      "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "schoorsteenmantel met blazoen",
+      "cryptogram": "dansvloer",
       "length": 11,
       "help_numbers": [
-        2,
-        null,
         3,
+        null,
+        1,
+        null,
+        null,
         null,
         null,
         null,
         17,
-        null,
-        8,
-        null,
+        14,
         2
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "wolvengedrag: versnippering",
+      "cryptogram": "einde van een betrekking door ontslag of pensionering",
       "length": 12,
       "help_numbers": [
-        7,
         null,
-        null,
-        19,
-        17,
-        null,
-        null,
-        16,
+        22,
+        3,
         null,
         null,
         null,
-        20
+        null,
+        18,
+        null,
+        18,
+        null,
+        10
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "slaapgebrek",
+      "cryptogram": "hij bezingt een dochter van Atlas",
       "length": 13,
       "help_numbers": [
+        8,
+        null,
+        null,
+        19,
+        5,
+        6,
+        null,
+        23,
+        null,
+        null,
         13,
         null,
-        null,
-        18,
-        null,
-        22,
-        null,
-        null,
-        null,
-        4,
-        null,
-        5,
-        6
+        null
       ],
       "offset": 0,
       "solution": null
     },
     {
-      "cryptogram": "gefloten deuntje",
+      "cryptogram": "hij geeft een grote groep dieren te eten",
       "length": 12,
       "help_numbers": [
+        10,
+        21,
         null,
-        8,
-        null,
-        6,
         null,
         null,
         12,
         null,
         null,
-        1,
-        11,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "'Miss Globe'",
-      "length": 11,
-      "help_numbers": [
-        2,
-        null,
-        13,
-        null,
-        22,
-        null,
-        null,
-        5,
-        null,
-        null,
-        22
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "gereed voor een heildronk",
-      "length": 10,
-      "help_numbers": [
-        null,
-        null,
-        5,
-        21,
-        null,
-        null,
-        null,
-        9,
-        9,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "Sinterklaas",
-      "length": 9,
-      "help_numbers": [
-        6,
-        9,
-        null,
-        null,
-        null,
-        null,
         18,
         null,
+        null,
+        18
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "jeugdparlement",
+      "length": 11,
+      "help_numbers": [
+        null,
+        4,
+        14,
+        2,
+        null,
+        null,
+        null,
+        20,
+        22,
+        null,
         null
       ],
-      "offset": 2,
+      "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "bot gebroken",
-      "length": 8,
+      "cryptogram": "sst met te hoge snelheid",
+      "length": 10,
       "help_numbers": [
-        10,
-        null,
-        null,
-        null,
-        null,
-        null,
         16,
-        1
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "kinderopvang",
-      "length": 7,
-      "help_numbers": [
-        17,
-        null,
-        21,
+        7,
         null,
         null,
         null,
-        15
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "Zeemacht Le Pen",
-      "length": 6,
-      "help_numbers": [
         null,
         null,
-        13,
-        null,
+        15,
         null,
         14
       ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "globaal medisch onderzoek (Eng.)",
+      "length": 9,
+      "help_numbers": [
+        null,
+        17,
+        null,
+        19,
+        null,
+        11,
+        null,
+        null,
+        10
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "geen zuurstok",
+      "length": 8,
+      "help_numbers": [
+        23,
+        null,
+        15,
+        null,
+        null,
+        null,
+        21,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "Barbarijse moedervorst",
+      "length": 7,
+      "help_numbers": [
+        22,
+        null,
+        null,
+        null,
+        3,
+        null,
+        4
+      ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "hemellichaam",
-      "length": 5,
+      "cryptogram": "teljoor (Eng.)",
+      "length": 6,
       "help_numbers": [
+        9,
         null,
-        21,
         null,
+        7,
         null,
-        22
+        null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "Moezel schrijf je niet met s maar ...",
-      "length": 4,
+      "cryptogram": "valt net uit de top tien",
+      "length": 5,
       "help_numbers": [
-        15,
         null,
+        7,
+        null,
+        2,
+        null
+      ],
+      "offset": 4,
+      "solution": null
+    },
+    {
+      "cryptogram": "kort artikel over kunst",
+      "length": 3,
+      "help_numbers": [
+        20,
         null,
         null
       ],
-      "offset": 5,
+      "offset": 4,
       "solution": null
     }
   ]

@@ -5370,5 +5370,322 @@
         "solution": "mark"
       }
     ]
+  },
+  {
+    "id": 883,
+    "title": "Karels Crypto 26 september",
+    "date": "2026-09-26",
+    "solution": "landhuishoudkundige",
+    "words": [
+      {
+        "cryptogram": "noodnummer van The Beatles",
+        "length": 4,
+        "help_numbers": [
+          4,
+          null,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "help"
+      },
+      {
+        "cryptogram": "taptakel",
+        "length": 5,
+        "help_numbers": [
+          1,
+          null,
+          null,
+          null,
+          21
+        ],
+        "offset": 4,
+        "solution": "kraan"
+      },
+      {
+        "cryptogram": "mannetjes werpen",
+        "length": 6,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          20,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "jongen"
+      },
+      {
+        "cryptogram": "strandfiets (dial.)",
+        "length": 7,
+        "help_numbers": [
+          12,
+          null,
+          null,
+          null,
+          7,
+          null,
+          8
+        ],
+        "offset": 3,
+        "solution": "zandvlo"
+      },
+      {
+        "cryptogram": "pand van de Brugse voetbalploeg",
+        "length": 8,
+        "help_numbers": [
+          17,
+          null,
+          null,
+          10,
+          null,
+          null,
+          null,
+          19
+        ],
+        "offset": 2,
+        "solution": "clubhuis"
+      },
+      {
+        "cryptogram": "gevolg in de Ronde",
+        "length": 9,
+        "help_numbers": [
+          null,
+          21,
+          18,
+          null,
+          null,
+          null,
+          9,
+          20,
+          null
+        ],
+        "offset": 2,
+        "solution": "entourage"
+      },
+      {
+        "cryptogram": "vliegenier op stage",
+        "length": 10,
+        "help_numbers": [
+          null,
+          14,
+          19,
+          null,
+          3,
+          null,
+          22,
+          null,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "testpiloot"
+      },
+      {
+        "cryptogram": "schoorsteenmantel met blazoen",
+        "length": 11,
+        "help_numbers": [
+          2,
+          null,
+          3,
+          null,
+          null,
+          null,
+          17,
+          null,
+          8,
+          null,
+          2
+        ],
+        "offset": 1,
+        "solution": "wapenschouw"
+      },
+      {
+        "cryptogram": "wolvengedrag: versnippering",
+        "length": 12,
+        "help_numbers": [
+          7,
+          null,
+          null,
+          19,
+          17,
+          null,
+          null,
+          16,
+          null,
+          null,
+          null,
+          20
+        ],
+        "offset": 1,
+        "solution": "verscheuring"
+      },
+      {
+        "cryptogram": "slaapgebrek",
+        "length": 13,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          18,
+          null,
+          22,
+          null,
+          null,
+          null,
+          4,
+          null,
+          5,
+          6
+        ],
+        "offset": 0,
+        "solution": "rusteloosheid"
+      },
+      {
+        "cryptogram": "gefloten deuntje",
+        "length": 12,
+        "help_numbers": [
+          null,
+          8,
+          null,
+          6,
+          null,
+          null,
+          12,
+          null,
+          null,
+          1,
+          11,
+          null
+        ],
+        "offset": 1,
+        "solution": "mondmuziekje"
+      },
+      {
+        "cryptogram": "'Miss Globe'",
+        "length": 11,
+        "help_numbers": [
+          2,
+          null,
+          13,
+          null,
+          22,
+          null,
+          null,
+          5,
+          null,
+          null,
+          22
+        ],
+        "offset": 1,
+        "solution": "wereldtitel"
+      },
+      {
+        "cryptogram": "gereed voor een heildronk",
+        "length": 10,
+        "help_numbers": [
+          null,
+          null,
+          5,
+          21,
+          null,
+          null,
+          null,
+          9,
+          9,
+          null
+        ],
+        "offset": 2,
+        "solution": "klinkklaar"
+      },
+      {
+        "cryptogram": "Sinterklaas",
+        "length": 9,
+        "help_numbers": [
+          6,
+          9,
+          null,
+          null,
+          null,
+          null,
+          18,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "dakruiter"
+      },
+      {
+        "cryptogram": "bot gebroken",
+        "length": 8,
+        "help_numbers": [
+          10,
+          null,
+          null,
+          null,
+          null,
+          null,
+          16,
+          1
+        ],
+        "offset": 3,
+        "solution": "beenstuk"
+      },
+      {
+        "cryptogram": "kinderopvang",
+        "length": 7,
+        "help_numbers": [
+          17,
+          null,
+          21,
+          null,
+          null,
+          null,
+          15
+        ],
+        "offset": 3,
+        "solution": "condoom"
+      },
+      {
+        "cryptogram": "Zeemacht Le Pen",
+        "length": 6,
+        "help_numbers": [
+          null,
+          null,
+          13,
+          null,
+          null,
+          14
+        ],
+        "offset": 3,
+        "solution": "marine"
+      },
+      {
+        "cryptogram": "hemellichaam",
+        "length": 5,
+        "help_numbers": [
+          null,
+          21,
+          null,
+          null,
+          22
+        ],
+        "offset": 4,
+        "solution": "engel"
+      },
+      {
+        "cryptogram": "Moezel schrijf je niet met s maar ...",
+        "length": 4,
+        "help_numbers": [
+          15,
+          null,
+          null,
+          null
+        ],
+        "offset": 5,
+        "solution": "metz"
+      }
+    ]
   }
 ]
