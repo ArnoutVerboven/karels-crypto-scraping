@@ -15,7 +15,7 @@
     "preview": "vite preview --port 4173 --strictPort",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "pnpm clues && vitest run",
-    "check": "pnpm typecheck && pnpm test"
+    "check": "pnpm clues && pnpm typecheck && vitest run"
   },
   "dependencies": {
     "firebase": "^12.19.0",
