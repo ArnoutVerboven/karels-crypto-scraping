@@ -1,0 +1,90 @@
+name: benchmark-app
+
+# Human benchmark webapp (karels-crypto-benchmark/): checks on every PR, deploys main to
+# Firebase Hosting. Also redeploys after each weekly scrape so new clues show up.
+# Needs secret FIREBASE_SERVICE_ACCOUNT and variable FIREBASE_PROJECT_ID
+# (see karels-crypto-benchmark/README.md); skips deploying while they are not set.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - karels-crypto-benchmark/**
+      - karels-crypto-solving/data/ingested_puzzles.json
+      - .github/workflows/benchmark-app.yml
+  pull_request:
+    paths:
+      - karels-crypto-benchmark/**
+      - .github/workflows/benchmark-app.yml
+  workflow_run:
+    workflows: [scrape]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: benchmark-app-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: karels-crypto-benchmark
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # after a scrape, build from main's latest commit (the data commit)
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || '' }}
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: karels-crypto-benchmark/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: karels-crypto-benchmark/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm build
+      - id: cfg
+        name: Check Firebase configuration
+        env:
+          HAS_SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT != '' }}
+          HAS_PROJECT: ${{ vars.FIREBASE_PROJECT_ID != '' }}
+        run: |
+          if [ "$HAS_SA" = "true" ] && [ "$HAS_PROJECT" = "true" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Firebase not configured (FIREBASE_SERVICE_ACCOUNT / FIREBASE_PROJECT_ID). Skipping deploy."
+          fi
+      - if: steps.cfg.outputs.configured == 'true'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+          entryPoint: karels-crypto-benchmark
+          channelId: ${{ github.event_name == 'pull_request' && '' || 'live' }}
+          expires: 14d
+      - if: steps.cfg.outputs.configured == 'true' && github.event_name != 'pull_request'
+        name: Deploy Firestore rules
+        continue-on-error: true
+        env:
+          SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+        run: |
+          printf '%s' "$SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          npx --yes firebase-tools@14 deploy --only firestore:rules --project "$PROJECT_ID" --non-interactive \
+            || echo "::warning::Firestore rules were not deployed. The database must exist and the service account needs the Firebase Rules Admin role (see README)."
+          rm -f "$RUNNER_TEMP/sa.json"
