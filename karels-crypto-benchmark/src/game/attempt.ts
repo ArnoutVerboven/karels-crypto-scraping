@@ -15,7 +15,7 @@ export function toAttempt(
   const end = s.finishedAt ?? now
   const firstKey = s.events.find((e) => e.type === 'type')
   const a: Attempt = {
-    v: 1,
+    v: 2,
     clueId: ref.clue.id,
     cryptoId: ref.crypto.id,
     cryptoNo: ref.crypto.no,
@@ -32,6 +32,8 @@ export function toAttempt(
     wrongGuesses: s.events.flatMap((e) => (e.type === 'submit' && !e.correct ? [{ t: Math.round(e.t), guess: e.guess }] : [])),
     reveals: s.events.flatMap((e) => (e.type === 'reveal' ? [{ t: Math.round(e.t), pos: e.pos }] : [])),
     events: s.events.map((e) => ({ ...e, t: Math.round(e.t) })),
+    seed: s.seed,
+    revealOrder: s.revealOrder,
     startedAt: new Date(s.startedAt).toISOString(),
     finishedAt: new Date(end).toISOString(),
     userAgent: ua(),

@@ -33,6 +33,10 @@ export interface WordState {
   hiddenSince: number | null
   completedByReveal: boolean
   finishedAt: number | null
+  /** seed of the "Show letter" order, stored so the same letters can be shown to an LLM */
+  seed: number
+  /** letter positions in the order "Show letter" reveals them (derived from `seed`) */
+  revealOrder: number[]
 }
 
 export type Action =
@@ -45,7 +49,36 @@ export type Action =
   | { type: 'hide' }
   | { type: 'show' }
 
-export function newWord(clueId: string, answer: string, now: number): WordState {
+/** mulberry32: tiny seeded PRNG returning floats in [0, 1). */
+export function seededRng(seed: number): () => number {
+  let a = seed >>> 0
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0
+    let t = a
+    t = Math.imul(t ^ (t >>> 15), t | 1)
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+export const randomSeed = () => Math.floor(Math.random() * 2 ** 32)
+
+/**
+ * The order in which "Show letter" reveals letter positions: a Fisher–Yates shuffle of the
+ * letter positions driven by `seededRng(seed)`. Each reveal takes the first position in this
+ * order that is still empty or wrong, so a seed fixes which letters get shown.
+ */
+export function revealOrderFor(answer: string, seed: number): number[] {
+  const pos = [...normalize(answer)].flatMap((ch, i) => (/[a-z]/.test(ch) ? [i] : []))
+  const rng = seededRng(seed)
+  for (let i = pos.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1))
+    ;[pos[i], pos[j]] = [pos[j]!, pos[i]!]
+  }
+  return pos
+}
+
+export function newWord(clueId: string, answer: string, now: number, seed: number = randomSeed()): WordState {
   const cells: Cell[] = [...normalize(answer)].map((ch) => {
     const fixed = !/[a-z]/.test(ch)
     return { target: ch, fixed, value: fixed ? ch : null, revealed: false, typedAt: null }
@@ -62,6 +95,8 @@ export function newWord(clueId: string, answer: string, now: number): WordState 
     hiddenSince: null,
     completedByReveal: false,
     finishedAt: null,
+    seed,
+    revealOrder: revealOrderFor(answer, seed),
   }
   state.cursor = nextEditable(state.cells, -1) ?? 0
   return state
@@ -91,11 +126,11 @@ const isFull = (s: WordState) => s.cells.every((c) => c.value !== null)
 const isCorrect = (s: WordState) => s.cells.every((c) => c.value === c.target)
 
 /**
- * Pure state transition. `rng` picks the revealed letter (injected for tests).
+ * Pure state transition. "Show letter" follows the seeded `revealOrder`.
  * When the last empty cell gets filled the word is checked: correct → solved (or failed when
  * that last letter came from "Show letter"), wrong → stays in place with wrongCount + 1.
  */
-export function step(s: WordState, a: Action, now: number, rng: () => number = Math.random): WordState {
+export function step(s: WordState, a: Action, now: number): WordState {
   if (a.type === 'hide') {
     if (s.hiddenSince !== null || s.status !== 'playing') return s
     const t = activeMs(s, now)
@@ -148,11 +183,9 @@ export function step(s: WordState, a: Action, now: number, rng: () => number = M
       return check(next, now, false)
     }
     case 'reveal': {
-      const candidates = cells
-        .map((c, i) => ({ c, i }))
-        .filter(({ c }) => editable(c) && c.value !== c.target)
-      if (candidates.length === 0) return s
-      const { c, i } = candidates[Math.min(candidates.length - 1, Math.floor(rng() * candidates.length))]!
+      const i = s.revealOrder.find((p) => editable(cells[p]!) && cells[p]!.value !== cells[p]!.target)
+      if (i === undefined) return s
+      const c = cells[i]!
       c.value = c.target
       c.revealed = true
       c.typedAt = null

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ALL_CLUES, CLUE_BY_ID, formatDate, type ClueRef } from '@/data/clues'
 import { skippedUnseen, toAttempt } from '@/game/attempt'
-import { newWord, step, type Action, type WordState } from '@/game/word'
+import { nextOpenClue } from '@/game/order'
+import { newWord, randomSeed, revealOrderFor, step, type Action, type WordState } from '@/game/word'
 import type { AuthUser } from '@/services/auth'
 import {
   clearLocalAttempts,
@@ -30,6 +31,8 @@ export function Game({ store, user }: { store: AttemptStore; user: AuthUser | nu
   const [attempts, setAttempts] = useState<Attempts | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [picked, setPicked] = useState<string | null>(null)
+  /** the clue just finished or skipped: play continues with the next open clue after it */
+  const [after, setAfter] = useState<string | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [layout, setLayout] = useState<Layout>(readLayout)
 
@@ -47,8 +50,8 @@ export function Game({ store, user }: { store: AttemptStore; user: AuthUser | nu
   const current: ClueRef | null = useMemo(() => {
     if (!attempts) return null
     if (picked) return CLUE_BY_ID.get(picked) ?? null
-    return ALL_CLUES.find((r) => !attempts[r.clue.id]) ?? null
-  }, [attempts, picked])
+    return nextOpenClue(attempts, after)
+  }, [attempts, picked, after])
 
   const [word, setWord] = useState<WordState | null>(null)
   useEffect(() => {
@@ -57,7 +60,11 @@ export function Game({ store, user }: { store: AttemptStore; user: AuthUser | nu
       if (w?.clueId === current.clue.id) return w
       const draft = loadDraft(current.clue.id)
       const now = Date.now()
-      return draft ? step(draft, { type: 'show' }, now) : newWord(current.clue.id, current.clue.answer, now)
+      if (!draft) return newWord(current.clue.id, current.clue.answer, now)
+      // drafts saved before seeds were recorded get one now
+      const seed = draft.seed ?? randomSeed()
+      const seeded = { ...draft, seed, revealOrder: draft.revealOrder ?? revealOrderFor(current.clue.answer, seed) }
+      return step(seeded, { type: 'show' }, now)
     })
   }, [current])
 
@@ -89,6 +96,7 @@ export function Game({ store, user }: { store: AttemptStore; user: AuthUser | nu
     const status = word.status
     const id = setTimeout(() => {
       void store.save([toAttempt(current, word, status, Date.now())]).catch((e: unknown) => setError(String(e)))
+      setAfter(current.clue.id)
       setPicked(null)
     }, FINISH_DELAY[status])
     return () => clearTimeout(id)
@@ -97,6 +105,7 @@ export function Game({ store, user }: { store: AttemptStore; user: AuthUser | nu
   const skipClue = () => {
     if (!word || !current || word.status !== 'playing') return
     void store.save([toAttempt(current, word, 'skipped', Date.now(), 'clue')])
+    setAfter(current.clue.id)
     setPicked(null)
   }
   const skipCrypto = () => {
@@ -106,6 +115,7 @@ export function Game({ store, user }: { store: AttemptStore; user: AuthUser | nu
       .filter((c) => c.id !== current.clue.id && !attempts[c.id])
       .map((c) => skippedUnseen(CLUE_BY_ID.get(c.id)!, now))
     void store.save([toAttempt(current, word, 'skipped', now, 'crypto'), ...rest])
+    setAfter(current.clue.id)
     setPicked(null)
   }
 

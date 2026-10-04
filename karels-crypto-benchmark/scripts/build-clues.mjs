@@ -17,6 +17,7 @@ const cryptos = puzzles
     id: p.id,
     no: p.number ?? p.id,
     date: p.date,
+    yellow: typeof p.solution === 'string' ? p.solution : null,
     words: p.words
       .map((w, i) => ({ w, i }))
       .filter(({ w }) => typeof w.solution === 'string' && w.solution.length > 0),
@@ -27,6 +28,7 @@ const cryptos = puzzles
     id: c.id,
     no: c.no,
     date: c.date,
+    yellow: c.yellow,
     clues: c.words.map(({ w, i }) => ({
       id: `${c.id}-${i}`,
       letter: String.fromCharCode(65 + i),
