@@ -1,0 +1,6 @@
+node_modules/
+dist/
+dist-single/
+# generated from the scraped/ingested datasets by scripts/build-clues.mjs
+src/data/clues.json
+.firebase/

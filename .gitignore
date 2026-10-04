@@ -12,6 +12,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+!karels-crypto-benchmark/.env.production
 
 # (the ingestion raw intermediates _ingest_*_raw.json ARE kept, so a re-merge
 # doesn't need another paid vision pass)
