@@ -6,13 +6,14 @@ It replaces the `human_benchmark_worksheet.csv` flow.
 
 - **Clue screen**: type with the on-screen keyboard (or a laptop keyboard). When every cell is
   filled the guess is checked: green and on to the next clue, or red and everything stays in
-  place (no penalty). *Show letter* fills a random missing/wrong letter and locks it; if that
+  place (no penalty). *Show letter* fills a missing/wrong letter (in a random order fixed by a per-clue seed) and locks it; if that
   completes the word, the clue counts as failed. *Skip clue* / *Skip crypto* for clues whose
   solution you've already seen.
 - **Menu**: browse all cryptos and clues (never the solutions) with solved / failed / skipped
   status and date. Skipped and unplayed clues can be opened from there. Download/copy all data
   as JSON.
-- Opening the app always shows the oldest clue that is not solved, failed or skipped.
+- Opening the app shows the oldest clue that is not solved, failed or skipped; after finishing
+  or skipping a clue it continues with the next open clue after it (wrapping around).
 - The clock pauses while the app is in the background or the menu is open; an unfinished clue
   survives a reload.
 
@@ -34,6 +35,7 @@ One Firestore document per clue at `users/{uid}/attempts/{clueId}` (`src/game/ty
 | `wrongGuesses`, `reveals` | each wrong full guess and each *Show letter*, with time |
 | `events` | the full timeline: every type / delete / reveal / submit / hide / show |
 | `completedByReveal` | failed because *Show letter* filled the last missing letter |
+| `seed`, `revealOrder` | seed of the *Show letter* order and the answer positions it gives (from v2). Each *Show letter* reveals the first position in `revealOrder` that is still empty or wrong, so an LLM run can be shown the same letters; `revealOrderFor(answer, seed)` in `src/game/word.ts` regenerates the order |
 
 ## Run locally
 

@@ -10,7 +10,8 @@ export type AttemptEvent =
 
 /** What is stored per clue (Firestore users/{uid}/attempts/{clueId}). */
 export interface Attempt {
-  v: 1
+  /** 2 adds `seed` / `revealOrder` */
+  v: 1 | 2
   clueId: string
   cryptoId: number
   cryptoNo: number
@@ -35,6 +36,10 @@ export interface Attempt {
   wrongGuesses: { t: number; guess: string }[]
   reveals: { t: number; pos: number }[]
   events: AttemptEvent[]
+  /** seed for the "Show letter" order (see `revealOrderFor` in word.ts); absent on v1 records */
+  seed?: number
+  /** answer positions in the order "Show letter" reveals them, derived from `seed` */
+  revealOrder?: number[]
   startedAt: string
   finishedAt: string
   userAgent: string

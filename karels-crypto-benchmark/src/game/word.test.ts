@@ -1,10 +1,12 @@
-import { newWord, step, type WordState, type Action } from './word'
+import { newWord, revealOrderFor, step, type WordState, type Action } from './word'
+import { nextOpenClue } from './order'
+import type { Attempt } from './types'
 import { toAttempt } from './attempt'
 import { ALL_CLUES } from '@/data/clues'
 
-const run = (s: WordState, actions: Action[], rng = () => 0) => {
+const run = (s: WordState, actions: Action[]) => {
   let t = s.startedAt
-  for (const a of actions) s = step(s, a, (t += 1000), rng)
+  for (const a of actions) s = step(s, a, (t += 1000))
   return s
 }
 const keys = (w: string): Action[] => [...w].map((key) => ({ type: 'key', key }))
@@ -31,16 +33,28 @@ describe('word', () => {
     expect(s.cursor).toBe(1)
   })
 
-  it('reveal fills a random wrong/empty letter and locks it', () => {
-    const s = run(newWord('x', 'roma', 0), [{ type: 'reveal' }])
+  it('reveal fills the first wrong/empty letter in the seeded order and locks it', () => {
+    const s = run({ ...newWord('x', 'roma', 0), revealOrder: [0, 2, 1, 3] }, [{ type: 'reveal' }])
     expect(s.cells[0]).toMatchObject({ value: 'r', revealed: true })
     expect(s.cursor).toBe(1)
     const s2 = run(s, [{ type: 'move', pos: 0 }])
     expect(s2.cursor).toBe(1)
+    // positions 2 and 1 come next in the order but are already correct, so 3 is shown
+    const s3 = run(s2, [...keys('om'), { type: 'reveal' }])
+    expect(s3.cells[3]).toMatchObject({ value: 'a', revealed: true })
+  })
+
+  it('the seed fixes the reveal order', () => {
+    expect(revealOrderFor('Lay-out', 42)).toEqual(revealOrderFor('Lay-out', 42))
+    expect([...revealOrderFor('Lay-out', 42)].sort()).toEqual([0, 1, 2, 4, 5, 6])
+    expect(newWord('x', 'Lay-out', 0, 42).revealOrder).toEqual(revealOrderFor('Lay-out', 42))
+    const orders = new Set([1, 2, 3, 4, 5, 6, 7, 8].map((seed) => revealOrderFor('abcdefgh', seed).join()))
+    expect(orders.size).toBeGreaterThan(1)
   })
 
   it('fails when the last missing letter comes from Show letter', () => {
     const s = run(newWord('x', 'roma', 0), [...keys('rom'), { type: 'reveal' }])
+    expect(s.cells[3]).toMatchObject({ value: 'a', revealed: true })
     expect(s.status).toBe('failed')
     expect(s.completedByReveal).toBe(true)
   })
@@ -62,11 +76,29 @@ describe('word', () => {
 
   it('builds an attempt record', () => {
     const ref = ALL_CLUES[0]!
-    let s = newWord(ref.clue.id, 'roma', 0)
+    let s = { ...newWord(ref.clue.id, 'roma', 0, 7), revealOrder: [0, 1, 2, 3] }
     s = run(s, [{ type: 'reveal' }, ...keys('omx'), { type: 'backspace' }, { type: 'key', key: 'a' }])
     const a = toAttempt(ref, s, 'solved', 10_000)
-    expect(a).toMatchObject({ length: 4, lettersNeeded: 3, revealedCount: 1, outcome: 'solved' })
+    expect(a).toMatchObject({ v: 2, length: 4, lettersNeeded: 3, revealedCount: 1, outcome: 'solved', seed: 7 })
     expect(a.letterMs[0]).toBeNull()
     expect(a.wrongGuesses).toEqual([{ t: 4000, guess: 'romx' }])
+  })
+})
+
+describe('nextOpenClue', () => {
+  const done = (...refs: number[]) =>
+    Object.fromEntries(refs.map((i) => [ALL_CLUES[i]!.clue.id, { outcome: 'solved' } as Attempt]))
+
+  it('starts at the oldest open clue', () => {
+    expect(nextOpenClue(done(0, 1), null)).toBe(ALL_CLUES[2])
+  })
+
+  it('continues after the clue just finished, skipping done ones', () => {
+    expect(nextOpenClue(done(0, 5, 6, 7), ALL_CLUES[5]!.clue.id)).toBe(ALL_CLUES[8])
+  })
+
+  it('wraps around to earlier open clues', () => {
+    const last = ALL_CLUES.length - 1
+    expect(nextOpenClue(done(0, last), ALL_CLUES[last]!.clue.id)).toBe(ALL_CLUES[1])
   })
 })
