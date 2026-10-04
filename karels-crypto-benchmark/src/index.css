@@ -452,6 +452,18 @@ button {
   margin-left: 6px;
   font-weight: 400;
 }
+.crypto-yellow {
+  display: table;
+  margin-top: 4px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--yellow);
+  color: var(--on-yellow);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 .crypto-count {
   font-size: 13px;
   color: var(--muted);

@@ -122,6 +122,7 @@ export function Menu({
                   <span className="crypto-title">
                     Crypto {c.no}
                     <span className="crypto-date">{formatDate(c.date)}</span>
+                    {c.yellow && <span className="crypto-yellow">{c.yellow}</span>}
                   </span>
                   <span className="crypto-count">
                     {done}/{c.clues.length}

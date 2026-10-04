@@ -10,6 +10,8 @@ export interface Crypto {
   id: number
   no: number
   date: string
+  /** the puzzle's solution: the word in the yellow middle column, null if unknown */
+  yellow: string | null
   clues: Clue[]
 }
 export interface ClueRef {

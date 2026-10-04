@@ -9,7 +9,8 @@ It replaces the `human_benchmark_worksheet.csv` flow.
   place (no penalty). *Show letter* fills a missing/wrong letter (in a random order fixed by a per-clue seed) and locks it; if that
   completes the word, the clue counts as failed. *Skip clue* / *Skip crypto* for clues whose
   solution you've already seen.
-- **Menu**: browse all cryptos and clues (never the solutions) with solved / failed / skipped
+- **Menu**: browse all cryptos (each with its yellow middle-column word, so you can tell which
+  ones you already know) and clues (never the clue solutions) with solved / failed / skipped
   status and date. Skipped and unplayed clues can be opened from there. Download/copy all data
   as JSON.
 - Opening the app shows the oldest clue that is not solved, failed or skipped; after finishing
