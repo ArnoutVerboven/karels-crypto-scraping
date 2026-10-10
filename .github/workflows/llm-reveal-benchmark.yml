@@ -5,9 +5,8 @@ name: llm-reveal-benchmark
 # 1. prepare: read-only Firestore export (scripts/export_human_attempts.py) + model probe
 # 2. run: one job per model that answered the probe
 # 3. report: length x revealed matrices, committed to research/llm_reveal/ on this branch
-# Runs on dispatch, or on a push that changes this file or research/llm_reveal/rerun.txt.
-# rerun.txt (one model per line) re-runs only those models; the report merges them with
-# the runs already committed on the branch.
+# Manual: Actions tab -> Run workflow. Give `models` (space separated) to re-run only those
+# models; the report merges them with the runs already committed on the branch.
 
 on:
   workflow_dispatch:
@@ -17,10 +16,9 @@ on:
         type: choice
         options: [minimal, low, medium, high]
         default: low
-  push:
-    paths:
-      - ".github/workflows/llm-reveal-benchmark.yml"
-      - "karels-crypto-solving/research/llm_reveal/rerun.txt"
+      models:
+        description: "only re-run these models (space separated); empty = probe and run all"
+        default: ""
 
 concurrency:
   group: llm-reveal-${{ github.ref }}
@@ -68,10 +66,11 @@ jobs:
 
       - name: Models to re-run
         id: rerun
+        env:
+          MODELS: ${{ inputs.models }}
         run: |
-          f=research/llm_reveal/rerun.txt
-          if [ -s "$f" ]; then
-            echo "models=$(grep -v '^\s*$' "$f" | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+          if [ -n "${MODELS// }" ]; then
+            echo "models=$(printf '%s\n' $MODELS | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Probe models
