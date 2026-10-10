@@ -5687,5 +5687,320 @@
         "solution": "metz"
       }
     ]
+  },
+  {
+    "id": 884,
+    "title": "Karels Crypto 3 oktober",
+    "date": "2026-10-03",
+    "solution": "spellingvoorschrift",
+    "words": [
+      {
+        "cryptogram": "zee(p)water",
+        "length": 3,
+        "help_numbers": [
+          null,
+          null,
+          5
+        ],
+        "offset": 6,
+        "solution": "sop"
+      },
+      {
+        "cryptogram": "springschuif",
+        "length": 5,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          7,
+          null
+        ],
+        "offset": 4,
+        "solution": "hopla"
+      },
+      {
+        "cryptogram": "universele atmosferische gesteldheid",
+        "length": 6,
+        "help_numbers": [
+          null,
+          7,
+          1,
+          null,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "alweer"
+      },
+      {
+        "cryptogram": "Aline van de dienst public relations",
+        "length": 7,
+        "help_numbers": [
+          5,
+          null,
+          null,
+          null,
+          4,
+          14,
+          null
+        ],
+        "offset": 3,
+        "solution": "praline"
+      },
+      {
+        "cryptogram": "reclamesmile",
+        "length": 8,
+        "help_numbers": [
+          6,
+          null,
+          17,
+          null,
+          null,
+          null,
+          8,
+          null
+        ],
+        "offset": 2,
+        "solution": "spotlach"
+      },
+      {
+        "cryptogram": "verraden",
+        "length": 9,
+        "help_numbers": [
+          12,
+          null,
+          null,
+          13,
+          null,
+          6,
+          6,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "vergissen"
+      },
+      {
+        "cryptogram": "zuigelingen onder de wapens",
+        "length": 10,
+        "help_numbers": [
+          null,
+          null,
+          16,
+          20,
+          null,
+          9,
+          null,
+          18,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "infanterie"
+      },
+      {
+        "cryptogram": "dansvloer",
+        "length": 11,
+        "help_numbers": [
+          3,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          17,
+          14,
+          2
+        ],
+        "offset": 1,
+        "solution": "beweeggrond"
+      },
+      {
+        "cryptogram": "einde van een betrekking door ontslag of pensionering",
+        "length": 12,
+        "help_numbers": [
+          null,
+          22,
+          3,
+          null,
+          null,
+          null,
+          null,
+          18,
+          null,
+          18,
+          null,
+          10
+        ],
+        "offset": 1,
+        "solution": "ambtsvertrek"
+      },
+      {
+        "cryptogram": "hij bezingt een dochter van Atlas",
+        "length": 13,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          19,
+          5,
+          6,
+          null,
+          23,
+          null,
+          null,
+          13,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "calypsozanger"
+      },
+      {
+        "cryptogram": "hij geeft een grote groep dieren te eten",
+        "length": 12,
+        "help_numbers": [
+          10,
+          21,
+          null,
+          null,
+          null,
+          12,
+          null,
+          null,
+          18,
+          null,
+          null,
+          18
+        ],
+        "offset": 0,
+        "solution": "kuddevoerder"
+      },
+      {
+        "cryptogram": "jeugdparlement",
+        "length": 11,
+        "help_numbers": [
+          null,
+          4,
+          14,
+          2,
+          null,
+          null,
+          null,
+          20,
+          22,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "kinderkamer"
+      },
+      {
+        "cryptogram": "sst met te hoge snelheid",
+        "length": 10,
+        "help_numbers": [
+          16,
+          7,
+          null,
+          null,
+          null,
+          null,
+          null,
+          15,
+          null,
+          14
+        ],
+        "offset": 2,
+        "solution": "flitstrein"
+      },
+      {
+        "cryptogram": "globaal medisch onderzoek (Eng.)",
+        "length": 9,
+        "help_numbers": [
+          null,
+          17,
+          null,
+          19,
+          null,
+          11,
+          null,
+          null,
+          10
+        ],
+        "offset": 2,
+        "solution": "bodycheck"
+      },
+      {
+        "cryptogram": "geen zuurstok",
+        "length": 8,
+        "help_numbers": [
+          23,
+          null,
+          15,
+          null,
+          null,
+          null,
+          21,
+          null
+        ],
+        "offset": 2,
+        "solution": "zoethout"
+      },
+      {
+        "cryptogram": "Barbarijse moedervorst",
+        "length": 7,
+        "help_numbers": [
+          22,
+          null,
+          null,
+          null,
+          3,
+          null,
+          4
+        ],
+        "offset": 3,
+        "solution": "moerbei"
+      },
+      {
+        "cryptogram": "teljoor (Eng.)",
+        "length": 6,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          7,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "tailor"
+      },
+      {
+        "cryptogram": "valt net uit de top tien",
+        "length": 5,
+        "help_numbers": [
+          null,
+          7,
+          null,
+          2,
+          null
+        ],
+        "offset": 4,
+        "solution": "elfde"
+      },
+      {
+        "cryptogram": "kort artikel over kunst",
+        "length": 3,
+        "help_numbers": [
+          20,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "art"
+      }
+    ]
   }
 ]
