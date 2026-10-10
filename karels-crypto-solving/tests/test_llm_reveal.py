@@ -19,3 +19,22 @@ def test_matrix_counts_success_from_k_star_up():
     m = matrix([(4, 2), (4, None), (3, 0)])
     assert m[4] == {0: [0, 2], 1: [0, 2], 2: [1, 2], 3: [1, 2]}
     assert m[3] == {0: [1, 1], 1: [1, 1], 2: [1, 1]}
+
+
+def test_transport_errors_are_retried(monkeypatch):
+    import karels_crypto_solving.llm_reveal as lr
+    from karels_crypto_solving.word_solver import WordSolution
+
+    calls = []
+
+    def flaky(*args, **kwargs):
+        calls.append(1)
+        if len(calls) == 1:
+            raise ConnectionError("Server disconnected without sending a response.")
+        return WordSolution(answer="roma", raw="ANSWER: roma")
+
+    monkeypatch.setattr(lr, "solve_word", flaky)
+    monkeypatch.setattr(lr.time, "sleep", lambda s: None)
+    task = {"clueId": "1-0", "text": "x", "answer": "roma", "length": 4, "order": [3, 2, 0, 1]}
+    res = lr.solve_with_reveals("m", task, None)
+    assert res["k_star"] == 0 and len(calls) == 2

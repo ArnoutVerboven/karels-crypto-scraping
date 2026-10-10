@@ -5,7 +5,9 @@ name: llm-reveal-benchmark
 # 1. prepare: read-only Firestore export (scripts/export_human_attempts.py) + model probe
 # 2. run: one job per model that answered the probe
 # 3. report: length x revealed matrices, committed to research/llm_reveal/ on this branch
-# Runs on dispatch, or on a push that changes this file.
+# Runs on dispatch, or on a push that changes this file or research/llm_reveal/rerun.txt.
+# rerun.txt (one model per line) re-runs only those models; the report merges them with
+# the runs already committed on the branch.
 
 on:
   workflow_dispatch:
@@ -18,6 +20,7 @@ on:
   push:
     paths:
       - ".github/workflows/llm-reveal-benchmark.yml"
+      - "karels-crypto-solving/research/llm_reveal/rerun.txt"
 
 concurrency:
   group: llm-reveal-${{ github.ref }}
@@ -41,7 +44,7 @@ jobs:
       run:
         working-directory: karels-crypto-solving
     outputs:
-      models: ${{ steps.probe.outputs.models }}
+      models: ${{ steps.rerun.outputs.models || steps.probe.outputs.models }}
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
@@ -63,8 +66,17 @@ jobs:
           path: ${{ runner.temp }}/attempts.json
           retention-days: 1
 
+      - name: Models to re-run
+        id: rerun
+        run: |
+          f=research/llm_reveal/rerun.txt
+          if [ -s "$f" ]; then
+            echo "models=$(grep -v '^\s*$' "$f" | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Probe models
         id: probe
+        if: steps.rerun.outputs.models == ''
         run: |
           uv run karels-crypto-llm-reveal probe --output research/llm_reveal/models.json \
             --discover '^gpt-5\.6' '^gpt-6' '^claude-(opus|sonnet|haiku)-(4-9|5)' '^gemini-(3\.[6-9]|[4-9])' \
@@ -84,6 +96,7 @@ jobs:
           echo "models=$(jq -c .available research/llm_reveal/models.json)" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
+        if: steps.rerun.outputs.models == ''
         with:
           name: models
           path: karels-crypto-solving/research/llm_reveal/models.json
@@ -132,6 +145,8 @@ jobs:
         working-directory: karels-crypto-solving
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}  # branch head, with runs committed earlier
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
       - uses: actions/download-artifact@v4
@@ -139,6 +154,7 @@ jobs:
           name: attempts
           path: ${{ runner.temp }}
       - uses: actions/download-artifact@v4
+        continue-on-error: true  # absent on a re-run
         with:
           name: models
           path: karels-crypto-solving/research/llm_reveal

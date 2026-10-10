@@ -154,9 +154,12 @@ def _call(model: str, task: dict, k: int, effort: str | None, retries: int = 6):
             return pattern, solve_word(
                 task["text"], task["length"], pattern, model=model, reasoning_effort=effort
             )
-        except ProviderError as exc:
+        except Exception as exc:  # noqa: BLE001 - SDKs leak transport errors (httpx, …)
+            if not isinstance(exc, ProviderError):
+                # e.g. google-genai raises httpx.RemoteProtocolError on a dropped connection
+                exc = ProviderError(f"{type(exc).__name__}: {exc}", None)
             if exc.status_code not in _RETRY_STATUS or attempt == retries:
-                raise
+                raise exc from None
             logger.info("%s retry %d after %s", model, attempt + 1, exc.status_code)
             time.sleep(delay)
             delay = min(delay * 2, 120)
