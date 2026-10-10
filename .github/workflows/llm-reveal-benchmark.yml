@@ -1,0 +1,159 @@
+name: llm-reveal-benchmark
+
+# LLM vs human on the clues Arnout solved in the benchmark app (issue #9): each model
+# guesses, then gets one more letter per wrong guess in the app's reveal order.
+# 1. prepare: read-only Firestore export (scripts/export_human_attempts.py) + model probe
+# 2. run: one job per model that answered the probe
+# 3. report: length x revealed matrices, committed to research/llm_reveal/ on this branch
+# Runs on dispatch, or on a push that changes this file.
+
+on:
+  workflow_dispatch:
+    inputs:
+      effort:
+        description: "reasoning_effort for reasoning/thinking models"
+        type: choice
+        options: [minimal, low, medium, high]
+        default: low
+  push:
+    paths:
+      - ".github/workflows/llm-reveal-benchmark.yml"
+
+concurrency:
+  group: llm-reveal-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || secrets.OPENAI_BASE_URL }}
+  ANTHROPIC_BASE_URL: ${{ vars.ANTHROPIC_BASE_URL || secrets.ANTHROPIC_BASE_URL }}
+  GOOGLE_BASE_URL: ${{ vars.GOOGLE_BASE_URL || secrets.GOOGLE_BASE_URL }}
+  EFFORT: ${{ inputs.effort || 'low' }}
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    outputs:
+      models: ${{ steps.probe.outputs.models }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+
+      - name: Export Arnout's attempts (read-only)
+        env:
+          SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+        run: |
+          printf '%s' "$SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
+          GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json" \
+            uv run --with firebase-admin python scripts/export_human_attempts.py "$RUNNER_TEMP/attempts.json"
+          rm -f "$RUNNER_TEMP/sa.json"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: attempts
+          path: ${{ runner.temp }}/attempts.json
+          retention-days: 1
+
+      - name: Probe models
+        id: probe
+        run: |
+          uv run karels-crypto-llm-reveal probe --output research/llm_reveal/models.json \
+            --discover '^gpt-5\.6' '^gpt-6' '^claude-(opus|sonnet|haiku)-(4-9|5)' '^gemini-(3\.[6-9]|[4-9])' \
+            --models \
+              gpt-3.5-turbo gpt-4-turbo gpt-4o-mini gpt-4o gpt-4.1-nano gpt-4.1-mini gpt-4.1 \
+              o3-mini o4-mini o3 \
+              gpt-5-nano-2025-08-07 gpt-5-mini-2025-08-07 gpt-5-2025-08-07 gpt-5.1-2025-11-13 \
+              gpt-5.2-2025-12-11 gpt-5.4-nano-2026-03-17 gpt-5.4-mini-2026-03-17 gpt-5.4-2026-03-05 \
+              gpt-5.5-2026-04-23 gpt-5.6 gpt-5.6-mini gpt-5.6-nano gpt-6 gpt-6-mini gpt-6-nano \
+              claude-3-haiku-20240307 claude-haiku-4-5-20251001 claude-sonnet-4-20250514 \
+              claude-sonnet-4-5-20250929 claude-sonnet-4-6 claude-opus-4-5-20251101 claude-opus-4-8 \
+              gemini-2.0-flash-lite gemini-2.0-flash gemini-2.5-flash-lite gemini-2.5-flash \
+              gemini-2.5-pro gemini-3-flash-preview gemini-3.1-flash-lite-preview \
+              gemini-3.1-pro-preview gemini-3.5-flash \
+              us.meta.llama3-1-8b-instruct-v1:0 us.meta.llama3-3-70b-instruct-v1:0 \
+              us.meta.llama4-maverick-17b-instruct-v1:0 command-r7b-12-2024 command-a-03-2025
+          echo "models=$(jq -c .available research/llm_reveal/models.json)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: models
+          path: karels-crypto-solving/research/llm_reveal/models.json
+          retention-days: 3
+
+  run:
+    needs: prepare
+    if: needs.prepare.outputs.models != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        model: ${{ fromJSON(needs.prepare.outputs.models) }}
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - uses: actions/download-artifact@v4
+        with:
+          name: attempts
+          path: ${{ runner.temp }}
+      - id: name
+        run: echo "safe=$(echo '${{ matrix.model }}' | sed 's/[^A-Za-z0-9._-]\+/_/g')" >> "$GITHUB_OUTPUT"
+      - name: Reveal loop
+        run: |
+          uv run karels-crypto-llm-reveal run --model '${{ matrix.model }}' \
+            --attempts "$RUNNER_TEMP/attempts.json" --reasoning-effort "$EFFORT" \
+            --num-threads 4 --output-dir "$RUNNER_TEMP/runs"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: run-${{ steps.name.outputs.safe }}
+          path: ${{ runner.temp }}/runs/*.json
+          retention-days: 7
+
+  report:
+    needs: [prepare, run]
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: karels-crypto-solving
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - uses: actions/download-artifact@v4
+        with:
+          name: attempts
+          path: ${{ runner.temp }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: models
+          path: karels-crypto-solving/research/llm_reveal
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: run-*
+          merge-multiple: true
+          path: karels-crypto-solving/research/llm_reveal/runs
+      - run: uv run karels-crypto-llm-reveal report --attempts "$RUNNER_TEMP/attempts.json"
+      - name: Commit results
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add karels-crypto-solving/research/llm_reveal
+          git commit -m "LLM reveal benchmark results" || exit 0
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
