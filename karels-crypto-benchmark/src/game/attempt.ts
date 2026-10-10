@@ -15,7 +15,7 @@ export function toAttempt(
   const end = s.finishedAt ?? now
   const firstKey = s.events.find((e) => e.type === 'type')
   const a: Attempt = {
-    v: 2,
+    v: 3,
     clueId: ref.clue.id,
     cryptoId: ref.crypto.id,
     cryptoNo: ref.crypto.no,

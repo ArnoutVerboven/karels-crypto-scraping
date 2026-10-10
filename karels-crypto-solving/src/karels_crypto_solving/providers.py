@@ -55,7 +55,7 @@ def is_reasoning_model(model: str) -> bool:
     name = (model or "").lower()
     if name.startswith(("o1", "o3", "o4", "o5")):
         return True
-    return name.startswith("gpt-5") and "chat" not in name
+    return name.startswith(("gpt-5", "gpt-6")) and "chat" not in name
 
 
 def chat(

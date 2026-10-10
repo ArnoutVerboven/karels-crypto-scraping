@@ -66,7 +66,8 @@ export const randomSeed = () => Math.floor(Math.random() * 2 ** 32)
 /**
  * The order in which "Show letter" reveals letter positions: a Fisher–Yates shuffle of the
  * letter positions driven by `seededRng(seed)`. Each reveal takes the first position in this
- * order that is still empty or wrong, so a seed fixes which letters get shown.
+ * order that is not revealed yet, even one already typed correctly, so the k-th reveal always
+ * shows the same letter whatever was typed (an LLM run can be shown exactly the same letters).
  */
 export function revealOrderFor(answer: string, seed: number): number[] {
   const pos = [...normalize(answer)].flatMap((ch, i) => (/[a-z]/.test(ch) ? [i] : []))
@@ -183,9 +184,10 @@ export function step(s: WordState, a: Action, now: number): WordState {
       return check(next, now, false)
     }
     case 'reveal': {
-      const i = s.revealOrder.find((p) => editable(cells[p]!) && cells[p]!.value !== cells[p]!.target)
+      const i = s.revealOrder.find((p) => editable(cells[p]!))
       if (i === undefined) return s
       const c = cells[i]!
+      const changed = c.value !== c.target
       c.value = c.target
       c.revealed = true
       c.typedAt = null
@@ -193,7 +195,8 @@ export function step(s: WordState, a: Action, now: number): WordState {
       if (s.cursor === i || !editable(cells[s.cursor]!)) {
         next.cursor = nextEditable(cells, i) ?? prevEditable(cells, i) ?? s.cursor
       }
-      return check(next, now, true)
+      // A letter that was already right only gets locked: the board did not change, so no new check.
+      return changed ? check(next, now, true) : next
     }
   }
 }
