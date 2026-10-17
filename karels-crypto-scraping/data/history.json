@@ -6002,5 +6002,320 @@
         "solution": "art"
       }
     ]
+  },
+  {
+    "id": 885,
+    "title": "Karels Crypto 10 oktober",
+    "date": "2026-10-10",
+    "solution": "jarenzeventigkapsel",
+    "words": [
+      {
+        "cryptogram": "kopman",
+        "length": 3,
+        "help_numbers": [
+          null,
+          null,
+          1
+        ],
+        "offset": 6,
+        "solution": "jut"
+      },
+      {
+        "cryptogram": "lever-, vreugde- en Suma-",
+        "length": 5,
+        "help_numbers": [
+          null,
+          24,
+          null,
+          null,
+          15
+        ],
+        "offset": 4,
+        "solution": "traan"
+      },
+      {
+        "cryptogram": "de runderen van boer Cornelis",
+        "length": 6,
+        "help_numbers": [
+          13,
+          null,
+          null,
+          17,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "Corvee"
+      },
+      {
+        "cryptogram": "met een bloembed",
+        "length": 7,
+        "help_numbers": [
+          20,
+          null,
+          9,
+          null,
+          null,
+          7,
+          null
+        ],
+        "offset": 3,
+        "solution": "beperkt"
+      },
+      {
+        "cryptogram": "achtpotig dier (uit) het Verre Oosten",
+        "length": 8,
+        "help_numbers": [
+          2,
+          null,
+          null,
+          null,
+          19,
+          23,
+          null,
+          null
+        ],
+        "offset": 3,
+        "solution": "spinazie"
+      },
+      {
+        "cryptogram": "belangrijk symptoom van orthostatische hypotensie",
+        "length": 9,
+        "help_numbers": [
+          null,
+          14,
+          10,
+          null,
+          null,
+          8,
+          null,
+          24,
+          null
+        ],
+        "offset": 2,
+        "solution": "ogenzwart"
+      },
+      {
+        "cryptogram": "kinderlijk applaus",
+        "length": 10,
+        "help_numbers": [
+          4,
+          null,
+          null,
+          null,
+          22,
+          null,
+          7,
+          null,
+          null,
+          9
+        ],
+        "offset": 1,
+        "solution": "handjeklap"
+      },
+      {
+        "cryptogram": "is de gigolo na zijn dagtaak (vulg.)",
+        "length": 11,
+        "help_numbers": [
+          12,
+          null,
+          1,
+          null,
+          null,
+          null,
+          18,
+          null,
+          null,
+          16,
+          6
+        ],
+        "offset": 1,
+        "solution": "uitgevogeld"
+      },
+      {
+        "cryptogram": "gebeurt op een ponykamp",
+        "length": 12,
+        "help_numbers": [
+          9,
+          null,
+          null,
+          null,
+          6,
+          22,
+          null,
+          null,
+          21,
+          6,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "paardjeryden"
+      },
+      {
+        "cryptogram": "het verzameld werk van een marien fabelwezen",
+        "length": 13,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          null,
+          11,
+          19,
+          null,
+          18,
+          null,
+          12,
+          17,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "meermanoeuvre"
+      },
+      {
+        "cryptogram": "maat, auto",
+        "length": 12,
+        "help_numbers": [
+          4,
+          null,
+          16,
+          3,
+          null,
+          12,
+          null,
+          null,
+          11,
+          null,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "halfautomaat"
+      },
+      {
+        "cryptogram": "kunststofsnert",
+        "length": 11,
+        "help_numbers": [
+          null,
+          16,
+          19,
+          null,
+          1,
+          null,
+          13,
+          null,
+          18,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "plasticsoep"
+      },
+      {
+        "cryptogram": "bejaarde ecologist",
+        "length": 10,
+        "help_numbers": [
+          null,
+          24,
+          21,
+          null,
+          null,
+          24,
+          null,
+          null,
+          15,
+          null
+        ],
+        "offset": 2,
+        "solution": "grysgroene"
+      },
+      {
+        "cryptogram": "die bereidt het eten met ups en downs",
+        "length": 9,
+        "help_numbers": [
+          null,
+          5,
+          3,
+          null,
+          null,
+          18,
+          null,
+          10,
+          null
+        ],
+        "offset": 2,
+        "solution": "liftkoker"
+      },
+      {
+        "cryptogram": "\"Er zijn er vijf: zoet, zuur, zout, bitter en umami.\"'",
+        "length": 8,
+        "help_numbers": [
+          2,
+          null,
+          null,
+          null,
+          null,
+          23,
+          5,
+          null
+        ],
+        "offset": 3,
+        "solution": "smaakzin"
+      },
+      {
+        "cryptogram": "open doel",
+        "length": 7,
+        "help_numbers": [
+          1,
+          null,
+          null,
+          null,
+          14,
+          null,
+          1
+        ],
+        "offset": 3,
+        "solution": "trapgat"
+      },
+      {
+        "cryptogram": "reinigen met stijgend water",
+        "length": 6,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          null,
+          10,
+          null
+        ],
+        "offset": 4,
+        "solution": "wassen"
+      },
+      {
+        "cryptogram": "onmens",
+        "length": 5,
+        "help_numbers": [
+          20,
+          null,
+          null,
+          2,
+          null
+        ],
+        "offset": 4,
+        "solution": "beest"
+      },
+      {
+        "cryptogram": "korte bijlage",
+        "length": 3,
+        "help_numbers": [
+          20,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "byl"
+      }
+    ]
   }
 ]

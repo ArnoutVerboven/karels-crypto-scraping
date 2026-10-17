@@ -1,146 +1,146 @@
 {
-  "id": 885,
-  "title": "Karels Crypto 10 oktober",
-  "date": "2026-10-10",
+  "id": 886,
+  "title": "Karels Crypto 17 oktober",
+  "date": "2026-10-17",
   "solution": null,
   "words": [
     {
-      "cryptogram": "kopman",
+      "cryptogram": "gevolgde Italiaanse weg",
       "length": 3,
       "help_numbers": [
+        8,
         null,
-        null,
-        1
+        null
       ],
-      "offset": 6,
+      "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "lever-, vreugde- en Suma-",
+      "cryptogram": "geluidje van een stoomtreintje",
       "length": 5,
       "help_numbers": [
         null,
-        24,
+        1,
         null,
-        null,
-        15
+        23,
+        null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "de runderen van boer Cornelis",
+      "cryptogram": "lovenswaardig",
       "length": 6,
       "help_numbers": [
+        9,
+        null,
+        14,
+        null,
+        null,
+        null
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "congregatieus",
+      "length": 7,
+      "help_numbers": [
+        16,
+        null,
         13,
         null,
         null,
-        17,
-        null,
-        null
-      ],
-      "offset": 4,
-      "solution": null
-    },
-    {
-      "cryptogram": "met een bloembed",
-      "length": 7,
-      "help_numbers": [
-        20,
-        null,
-        9,
-        null,
-        null,
-        7,
+        14,
         null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "achtpotig dier (uit) het Verre Oosten",
+      "cryptogram": "klarie, knonsens, kabracadabra",
       "length": 8,
       "help_numbers": [
-        2,
+        3,
+        4,
+        null,
+        6,
         null,
         null,
         null,
-        19,
-        23,
-        null,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "belangrijk symptoom van orthostatische hypotensie",
-      "length": 9,
-      "help_numbers": [
-        null,
-        14,
-        10,
-        null,
-        null,
-        8,
-        null,
-        24,
         null
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "kinderlijk applaus",
-      "length": 10,
+      "cryptogram": "met veel vliegverkeer",
+      "length": 9,
       "help_numbers": [
-        4,
-        null,
-        null,
-        null,
         22,
+        null,
         null,
         7,
         null,
+        13,
         null,
-        9
+        null,
+        3
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "lumineuze ingeving",
+      "length": 10,
+      "help_numbers": [
+        22,
+        null,
+        15,
+        null,
+        null,
+        null,
+        null,
+        8,
+        null,
+        22
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "is de gigolo na zijn dagtaak (vulg.)",
+      "cryptogram": "Chinees speldenwerk",
       "length": 11,
       "help_numbers": [
         12,
+        15,
         null,
-        1,
-        null,
-        null,
-        null,
-        18,
+        9,
         null,
         null,
-        16,
+        15,
+        null,
+        null,
+        null,
         6
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "gebeurt op een ponykamp",
+      "cryptogram": "binnen is hij aardig maar …",
       "length": 12,
       "help_numbers": [
-        9,
-        null,
-        null,
-        null,
-        6,
-        22,
-        null,
-        null,
+        17,
+        1,
         21,
-        6,
+        10,
+        null,
+        null,
+        null,
+        null,
+        5,
+        null,
         null,
         null
       ],
@@ -148,40 +148,40 @@
       "solution": null
     },
     {
-      "cryptogram": "het verzameld werk van een marien fabelwezen",
+      "cryptogram": "dispuutspikkel",
       "length": 13,
       "help_numbers": [
-        11,
+        13,
+        null,
+        null,
+        15,
         null,
         null,
         null,
-        11,
-        19,
         null,
-        18,
+        20,
+        9,
         null,
-        12,
-        17,
-        null,
-        null
+        2,
+        10
       ],
       "offset": 0,
       "solution": null
     },
     {
-      "cryptogram": "maat, auto",
+      "cryptogram": "bij gebruik ervan zie je er het best op toe het kind niet mee te gooien",
       "length": 12,
       "help_numbers": [
         4,
         null,
-        16,
-        3,
-        null,
-        12,
+        18,
+        4,
         null,
         null,
-        11,
         null,
+        null,
+        1,
+        21,
         null,
         null
       ],
@@ -189,126 +189,127 @@
       "solution": null
     },
     {
-      "cryptogram": "kunststofsnert",
+      "cryptogram": "lanceringsversje",
       "length": 11,
       "help_numbers": [
-        null,
-        16,
+        12,
         19,
         null,
-        1,
         null,
-        13,
+        22,
         null,
-        18,
         null,
+        5,
+        null,
+        23,
         null
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "bejaarde ecologist",
+      "cryptogram": "voor de Maas: Pouilly-en-Bassigny",
       "length": 10,
       "help_numbers": [
-        null,
-        24,
-        21,
-        null,
-        null,
-        24,
+        11,
+        10,
         null,
         null,
-        15,
-        null
+        null,
+        null,
+        17,
+        null,
+        null,
+        2
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "die bereidt het eten met ups en downs",
+      "cryptogram": "kauw 80",
       "length": 9,
       "help_numbers": [
-        null,
-        5,
         3,
         null,
-        null,
-        18,
-        null,
         10,
+        null,
+        null,
+        7,
+        10,
+        null,
         null
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "\"Er zijn er vijf: zoet, zuur, zout, bitter en umami.\"'",
+      "cryptogram": "Hij is niet meer van de jongste; we moeten dringend op onze …",
       "length": 8,
       "help_numbers": [
-        2,
+        9,
+        null,
+        22,
         null,
         null,
         null,
         null,
-        23,
-        5,
-        null
+        2
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "open doel",
+      "cryptogram": "€ 2 + $ 4 + £ 6 =",
       "length": 7,
       "help_numbers": [
-        1,
+        18,
+        20,
         null,
         null,
+        11,
         null,
-        14,
-        null,
-        1
+        null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "reinigen met stijgend water",
+      "cryptogram": "medische voedingskabel",
       "length": 6,
       "help_numbers": [
-        8,
+        21,
+        null,
+        19,
         null,
         null,
-        null,
-        10,
         null
       ],
-      "offset": 4,
+      "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "onmens",
+      "cryptogram": "opschudding na het middelbaar onderwijs",
       "length": 5,
       "help_numbers": [
+        5,
+        null,
+        null,
         20,
-        null,
-        null,
-        2,
         null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "korte bijlage",
-      "length": 3,
+      "cryptogram": "nieuw element, soms gebruikt bij reclame",
+      "length": 4,
       "help_numbers": [
-        20,
         null,
+        null,
+        16,
         null
       ],
-      "offset": 4,
+      "offset": 5,
       "solution": null
     }
   ]
