@@ -166,7 +166,7 @@ def _call(model: str, task: dict, k: int, effort: str | None, retries: int = 6):
     raise AssertionError("unreachable")
 
 
-def solve_with_reveals(model: str, task: dict, effort: str | None) -> dict:
+def solve_with_reveals(model: str, task: dict, effort: str | None, keep_raw: bool = False) -> dict:
     target = letters_only(task["answer"])
     tries, p_tok, c_tok = [], 0, 0
     for k in range(task["length"]):  # k = length would show the whole word
@@ -178,7 +178,13 @@ def solve_with_reveals(model: str, task: dict, effort: str | None) -> dict:
         p_tok += sol.prompt_tokens
         c_tok += sol.completion_tokens
         ok = letters_only(sol.answer) == target
-        tries.append({"k": k, "pattern": pattern, "guess": sol.answer, "correct": ok})
+        rec = {"k": k, "pattern": pattern, "guess": sol.answer, "correct": ok}
+        if keep_raw:
+            # The model's full visible reply. With no reasoning_effort the word solver prompt
+            # asks it to "reason briefly, then ANSWER:", so this carries its visible reasoning.
+            rec["reply"] = sol.raw
+            rec["completion_tokens"] = sol.completion_tokens
+        tries.append(rec)
         if ok:
             break
     k_star = tries[-1]["k"] if tries and tries[-1]["correct"] else None
@@ -404,6 +410,110 @@ def _mean(xs):
     return sum(xs) / len(xs) if xs else None
 
 
+# --- examples (full model replies, for the blog) -------------------------------
+
+# Two blog categories over a small set of clues. "Hard" = answers few models got
+# cold in the main run; "easy" = answers nearly everyone (and Arnout) got cold.
+_HARD = ["pryskraker", "kidnappen", "balkonscene", "fretkat", "koersinzicht",
+         "samenroepen", "matglas", "autogame", "kopklep", "sleutelbedryf"]
+_EASY = ["marine", "nagellak", "staat", "toets", "legaat",
+         "malaise", "interpoleren", "help", "casanova", "ram"]
+# A weak model, a strong one, and a strong one from a different provider.
+_EXAMPLE_MODELS = ["gpt-4o-mini", "gpt-4.1", "claude-sonnet-4-6"]
+
+
+def _render_examples(groups, human, raw, models) -> list[str]:
+    lines = [
+        "# Full model replies, letters revealed one at a time",
+        "",
+        "For a handful of the benchmark clues, the complete visible reply each model "
+        "gave at every reveal step. No `reasoning_effort` is set, so the word-solver "
+        "prompt asks the model to reason briefly and then answer, and that reasoning is "
+        "what you see below. Hidden/internal reasoning (for reasoning models) is not "
+        "returned by the gateway and is not here.",
+        "",
+        f"Models: {', '.join(f'`{m}`' for m in models)}.",
+        "",
+    ]
+    for label, picks in groups:
+        lines += [f"## {label}", ""]
+        for t in picks:
+            a = human.get(t["clueId"], {})
+            if a.get("outcome") == "solved":
+                h = f"Arnout **solved** this after {a.get('revealedCount', '?')} letter(s)."
+            elif a.get("outcome") == "failed":
+                h = "Arnout **did not** solve this one."
+            else:
+                h = f"Arnout outcome: {a.get('outcome', 'unknown')}."
+            lines += [f"### {t['answer']} — {t['length']} letters", "",
+                      f"> Clue: {t['text']}", "", h, ""]
+            for model in models:
+                r = raw[model].get(t["clueId"], {})
+                lines.append(f"#### `{model}`")
+                if "error" in r:
+                    lines += ["", f"_Error: {r['error']}_", ""]
+                    continue
+                k_star = r.get("k_star")
+                lines.append(
+                    f"Solved after {k_star} letter(s)." if k_star is not None
+                    else "Never solved (even with all but one letter shown).")
+                lines.append("")
+                for tr in r.get("tries", []):
+                    mark = "✓" if tr["correct"] else "✗"
+                    shown = "no letters" if tr["k"] == 0 else f"{tr['k']} letter(s)"
+                    lines += [f"- **{shown}** shown as `{tr['pattern']}` → "
+                              f"guessed **{tr['guess']}** {mark}"]
+                    reply = (tr.get("reply") or "").strip()
+                    if reply:
+                        lines += ["", "  ```", *[f"  {ln}" for ln in reply.splitlines()],
+                                   "  ```", ""]
+                lines.append("")
+    return lines
+
+
+def cmd_examples(args) -> int:
+    models = args.models or _EXAMPLE_MODELS
+    attempts = json.loads(Path(args.attempts).read_text(encoding="utf-8"))
+    human = {a["clueId"]: a for a in attempts}
+    # Both outcomes: the "hard" blog category wants clues Arnout himself missed too.
+    by_answer = {}
+    for t in load_tasks(Path(args.attempts), outcomes=("solved", "failed")):
+        by_answer.setdefault(letters_only(t["answer"]), t)
+
+    groups = []
+    for label, words in [("Hard clues", args.hard or _HARD),
+                         ("Easy clues", args.easy or _EASY)]:
+        picks = []
+        for w in words:
+            t = by_answer.get(letters_only(w))
+            if t is None:
+                logger.warning("No attempt for %r, skipped", w)
+                continue
+            picks.append(t)
+        groups.append((label, picks))
+
+    picked = [t for _, picks in groups for t in picks]
+    logger.info("examples: %d clues x %d models", len(picked), len(models))
+    raw: dict[str, dict] = {}
+    for model in models:
+        with ThreadPoolExecutor(max_workers=args.num_threads) as pool:
+            res = list(pool.map(
+                lambda t: solve_with_reveals(model, t, None, keep_raw=True), picked))
+        raw[model] = {picked[i]["clueId"]: res[i] for i in range(len(picked))}
+        done = sum(1 for r in raw[model].values() if r.get("k_star") is not None)
+        print(f"{model}: solved {done}/{len(picked)}")
+
+    out = Path(args.output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "examples.json").write_text(
+        json.dumps({"models": models, "raw": raw}, indent=1, ensure_ascii=False) + "\n",
+        encoding="utf-8")
+    md = _render_examples(groups, human, raw, models)
+    (out / "examples.md").write_text("\n".join(md) + "\n", encoding="utf-8")
+    print(f"wrote {out / 'examples.md'}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -422,6 +532,13 @@ def build_parser() -> argparse.ArgumentParser:
     rep.add_argument("--attempts", required=True)
     rep.add_argument("--probe", default=str(DEFAULT_OUTPUT_DIR / "models.json"))
     rep.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR))
+    ex = sub.add_parser("examples")
+    ex.add_argument("--attempts", required=True)
+    ex.add_argument("--models", nargs="*", default=[], help="default: a weak + 2 strong")
+    ex.add_argument("--hard", nargs="*", default=[], help="override the hard clue answers")
+    ex.add_argument("--easy", nargs="*", default=[], help="override the easy clue answers")
+    ex.add_argument("--num-threads", type=int, default=4)
+    ex.add_argument("--output-dir", default=str(DEFAULT_OUTPUT_DIR / "examples"))
     return p
 
 
@@ -431,7 +548,8 @@ def main(argv: list[str] | None = None) -> int:
         logging.getLogger(noisy).setLevel(logging.WARNING)
     config.load_env()
     args = build_parser().parse_args(argv)
-    return {"probe": cmd_probe, "run": cmd_run, "report": cmd_report}[args.cmd](args)
+    return {"probe": cmd_probe, "run": cmd_run, "report": cmd_report,
+            "examples": cmd_examples}[args.cmd](args)
 
 
 if __name__ == "__main__":
