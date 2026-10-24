@@ -33,15 +33,28 @@ describe('word', () => {
     expect(s.cursor).toBe(1)
   })
 
-  it('reveal fills the first wrong/empty letter in the seeded order and locks it', () => {
+  it('reveal shows the next unrevealed letter in the seeded order and locks it', () => {
     const s = run({ ...newWord('x', 'roma', 0), revealOrder: [0, 2, 1, 3] }, [{ type: 'reveal' }])
     expect(s.cells[0]).toMatchObject({ value: 'r', revealed: true })
     expect(s.cursor).toBe(1)
     const s2 = run(s, [{ type: 'move', pos: 0 }])
     expect(s2.cursor).toBe(1)
-    // positions 2 and 1 come next in the order but are already correct, so 3 is shown
+    // position 2 is next in the order: it is revealed even though it was already typed correctly
     const s3 = run(s2, [...keys('om'), { type: 'reveal' }])
-    expect(s3.cells[3]).toMatchObject({ value: 'a', revealed: true })
+    expect(s3.cells[2]).toMatchObject({ value: 'm', revealed: true })
+    expect(s3.cells[3]!.revealed).toBe(false)
+    expect(s3.status).toBe('playing')
+  })
+
+  it('locking an already-correct letter on a full wrong board adds no wrong guess', () => {
+    let s = run({ ...newWord('x', 'roma', 0), revealOrder: [0, 3, 1, 2] }, keys('rome'))
+    expect(s.wrongCount).toBe(1)
+    s = run(s, [{ type: 'reveal' }])
+    expect(s.cells[0]).toMatchObject({ value: 'r', revealed: true })
+    expect(s.wrongCount).toBe(1)
+    s = run(s, [{ type: 'reveal' }])
+    expect(s.cells[3]).toMatchObject({ value: 'a', revealed: true })
+    expect(s.status).toBe('failed')
   })
 
   it('the seed fixes the reveal order', () => {
@@ -53,7 +66,7 @@ describe('word', () => {
   })
 
   it('fails when the last missing letter comes from Show letter', () => {
-    const s = run(newWord('x', 'roma', 0), [...keys('rom'), { type: 'reveal' }])
+    const s = run({ ...newWord('x', 'roma', 0), revealOrder: [3, 0, 1, 2] }, [...keys('rom'), { type: 'reveal' }])
     expect(s.cells[3]).toMatchObject({ value: 'a', revealed: true })
     expect(s.status).toBe('failed')
     expect(s.completedByReveal).toBe(true)
@@ -79,7 +92,7 @@ describe('word', () => {
     let s = { ...newWord(ref.clue.id, 'roma', 0, 7), revealOrder: [0, 1, 2, 3] }
     s = run(s, [{ type: 'reveal' }, ...keys('omx'), { type: 'backspace' }, { type: 'key', key: 'a' }])
     const a = toAttempt(ref, s, 'solved', 10_000)
-    expect(a).toMatchObject({ v: 2, length: 4, lettersNeeded: 3, revealedCount: 1, outcome: 'solved', seed: 7 })
+    expect(a).toMatchObject({ v: 3, length: 4, lettersNeeded: 3, revealedCount: 1, outcome: 'solved', seed: 7 })
     expect(a.letterMs[0]).toBeNull()
     expect(a.wrongGuesses).toEqual([{ t: 4000, guess: 'romx' }])
   })

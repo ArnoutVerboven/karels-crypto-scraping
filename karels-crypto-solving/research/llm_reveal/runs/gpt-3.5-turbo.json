@@ -1,0 +1,9194 @@
+{
+ "model": "gpt-3.5-turbo",
+ "provider": "openai",
+ "reasoning_effort": "low",
+ "n_clues": 173,
+ "errors": 0,
+ "prompt_tokens": 122638,
+ "completion_tokens": 41075,
+ "est_cost_usd": 0.1229315,
+ "results": [
+  {
+   "clueId": "867-0",
+   "length": 4,
+   "answer": "klad",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "scho",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_l__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_l_d",
+     "guess": "slecht",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "kl_d",
+     "guess": "kluis",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 369,
+   "completion_tokens": 130
+  },
+  {
+   "clueId": "867-1",
+   "length": 5,
+   "answer": "staat",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "staat",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 95,
+   "completion_tokens": 38
+  },
+  {
+   "clueId": "867-10",
+   "length": 12,
+   "answer": "uilengezicht",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "daklicht",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "u___________",
+     "guess": "uilskuiken",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "u_____e_____",
+     "guess": "knuffeldier",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "u___n_e_____",
+     "guess": "uilensnoet",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "u_l_n_e_____",
+     "guess": "sander",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "u_len_e_____",
+     "guess": "schuinschot",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "u_len_e_i___",
+     "guess": "luchthaven",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "u_lenge_i___",
+     "guess": "regelwetend",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "u_lenge_ic__",
+     "guess": "uitbreidingen",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "u_lenge_ic_t",
+     "guess": "ontwikkeling",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "u_lenge_icht",
+     "guess": "ontgezicht",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "u_lengezicht",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1158,
+   "completion_tokens": 374
+  },
+  {
+   "clueId": "867-11",
+   "length": 11,
+   "answer": "samenroepen",
+   "k_star": 7,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "woedend",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________p__",
+     "guess": "samenkrijsen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______o_p__",
+     "guess": "sponsoring",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_a____o_p__",
+     "guess": "samenzang",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_a__n_o_p__",
+     "guess": "schreeuwen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_a__nro_p__",
+     "guess": "kelenklanken",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_am_nro_p__",
+     "guess": "samenzang",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_am_nro_pe_",
+     "guess": "samenroepen",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 803,
+   "completion_tokens": 255
+  },
+  {
+   "clueId": "867-12",
+   "length": 10,
+   "answer": "tekenkamer",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "huwelijks",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__k_______",
+     "guess": "huwelijkin",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__k______r",
+     "guess": "huwelijkse",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "t_k______r",
+     "guess": "onderkoffer",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "t_k____m_r",
+     "guess": "huwelijkse",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "t_k_n__m_r",
+     "guess": "ondertrouw",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "t_ken__m_r",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "t_ken__mer",
+     "guess": "handtekenen",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "teken__mer",
+     "guess": "handteken",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "teken_amer",
+     "guess": "akteschrijf",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1066,
+   "completion_tokens": 253
+  },
+  {
+   "clueId": "867-13",
+   "length": 9,
+   "answer": "tegeloven",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "geloofd",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___e_____",
+     "guess": "onwaarheid",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e_e_____",
+     "guess": "verwaarloos",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_e_e__v__",
+     "guess": "geloofwaardig",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_e_e__ve_",
+     "guess": "tevergeef",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "te_e__ve_",
+     "guess": "tevensprekend",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "te_e_ove_",
+     "guess": "tevergeefs",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "te_e_oven",
+     "guess": "tegenoven",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "te_eloven",
+     "guess": "onvoorstelbaar",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1055,
+   "completion_tokens": 291
+  },
+  {
+   "clueId": "867-14",
+   "length": 8,
+   "answer": "antislip",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "bedstrooi",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "a_______",
+     "guess": "takschijf",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "a____l__",
+     "guess": "sneeuwval",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "an___l__",
+     "guess": "wittigheid",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "an_i_l__",
+     "guess": "sneeuwwit",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "anti_l__",
+     "guess": "anitslot",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "anti_l_p",
+     "guess": "sneeuwzout",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "anti_lip",
+     "guess": "strooizout",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 754,
+   "completion_tokens": 295
+  },
+  {
+   "clueId": "867-15",
+   "length": 7,
+   "answer": "kopklep",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "tandelo",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o_____",
+     "guess": "spraak",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "ko_____",
+     "guess": "koester",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "ko____p",
+     "guess": "koffie",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "ko__l_p",
+     "guess": "kouslip",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "kop_l_p",
+     "guess": "koppels",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "kopkl_p",
+     "guess": "lippen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 657,
+   "completion_tokens": 221
+  },
+  {
+   "clueId": "867-16",
+   "length": 6,
+   "answer": "welkom",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "proest",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____o_",
+     "guess": "watert",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____om",
+     "guess": "vat",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___kom",
+     "guess": "schoff",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_e_kom",
+     "guess": "recept",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "we_kom",
+     "guess": "grasbak",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 549,
+   "completion_tokens": 139
+  },
+  {
+   "clueId": "867-17",
+   "length": 5,
+   "answer": "tiens",
+   "k_star": 1,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "tjonge",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__e__",
+     "guess": "tiens",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 196,
+   "completion_tokens": 66
+  },
+  {
+   "clueId": "867-18",
+   "length": 4,
+   "answer": "aura",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___a",
+     "guess": "ra",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "a__a",
+     "guess": "ra",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "a_ra",
+     "guess": "ra",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 380,
+   "completion_tokens": 103
+  },
+  {
+   "clueId": "867-2",
+   "length": 6,
+   "answer": "cadans",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "schudden",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__d___",
+     "guess": "schudt",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__d_n_",
+     "guess": "dansen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__d_ns",
+     "guess": "ossend",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__dans",
+     "guess": "tanden",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "c_dans",
+     "guess": "kalken",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 593,
+   "completion_tokens": 184
+  },
+  {
+   "clueId": "867-3",
+   "length": 7,
+   "answer": "legging",
+   "k_star": 6,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___g___",
+     "guess": "overleg",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e_g___",
+     "guess": "blessen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_e_g_n_",
+     "guess": "koksmuts",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_e_gin_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "le_gin_",
+     "guess": "leggings",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "le_ging",
+     "guess": "legging",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 663,
+   "completion_tokens": 233
+  },
+  {
+   "clueId": "867-4",
+   "length": 8,
+   "answer": "verwylen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "overlijden",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____y___",
+     "guess": "overlijden",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____y_e_",
+     "guess": "sterven",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____y_en",
+     "guess": "dood",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___wy_en",
+     "guess": "overlijden",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_e_wy_en",
+     "guess": "overleven",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_e_wylen",
+     "guess": "sterf",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "ve_wylen",
+     "guess": "overlijden",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 749,
+   "completion_tokens": 261
+  },
+  {
+   "clueId": "867-5",
+   "length": 9,
+   "answer": "kidnappen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__d______",
+     "guess": "speeltafel",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__d_____n",
+     "guess": "kleedkamer",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_id_____n",
+     "guess": "slijptafel",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_id___p_n",
+     "guess": "snoepzakje",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_id__pp_n",
+     "guess": "kinderpon",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_id_app_n",
+     "guess": "dessert",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_idnapp_n",
+     "guess": "servetjes",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "kidnapp_n",
+     "guess": "kinderservet",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 864,
+   "completion_tokens": 351
+  },
+  {
+   "clueId": "867-6",
+   "length": 10,
+   "answer": "krachtterm",
+   "k_star": 8,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "mogendheid",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______e__",
+     "guess": "bevoegdheid",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___c___e__",
+     "guess": "gezaghebber",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "k__c___e__",
+     "guess": "electriciteit",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "k__c_t_e__",
+     "guess": "powerful",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "k_ac_t_e__",
+     "guess": "karakterze",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "k_ac_t_er_",
+     "guess": "krachtheer",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "k_acht_er_",
+     "guess": "bekwaamste",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "k_achtter_",
+     "guess": "krachtterm",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 844,
+   "completion_tokens": 251
+  },
+  {
+   "clueId": "867-7",
+   "length": 11,
+   "answer": "verdoemenis",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "uitschelden",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___d_______",
+     "guess": "vervloeken",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___do______",
+     "guess": "bevloeken",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "v__do______",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "v__do_m____",
+     "guess": "vloeken",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "v__do_me___",
+     "guess": "verdomme",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "ve_do_me___",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "ve_doeme___",
+     "guess": "verwenschen",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "ve_doemen__",
+     "guess": "verdorvening",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "ve_doemeni_",
+     "guess": "vervloeken",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "verdoemeni_",
+     "guess": "vervloekenis",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1049,
+   "completion_tokens": 346
+  },
+  {
+   "clueId": "867-8",
+   "length": 12,
+   "answer": "vingerwyzing",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "vingerkootjes",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______w_____",
+     "guess": "flamingo",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___g__w_____",
+     "guess": "kalveren",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___g_rw_____",
+     "guess": "spaargeldwaas",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___g_rw___n_",
+     "guess": "kalveren",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_i_g_rw___n_",
+     "guess": "rietgewassen",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "vi_g_rw___n_",
+     "guess": "pinken",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "vi_g_rw___ng",
+     "guess": "knikken",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "ving_rw___ng",
+     "guess": "toeën",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "vingerw___ng",
+     "guess": "pinken",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "vingerwy__ng",
+     "guess": "vingerzwaaiing",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "vingerwyz_ng",
+     "guess": "vingerwijzing",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1127,
+   "completion_tokens": 424
+  },
+  {
+   "clueId": "867-9",
+   "length": 13,
+   "answer": "gezinsverband",
+   "k_star": 9,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__________a__",
+     "guess": "this",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "g_________a__",
+     "guess": "rozijntomaatje",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "g___n_____a__",
+     "guess": "grootverpakking",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "g___n____ba__",
+     "guess": "gezinverbanden",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "g___n__e_ba__",
+     "guess": "gezinsverpakking",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "ge__n__e_ba__",
+     "guess": "gezinsverpakking",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "ge__ns_e_ba__",
+     "guess": "gezinsverpakking",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "ge__ns_e_ba_d",
+     "guess": "geneesmiddelen",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "ge__nsve_ba_d",
+     "guess": "gezinsverband",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 1001,
+   "completion_tokens": 228
+  },
+  {
+   "clueId": "868-0",
+   "length": 4,
+   "answer": "lege",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "kaal",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__g_",
+     "guess": "kaal",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_eg_",
+     "guess": "blee",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "leg_",
+     "guess": "grijs",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 397,
+   "completion_tokens": 63
+  },
+  {
+   "clueId": "873-0",
+   "length": 4,
+   "answer": "shit",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "wiet",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__i_",
+     "guess": "slib",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__it",
+     "guess": "shit",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 282,
+   "completion_tokens": 75
+  },
+  {
+   "clueId": "873-1",
+   "length": 5,
+   "answer": "drome",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "droom",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_r___",
+     "guess": "droom",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "dr___",
+     "guess": "droom",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "dr__e",
+     "guess": "good",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "dr_me",
+     "guess": "droom",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 491,
+   "completion_tokens": 114
+  },
+  {
+   "clueId": "873-10",
+   "length": 12,
+   "answer": "programmawet",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "omroepwetgeving",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______m____",
+     "guess": "omroepwet",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_______m___t",
+     "guess": "omroepwet",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "p______m___t",
+     "guess": "omroepwet",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "p_o____m___t",
+     "guess": "omroepwet",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "p_o_r__m___t",
+     "guess": "omroepwetgeving",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "pro_r__m___t",
+     "guess": "programmamet",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "pro_r__ma__t",
+     "guess": "programmaraad",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "progr__ma__t",
+     "guess": "regelgeving",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "progra_ma__t",
+     "guess": "omroepwet",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "progra_ma_et",
+     "guess": "omroepwetgeving",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "programma_et",
+     "guess": "omroepwetgeving",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1332,
+   "completion_tokens": 411
+  },
+  {
+   "clueId": "873-11",
+   "length": 11,
+   "answer": "antiskating",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "tegenstrijd",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________i__",
+     "guess": "opposition",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______a_i__",
+     "guess": "tegenkracht",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "______a_i_g",
+     "guess": "it",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "a_____a_i_g",
+     "guess": "afstandstag",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "a_t___a_i_g",
+     "guess": "tegenmachtig",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "a_ti__a_i_g",
+     "guess": "tegenstandig",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "anti__a_i_g",
+     "guess": "antropologie",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "anti_ka_i_g",
+     "guess": "tegenkantig",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "anti_kati_g",
+     "guess": "wrijvingsde",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "anti_kating",
+     "guess": "tegendraads",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1171,
+   "completion_tokens": 299
+  },
+  {
+   "clueId": "873-12",
+   "length": 10,
+   "answer": "pryskraker",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "wervelkrom",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___s______",
+     "guess": "behandler",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___s__a___",
+     "guess": "massagetafel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___s__ak__",
+     "guess": "ruggemerg",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___s_rak__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__ys_rak__",
+     "guess": "symptomen",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__ys_rake_",
+     "guess": "massagebed",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "p_ys_rake_",
+     "guess": "fysiotherapie",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "p_ys_raker",
+     "guess": "krakerprins",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "p_yskraker",
+     "guess": "behandelaar",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 957,
+   "completion_tokens": 386
+  },
+  {
+   "clueId": "873-13",
+   "length": 9,
+   "answer": "verheffen",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "verkeuren",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______e_",
+     "guess": "misjudge",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___h___e_",
+     "guess": "vergheten",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "v__h___e_",
+     "guess": "verhullen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "ve_h___e_",
+     "guess": "verheffen",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 482,
+   "completion_tokens": 228
+  },
+  {
+   "clueId": "873-14",
+   "length": 8,
+   "answer": "casanova",
+   "k_star": 3,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "vrijgezel",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__s_____",
+     "guess": "tuttendoos",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_as_____",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "cas_____",
+     "guess": "casanova",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 418,
+   "completion_tokens": 55
+  },
+  {
+   "clueId": "873-15",
+   "length": 7,
+   "answer": "amazone",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "jeugdz",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__a____",
+     "guess": "jeugdz",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__az___",
+     "guess": "jeugd",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__az__e",
+     "guess": "verzame",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__azo_e",
+     "guess": "jeugdzo",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "a_azo_e",
+     "guess": "amvkind",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "a_azone",
+     "guess": "kamerst",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 736,
+   "completion_tokens": 207
+  },
+  {
+   "clueId": "873-16",
+   "length": 6,
+   "answer": "lokaal",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "paling",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "l_____",
+     "guess": "paling",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "l__a__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "l__a_l",
+     "guess": "aalval",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "l_ka_l",
+     "guess": "zeepaling",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "loka_l",
+     "guess": "hanenkam",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 564,
+   "completion_tokens": 206
+  },
+  {
+   "clueId": "873-17",
+   "length": 5,
+   "answer": "tonic",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "sint",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__n__",
+     "guess": "pakjesavond",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "t_n__",
+     "guess": "stntr",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "t_ni_",
+     "guess": "piets",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "t_nic",
+     "guess": "kerst",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 474,
+   "completion_tokens": 168
+  },
+  {
+   "clueId": "873-18",
+   "length": 3,
+   "answer": "pad",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "ei",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "p__",
+     "guess": "ado",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "p_d",
+     "guess": "pad",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 287,
+   "completion_tokens": 102
+  },
+  {
+   "clueId": "873-2",
+   "length": 6,
+   "answer": "invoer",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "vrucht",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____r",
+     "guess": "soort",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___o_r",
+     "guess": "gezond",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___oer",
+     "guess": "snoep",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__voer",
+     "guess": "broodje",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "i_voer",
+     "guess": "vervol",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 586,
+   "completion_tokens": 184
+  },
+  {
+   "clueId": "873-3",
+   "length": 7,
+   "answer": "matglas",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____a_",
+     "guess": "foutief",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____la_",
+     "guess": "inhouds",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_a__la_",
+     "guess": "flessen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_a__las",
+     "guess": "onjuist",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_a_glas",
+     "guess": "onjuist",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_atglas",
+     "guess": "foutief",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 675,
+   "completion_tokens": 204
+  },
+  {
+   "clueId": "873-4",
+   "length": 8,
+   "answer": "autogame",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____g___",
+     "guess": "sprookje",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___og___",
+     "guess": "toneelstuk",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "a__og___",
+     "guess": "toneelst",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "a__og_m_",
+     "guess": "karavaan",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "au_og_m_",
+     "guess": "schaakmat",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "au_ogam_",
+     "guess": "kermissto",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "autogam_",
+     "guess": "automat",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 751,
+   "completion_tokens": 266
+  },
+  {
+   "clueId": "873-5",
+   "length": 9,
+   "answer": "huisvrouw",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "nvmjreztq",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__i______",
+     "guess": "each",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__i___o__",
+     "guess": "verkoopster",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "h_i___o__",
+     "guess": "end",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "h_i___ou_",
+     "guess": "hypotheek",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "h_i__rou_",
+     "guess": "verhuurster",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "h_i_vrou_",
+     "guess": "verhuizen",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "h_isvrou_",
+     "guess": "verhuurster",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "huisvrou_",
+     "guess": "verkoopster",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 859,
+   "completion_tokens": 272
+  },
+  {
+   "clueId": "873-6",
+   "length": 10,
+   "answer": "buikgevoel",
+   "k_star": 1,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "darminfarct",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_u________",
+     "guess": "buikgevoel",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 199,
+   "completion_tokens": 61
+  },
+  {
+   "clueId": "873-7",
+   "length": 11,
+   "answer": "balkonscene",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "toneelstrijd",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____o______",
+     "guess": "theaterstuk",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____o___e__",
+     "guess": "toneelgevechten",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____o_s_e__",
+     "guess": "toneelkift",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____o_s_e_e",
+     "guess": "toneelschil",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "____o_sce_e",
+     "guess": "vertoningss",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__l_o_sce_e",
+     "guess": "toneelstrijd",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__lko_sce_e",
+     "guess": "argument",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "__lkonsce_e",
+     "guess": "**",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_alkonsce_e",
+     "guess": "toneelstukje",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "balkonsce_e",
+     "guess": "balconscène",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1087,
+   "completion_tokens": 472
+  },
+  {
+   "clueId": "873-8",
+   "length": 12,
+   "answer": "orgelstemmer",
+   "k_star": 5,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "pijproker",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_________m__",
+     "guess": "regeringso",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______t__m__",
+     "guess": "tandartsprak",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "______t__me_",
+     "guess": "stembusgang",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_____st__me_",
+     "guess": "afstemming",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_r___st__me_",
+     "guess": "orgelstemmer",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 575,
+   "completion_tokens": 224
+  },
+  {
+   "clueId": "873-9",
+   "length": 13,
+   "answer": "sleutelbedryf",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "rotterdammer",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____t________",
+     "guess": "universiteit",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "s___t________",
+     "guess": "concernvestiging",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "s___t___e____",
+     "guess": "samenwerking",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "s___t__be____",
+     "guess": "stapelbedden",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "s___t__bed___",
+     "guess": "studentenbedrijf",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "s___t__bedr__",
+     "guess": "sleutelwoord",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "s___te_bedr__",
+     "guess": "sleutelbedrijf",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "s_e_te_bedr__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "s_eute_bedr__",
+     "guess": "universiteit",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "s_eute_bedry_",
+     "guess": "geregistreerd",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "s_eute_bedryf",
+     "guess": "onderbedrijf",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "s_eutelbedryf",
+     "guess": "antiekmeubels",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1242,
+   "completion_tokens": 439
+  },
+  {
+   "clueId": "874-0",
+   "length": 4,
+   "answer": "expo",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "po",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "e___",
+     "guess": "wc",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "ex__",
+     "guess": "kelk",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "ex_o",
+     "guess": "poep",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 387,
+   "completion_tokens": 150
+  },
+  {
+   "clueId": "874-1",
+   "length": 5,
+   "answer": "gelei",
+   "k_star": 1,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "eiwit",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "g____",
+     "guess": "gelei",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 193,
+   "completion_tokens": 96
+  },
+  {
+   "clueId": "874-10",
+   "length": 12,
+   "answer": "geluidsmixer",
+   "k_star": 11,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "bladblazer",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____d______",
+     "guess": "blender",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____id______",
+     "guess": "afzuigkap",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___uid______",
+     "guess": "koffiemachine",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__luid______",
+     "guess": "blender",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__luid_____r",
+     "guess": "broodrooster",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__luid_m___r",
+     "guess": "keukenmachine",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__luid_m_x_r",
+     "guess": "blender",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "__luidsm_x_r",
+     "guess": "smaakversterker",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "__luidsmix_r",
+     "guess": "blenderen",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "g_luidsmix_r",
+     "guess": "afzuigkap",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "geluidsmix_r",
+     "guess": "geluidsmixer",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 1224,
+   "completion_tokens": 421
+  },
+  {
+   "clueId": "874-11",
+   "length": 11,
+   "answer": "fastforward",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "schaar",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______r____",
+     "guess": "sneltrein",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____or____",
+     "guess": "snelheidsduivel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_____orw___",
+     "guess": "hervormdruk",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__s__orw___",
+     "guess": "scherpschuts",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__s__orwa__",
+     "guess": "sneltrein",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__s__orwa_d",
+     "guess": "sneltrein",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_as__orwa_d",
+     "guess": "schoffelraad",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "fas__orwa_d",
+     "guess": "scoreleader",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "fas__orward",
+     "guess": "sneltrein",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "fast_orward",
+     "guess": "doorzetter",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1083,
+   "completion_tokens": 362
+  },
+  {
+   "clueId": "874-12",
+   "length": 10,
+   "answer": "spiermassa",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "onderkruiper",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_________a",
+     "guess": "sportschool",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______a__a",
+     "guess": "abonnees",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____r_a__a",
+     "guess": "plebs",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____rma__a",
+     "guess": "braniepees",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_p__rma__a",
+     "guess": "onderwerpen",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_p_erma__a",
+     "guess": "sporters",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "sp_erma__a",
+     "guess": "sportszaal",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "spierma__a",
+     "guess": "spiermanen",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "spiermas_a",
+     "guess": "fitnessers",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 996,
+   "completion_tokens": 338
+  },
+  {
+   "clueId": "874-13",
+   "length": 9,
+   "answer": "obligatie",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________e",
+     "guess": "obligation",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____a__e",
+     "guess": "obligation",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___i_a__e",
+     "guess": "noodzaak",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___i_at_e",
+     "guess": "obligation",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "___i_atie",
+     "guess": "noodzaak",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__li_atie",
+     "guess": "plichtig",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_bli_atie",
+     "guess": "obligation",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_bligatie",
+     "guess": "schuldiging",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 854,
+   "completion_tokens": 303
+  },
+  {
+   "clueId": "874-14",
+   "length": 8,
+   "answer": "opvoeren",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "verhogen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__v_____",
+     "guess": "vergroten",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__v__r__",
+     "guess": "uitvoeren",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__v__r_n",
+     "guess": "verdienen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "o_v__r_n",
+     "guess": "vergroten",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "o_v_er_n",
+     "guess": "vergroten",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "o_voer_n",
+     "guess": "vergrooten",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "opvoer_n",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 801,
+   "completion_tokens": 164
+  },
+  {
+   "clueId": "874-15",
+   "length": 7,
+   "answer": "koevoet",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "terreur",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____o__",
+     "guess": "kalfsvel",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_o__o__",
+     "guess": "teenknokel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_o__o_t",
+     "guess": "hoofdtof",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_oe_o_t",
+     "guess": "hoefoot",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "koe_o_t",
+     "guess": "koeauto",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "koe_oet",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 671,
+   "completion_tokens": 267
+  },
+  {
+   "clueId": "874-16",
+   "length": 6,
+   "answer": "meiden",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "voorja",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_e____",
+     "guess": "leegte",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e__e_",
+     "guess": "leerje",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "me__e_",
+     "guess": "meibloem",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "me__en",
+     "guess": "meuren",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "mei_en",
+     "guess": "meiblo",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 559,
+   "completion_tokens": 206
+  },
+  {
+   "clueId": "874-17",
+   "length": 5,
+   "answer": "venus",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "serena",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "v____",
+     "guess": "speer",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "v__u_",
+     "guess": "venus",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 280,
+   "completion_tokens": 102
+  },
+  {
+   "clueId": "874-18",
+   "length": 3,
+   "answer": "aga",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "ott",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__a",
+     "guess": "sja",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_ga",
+     "guess": "aga",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 284,
+   "completion_tokens": 112
+  },
+  {
+   "clueId": "874-2",
+   "length": 6,
+   "answer": "legaat",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "nuntie",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__g___",
+     "guess": "nagels",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "l_g___",
+     "guess": "legaat",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 301,
+   "completion_tokens": 101
+  },
+  {
+   "clueId": "874-3",
+   "length": 7,
+   "answer": "fretkat",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "etenswaard",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____a_",
+     "guess": "katerig",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____at",
+     "guess": "sardine",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__e__at",
+     "guess": "kateten",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "f_e__at",
+     "guess": "eten",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "f_e_kat",
+     "guess": "fijnkat",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "fre_kat",
+     "guess": "ontbijt",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 729,
+   "completion_tokens": 293
+  },
+  {
+   "clueId": "874-4",
+   "length": 8,
+   "answer": "hertogen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "verrekijker",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__r_____",
+     "guess": "toeschou",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__r_o___",
+     "guess": "binoculars",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "h_r_o___",
+     "guess": "horloge",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "h_r_og__",
+     "guess": "verrekij",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "h_r_oge_",
+     "guess": "verrekijkers",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "h_rtoge_",
+     "guess": "verrekijkers",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "hertoge_",
+     "guess": "binoculars",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 759,
+   "completion_tokens": 330
+  },
+  {
+   "clueId": "874-5",
+   "length": 9,
+   "answer": "zonnewind",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "zomerwind",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______i__",
+     "guess": "firecracker",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____wi__",
+     "guess": "downpour",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____ewi__",
+     "guess": "zomerdag",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____ewi_d",
+     "guess": "zomervacht",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "____ewind",
+     "guess": "windzoeken",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "___newind",
+     "guess": "wolkenkrabber",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "z__newind",
+     "guess": "hooiwagen",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "zo_newind",
+     "guess": "zomerhitte",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 848,
+   "completion_tokens": 327
+  },
+  {
+   "clueId": "874-6",
+   "length": 10,
+   "answer": "stopplaats",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "sokkengat",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________t_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__o_____t_",
+     "guess": "hielspoor",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__o____at_",
+     "guess": "antwoordende",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_to____at_",
+     "guess": "patroon",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_top___at_",
+     "guess": "schoenveter",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "stop___at_",
+     "guess": "stoppelsat",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "stop_l_at_",
+     "guess": "teenwarmte",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "stop_l_ats",
+     "guess": "teenkousen",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "stop_laats",
+     "guess": "outlet",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 961,
+   "completion_tokens": 355
+  },
+  {
+   "clueId": "874-7",
+   "length": 11,
+   "answer": "inbraakgolf",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "wegwerpauto",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______g___",
+     "guess": "plofkraken",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__b____g___",
+     "guess": "autobestendig",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__b_a__g___",
+     "guess": "aanslag",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "i_b_a__g___",
+     "guess": "inbraakauto",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "i_bra__g___",
+     "guess": "autokraak",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "i_braa_g___",
+     "guess": "gebroeders",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "i_braa_go__",
+     "guess": "inbraakauto",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "inbraa_go__",
+     "guess": "wagenkloof",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "inbraa_gol_",
+     "guess": "kade",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "inbraa_golf",
+     "guess": "buitenspiegel",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1136,
+   "completion_tokens": 373
+  },
+  {
+   "clueId": "874-8",
+   "length": 12,
+   "answer": "koersinzicht",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "wielrenwedstrijd",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__________h_",
+     "guess": "sprinterspel",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__e_______h_",
+     "guess": "camerahoekje",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__e__i____h_",
+     "guess": "antisymmetrie",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__e__in___h_",
+     "guess": "sprinter",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__e__in_i_h_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__e__in_i_ht",
+     "guess": "wielrenwedstrijd",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__e__inzi_ht",
+     "guess": "wielerwedstrijd",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "k_e__inzi_ht",
+     "guess": "keizersnede",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "k_e_sinzi_ht",
+     "guess": "kampioenschap",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "koe_sinzi_ht",
+     "guess": "voorstellingen",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "koersinzi_ht",
+     "guess": "wielrenners",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1243,
+   "completion_tokens": 457
+  },
+  {
+   "clueId": "874-9",
+   "length": 13,
+   "answer": "eindredacteur",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "woordbewerker",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "e____________",
+     "guess": "woordprocessor",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "e___________r",
+     "guess": "woordenboek",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "e___r_______r",
+     "guess": "wordprocessor",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "e___r___c___r",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "e___r__ac___r",
+     "guess": "woordvoerder",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "e__dr__ac___r",
+     "guess": "tekstverwerker",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "e__dr__act__r",
+     "guess": "wordprocessor",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "e__dr__acte_r",
+     "guess": "teksteditor",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "e__dre_acte_r",
+     "guess": "woordverwerker",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "e__dre_acteur",
+     "guess": "wordprocessor",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "e_ndre_acteur",
+     "guess": "wordprocessor",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "eindre_acteur",
+     "guess": "woordenboek",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1253,
+   "completion_tokens": 357
+  },
+  {
+   "clueId": "875-0",
+   "length": 3,
+   "answer": "bic",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "inr",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__c",
+     "guess": "pen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_ic",
+     "guess": "bic",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 293,
+   "completion_tokens": 92
+  },
+  {
+   "clueId": "875-1",
+   "length": 5,
+   "answer": "varen",
+   "k_star": 1,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "bies",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "v____",
+     "guess": "varen",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 181,
+   "completion_tokens": 49
+  },
+  {
+   "clueId": "875-10",
+   "length": 12,
+   "answer": "lettergieter",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "verbaalgeweld",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______i____",
+     "guess": "gesprekstijder",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_______ie___",
+     "guess": "kletsmajoor",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____e__ie___",
+     "guess": "monoloog",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "l___e__ie___",
+     "guess": "monoloog",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "l__te__ie___",
+     "guess": "lawaaiige",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "l_tte__ie___",
+     "guess": "woordwaterval",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "l_tte_gie___",
+     "guess": "watervallen",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "l_tte_giet__",
+     "guess": "betweterigste",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "l_ttergiet__",
+     "guess": "uitdrukkings",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "lettergiet__",
+     "guess": "lettergietster",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "lettergiete_",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1164,
+   "completion_tokens": 470
+  },
+  {
+   "clueId": "875-11",
+   "length": 11,
+   "answer": "inseparabel",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "schoonheid",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___e_______",
+     "guess": "verandering",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "i__e_______",
+     "guess": "walvis",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "i__e_a_____",
+     "guess": "estherlijk",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "i__e_a_a___",
+     "guess": "scheppingen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "i__e_ara___",
+     "guess": "koningin",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "i__e_arab__",
+     "guess": "esther",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "i__e_arab_l",
+     "guess": "esther",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "in_e_arab_l",
+     "guess": "scheppingsverhaal",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "in_e_arabel",
+     "guess": "assepoester",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "inse_arabel",
+     "guess": "downpour",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1142,
+   "completion_tokens": 343
+  },
+  {
+   "clueId": "875-12",
+   "length": 10,
+   "answer": "combinatie",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "nederland",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____n____",
+     "guess": "nederland",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____in____",
+     "guess": "nederland",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____in_t__",
+     "guess": "politiegroen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__m_in_t__",
+     "guess": "gevangenis",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__mbin_t__",
+     "guess": "nederland",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__mbin_t_e",
+     "guess": "nederland",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "c_mbin_t_e",
+     "guess": "provincie",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "c_mbinat_e",
+     "guess": "ambulance",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "combinat_e",
+     "guess": "politieauto",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 980,
+   "completion_tokens": 430
+  },
+  {
+   "clueId": "875-13",
+   "length": 9,
+   "answer": "lystduwer",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "bedelaar",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____u___",
+     "guess": "opdringer",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "l____u___",
+     "guess": "word",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "l____u_e_",
+     "guess": "voordrager",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "l__t_u_e_",
+     "guess": "insluiter",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "l__tdu_e_",
+     "guess": "candidate",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "l__tdu_er",
+     "guess": "plantaardig",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "l_stdu_er",
+     "guess": "indringer",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "l_stduwer",
+     "guess": "insluiper",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 858,
+   "completion_tokens": 258
+  },
+  {
+   "clueId": "875-14",
+   "length": 8,
+   "answer": "hemelbed",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "begraaf",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_e______",
+     "guess": "begraafplaats",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e_e____",
+     "guess": "grafheuvel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_e_e___d",
+     "guess": "kerkhof",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_e_e__ed",
+     "guess": "kerkhof",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_e_e_bed",
+     "guess": "kerkhof",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "he_e_bed",
+     "guess": "kerkhof",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "heme_bed",
+     "guess": "begraaf",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 782,
+   "completion_tokens": 243
+  },
+  {
+   "clueId": "875-15",
+   "length": 7,
+   "answer": "pikorde",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "nonnen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____d_",
+     "guess": "monnik",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___o_d_",
+     "guess": "monnik",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___ord_",
+     "guess": "broeder",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___orde",
+     "guess": "ordezin",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "p__orde",
+     "guess": "jeugdig",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "pi_orde",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 699,
+   "completion_tokens": 180
+  },
+  {
+   "clueId": "875-16",
+   "length": 6,
+   "answer": "pamper",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "asylum",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___p__",
+     "guess": "firstly",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_a_p__",
+     "guess": "shelter",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "pa_p__",
+     "guess": "asyl",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "pa_p_r",
+     "guess": "vader",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "pamp_r",
+     "guess": "asylum",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 557,
+   "completion_tokens": 210
+  },
+  {
+   "clueId": "875-17",
+   "length": 5,
+   "answer": "toets",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "schro",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o___",
+     "guess": "now",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_o_t_",
+     "guess": "toets",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 278,
+   "completion_tokens": 75
+  },
+  {
+   "clueId": "875-18",
+   "length": 3,
+   "answer": "rok",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "kou",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o_",
+     "guess": "bos",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_ok",
+     "guess": "stil",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 279,
+   "completion_tokens": 162
+  },
+  {
+   "clueId": "875-2",
+   "length": 6,
+   "answer": "hoeven",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "stallen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____n",
+     "guess": "stallen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____en",
+     "guess": "hengst",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___ven",
+     "guess": "stallen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__even",
+     "guess": "stallen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "h_even",
+     "guess": "stalhof",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 575,
+   "completion_tokens": 241
+  },
+  {
+   "clueId": "875-3",
+   "length": 7,
+   "answer": "alleman",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "allen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____m__",
+     "guess": "anderen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____ma_",
+     "guess": "allemaal",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___ema_",
+     "guess": "iederen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_l_ema_",
+     "guess": "allemaal",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_l_eman",
+     "guess": "columnen",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_lleman",
+     "guess": "allenman",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 681,
+   "completion_tokens": 208
+  },
+  {
+   "clueId": "875-4",
+   "length": 8,
+   "answer": "morsdood",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "sterfte",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____o__",
+     "guess": "sterven",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____oo_",
+     "guess": "sterven",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_o___oo_",
+     "guess": "sterven",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_o_s_oo_",
+     "guess": "doodstil",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_o_s_ood",
+     "guess": "geloosd",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_o_sdood",
+     "guess": "doodskist",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "mo_sdood",
+     "guess": "overlijden",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 831,
+   "completion_tokens": 368
+  },
+  {
+   "clueId": "875-5",
+   "length": 9,
+   "answer": "prysbeest",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "levensles",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "p________",
+     "guess": "prijswaan",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "p_____e__",
+     "guess": "peperoede",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "p_____e_t",
+     "guess": "rooster",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "p_____est",
+     "guess": "prijsbeest",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "p__s__est",
+     "guess": "kippeneier",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "p__sb_est",
+     "guess": "prijsbeest",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "p_ysb_est",
+     "guess": "kippenest",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "p_ysbeest",
+     "guess": "pluimvee",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 934,
+   "completion_tokens": 393
+  },
+  {
+   "clueId": "875-6",
+   "length": 10,
+   "answer": "huisvesten",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "jaszakken",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___s______",
+     "guess": "laboranta",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_u_s______",
+     "guess": "bontjassen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_u_s_____n",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_u_s__s__n",
+     "guess": "coats",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_u_sv_s__n",
+     "guess": "vuurvaststenen",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_u_sves__n",
+     "guess": "kamerjassen",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_u_svest_n",
+     "guess": "gastvrouwen",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "hu_svest_n",
+     "guess": "huiskleding",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "hu_svesten",
+     "guess": "vorstenhuis",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 958,
+   "completion_tokens": 320
+  },
+  {
+   "clueId": "875-7",
+   "length": 11,
+   "answer": "wapenknecht",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "zwaarbewapend",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__________t",
+     "guess": "kamerdienaar",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "w_________t",
+     "guess": "wagenmeester",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "w__e______t",
+     "guess": "kanonnendweil",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "w__e_____ht",
+     "guess": "kanonnier",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "w__e___e_ht",
+     "guess": "kanonnierder",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "wa_e___e_ht",
+     "guess": "vormgever",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "wape___e_ht",
+     "guess": "wapendrager",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "wape__ne_ht",
+     "guess": "wapenhandel",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "wape__necht",
+     "guess": "wapendrager",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "wapen_necht",
+     "guess": "vazallen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1196,
+   "completion_tokens": 350
+  },
+  {
+   "clueId": "875-8",
+   "length": 12,
+   "answer": "bokkensprong",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "bruggetjes",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o__________",
+     "guess": "brugoefening",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_o__e_______",
+     "guess": "evenwichtsbalk",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_ok_e_______",
+     "guess": "evenwichtsbalk",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_ok_e___r___",
+     "guess": "hoepelsprongen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_okke___r___",
+     "guess": "kukelkoren",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_okke___ro__",
+     "guess": "sparrendans",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_okke___ro_g",
+     "guess": "brugoefening",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_okke_s_ro_g",
+     "guess": "brugoefening",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "bokke_s_ro_g",
+     "guess": "bokkesprong",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "bokke_s_rong",
+     "guess": "bruggetoestel",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "bokkens_rong",
+     "guess": "bruggeturnen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1230,
+   "completion_tokens": 325
+  },
+  {
+   "clueId": "875-9",
+   "length": 13,
+   "answer": "concertpodium",
+   "k_star": 12,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "playground",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___c_________",
+     "guess": "speeltuin",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___c_____d___",
+     "guess": "schoolplein",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "c__c_____d___",
+     "guess": "schoolplein",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "c__c_____di__",
+     "guess": "klimrekkenwip",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "c__c_____di_m",
+     "guess": "kinderhoekjes",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "c__ce____di_m",
+     "guess": "achteruitkijkspiegel",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "c_nce____di_m",
+     "guess": "playground",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "c_nce____dium",
+     "guess": "concentratium",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "c_nce___odium",
+     "guess": "kinderkamping",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "c_nce__podium",
+     "guess": "speelverdeler",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "conce__podium",
+     "guess": "speeltuin",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "concer_podium",
+     "guess": "concertpodium",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 1250,
+   "completion_tokens": 477
+  },
+  {
+   "clueId": "876-0",
+   "length": 4,
+   "answer": "snik",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "brul",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___k",
+     "guess": "heet",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_n_k",
+     "guess": "pijn",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_nik",
+     "guess": "nip",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 372,
+   "completion_tokens": 168
+  },
+  {
+   "clueId": "876-1",
+   "length": 5,
+   "answer": "zomer",
+   "k_star": 3,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "beleg",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "z____",
+     "guess": "inzet",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "z_m__",
+     "guess": "ziemt",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "zom__",
+     "guess": "zomer",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 369,
+   "completion_tokens": 131
+  },
+  {
+   "clueId": "876-10",
+   "length": 12,
+   "answer": "bordenwarmer",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "aardbeienteler",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___d________",
+     "guess": "kinderwagen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__rd________",
+     "guess": "wereldreiziger",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__rd______e_",
+     "guess": "logopediste",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "b_rd______e_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "bord______e_",
+     "guess": "buschauffeur",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "bord____r_e_",
+     "guess": "bus",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "borde___r_e_",
+     "guess": "taxichauffeur",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "borde_w_r_e_",
+     "guess": "schoolplein",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "borde_war_e_",
+     "guess": "gemeenteraad",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "borde_warme_",
+     "guess": "autobuschauffeur",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "borde_warmer",
+     "guess": "wijnflesopener",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1173,
+   "completion_tokens": 410
+  },
+  {
+   "clueId": "876-11",
+   "length": 11,
+   "answer": "wildbestand",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "rustvol",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____b______",
+     "guess": "roekeloos",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__l_b______",
+     "guess": "halsbrekend",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__l_b___a__",
+     "guess": "onderbreken",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__l_b__ta__",
+     "guess": "overhaastig",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__l_b__tan_",
+     "guess": "overhaasten",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__ldb__tan_",
+     "guess": "beulsroten",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__ldbe_tan_",
+     "guess": "overhaasting",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "__ldbe_tand",
+     "guess": "overhaasten",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "w_ldbe_tand",
+     "guess": "wapenstilstand",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "wildbe_tand",
+     "guess": "wapenstilstand",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1122,
+   "completion_tokens": 262
+  },
+  {
+   "clueId": "876-12",
+   "length": 10,
+   "answer": "sleutelrol",
+   "k_star": 7,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____t_____",
+     "guess": "debuteren",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__e_t_____",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_le_t_____",
+     "guess": "debuutrol",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_le_t____l",
+     "guess": "debutantje",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_le_t_l__l",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "sle_t_l__l",
+     "guess": "debuteren",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "sleut_l__l",
+     "guess": "sleutelrol",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 818,
+   "completion_tokens": 164
+  },
+  {
+   "clueId": "876-13",
+   "length": 9,
+   "answer": "randgeval",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "valutaprobleem",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______a_",
+     "guess": "belegging",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______va_",
+     "guess": "zuidafrika",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_____eva_",
+     "guess": "invordering",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____geva_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_a__geva_",
+     "guess": "geldzaak",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_a_dgeva_",
+     "guess": "padvinder",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_andgeva_",
+     "guess": "sangfroid",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_andgeval",
+     "guess": "wisselkoers",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 937,
+   "completion_tokens": 288
+  },
+  {
+   "clueId": "876-14",
+   "length": 8,
+   "answer": "nagellak",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "nagellak",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 93,
+   "completion_tokens": 29
+  },
+  {
+   "clueId": "876-15",
+   "length": 7,
+   "answer": "lokvink",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "titvink",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____n_",
+     "guess": "oomzegg",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "l____n_",
+     "guess": "t",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "l____nk",
+     "guess": "tjiftjaf",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "l___ink",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "l_k_ink",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "l_kvink",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 694,
+   "completion_tokens": 274
+  },
+  {
+   "clueId": "876-16",
+   "length": 6,
+   "answer": "domino",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "is",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o____",
+     "guess": "voeder",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_o__n_",
+     "guess": "londen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_om_n_",
+     "guess": "dommen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "dom_n_",
+     "guess": "dommen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "domin_",
+     "guess": "dominee",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 558,
+   "completion_tokens": 159
+  },
+  {
+   "clueId": "876-17",
+   "length": 5,
+   "answer": "tonus",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "kruik",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "t____",
+     "guess": "ton",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "t_n__",
+     "guess": "tante",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "t_n_s",
+     "guess": "vecht",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "t_nus",
+     "guess": "tonus",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 462,
+   "completion_tokens": 125
+  },
+  {
+   "clueId": "876-18",
+   "length": 3,
+   "answer": "egw",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "egw",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 108,
+   "completion_tokens": 36
+  },
+  {
+   "clueId": "876-2",
+   "length": 6,
+   "answer": "gombal",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "dansen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o____",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_om___",
+     "guess": "judo",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_omb__",
+     "guess": "hockey",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_omba_",
+     "guess": "korfbal",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_ombal",
+     "guess": "judo",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 586,
+   "completion_tokens": 131
+  },
+  {
+   "clueId": "876-3",
+   "length": 7,
+   "answer": "inzicht",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "binnenkij",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______t",
+     "guess": "buren",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_n____t",
+     "guess": "glimpen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "in____t",
+     "guess": "interne",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "in___ht",
+     "guess": "inlicht",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "in_i_ht",
+     "guess": "inricht",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "inzi_ht",
+     "guess": "insight",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 650,
+   "completion_tokens": 169
+  },
+  {
+   "clueId": "876-4",
+   "length": 8,
+   "answer": "hangsnor",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "zwarte",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_a______",
+     "guess": "vermoord",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_an_____",
+     "guess": "tangram",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_ang____",
+     "guess": "hangman",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "hang____",
+     "guess": "hangover",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "hangs___",
+     "guess": "stropdas",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "hangs_o_",
+     "guess": "padlock",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "hangs_or",
+     "guess": "verzetsvrouw",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 757,
+   "completion_tokens": 239
+  },
+  {
+   "clueId": "876-5",
+   "length": 9,
+   "answer": "uitvreten",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "vegetatie",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____e___",
+     "guess": "ontbijten",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__t__e___",
+     "guess": "ontbijten",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__t__et__",
+     "guess": "grazen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__t_ret__",
+     "guess": "ondertriet",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__t_rete_",
+     "guess": "uitvereten",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__t_reten",
+     "guess": "ontbijten",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__tvreten",
+     "guess": "ontbeten",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "u_tvreten",
+     "guess": "ontbijten",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 871,
+   "completion_tokens": 285
+  },
+  {
+   "clueId": "876-6",
+   "length": 10,
+   "answer": "opgewassen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "klimop",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__g_______",
+     "guess": "kaaskruiden",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__ge______",
+     "guess": "climbing",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__ge___s__",
+     "guess": "klimop",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__ge_a_s__",
+     "guess": "wingerdbla",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "o_ge_a_s__",
+     "guess": "klimopblad",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "o_ge_ass__",
+     "guess": "klimopgaten",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "o_ge_ass_n",
+     "guess": "klimopassan",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "opge_ass_n",
+     "guess": "klimopasen",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "opgewass_n",
+     "guess": "klimopplanten",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 951,
+   "completion_tokens": 374
+  },
+  {
+   "clueId": "876-7",
+   "length": 11,
+   "answer": "conditioner",
+   "k_star": 1,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "hondebel",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__n________",
+     "guess": "conditioner",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 190,
+   "completion_tokens": 86
+  },
+  {
+   "clueId": "876-8",
+   "length": 12,
+   "answer": "precisiewerk",
+   "k_star": 7,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "stiptheidsactie",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__e_________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__e____e____",
+     "guess": "werkweigering",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__e___ie____",
+     "guess": "werkonderbreking",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__e___ie__r_",
+     "guess": "bedrijfsruimte",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "p_e___ie__r_",
+     "guess": "persoonlijke",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "p_ec__ie__r_",
+     "guess": "precisieoperatie",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "p_ec__iew_r_",
+     "guess": "precisiewerk",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 780,
+   "completion_tokens": 211
+  },
+  {
+   "clueId": "876-9",
+   "length": 13,
+   "answer": "schurkenstaat",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "sluwe",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______e______",
+     "guess": "verraderij",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____r_e______",
+     "guess": "struikrovers",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___ur_e______",
+     "guess": "schurkenstreek",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___ur_e____a_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__hur_e____a_",
+     "guess": "achterbaksheid",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "s_hur_e____a_",
+     "guess": "schurkenstreek",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "s_hurke____a_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "s_hurken___a_",
+     "guess": "assassin",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "schurken___a_",
+     "guess": "schurkenstreek",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "schurken_t_a_",
+     "guess": "struikrover",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "schurkenst_a_",
+     "guess": "schurkenstreek",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "schurkenst_at",
+     "guess": "schatkistroof",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1257,
+   "completion_tokens": 415
+  },
+  {
+   "clueId": "877-0",
+   "length": 4,
+   "answer": "jobs",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__b_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "j_b_",
+     "guess": "jobs",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 316,
+   "completion_tokens": 31
+  },
+  {
+   "clueId": "877-1",
+   "length": 5,
+   "answer": "speer",
+   "k_star": 3,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "wapen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__e__",
+     "guess": "wapen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__e_r",
+     "guess": "wapen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_pe_r",
+     "guess": "speer",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 394,
+   "completion_tokens": 93
+  },
+  {
+   "clueId": "877-10",
+   "length": 12,
+   "answer": "stammentwist",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "boomgrens",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___________t",
+     "guess": "bladverliezend",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_______t___t",
+     "guess": "haardhoutpilet",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____m__t___t",
+     "guess": "hakhoutmetten",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____m__t_i_t",
+     "guess": "boomhoogte",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "____m__t_ist",
+     "guess": "leafloss",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__a_m__t_ist",
+     "guess": "bladwisseling",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_ta_m__t_ist",
+     "guess": "bladverliezend",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_ta_me_t_ist",
+     "guess": "boomstronkist",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_ta_me_twist",
+     "guess": "boswachters",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "_tamme_twist",
+     "guess": "boomtwisten",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "_tammentwist",
+     "guess": "bladtwrijst",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1229,
+   "completion_tokens": 480
+  },
+  {
+   "clueId": "877-11",
+   "length": 11,
+   "answer": "waterschade",
+   "k_star": 9,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "hondsdraf",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__t________",
+     "guess": "grasmatplek",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__t_r______",
+     "guess": "concentratie",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__t_r__h___",
+     "guess": "hibiscusplant",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__t_r__h_d_",
+     "guess": "straathond",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "w_t_r__h_d_",
+     "guess": "wortelhuidje",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "w_t_r_ch_d_",
+     "guess": "luierikhoek",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "w_ter_ch_d_",
+     "guess": "woestijnzand",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "water_ch_d_",
+     "guess": "verbrandplek",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "watersch_d_",
+     "guess": "waterschade",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 1130,
+   "completion_tokens": 244
+  },
+  {
+   "clueId": "877-12",
+   "length": 10,
+   "answer": "boomklever",
+   "k_star": 6,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "stamboomist",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______v__",
+     "guess": "trotsevrouw",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_______v_r",
+     "guess": "dolkenroos",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_____l_v_r",
+     "guess": "autobiograaf",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "b____l_v_r",
+     "guess": "bloemlezer",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "b____l_ver",
+     "guess": "barkworm",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "b__m_l_ver",
+     "guess": "boomklever",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 665,
+   "completion_tokens": 298
+  },
+  {
+   "clueId": "877-13",
+   "length": 9,
+   "answer": "nulpunten",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "zwaartillen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______e_",
+     "guess": "winnaar",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__l____e_",
+     "guess": "zweden",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__lp___e_",
+     "guess": "mississippi",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__lpu__e_",
+     "guess": "teleurstel",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__lpun_e_",
+     "guess": "verplette",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_ulpun_e_",
+     "guess": "ruitplank",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "nulpun_e_",
+     "guess": "nullpoints",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "nulpunte_",
+     "guess": "nul",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 986,
+   "completion_tokens": 348
+  },
+  {
+   "clueId": "877-14",
+   "length": 8,
+   "answer": "runnerup",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "coaster",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____r__",
+     "guess": "klimmer",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__n__r__",
+     "guess": "toename",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_un__r__",
+     "guess": "struikroven",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_un__r_p",
+     "guess": "stalker",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_un__rup",
+     "guess": "gunrunner",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_unn_rup",
+     "guess": "bergop",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "runn_rup",
+     "guess": "oploper",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 768,
+   "completion_tokens": 254
+  },
+  {
+   "clueId": "877-15",
+   "length": 7,
+   "answer": "kardoen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "schaarste",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____o__",
+     "guess": "boot",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "k___o__",
+     "guess": "koetsen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "ka__o__",
+     "guess": "karos",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "kar_o__",
+     "guess": "karos",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "kar_oe_",
+     "guess": "paard",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "kar_oen",
+     "guess": "paard",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 779,
+   "completion_tokens": 163
+  },
+  {
+   "clueId": "877-16",
+   "length": 6,
+   "answer": "heiden",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__i___",
+     "guess": "den",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__id__",
+     "guess": "denken",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__id_n",
+     "guess": "denne",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__iden",
+     "guess": "dennen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "h_iden",
+     "guess": "dennen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 555,
+   "completion_tokens": 282
+  },
+  {
+   "clueId": "877-17",
+   "length": 5,
+   "answer": "jagen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "jaarg",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_a___",
+     "guess": "ja",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_a__n",
+     "guess": "waar",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_a_en",
+     "guess": "genen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "ja_en",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 498,
+   "completion_tokens": 176
+  },
+  {
+   "clueId": "877-18",
+   "length": 3,
+   "answer": "iel",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "pot",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_e_",
+     "guess": "erg",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_el",
+     "guess": "bak",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 285,
+   "completion_tokens": 111
+  },
+  {
+   "clueId": "877-2",
+   "length": 6,
+   "answer": "vellen",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "kappen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____n",
+     "guess": "kappen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e___n",
+     "guess": "verbre",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_el__n",
+     "guess": "dellen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "vel__n",
+     "guess": "vellen",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 479,
+   "completion_tokens": 207
+  },
+  {
+   "clueId": "877-3",
+   "length": 7,
+   "answer": "mahatma",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "tweeling",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_a_____",
+     "guess": "damesho",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_a__t__",
+     "guess": "schotel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_a__tm_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_a__tma",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_a_atma",
+     "guess": "matenai",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "ma_atma",
+     "guess": "the",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 720,
+   "completion_tokens": 280
+  },
+  {
+   "clueId": "877-4",
+   "length": 8,
+   "answer": "botsauto",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "aanhanger",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o______",
+     "guess": "voordeur",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "bo______",
+     "guess": "botsauto",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 279,
+   "completion_tokens": 114
+  },
+  {
+   "clueId": "877-5",
+   "length": 9,
+   "answer": "sportzaak",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "trapladder",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______a_",
+     "guess": "antiekzaak",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______aa_",
+     "guess": "ladderen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_p____aa_",
+     "guess": "stepladder",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_p___zaa_",
+     "guess": "trapzaak",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_po__zaa_",
+     "guess": "trapzaak",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_po__zaak",
+     "guess": "klimzaak",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "spo__zaak",
+     "guess": "sprookjes",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "spor_zaak",
+     "guess": "trapzaak",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 885,
+   "completion_tokens": 331
+  },
+  {
+   "clueId": "877-6",
+   "length": 10,
+   "answer": "poepsimpel",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__e_______",
+     "guess": "vanzelfsprekend",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__e___m___",
+     "guess": "smeedbaar",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_oe___m___",
+     "guess": "kinderlijk",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_oe___mp__",
+     "guess": "poepzakken",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_oe___mp_l",
+     "guess": "boerderij",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_oe___mpel",
+     "guess": "boerderij",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_oep__mpel",
+     "guess": "composteer",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_oeps_mpel",
+     "guess": "vanilleroom",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_oepsimpel",
+     "guess": "kunstmest",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 957,
+   "completion_tokens": 315
+  },
+  {
+   "clueId": "877-7",
+   "length": 11,
+   "answer": "daarentegen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______t____",
+     "guess": "tegengif",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____nt____",
+     "guess": "tegenstander",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__a__nt____",
+     "guess": "tegenstand",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "d_a__nt____",
+     "guess": "tegenstander",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "d_a__nte___",
+     "guess": "tegendeel",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "daa__nte___",
+     "guess": "daaromtrent",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "daa_ente___",
+     "guess": "distantieerd",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "daa_ente__n",
+     "guess": "daartegen",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "daarente__n",
+     "guess": "discriminant",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "daarenteg_n",
+     "guess": "tegenraan",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1050,
+   "completion_tokens": 372
+  },
+  {
+   "clueId": "877-8",
+   "length": 12,
+   "answer": "zigzagbeleid",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "regeringsakkoord",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____g______",
+     "guess": "onzekerheid",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____g___e__",
+     "guess": "regeringsbeleid",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_____g_e_e__",
+     "guess": "wankelende",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____ag_e_e__",
+     "guess": "kwakzalverij",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "____ag_ele__",
+     "guess": "regeringsval",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "____ag_elei_",
+     "guess": "dagelijks",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "____ag_eleid",
+     "guess": "interimregering",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "___zag_eleid",
+     "guess": "zeilbootkunde",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_i_zag_eleid",
+     "guess": "slingerend",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "_igzag_eleid",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "zigzag_eleid",
+     "guess": "slalomrijden",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1170,
+   "completion_tokens": 513
+  },
+  {
+   "clueId": "877-9",
+   "length": 13,
+   "answer": "ochtendgloren",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "sleepwalker",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__h__________",
+     "guess": "slaapkamerraam",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__h_e________",
+     "guess": "slaapverwekkend",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__h_e__g_____",
+     "guess": "slaapvertrek",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__h_e__g___e_",
+     "guess": "avondeten",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__h_en_g___e_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "o_h_en_g___e_",
+     "guess": "slaapkamer",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "o_h_en_gl__e_",
+     "guess": "slaapkamerraam",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "o_h_en_gl__en",
+     "guess": "overnachten",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "o_h_endgl__en",
+     "guess": "slaapvertrek",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "o_h_endglo_en",
+     "guess": "slaapkamer",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "och_endglo_en",
+     "guess": "slaapwandel",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "ochtendglo_en",
+     "guess": "slaapvertrek",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1258,
+   "completion_tokens": 389
+  },
+  {
+   "clueId": "881-0",
+   "length": 3,
+   "answer": "vos",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "mus",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "v__",
+     "guess": "vog",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "vo_",
+     "guess": "vos",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 293,
+   "completion_tokens": 166
+  },
+  {
+   "clueId": "881-1",
+   "length": 5,
+   "answer": "stoom",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "moeder",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_t___",
+     "guess": "kind",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "st___",
+     "guess": "sterf",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "st_o_",
+     "guess": "stoof",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "stoo_",
+     "guess": "stoof",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 477,
+   "completion_tokens": 131
+  },
+  {
+   "clueId": "881-10",
+   "length": 12,
+   "answer": "kunstmagneet",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "meesterwerk",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______a_____",
+     "guess": "magnet",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______ag____",
+     "guess": "meesterwerk",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "______ag_e__",
+     "guess": "meesterwerk",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__n___ag_e__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__n___ag_ee_",
+     "guess": "schilderijtentoonstelling",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__n___ag_eet",
+     "guess": "magneetkunst",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_un___ag_eet",
+     "guess": "stilleven",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_un_t_ag_eet",
+     "guess": "aantrekkend",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_un_t_agneet",
+     "guess": "magnetisch",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "_un_tmagneet",
+     "guess": "magnet",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "_unstmagneet",
+     "guess": "attracties",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1248,
+   "completion_tokens": 469
+  },
+  {
+   "clueId": "881-11",
+   "length": 11,
+   "answer": "zoutaanslag",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "zouteloos",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__u________",
+     "guess": "vergiftiging",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__u____s___",
+     "guess": "verdrinkingslachtoffer",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__u____s__g",
+     "guess": "vergiftiging",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__u__a_s__g",
+     "guess": "vergiftiging",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "z_u__a_s__g",
+     "guess": "vergiftiging",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "z_u__a_sl_g",
+     "guess": "verzilting",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "z_ut_a_sl_g",
+     "guess": "vergiftiging",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "z_ut_a_slag",
+     "guess": "verzoutingsdag",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "zout_a_slag",
+     "guess": "anticiperen",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "zout_anslag",
+     "guess": "vergiftiging",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1134,
+   "completion_tokens": 438
+  },
+  {
+   "clueId": "881-12",
+   "length": 10,
+   "answer": "vloerkleed",
+   "k_star": 3,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "judomat",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_________d",
+     "guess": "judomat",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__o______d",
+     "guess": "judozaal",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__o__k___d",
+     "guess": "vloerkleed",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 372,
+   "completion_tokens": 152
+  },
+  {
+   "clueId": "881-13",
+   "length": 9,
+   "answer": "stroperig",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "smeigend",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "s________",
+     "guess": "slijmerig",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "s_______g",
+     "guess": "stroperig",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 305,
+   "completion_tokens": 69
+  },
+  {
+   "clueId": "881-14",
+   "length": 8,
+   "answer": "facelift",
+   "k_star": 5,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "features",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____i__",
+     "guess": "features",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "f____i__",
+     "guess": "fronslijn",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "f____if_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "fa___if_",
+     "guess": "fabriek",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "fa_e_if_",
+     "guess": "facelift",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 591,
+   "completion_tokens": 267
+  },
+  {
+   "clueId": "881-15",
+   "length": 7,
+   "answer": "malaise",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "i",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_a_____",
+     "guess": "anstand",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "ma_____",
+     "guess": "malaise",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 286,
+   "completion_tokens": 96
+  },
+  {
+   "clueId": "881-16",
+   "length": 6,
+   "answer": "ysgang",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "gangen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_s____",
+     "guess": "straat",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_sg___",
+     "guess": "gangen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_sga__",
+     "guess": "gangen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_sga_g",
+     "guess": "antich",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_sgang",
+     "guess": "gang",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 582,
+   "completion_tokens": 119
+  },
+  {
+   "clueId": "881-17",
+   "length": 5,
+   "answer": "baton",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "normaal",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__t__",
+     "guess": "meter",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__t_n",
+     "guess": "noota",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "b_t_n",
+     "guess": "baken",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "bat_n",
+     "guess": "laten",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 467,
+   "completion_tokens": 138
+  },
+  {
+   "clueId": "881-18",
+   "length": 3,
+   "answer": "sul",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "knoeier",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_u_",
+     "guess": "dut",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_ul",
+     "guess": "mol",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 306,
+   "completion_tokens": 50
+  },
+  {
+   "clueId": "881-2",
+   "length": 6,
+   "answer": "evenzo",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "e_____",
+     "guess": "even",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "e_e___",
+     "guess": "evenes",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "eve___",
+     "guess": "oosten",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "eve_z_",
+     "guess": "ineens",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "eve_zo",
+     "guess": "kiezen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 614,
+   "completion_tokens": 151
+  },
+  {
+   "clueId": "881-3",
+   "length": 7,
+   "answer": "pasdame",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "troela",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "p______",
+     "guess": "passant",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "pa_____",
+     "guess": "passant",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "pa__a__",
+     "guess": "pasante",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "pas_a__",
+     "guess": "passant",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "pas_am_",
+     "guess": "passant",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "pas_ame",
+     "guess": "passant",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 741,
+   "completion_tokens": 290
+  },
+  {
+   "clueId": "881-4",
+   "length": 8,
+   "answer": "lidstaat",
+   "k_star": 5,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "stijve",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___s____",
+     "guess": "oprichting",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_i_s____",
+     "guess": "missies",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_i_s__a_",
+     "guess": "oprichting",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_ids__a_",
+     "guess": "kindersta",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_ids__at",
+     "guess": "lidstaat",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 558,
+   "completion_tokens": 218
+  },
+  {
+   "clueId": "881-5",
+   "length": 9,
+   "answer": "achteruit",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "numbers",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_c_______",
+     "guess": "spontaan",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_c___r___",
+     "guess": "writer",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_c___r_i_",
+     "guess": "achterlijn",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "ac___r_i_",
+     "guess": "achteruit",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 587,
+   "completion_tokens": 150
+  },
+  {
+   "clueId": "881-6",
+   "length": 10,
+   "answer": "rysnelheid",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "slakkengang",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______h___",
+     "guess": "snelheid",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "r_____h___",
+     "guess": "snelheidslimiet",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "r_____h__d",
+     "guess": "randweg",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "r__n__h__d",
+     "guess": "snelpostrit",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "ry_n__h__d",
+     "guess": "slenterend",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "ry_n__he_d",
+     "guess": "kruipende",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "rysn__he_d",
+     "guess": "rustigheid",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "rysn_lhe_d",
+     "guess": "snelheidslimiet",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "rysnelhe_d",
+     "guess": "slakgang",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1069,
+   "completion_tokens": 287
+  },
+  {
+   "clueId": "881-7",
+   "length": 11,
+   "answer": "proefballon",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__________n",
+     "guess": "feestattribuut",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___e______n",
+     "guess": "slingers",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___e__a___n",
+     "guess": "versiering",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_r_e__a___n",
+     "guess": "sprookjesman",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_r_e_ba___n",
+     "guess": "brankaf",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_r_e_ba__on",
+     "guess": "luchthapper",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_r_e_ba_lon",
+     "guess": "borrelhapje",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_r_efba_lon",
+     "guess": "verjaardagshat",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_roefba_lon",
+     "guess": "feesttoeter",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "proefba_lon",
+     "guess": "snoepartikel",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1092,
+   "completion_tokens": 374
+  },
+  {
+   "clueId": "881-8",
+   "length": 12,
+   "answer": "snuffelronde",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "snuifcirkel",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___f________",
+     "guess": "rookworst",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___f_____n__",
+     "guess": "gesnuffeld",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__uf_____n__",
+     "guess": "cirkel",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__uf_e___n__",
+     "guess": "rondetafel",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__uf_e___n_e",
+     "guess": "verkeersplein",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__uf_e___nde",
+     "guess": "ademcirkel",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__uf_el__nde",
+     "guess": "sneeuwklokje",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_nuf_el__nde",
+     "guess": "flessendopje",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_nuf_elr_nde",
+     "guess": "samenwerking",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "_nuf_elronde",
+     "guess": "waarschijnlijk",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "_nuffelronde",
+     "guess": "joint",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1179,
+   "completion_tokens": 437
+  },
+  {
+   "clueId": "881-9",
+   "length": 13,
+   "answer": "verbouwereren",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "de",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "v____________",
+     "guess": "televisiebedrijf",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "v_r__________",
+     "guess": "verheerlijken",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "v_r__u_______",
+     "guess": "vermeerderaar",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "v_r__u____r__",
+     "guess": "verzameltuinen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "v_r_ou____r__",
+     "guess": "verzorger",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "v_r_ou_e__r__",
+     "guess": "verontwaardiger",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "v_r_ou_e__r_n",
+     "guess": "verantwoorden",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "v_r_ou_e__ren",
+     "guess": "wortelteler",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "v_rbou_e__ren",
+     "guess": "kassenbouwers",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "v_rbouwe__ren",
+     "guess": "vermeerderen",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "verbouwe__ren",
+     "guess": "praiser",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "verbouwe_eren",
+     "guess": "vergrotenaren",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1296,
+   "completion_tokens": 420
+  },
+  {
+   "clueId": "882-0",
+   "length": 3,
+   "answer": "dot",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "dot",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 96,
+   "completion_tokens": 28
+  },
+  {
+   "clueId": "882-1",
+   "length": 5,
+   "answer": "inham",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "vaals",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "i____",
+     "guess": "venlo",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "in___",
+     "guess": "urmond",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "in__m",
+     "guess": "inwom",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "in_am",
+     "guess": "vaals",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 535,
+   "completion_tokens": 122
+  },
+  {
+   "clueId": "882-10",
+   "length": 12,
+   "answer": "interpoleren",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "interpoleren",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 101,
+   "completion_tokens": 36
+  },
+  {
+   "clueId": "882-11",
+   "length": 11,
+   "answer": "gastronomie",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "astronomie",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__s________",
+     "guess": "ruimtevaart",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__s___n____",
+     "guess": "astrologie",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__s___n___e",
+     "guess": "zwaartekracht",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_as___n___e",
+     "guess": "kernstoffenleer",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_as___n_m_e",
+     "guess": "ruimtevaart",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_as_r_n_m_e",
+     "guess": "gasreuzen",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_as_r_nom_e",
+     "guess": "astrologie",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "gas_r_nom_e",
+     "guess": "astrologie",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "gastr_nom_e",
+     "guess": "one",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "gastronom_e",
+     "guess": "astronomie",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1073,
+   "completion_tokens": 392
+  },
+  {
+   "clueId": "882-12",
+   "length": 10,
+   "answer": "pompgemaal",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "echtgenoot",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____e____",
+     "guess": "vrouwenecht",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____ge____",
+     "guess": "schoonzoon",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_o__ge____",
+     "guess": "schoonzoon",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_om_ge____",
+     "guess": "voortgangen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_om_gem___",
+     "guess": "samenhang",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "pom_gem___",
+     "guess": "pompmengsel",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "pom_gem_a_",
+     "guess": "verloofde",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "pom_gem_al",
+     "guess": "pompstation",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "pom_gemaal",
+     "guess": "echtgenote",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 975,
+   "completion_tokens": 348
+  },
+  {
+   "clueId": "882-13",
+   "length": 9,
+   "answer": "escaleren",
+   "k_star": 6,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "beweging",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____l____",
+     "guess": "kronkelen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___al____",
+     "guess": "installing",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___al___n",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__cal___n",
+     "guess": "escalatie",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__cale__n",
+     "guess": "calendar",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_scale__n",
+     "guess": "escaleren",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 682,
+   "completion_tokens": 171
+  },
+  {
+   "clueId": "882-14",
+   "length": 8,
+   "answer": "algemeen",
+   "k_star": 5,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "it",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "a_______",
+     "guess": "afschuw",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "a_g_____",
+     "guess": "afgrijselijk",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "a_g__e__",
+     "guess": "aangeven",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "a_g__ee_",
+     "guess": "aalgierig",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "alg__ee_",
+     "guess": "algemeen",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 580,
+   "completion_tokens": 255
+  },
+  {
+   "clueId": "882-15",
+   "length": 7,
+   "answer": "overkop",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "ronding",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__e____",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__e_k__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "__e_ko_",
+     "guess": "rondom",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__e_kop",
+     "guess": "overkop",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 488,
+   "completion_tokens": 240
+  },
+  {
+   "clueId": "882-16",
+   "length": 6,
+   "answer": "afgang",
+   "k_star": 3,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "schande",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "a_____",
+     "guess": "afgunst",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "af____",
+     "guess": "afgunst",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "af___g",
+     "guess": "afgang",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 376,
+   "completion_tokens": 121
+  },
+  {
+   "clueId": "882-17",
+   "length": 5,
+   "answer": "reaal",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "munt",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____l",
+     "guess": "gulden",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e__l",
+     "guess": "penning",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_ea_l",
+     "guess": "geaal",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_eaal",
+     "guess": "maaksel",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 483,
+   "completion_tokens": 203
+  },
+  {
+   "clueId": "882-18",
+   "length": 4,
+   "answer": "mark",
+   "k_star": 3,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "euro",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "m___",
+     "guess": "euro",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "ma__",
+     "guess": "naam",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "ma_k",
+     "guess": "mark",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 379,
+   "completion_tokens": 151
+  },
+  {
+   "clueId": "882-2",
+   "length": 6,
+   "answer": "vieren",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "vieren",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 94,
+   "completion_tokens": 39
+  },
+  {
+   "clueId": "882-3",
+   "length": 7,
+   "answer": "betonen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "verzinnen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______n",
+     "guess": "melodie",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e____n",
+     "guess": "zinnen",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_e___en",
+     "guess": "melodie",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_e__nen",
+     "guess": "zetten",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_et_nen",
+     "guess": "zetten",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "bet_nen",
+     "guess": "toonen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 674,
+   "completion_tokens": 120
+  },
+  {
+   "clueId": "882-4",
+   "length": 8,
+   "answer": "ongelikt",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "frankeren",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____i__",
+     "guess": "frisheid",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____ik_",
+     "guess": "frankeren",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___e_ik_",
+     "guess": "franking",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___elik_",
+     "guess": "frankvel",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "___elikt",
+     "guess": "franking",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_n_elikt",
+     "guess": "plakzegel",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "on_elikt",
+     "guess": "stamp",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 779,
+   "completion_tokens": 271
+  },
+  {
+   "clueId": "882-5",
+   "length": 9,
+   "answer": "bolhoeden",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "continent",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____e___",
+     "guess": "wereldbol",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___h_e___",
+     "guess": "aardekring",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "___h_e_e_",
+     "guess": "kontinent",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___hoe_e_",
+     "guess": "rondvormig",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "___hoede_",
+     "guess": "wereldbol",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "b__hoede_",
+     "guess": "binnendoos",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "bo_hoede_",
+     "guess": "aardrijkskunde",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "bolhoede_",
+     "guess": "aardbolle",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 864,
+   "completion_tokens": 278
+  },
+  {
+   "clueId": "882-6",
+   "length": 10,
+   "answer": "slingerpad",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "watersalamander",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "____g_____",
+     "guess": "salamander",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "____g____d",
+     "guess": "padhagedis",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____g___ad",
+     "guess": "treksprinkhaan",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "s___g___ad",
+     "guess": "speenvarken",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "sl__g___ad",
+     "guess": "salamander",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "sl__g__pad",
+     "guess": "salamander",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "sl__ge_pad",
+     "guess": "salamander",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "sl_nge_pad",
+     "guess": "salamander",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "slinge_pad",
+     "guess": "kaarslange",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1029,
+   "completion_tokens": 303
+  },
+  {
+   "clueId": "882-7",
+   "length": 11,
+   "answer": "oerprincipe",
+   "k_star": 9,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "fundamenten",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_______c___",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "o______c___",
+     "guess": "oxynergieën",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "o____i_c___",
+     "guess": "oxideringscilindrisch",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "o_r__i_c___",
+     "guess": "oorpronkelijk",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "o_r__i_ci__",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "o_r_ri_ci__",
+     "guess": "oorspronkelijk",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "o_r_ri_cip_",
+     "guess": "mineraal",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "oer_ri_cip_",
+     "guess": "oorprincipe",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "oerpri_cip_",
+     "guess": "oerprincipe",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 1035,
+   "completion_tokens": 379
+  },
+  {
+   "clueId": "882-8",
+   "length": 12,
+   "answer": "vredegerecht",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "vredestichter",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______e_____",
+     "guess": "vredesduifje",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____ge_____",
+     "guess": "recept",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_____ge__c__",
+     "guess": "vredesteken",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "___d_ge__c__",
+     "guess": "vredestichter",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "___dege__c__",
+     "guess": "vredesduifjes",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "___dege__c_t",
+     "guess": "vredesduif",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "__edege__c_t",
+     "guess": "vredestichter",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "__edeger_c_t",
+     "guess": "vredesduifje",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "__edeger_cht",
+     "guess": "grootmoeders",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "__edegerecht",
+     "guess": "vredesduifje",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "_redegerecht",
+     "guess": "vredegebaren",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1270,
+   "completion_tokens": 435
+  },
+  {
+   "clueId": "882-9",
+   "length": 13,
+   "answer": "omslagheffing",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "rugzakriemen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________f____",
+     "guess": "boekenplank",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "______h_f____",
+     "guess": "boekentas",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "______h_f___g",
+     "guess": "boodschappentas",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "__s___h_f___g",
+     "guess": "boekenplank",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "__s__gh_f___g",
+     "guess": "schooltas",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "__s_agh_f___g",
+     "guess": "boekenrugzak",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "o_s_agh_f___g",
+     "guess": "boekentas",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "oms_agh_f___g",
+     "guess": "gespreksstof",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "oms_agh_f_i_g",
+     "guess": "boekentas",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "omslagh_f_i_g",
+     "guess": "herkantelingen",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "omslaghef_i_g",
+     "guess": "boekbinders",
+     "correct": false
+    },
+    {
+     "k": 12,
+     "pattern": "omslagheffi_g",
+     "guess": "boekenlegger",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1261,
+   "completion_tokens": 344
+  },
+  {
+   "clueId": "883-0",
+   "length": 4,
+   "answer": "help",
+   "k_star": 2,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "twee",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__l_",
+     "guess": "nood",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__lp",
+     "guess": "help",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 282,
+   "completion_tokens": 141
+  },
+  {
+   "clueId": "883-1",
+   "length": 5,
+   "answer": "kraan",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "knoop",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___a_",
+     "guess": "takel",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "___an",
+     "guess": "nevel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "k__an",
+     "guess": "takel",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "k_aan",
+     "guess": "kraan",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 467,
+   "completion_tokens": 116
+  },
+  {
+   "clueId": "883-10",
+   "length": 12,
+   "answer": "mondmuziekje",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_o__________",
+     "guess": "fluitdeuntje",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_o__m_______",
+     "guess": "fluitmelodie",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_o__m_____j_",
+     "guess": "volksliedje",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_o_dm_____j_",
+     "guess": "fluitmelodie",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_o_dm____kj_",
+     "guess": "fluitdeuntje",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_o_dmu___kj_",
+     "guess": "melodietje",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_o_dmu__ekj_",
+     "guess": "accordeonist",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_ondmu__ekj_",
+     "guess": "fluitconcert",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_ondmu_iekj_",
+     "guess": "fluitmelodie",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "_ondmu_iekje",
+     "guess": "melodietje",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "mondmu_iekje",
+     "guess": "mondharmonica",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1189,
+   "completion_tokens": 300
+  },
+  {
+   "clueId": "883-11",
+   "length": 11,
+   "answer": "wereldtitel",
+   "k_star": 7,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "wereldbol",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__________l",
+     "guess": "wereldbolletje",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "________t_l",
+     "guess": "wereldbol",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "____l___t_l",
+     "guess": "end",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "____l___tel",
+     "guess": "wereldster",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_e__l___tel",
+     "guess": "titel",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "we__l___tel",
+     "guess": "wereldkunde",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "we__l_t_tel",
+     "guess": "wereldtitel",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 755,
+   "completion_tokens": 175
+  },
+  {
+   "clueId": "883-12",
+   "length": 10,
+   "answer": "klinkklaar",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "toostbaar",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________a_",
+     "guess": "this",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_l______a_",
+     "guess": "possible",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_l_n____a_",
+     "guess": "gelukkig",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_l_nk___a_",
+     "guess": "toostbaar",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_l_nk_l_a_",
+     "guess": "toostklaar",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_l_nk_laa_",
+     "guess": "volksgalaat",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_l_nk_laar",
+     "guess": "toostglas",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_link_laar",
+     "guess": "toostbaar",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_linkklaar",
+     "guess": "toostklaar",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1004,
+   "completion_tokens": 235
+  },
+  {
+   "clueId": "883-13",
+   "length": 9,
+   "answer": "dakruiter",
+   "k_star": 8,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "pietenbaas",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___r_____",
+     "guess": "kindervriend",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__kr_____",
+     "guess": "aankomst",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "d_kr_____",
+     "guess": "kindervoet",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "d_kr__t__",
+     "guess": "bishop",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "d_kru_t__",
+     "guess": "st",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "d_kru_te_",
+     "guess": "sinterklaas",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "d_kru_ter",
+     "guess": "beschuitje",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "dakru_ter",
+     "guess": "dakruiter",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 863,
+   "completion_tokens": 364
+  },
+  {
+   "clueId": "883-14",
+   "length": 8,
+   "answer": "beenstuk",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "scheen",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____t__",
+     "guess": "kartelrand",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e___t__",
+     "guess": "sleutel",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_e__st__",
+     "guess": "possible",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_e__stu_",
+     "guess": "morsig",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_e_nstu_",
+     "guess": "geopend",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_e_nstuk",
+     "guess": "breuklijn",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "be_nstuk",
+     "guess": "scheenbeen",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 754,
+   "completion_tokens": 242
+  },
+  {
+   "clueId": "883-15",
+   "length": 7,
+   "answer": "condoom",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "crèche",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "c______",
+     "guess": "daycare",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "co_____",
+     "guess": "crèche",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "co___o_",
+     "guess": "creche",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "co__oo_",
+     "guess": "crèches",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "co_doo_",
+     "guess": "crèche",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "co_doom",
+     "guess": "creche",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 659,
+   "completion_tokens": 167
+  },
+  {
+   "clueId": "883-16",
+   "length": 6,
+   "answer": "marine",
+   "k_star": 1,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "___i__",
+     "guess": "marine",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 188,
+   "completion_tokens": 27
+  },
+  {
+   "clueId": "883-17",
+   "length": 5,
+   "answer": "engel",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____",
+     "guess": "ster",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_n___",
+     "guess": "zon",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_n_e_",
+     "guess": "planeet",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_n_el",
+     "guess": "zon",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_ngel",
+     "guess": "engel",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 474,
+   "completion_tokens": 156
+  },
+  {
+   "clueId": "883-18",
+   "length": 4,
+   "answer": "metz",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____",
+     "guess": "oost",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__t_",
+     "guess": "breed",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__tz",
+     "guess": "zoet",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_etz",
+     "guess": "zet",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 400,
+   "completion_tokens": 284
+  },
+  {
+   "clueId": "883-2",
+   "length": 6,
+   "answer": "jongen",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "______",
+     "guess": "gooien",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "__n___",
+     "guess": "zonen",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "__n_e_",
+     "guess": "jonges",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_on_e_",
+     "guess": "tonen",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_onge_",
+     "guess": "sjoelen",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "jonge_",
+     "guess": "darten",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 571,
+   "completion_tokens": 183
+  },
+  {
+   "clueId": "883-3",
+   "length": 7,
+   "answer": "zandvlo",
+   "k_star": 6,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_______",
+     "guess": "cruiser",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______o",
+     "guess": "automaat",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_a____o",
+     "guess": "duinvoe",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "za____o",
+     "guess": "sandbox",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "za_d__o",
+     "guess": "zandbak",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "zand__o",
+     "guess": "fietsen",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "zandv_o",
+     "guess": "zandvlo",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 674,
+   "completion_tokens": 334
+  },
+  {
+   "clueId": "883-4",
+   "length": 8,
+   "answer": "clubhuis",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "________",
+     "guess": "clubhuis",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 101,
+   "completion_tokens": 42
+  },
+  {
+   "clueId": "883-5",
+   "length": 9,
+   "answer": "entourage",
+   "k_star": 5,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_________",
+     "guess": "gevolg",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "________e",
+     "guess": "peloton",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_____r__e",
+     "guess": "stoetgang",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "e____r__e",
+     "guess": "wielrenner",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "e_t__r__e",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "ent__r__e",
+     "guess": "entourage",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 589,
+   "completion_tokens": 248
+  },
+  {
+   "clueId": "883-6",
+   "length": 10,
+   "answer": "testpiloot",
+   "k_star": 6,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "__________",
+     "guess": "piloot",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_e________",
+     "guess": "pilotfilm",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e_______t",
+     "guess": "luchtvaart",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_es______t",
+     "guess": "pilootband",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_es_____ot",
+     "guess": "voorsteller",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_es_p___ot",
+     "guess": "ooievaar",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "tes_p___ot",
+     "guess": "testpiloot",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 679,
+   "completion_tokens": 329
+  },
+  {
+   "clueId": "883-7",
+   "length": 11,
+   "answer": "wapenschouw",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___________",
+     "guess": "schilderij",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "______c____",
+     "guess": "schilderij",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_a____c____",
+     "guess": "wapenschild",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_a___sc____",
+     "guess": "schilderijlijst",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "_a_e_sc____",
+     "guess": "wandschilder",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "_a_ensc____",
+     "guess": "wandschilder",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "_a_ensc_o__",
+     "guess": "schilderij",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "_a_enscho__",
+     "guess": "openhaard",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "_apenscho__",
+     "guess": "mantelpiece",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "_apenschou_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "_apenschouw",
+     "guess": "schilderij",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1111,
+   "completion_tokens": 402
+  },
+  {
+   "clueId": "883-8",
+   "length": 12,
+   "answer": "verscheuring",
+   "k_star": null,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "____________",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_____h______",
+     "guess": "roedelgedrag",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_e___h______",
+     "guess": "roedeloosheid",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "_e_s_h______",
+     "guess": "roedelgedrag",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "ve_s_h______",
+     "guess": "individualis",
+     "correct": false
+    },
+    {
+     "k": 5,
+     "pattern": "ve_s_h_u____",
+     "guess": "individualis",
+     "correct": false
+    },
+    {
+     "k": 6,
+     "pattern": "ve_sch_u____",
+     "guess": "roedelgedrag",
+     "correct": false
+    },
+    {
+     "k": 7,
+     "pattern": "ve_sch_u__n_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 8,
+     "pattern": "ve_sch_u_in_",
+     "guess": "the",
+     "correct": false
+    },
+    {
+     "k": 9,
+     "pattern": "ve_sch_u_ing",
+     "guess": "verschuiving",
+     "correct": false
+    },
+    {
+     "k": 10,
+     "pattern": "ve_sch_uring",
+     "guess": "verdeelzucht",
+     "correct": false
+    },
+    {
+     "k": 11,
+     "pattern": "ve_scheuring",
+     "guess": "fragmentatie",
+     "correct": false
+    }
+   ],
+   "prompt_tokens": 1213,
+   "completion_tokens": 328
+  },
+  {
+   "clueId": "883-9",
+   "length": 13,
+   "answer": "rusteloosheid",
+   "k_star": 4,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "_____________",
+     "guess": "nachtrust",
+     "correct": false
+    },
+    {
+     "k": 1,
+     "pattern": "_________h___",
+     "guess": "slapeloosheid",
+     "correct": false
+    },
+    {
+     "k": 2,
+     "pattern": "_______o_h___",
+     "guess": "lack",
+     "correct": false
+    },
+    {
+     "k": 3,
+     "pattern": "r______o_h___",
+     "guess": "twaalfuurtje",
+     "correct": false
+    },
+    {
+     "k": 4,
+     "pattern": "r_s____o_h___",
+     "guess": "rusteloosheid",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 484,
+   "completion_tokens": 156
+  },
+  {
+   "clueId": "900082-0",
+   "length": 3,
+   "answer": "ram",
+   "k_star": 0,
+   "tries": [
+    {
+     "k": 0,
+     "pattern": "___",
+     "guess": "ram",
+     "correct": true
+    }
+   ],
+   "prompt_tokens": 92,
+   "completion_tokens": 44
+  }
+ ]
+}

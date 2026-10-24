@@ -10,8 +10,8 @@ export type AttemptEvent =
 
 /** What is stored per clue (Firestore users/{uid}/attempts/{clueId}). */
 export interface Attempt {
-  /** 2 adds `seed` / `revealOrder` */
-  v: 1 | 2
+  /** 2 adds `seed` / `revealOrder`; from 3 every Show letter takes the next position in `revealOrder` */
+  v: 1 | 2 | 3
   clueId: string
   cryptoId: number
   cryptoNo: number
