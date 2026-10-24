@@ -24,6 +24,11 @@ on:
       models:
         description: "models (space separated); empty = benchmark probes all / examples uses its default set"
         default: ""
+      only_new:
+        description: "benchmark mode: run only probed models not already in research/llm_reveal/runs/"
+        type: choice
+        options: ["true", "false"]
+        default: "true"
 
 concurrency:
   group: llm-reveal-${{ github.ref }}
@@ -93,12 +98,22 @@ jobs:
               gpt-5.5-2026-04-23 gpt-5.6 gpt-5.6-mini gpt-5.6-nano gpt-6 gpt-6-mini gpt-6-nano \
               claude-3-haiku-20240307 claude-haiku-4-5-20251001 claude-sonnet-4-20250514 \
               claude-sonnet-4-5-20250929 claude-sonnet-4-6 claude-opus-4-5-20251101 claude-opus-4-8 \
+              claude-opus-5-5 claude-sonnet-5-5 claude-haiku-5-5 \
               gemini-2.0-flash-lite gemini-2.0-flash gemini-2.5-flash-lite gemini-2.5-flash \
               gemini-2.5-pro gemini-3-flash-preview gemini-3.1-flash-lite-preview \
               gemini-3.1-pro-preview gemini-3.5-flash \
               us.meta.llama3-1-8b-instruct-v1:0 us.meta.llama3-3-70b-instruct-v1:0 \
               us.meta.llama4-maverick-17b-instruct-v1:0 command-r7b-12-2024 command-a-03-2025
-          echo "models=$(jq -c .available research/llm_reveal/models.json)" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.only_new }}" = "false" ]; then
+            new=$(jq -c .available research/llm_reveal/models.json)
+          else
+            have=$(jq -r '.model' research/llm_reveal/runs/*.json 2>/dev/null | jq -R . | jq -sc .)
+            [ -z "$have" ] && have='[]'
+            new=$(jq -c --argjson have "$have" \
+              '[.available[] | select(. as $m | ($have | index($m)) | not)]' research/llm_reveal/models.json)
+          fi
+          echo "new models to run: $new"
+          echo "models=$new" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
         if: steps.rerun.outputs.models == ''
