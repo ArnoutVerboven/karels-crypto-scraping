@@ -1,6 +1,6 @@
 # LLM vs human: letters revealed one at a time
 
-Clues: the 173 clues Arnout solved in the benchmark app. Each model guesses with no letters shown; after a wrong guess one more letter is revealed in the same order the app used for Arnout (167 clues from the stored `revealOrder`, the rest from a fixed per-clue seed in the app's algorithm). Once right, the clue counts as solved at that reveal count and every higher one.
+Clues: the 174 clues Arnout solved in the benchmark app. Each model guesses with no letters shown; after a wrong guess one more letter is revealed in the same order the app used for Arnout (168 clues from the stored `revealOrder`, the rest from a fixed per-clue seed in the app's algorithm). Once right, the clue counts as solved at that reveal count and every higher one.
 
 **Cell accuracy** is the share of (clue, reveal count) cells that are successes, over every reveal count 0..length-1 of each clue: the average of the matrix below weighted by clues. **0 letters** = solved cold. **mean k\*** = average letters needed when solved.
 
@@ -11,39 +11,42 @@ Clues: the 173 clues Arnout solved in the benchmark app. Each model guesses with
 | 3 | gpt-6.1-sol | openai | 84.8% | 101/173 | 0.93 | 7 | 173 | 0 | low |  |
 | 4 | gpt-5.6-sol | openai | 82.3% | 85/173 | 1.36 | 3 | 173 | 0 | low |  |
 | 5 | gpt-6-sol | openai | 82.2% | 87/173 | 1.33 | 4 | 173 | 0 | low |  |
-| 6 | gemini-3.5-flash | google | 80.2% | 81/173 | 1.57 | 1 | 173 | 0 | low | $7.47 |
-| 7 | gpt-5.5-2026-04-23 | openai | 80.2% | 73/173 | 1.49 | 4 | 173 | 0 | low | $10.96 |
-| 8 | gpt-5-2025-08-07 | openai | 78.0% | 66/173 | 1.68 | 3 | 173 | 0 | low | $12.47 |
-| 9 | gemini-3-flash-preview | google | 77.5% | 67/173 | 1.55 | 6 | 173 | 0 | low | $2.56 |
-| 10 | o3 | openai | 76.0% | 58/173 | 1.84 | 3 | 173 | 0 | low | $14.06 |
-| 11 | gpt-5.6-terra | openai | 74.4% | 57/173 | 1.94 | 5 | 173 | 0 | low |  |
-| 12 | gpt-5.4-2026-03-05 | openai | 74.1% | 61/173 | 1.90 | 6 | 173 | 0 | low | $9.92 |
-| 13 | claude-opus-4-8 | anthropic | 73.9% | 52/173 | 2.05 | 3 | 173 | 0 | low | $29.00 |
-| 14 | gpt-6-luna | openai | 72.0% | 57/173 | 2.02 | 7 | 173 | 0 | low |  |
-| 15 | gpt-5.1-2025-11-13 | openai | 71.4% | 59/173 | 2.21 | 4 | 173 | 0 | low | $5.73 |
-| 16 | gpt-5.2-2025-12-11 | openai | 70.6% | 47/173 | 2.23 | 7 | 173 | 0 | low | $8.20 |
-| 17 | gpt-5.6-luna | openai | 69.9% | 54/173 | 2.26 | 7 | 173 | 0 | low |  |
-| 18 | human (Arnout) | human | 67.5% | 39/173 | 2.65 | 0 | 173 | 0 |  |  |
-| 19 | o4-mini | openai | 66.1% | 44/173 | 2.59 | 6 | 173 | 0 | low | $6.10 |
-| 20 | claude-opus-4-5-20251101 | anthropic | 65.8% | 43/173 | 2.46 | 9 | 173 | 0 | low | $35.86 |
-| 21 | gpt-5.4-mini-2026-03-17 | openai | 64.4% | 39/173 | 2.70 | 8 | 173 | 0 | low | $2.98 |
-| 22 | claude-sonnet-4-6 | anthropic | 63.1% | 35/173 | 2.76 | 9 | 173 | 0 | low | $14.39 |
-| 23 | gpt-5-mini-2025-08-07 | openai | 62.7% | 36/173 | 2.89 | 7 | 173 | 0 | low | $1.74 |
-| 24 | claude-sonnet-4-5-20250929 | anthropic | 61.8% | 32/173 | 2.87 | 8 | 173 | 0 | low | $12.28 |
-| 25 | gemini-2.5-pro | google | 60.4% | 42/173 | 2.90 | 9 | 173 | 0 | low | $13.04 |
-| 26 | gpt-5.4-nano-2026-03-17 | openai | 51.9% | 26/173 | 3.51 | 19 | 173 | 0 | low | $1.46 |
-| 27 | gpt-4.1 | openai | 49.4% | 26/173 | 3.63 | 20 | 173 | 0 | low | $2.93 |
-| 28 | gemini-2.5-flash | google | 47.8% | 26/173 | 3.70 | 28 | 173 | 0 | low | $9.19 |
-| 29 | o3-mini | openai | 46.4% | 22/173 | 4.01 | 19 | 173 | 0 | low | $8.43 |
-| 30 | gpt-4.1-mini | openai | 44.6% | 16/173 | 3.94 | 29 | 173 | 0 | low | $1.64 |
-| 31 | gpt-4-turbo | openai | 44.5% | 29/173 | 3.97 | 27 | 173 | 0 | low | $6.05 |
-| 32 | claude-haiku-4-5-20251001 | anthropic | 42.4% | 14/173 | 4.26 | 22 | 173 | 0 | low | $7.23 |
-| 33 | gpt-5-nano-2025-08-07 | openai | 42.0% | 18/173 | 4.28 | 25 | 173 | 0 | low | $0.52 |
-| 34 | gpt-4o | openai | 39.8% | 17/173 | 4.24 | 32 | 173 | 0 | low | $1.78 |
-| 35 | gemini-2.5-flash-lite | google | 32.5% | 11/173 | 4.82 | 43 | 173 | 0 | low | $2.60 |
-| 36 | gpt-4o-mini | openai | 23.3% | 6/173 | 5.14 | 72 | 173 | 0 | low | $0.12 |
-| 37 | gpt-4.1-nano | openai | 20.5% | 3/173 | 5.46 | 69 | 173 | 0 | low | $0.36 |
-| 38 | gpt-3.5-turbo | openai | 16.4% | 8/173 | 3.73 | 111 | 173 | 0 | low | $0.12 |
+| 6 | claude-opus-5-5 | anthropic | 80.5% | 74/174 | 1.47 | 3 | 174 | 0 | low |  |
+| 7 | gemini-3.5-flash | google | 80.2% | 81/173 | 1.57 | 1 | 173 | 0 | low | $7.47 |
+| 8 | gpt-5.5-2026-04-23 | openai | 80.2% | 73/173 | 1.49 | 4 | 173 | 0 | low | $10.96 |
+| 9 | gpt-5-2025-08-07 | openai | 78.0% | 66/173 | 1.68 | 3 | 173 | 0 | low | $12.47 |
+| 10 | gemini-3-flash-preview | google | 77.5% | 67/173 | 1.55 | 6 | 173 | 0 | low | $2.56 |
+| 11 | o3 | openai | 76.0% | 58/173 | 1.84 | 3 | 173 | 0 | low | $14.06 |
+| 12 | gpt-5.6-terra | openai | 74.4% | 57/173 | 1.94 | 5 | 173 | 0 | low |  |
+| 13 | gpt-5.4-2026-03-05 | openai | 74.1% | 61/173 | 1.90 | 6 | 173 | 0 | low | $9.92 |
+| 14 | claude-opus-4-8 | anthropic | 73.9% | 52/173 | 2.05 | 3 | 173 | 0 | low | $29.00 |
+| 15 | gpt-6-luna | openai | 72.0% | 57/173 | 2.02 | 7 | 173 | 0 | low |  |
+| 16 | gpt-5.1-2025-11-13 | openai | 71.4% | 59/173 | 2.21 | 4 | 173 | 0 | low | $5.73 |
+| 17 | gpt-5.2-2025-12-11 | openai | 70.6% | 47/173 | 2.23 | 7 | 173 | 0 | low | $8.20 |
+| 18 | gpt-5.6-luna | openai | 69.9% | 54/173 | 2.26 | 7 | 173 | 0 | low |  |
+| 19 | claude-sonnet-5-5 | anthropic | 68.4% | 54/174 | 2.38 | 7 | 174 | 0 | low |  |
+| 20 | human (Arnout) | human | 67.5% | 39/174 | 2.64 | 0 | 174 | 0 |  |  |
+| 21 | o4-mini | openai | 66.1% | 44/173 | 2.59 | 6 | 173 | 0 | low | $6.10 |
+| 22 | claude-opus-4-5-20251101 | anthropic | 65.8% | 43/173 | 2.46 | 9 | 173 | 0 | low | $35.86 |
+| 23 | gpt-5.4-mini-2026-03-17 | openai | 64.4% | 39/173 | 2.70 | 8 | 173 | 0 | low | $2.98 |
+| 24 | claude-sonnet-4-6 | anthropic | 63.1% | 35/173 | 2.76 | 9 | 173 | 0 | low | $14.39 |
+| 25 | gpt-5-mini-2025-08-07 | openai | 62.7% | 36/173 | 2.89 | 7 | 173 | 0 | low | $1.74 |
+| 26 | claude-sonnet-4-5-20250929 | anthropic | 61.8% | 32/173 | 2.87 | 8 | 173 | 0 | low | $12.28 |
+| 27 | gemini-2.5-pro | google | 60.4% | 42/173 | 2.90 | 9 | 173 | 0 | low | $13.04 |
+| 28 | claude-haiku-5-5 | anthropic | 53.4% | 28/174 | 3.53 | 13 | 174 | 0 | low |  |
+| 29 | gpt-5.4-nano-2026-03-17 | openai | 51.9% | 26/173 | 3.51 | 19 | 173 | 0 | low | $1.46 |
+| 30 | gpt-4.1 | openai | 49.4% | 26/173 | 3.63 | 20 | 173 | 0 | low | $2.93 |
+| 31 | gemini-2.5-flash | google | 47.8% | 26/173 | 3.70 | 28 | 173 | 0 | low | $9.19 |
+| 32 | o3-mini | openai | 46.4% | 22/173 | 4.01 | 19 | 173 | 0 | low | $8.43 |
+| 33 | gpt-4.1-mini | openai | 44.6% | 16/173 | 3.94 | 29 | 173 | 0 | low | $1.64 |
+| 34 | gpt-4-turbo | openai | 44.5% | 29/173 | 3.97 | 27 | 173 | 0 | low | $6.05 |
+| 35 | claude-haiku-4-5-20251001 | anthropic | 42.4% | 14/173 | 4.26 | 22 | 173 | 0 | low | $7.23 |
+| 36 | gpt-5-nano-2025-08-07 | openai | 42.0% | 18/173 | 4.28 | 25 | 173 | 0 | low | $0.52 |
+| 37 | gpt-4o | openai | 39.8% | 17/173 | 4.24 | 32 | 173 | 0 | low | $1.78 |
+| 38 | gemini-2.5-flash-lite | google | 32.5% | 11/173 | 4.82 | 43 | 173 | 0 | low | $2.60 |
+| 39 | gpt-4o-mini | openai | 23.3% | 6/173 | 5.14 | 72 | 173 | 0 | low | $0.12 |
+| 40 | gpt-4.1-nano | openai | 20.5% | 3/173 | 5.46 | 69 | 173 | 0 | low | $0.36 |
+| 41 | gpt-3.5-turbo | openai | 16.4% | 8/173 | 3.73 | 111 | 173 | 0 | low | $0.12 |
 
 ## Matrices (accuracy, clues per cell in brackets)
 
@@ -126,6 +129,22 @@ Clues: the 173 clues Arnout solved in the benchmark app. Each model guesses with
 | 11 | 56% (18) | 67% (18) | 78% (18) | 83% (18) | 94% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) |  |  |
 | 12 | 33% (18) | 67% (18) | 78% (18) | 83% (18) | 89% (18) | 89% (18) | 89% (18) | 89% (18) | 94% (18) | 94% (18) | 100% (18) | 100% (18) |  |
 | 13 | 33% (9) | 67% (9) | 67% (9) | 78% (9) | 89% (9) | 89% (9) | 89% (9) | 89% (9) | 89% (9) | 89% (9) | 100% (9) | 100% (9) | 100% (9) |
+
+### claude-opus-5-5
+
+| letters \ revealed | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 3 | 73% (11) | 82% (11) | 100% (11) |  |  |  |  |  |  |  |  |  |  |
+| 4 | 40% (10) | 70% (10) | 100% (10) | 100% (10) |  |  |  |  |  |  |  |  |  |
+| 5 | 56% (18) | 83% (18) | 94% (18) | 94% (18) | 100% (18) |  |  |  |  |  |  |  |  |
+| 6 | 56% (18) | 67% (18) | 78% (18) | 94% (18) | 94% (18) | 94% (18) |  |  |  |  |  |  |  |
+| 7 | 39% (18) | 50% (18) | 67% (18) | 83% (18) | 89% (18) | 100% (18) | 100% (18) |  |  |  |  |  |  |
+| 8 | 50% (18) | 67% (18) | 78% (18) | 94% (18) | 94% (18) | 94% (18) | 94% (18) | 100% (18) |  |  |  |  |  |
+| 9 | 28% (18) | 56% (18) | 61% (18) | 61% (18) | 78% (18) | 78% (18) | 89% (18) | 89% (18) | 89% (18) |  |  |  |  |
+| 10 | 33% (18) | 44% (18) | 61% (18) | 67% (18) | 78% (18) | 94% (18) | 94% (18) | 94% (18) | 100% (18) | 100% (18) |  |  |  |
+| 11 | 39% (18) | 67% (18) | 78% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) | 100% (18) |  |  |
+| 12 | 22% (18) | 61% (18) | 72% (18) | 78% (18) | 83% (18) | 89% (18) | 89% (18) | 89% (18) | 94% (18) | 94% (18) | 94% (18) | 100% (18) |  |
+| 13 | 44% (9) | 56% (9) | 78% (9) | 78% (9) | 78% (9) | 89% (9) | 89% (9) | 89% (9) | 89% (9) | 89% (9) | 100% (9) | 100% (9) | 100% (9) |
 
 ### gemini-3.5-flash
 
@@ -319,11 +338,27 @@ Clues: the 173 clues Arnout solved in the benchmark app. Each model guesses with
 | 12 | 22% (18) | 33% (18) | 39% (18) | 61% (18) | 67% (18) | 67% (18) | 72% (18) | 83% (18) | 89% (18) | 89% (18) | 89% (18) | 100% (18) |  |
 | 13 | 11% (9) | 33% (9) | 44% (9) | 56% (9) | 56% (9) | 56% (9) | 67% (9) | 67% (9) | 78% (9) | 78% (9) | 100% (9) | 100% (9) | 100% (9) |
 
+### claude-sonnet-5-5
+
+| letters \ revealed | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 3 | 64% (11) | 82% (11) | 91% (11) |  |  |  |  |  |  |  |  |  |  |
+| 4 | 60% (10) | 90% (10) | 100% (10) | 100% (10) |  |  |  |  |  |  |  |  |  |
+| 5 | 44% (18) | 67% (18) | 67% (18) | 94% (18) | 100% (18) |  |  |  |  |  |  |  |  |
+| 6 | 50% (18) | 56% (18) | 56% (18) | 83% (18) | 89% (18) | 89% (18) |  |  |  |  |  |  |  |
+| 7 | 33% (18) | 39% (18) | 39% (18) | 50% (18) | 67% (18) | 83% (18) | 94% (18) |  |  |  |  |  |  |
+| 8 | 33% (18) | 33% (18) | 61% (18) | 78% (18) | 83% (18) | 94% (18) | 100% (18) | 100% (18) |  |  |  |  |  |
+| 9 | 17% (18) | 17% (18) | 33% (18) | 39% (18) | 72% (18) | 78% (18) | 83% (18) | 89% (18) | 89% (18) |  |  |  |  |
+| 10 | 17% (18) | 33% (18) | 39% (18) | 56% (18) | 67% (18) | 83% (18) | 89% (18) | 94% (18) | 94% (18) | 94% (18) |  |  |  |
+| 11 | 22% (18) | 50% (18) | 61% (18) | 72% (18) | 78% (18) | 89% (18) | 94% (18) | 94% (18) | 100% (18) | 100% (18) | 100% (18) |  |  |
+| 12 | 11% (18) | 28% (18) | 28% (18) | 44% (18) | 67% (18) | 72% (18) | 83% (18) | 83% (18) | 89% (18) | 94% (18) | 94% (18) | 100% (18) |  |
+| 13 | 0% (9) | 22% (9) | 22% (9) | 44% (9) | 56% (9) | 67% (9) | 78% (9) | 78% (9) | 78% (9) | 89% (9) | 89% (9) | 100% (9) | 100% (9) |
+
 ### human (Arnout)
 
 | letters \ revealed | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 3 | 50% (10) | 80% (10) | 100% (10) |  |  |  |  |  |  |  |  |  |  |
+| 3 | 45% (11) | 73% (11) | 100% (11) |  |  |  |  |  |  |  |  |  |  |
 | 4 | 40% (10) | 60% (10) | 80% (10) | 100% (10) |  |  |  |  |  |  |  |  |  |
 | 5 | 39% (18) | 56% (18) | 89% (18) | 100% (18) | 100% (18) |  |  |  |  |  |  |  |  |
 | 6 | 22% (18) | 39% (18) | 61% (18) | 78% (18) | 94% (18) | 100% (18) |  |  |  |  |  |  |  |
@@ -446,6 +481,22 @@ Clues: the 173 clues Arnout solved in the benchmark app. Each model guesses with
 | 11 | 11% (18) | 28% (18) | 28% (18) | 44% (18) | 50% (18) | 67% (18) | 78% (18) | 83% (18) | 94% (18) | 94% (18) | 100% (18) |  |  |
 | 12 | 17% (18) | 33% (18) | 33% (18) | 39% (18) | 61% (18) | 67% (18) | 83% (18) | 83% (18) | 89% (18) | 94% (18) | 94% (18) | 94% (18) |  |
 | 13 | 22% (9) | 22% (9) | 33% (9) | 33% (9) | 44% (9) | 67% (9) | 67% (9) | 67% (9) | 67% (9) | 78% (9) | 78% (9) | 89% (9) | 89% (9) |
+
+### claude-haiku-5-5
+
+| letters \ revealed | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 3 | 27% (11) | 73% (11) | 82% (11) |  |  |  |  |  |  |  |  |  |  |
+| 4 | 30% (10) | 60% (10) | 70% (10) | 100% (10) |  |  |  |  |  |  |  |  |  |
+| 5 | 39% (18) | 50% (18) | 72% (18) | 89% (18) | 94% (18) |  |  |  |  |  |  |  |  |
+| 6 | 28% (18) | 44% (18) | 44% (18) | 56% (18) | 67% (18) | 89% (18) |  |  |  |  |  |  |  |
+| 7 | 11% (18) | 11% (18) | 22% (18) | 28% (18) | 33% (18) | 56% (18) | 78% (18) |  |  |  |  |  |  |
+| 8 | 17% (18) | 28% (18) | 28% (18) | 39% (18) | 61% (18) | 78% (18) | 89% (18) | 100% (18) |  |  |  |  |  |
+| 9 | 11% (18) | 17% (18) | 17% (18) | 22% (18) | 56% (18) | 67% (18) | 67% (18) | 83% (18) | 89% (18) |  |  |  |  |
+| 10 | 11% (18) | 22% (18) | 33% (18) | 33% (18) | 44% (18) | 78% (18) | 78% (18) | 78% (18) | 94% (18) | 94% (18) |  |  |  |
+| 11 | 6% (18) | 17% (18) | 33% (18) | 39% (18) | 56% (18) | 67% (18) | 72% (18) | 89% (18) | 94% (18) | 100% (18) | 100% (18) |  |  |
+| 12 | 0% (18) | 22% (18) | 33% (18) | 39% (18) | 44% (18) | 50% (18) | 50% (18) | 61% (18) | 78% (18) | 83% (18) | 94% (18) | 94% (18) |  |
+| 13 | 0% (9) | 0% (9) | 11% (9) | 22% (9) | 22% (9) | 22% (9) | 33% (9) | 44% (9) | 56% (9) | 67% (9) | 78% (9) | 89% (9) | 100% (9) |
 
 ### gpt-5.4-nano-2026-03-17
 
@@ -657,6 +708,11 @@ Clues: the 173 clues Arnout solved in the benchmark app. Each model guesses with
 
 ## Models the gateway did not serve
 
+- `gpt-3.5-turbo`: 404: Error code: 404 - {'error': {'message': 'The model `gpt-3.5-turbo` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type':
+- `gpt-4-turbo`: 404: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': '
+- `gpt-4.1-nano`: 404: Error code: 404 - {'error': {'message': 'The model `gpt-4.1-nano` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 
+- `o3-mini`: 404: Error code: 404 - {'error': {'message': 'The model `o3-mini` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'inva
+- `o4-mini`: 404: Error code: 404 - {'error': {'message': 'The model `o4-mini` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'inva
 - `gpt-5.6`: 403: Error code: 403 - {'error': "AI Gateway error: The model 'gpt-5.6' you requested is not allowed for the 'openai' provider. Check that you are using the correct 
 - `gpt-5.6-mini`: 403: Error code: 403 - {'error': "AI Gateway error: The model 'gpt-5.6-mini' you requested is not allowed for the 'openai' provider. Check that you are using the cor
 - `gpt-5.6-nano`: 403: Error code: 403 - {'error': "AI Gateway error: The model 'gpt-5.6-nano' you requested is not allowed for the 'openai' provider. Check that you are using the cor
