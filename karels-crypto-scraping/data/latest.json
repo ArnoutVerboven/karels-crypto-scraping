@@ -1,41 +1,42 @@
 {
-  "id": 887,
-  "title": "Karels Crypto 24 oktober",
-  "date": "2026-10-24",
+  "id": 888,
+  "title": "Karels Crypto 31 oktober",
+  "date": "2026-10-31",
   "solution": null,
   "words": [
     {
-      "cryptogram": "huidblad",
-      "length": 3,
+      "cryptogram": "stikstofverbinding",
+      "length": 4,
       "help_numbers": [
+        8,
         null,
         null,
-        16
+        null
       ],
-      "offset": 6,
+      "offset": 5,
       "solution": null
     },
     {
-      "cryptogram": "…, B. fris, C. rijm",
+      "cryptogram": "dit gebergte houdt je hoofd recht",
       "length": 5,
       "help_numbers": [
         null,
-        8,
+        10,
         null,
-        6,
-        null
+        null,
+        11
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "clowneske kade",
+      "cryptogram": "vroeger riepen de belangenorganisaties om hun rechten",
       "length": 6,
       "help_numbers": [
-        11,
         null,
+        18,
         null,
-        2,
+        19,
         null,
         null
       ],
@@ -43,269 +44,269 @@
       "solution": null
     },
     {
-      "cryptogram": "zeer winderig achterste (gemeenz.)",
+      "cryptogram": "de poten van een dar",
       "length": 7,
       "help_numbers": [
+        15,
+        7,
+        15,
         null,
-        13,
-        16,
         null,
         null,
-        13,
         null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "bijencel",
+      "cryptogram": "Water in het trapportaal!",
       "length": 8,
       "help_numbers": [
-        2,
+        null,
+        20,
         null,
         null,
-        23,
+        9,
         null,
         null,
-        4,
-        null
+        4
       ],
-      "offset": 2,
+      "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "kost van het inwinnen van info",
+      "cryptogram": "slakom (Eng.)",
       "length": 9,
       "help_numbers": [
-        8,
-        6,
         null,
-        null,
-        null,
+        16,
         null,
         6,
-        3,
+        null,
+        15,
+        null,
+        14,
         null
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "examinandus",
+      "cryptogram": "voor de hoofdgemeente van o.a. Huizingen en Alsemberg",
       "length": 10,
       "help_numbers": [
-        null,
-        12,
+        4,
         null,
         null,
         15,
+        null,
+        null,
         null,
         11,
         null,
-        15,
+        9
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "lipopvulling (Eng.)",
+      "length": 11,
+      "help_numbers": [
+        null,
+        null,
+        4,
+        21,
+        5,
+        null,
+        null,
+        null,
+        null,
+        8,
+        12
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "vogel met bijzondere linguïstische aanleg: talen…",
+      "length": 12,
+      "help_numbers": [
+        1,
+        null,
+        21,
+        null,
+        null,
+        22,
+        null,
+        3,
+        14,
+        null,
+        null,
+        null
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "'buitenhouden of binnenlaten'",
+      "length": 13,
+      "help_numbers": [
+        23,
+        null,
+        12,
+        2,
+        13,
+        null,
+        null,
+        null,
+        19,
+        null,
+        null,
+        13,
+        null
+      ],
+      "offset": 0,
+      "solution": null
+    },
+    {
+      "cryptogram": "uitrit (snelweg)",
+      "length": 12,
+      "help_numbers": [
+        null,
+        5,
+        null,
+        9,
+        null,
+        null,
+        4,
+        9,
+        null,
+        null,
+        10,
         null
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "pakketbezorger, koerier",
+      "cryptogram": "goederenboot met veel plaats",
       "length": 11,
       "help_numbers": [
-        5,
-        22,
         null,
-        18,
+        16,
+        null,
+        23,
+        null,
+        null,
+        11,
+        6,
+        17,
+        null,
+        null
+      ],
+      "offset": 1,
+      "solution": null
+    },
+    {
+      "cryptogram": "strijd tussen tipi en wigwam",
+      "length": 10,
+      "help_numbers": [
+        10,
         null,
         null,
         10,
         null,
-        9,
-        null,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "zwijnencyste, zeugenzak",
-      "length": 12,
-      "help_numbers": [
-        8,
         null,
         null,
-        19,
-        null,
-        11,
-        null,
-        17,
-        16,
-        null,
-        null,
-        null
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "die leidt een filmproject",
-      "length": 13,
-      "help_numbers": [
-        1,
-        null,
-        16,
-        null,
-        21,
-        null,
-        null,
-        4,
-        null,
-        20,
-        14,
-        null,
-        null
-      ],
-      "offset": 0,
-      "solution": null
-    },
-    {
-      "cryptogram": "dadenkoetsier",
-      "length": 12,
-      "help_numbers": [
-        null,
-        20,
-        14,
-        7,
-        null,
-        null,
-        12,
-        null,
-        null,
-        18,
-        null,
-        null
-      ],
-      "offset": 1,
-      "solution": null
-    },
-    {
-      "cryptogram": "niet tegen belasting",
-      "length": 11,
-      "help_numbers": [
-        null,
-        null,
-        null,
-        6,
+        13,
         23,
-        null,
-        1,
-        1,
-        null,
-        null,
-        10
+        null
       ],
       "offset": 1,
       "solution": null
     },
     {
-      "cryptogram": "ouderloze kinderen van de hoogste graad",
-      "length": 10,
+      "cryptogram": "inheemse plant met opvallende peddels",
+      "length": 9,
       "help_numbers": [
+        1,
         null,
-        21,
+        null,
         21,
         null,
         null,
         2,
-        null,
-        5,
-        null,
+        22,
         null
       ],
       "offset": 2,
       "solution": null
     },
     {
-      "cryptogram": "gedrogeerde fiets",
-      "length": 9,
-      "help_numbers": [
-        15,
-        21,
-        null,
-        null,
-        null,
-        17,
-        null,
-        19,
-        null
-      ],
-      "offset": 2,
-      "solution": null
-    },
-    {
-      "cryptogram": "broze persoon",
+      "cryptogram": "vestibulepluimen",
       "length": 8,
       "help_numbers": [
-        14,
+        17,
         null,
         null,
+        20,
         null,
-        16,
+        2,
+        null,
+        null
+      ],
+      "offset": 2,
+      "solution": null
+    },
+    {
+      "cryptogram": "zijrivier van de West-Vlaamse stroom",
+      "length": 7,
+      "help_numbers": [
+        7,
+        3,
         null,
         null,
-        10
+        13,
+        null,
+        null
       ],
       "offset": 3,
       "solution": null
     },
     {
-      "cryptogram": "het lied van de mannetjesvis",
-      "length": 7,
+      "cryptogram": "de bal is binnen (tenn.)",
+      "length": 6,
       "help_numbers": [
-        23,
+        18,
         null,
+        null,
+        null,
+        null,
+        12
+      ],
+      "offset": 3,
+      "solution": null
+    },
+    {
+      "cryptogram": "scheepsgidskeet",
+      "length": 5,
+      "help_numbers": [
         9,
         null,
         null,
-        7,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "preekstoel (Eng.)",
-      "length": 6,
-      "help_numbers": [
-        null,
-        13,
-        null,
-        null,
-        22,
-        null
-      ],
-      "offset": 3,
-      "solution": null
-    },
-    {
-      "cryptogram": "het inferno van de Sturmabteilung",
-      "length": 5,
-      "help_numbers": [
-        null,
-        13,
-        null,
-        22,
+        19,
         null
       ],
       "offset": 4,
       "solution": null
     },
     {
-      "cryptogram": "feitelijk is het een ontsteking aan de nagel",
+      "cryptogram": "de daadkracht van een stoomtrein",
       "length": 3,
       "help_numbers": [
+        4,
         null,
-        3,
         null
       ],
       "offset": 4,

@@ -6633,5 +6633,320 @@
         "solution": "neon"
       }
     ]
+  },
+  {
+    "id": 887,
+    "title": "Karels Crypto 24 oktober",
+    "date": "2026-10-24",
+    "solution": "vermogensoverdracht",
+    "words": [
+      {
+        "cryptogram": "huidblad",
+        "length": 3,
+        "help_numbers": [
+          null,
+          null,
+          16
+        ],
+        "offset": 6,
+        "solution": "vel"
+      },
+      {
+        "cryptogram": "…, B. fris, C. rijm",
+        "length": 5,
+        "help_numbers": [
+          null,
+          8,
+          null,
+          6,
+          null
+        ],
+        "offset": 4,
+        "solution": "avers"
+      },
+      {
+        "cryptogram": "clowneske kade",
+        "length": 6,
+        "help_numbers": [
+          11,
+          null,
+          null,
+          2,
+          null,
+          null
+        ],
+        "offset": 4,
+        "solution": "narwal"
+      },
+      {
+        "cryptogram": "zeer winderig achterste (gemeenz.)",
+        "length": 7,
+        "help_numbers": [
+          null,
+          13,
+          16,
+          null,
+          null,
+          13,
+          null
+        ],
+        "offset": 3,
+        "solution": "galmgat"
+      },
+      {
+        "cryptogram": "bijencel",
+        "length": 8,
+        "help_numbers": [
+          2,
+          null,
+          null,
+          23,
+          null,
+          null,
+          4,
+          null
+        ],
+        "offset": 2,
+        "solution": "washokje"
+      },
+      {
+        "cryptogram": "kost van het inwinnen van info",
+        "length": 9,
+        "help_numbers": [
+          8,
+          6,
+          null,
+          null,
+          null,
+          null,
+          6,
+          3,
+          null
+        ],
+        "offset": 2,
+        "solution": "vraagprys"
+      },
+      {
+        "cryptogram": "examinandus",
+        "length": 10,
+        "help_numbers": [
+          null,
+          12,
+          null,
+          null,
+          15,
+          null,
+          11,
+          null,
+          15,
+          null
+        ],
+        "offset": 1,
+        "solution": "toetsenist"
+      },
+      {
+        "cryptogram": "pakketbezorger, koerier",
+        "length": 11,
+        "help_numbers": [
+          5,
+          22,
+          null,
+          18,
+          null,
+          null,
+          10,
+          null,
+          9,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "zendingsman"
+      },
+      {
+        "cryptogram": "zwijnencyste, zeugenzak",
+        "length": 12,
+        "help_numbers": [
+          8,
+          null,
+          null,
+          19,
+          null,
+          11,
+          null,
+          17,
+          16,
+          null,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "varkensblaas"
+      },
+      {
+        "cryptogram": "die leidt een filmproject",
+        "length": 13,
+        "help_numbers": [
+          1,
+          null,
+          16,
+          null,
+          21,
+          null,
+          null,
+          4,
+          null,
+          20,
+          14,
+          null,
+          null
+        ],
+        "offset": 0,
+        "solution": "filmprojector"
+      },
+      {
+        "cryptogram": "dadenkoetsier",
+        "length": 12,
+        "help_numbers": [
+          null,
+          20,
+          14,
+          7,
+          null,
+          null,
+          12,
+          null,
+          null,
+          18,
+          null,
+          null
+        ],
+        "offset": 1,
+        "solution": "actievoerder"
+      },
+      {
+        "cryptogram": "niet tegen belasting",
+        "length": 11,
+        "help_numbers": [
+          null,
+          null,
+          null,
+          6,
+          23,
+          null,
+          1,
+          1,
+          null,
+          null,
+          10
+        ],
+        "offset": 1,
+        "solution": "voorheffing"
+      },
+      {
+        "cryptogram": "ouderloze kinderen van de hoogste graad",
+        "length": 10,
+        "help_numbers": [
+          null,
+          21,
+          21,
+          null,
+          null,
+          2,
+          null,
+          5,
+          null,
+          null
+        ],
+        "offset": 2,
+        "solution": "opperwezen"
+      },
+      {
+        "cryptogram": "gedrogeerde fiets",
+        "length": 9,
+        "help_numbers": [
+          15,
+          21,
+          null,
+          null,
+          null,
+          17,
+          null,
+          19,
+          null
+        ],
+        "offset": 2,
+        "solution": "speedbike"
+      },
+      {
+        "cryptogram": "broze persoon",
+        "length": 8,
+        "help_numbers": [
+          14,
+          null,
+          null,
+          null,
+          16,
+          null,
+          null,
+          10
+        ],
+        "offset": 3,
+        "solution": "teerling"
+      },
+      {
+        "cryptogram": "het lied van de mannetjesvis",
+        "length": 7,
+        "help_numbers": [
+          23,
+          null,
+          9,
+          null,
+          null,
+          7,
+          null
+        ],
+        "offset": 3,
+        "solution": "homaria"
+      },
+      {
+        "cryptogram": "preekstoel (Eng.)",
+        "length": 6,
+        "help_numbers": [
+          null,
+          13,
+          null,
+          null,
+          22,
+          null
+        ],
+        "offset": 3,
+        "solution": "cancel"
+      },
+      {
+        "cryptogram": "het inferno van de Sturmabteilung",
+        "length": 5,
+        "help_numbers": [
+          null,
+          13,
+          null,
+          22,
+          null
+        ],
+        "offset": 4,
+        "solution": "sahel"
+      },
+      {
+        "cryptogram": "feitelijk is het een ontsteking aan de nagel",
+        "length": 3,
+        "help_numbers": [
+          null,
+          3,
+          null
+        ],
+        "offset": 4,
+        "solution": "fyt"
+      }
+    ]
   }
 ]
